@@ -16,8 +16,7 @@ var articleNumber = 0;
         tempmainS.style.display = "flex";
         tempmainS.style.justifyContent = "center";
         tempmainSection.style.width = a1;
-        tempmainSection.style.height = "100%";
-       
+        tempmainSection.style.height = "100%"; 
         }
     else{
         if(c < d){
@@ -26,8 +25,23 @@ var articleNumber = 0;
             tempmainS.style.display = "flex";
             tempmainS.style.alignItems = "center"; 
             tempmainSection.style.height = b1;
-            tempmainSection.style.width = "100%";  
-        }
+            tempmainSection.style.width = "100%";
+        } 
+              
+/*
+            var tempRow = document.getElementsByClassName("articleGrid");
+            for(var i=0; i<tempRow.length; i++ )
+            {
+            if(i!=0){
+                tempRow[i].style.width = a*2/3 + "px";
+            }
+            else{
+                tempRow[0].style.width = a/3 + "px";
+                
+            }
+            } 
+            */
+        
         else{
             console.log("trece if ostalo isto ako je rezultat 0: " + g);
         }
@@ -50,10 +64,12 @@ function addArticle(){
     
     temprightSection.style.display = "grid";
     temprightSection.style.gridTemplateColumns = "auto auto auto";
+    temprightSection.style.gridTemplateRows = "auto auto auto";
 
     temprightSection.style.gridGap = "0.5%";
     temprightSection.style.padding = "0.5%";
     newArticle.style.backgroundColor = "skyblue";
+    newArticle.style.position = "relative";
 
     temprightSection.appendChild(newArticle);
 
@@ -90,20 +106,22 @@ function addArticle(){
 
     var tekst = document.createTextNode("neki tekst");
     tempcityName.appendChild(tekst);
-    tempcityName.style.color = "white";
+
+    tempcityName.style.color = "red";
+    tempcityName.style.position = "absolute";
+    tempcityName.style.bottom = "0px";
+    tempcityName.style.width = "100%";
+    tempcityName.style.height = "20%";
+    tempcityName.style.opacity = "0.8";
+    tempcityName.style.backgroundColor = "black";
 
     bgImageCity.appendChild(tempcityName);
     
     var tempRow = document.getElementsByClassName("articleGrid");
     for(var i=0; i<tempRow.length; i++ )
     {
-        if(i!=0)
-        {
-
+        if(i!=0){
             tempRow[i].style.height = "300px";
-        }
-        else{
-            tempRow[0].style.height = "600px";
         }
     } 
     
