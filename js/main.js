@@ -16,7 +16,7 @@ var articleNumber = 0;
         tempmainS.style.display = "flex";
         tempmainS.style.justifyContent = "center";
         tempmainSection.style.width = a1;
-        tempmainSection.style.height = "100%"; 
+        tempmainSection.style.height = "100%";
         }
     else{
         if(c < d){
@@ -27,21 +27,6 @@ var articleNumber = 0;
             tempmainSection.style.height = b1;
             tempmainSection.style.width = "100%";
         } 
-              
-/*
-            var tempRow = document.getElementsByClassName("articleGrid");
-            for(var i=0; i<tempRow.length; i++ )
-            {
-            if(i!=0){
-                tempRow[i].style.width = a*2/3 + "px";
-            }
-            else{
-                tempRow[0].style.width = a/3 + "px";
-                
-            }
-            } 
-            */
-        
         else{
             console.log("trece if ostalo isto ako je rezultat 0: " + g);
         }
@@ -51,26 +36,20 @@ var articleNumber = 0;
 
 function addArticle(){
     articleNumber++;
-    var tempmainSection = document.getElementById("mainSection");
-    var a = mainSection.clientWidth;
-    var b = mainSection.clientHeight;
-    var a1 = a/3;
-    var b2 = b/3;
 
     var temprightSection = document.getElementById("rightSection");
     var newArticle = document.createElement("article");
     newArticle.id = "article" + articleNumber;
     newArticle.className = "articleGrid";
-    
-    temprightSection.style.display = "grid";
-    temprightSection.style.gridTemplateColumns = "auto auto auto";
-    temprightSection.style.gridTemplateRows = "auto auto auto";
-
-    temprightSection.style.gridGap = "0.5%";
-    temprightSection.style.padding = "0.5%";
     newArticle.style.backgroundColor = "skyblue";
     newArticle.style.position = "relative";
+    newArticle.onmouseover = function(){ mouseOver()};
+   // newArticle.onmouseout = function() {mouseOut()};
 
+    temprightSection.style.display = "grid";
+    temprightSection.style.gridTemplateColumns = "auto auto auto";
+    temprightSection.style.gridGap = "0.5%";
+    temprightSection.style.padding = "0.5%";
     temprightSection.appendChild(newArticle);
 
     var firstArticle = document.getElementById("article1");
@@ -80,8 +59,9 @@ function addArticle(){
     firstArticle.style.gridRowEnd = 3;
 
     var bgImageCity = document.getElementById("article" + articleNumber);
-    bgImageCity.style.backgroundImage = "url('C:/Users/User02/Desktop/travel-test/images/london.jpg')";
+    //bgImageCity.style.backgroundImage = "url('C:/Users/User02/Desktop/travel-test/images/london.jpg')";
     bgImageCity.style.backgroundSize = "100% 100%";
+
 
     /*
     var bgImg = document.getElementById("article" + articleNumber);
@@ -103,10 +83,8 @@ function addArticle(){
 */
 
     var tempcityName = document.createElement("footer");
-
-    var tekst = document.createTextNode("neki tekst");
+    var tekst = document.createTextNode("city name");
     tempcityName.appendChild(tekst);
-
     tempcityName.style.color = "red";
     tempcityName.style.position = "absolute";
     tempcityName.style.bottom = "0px";
@@ -124,7 +102,21 @@ function addArticle(){
             tempRow[i].style.height = "300px";
         }
     } 
+
+    function mouseOver(){
+             
+            bgImageCity.style.backgroundColor = "white";
+        
+    }
     
+   /*function mouseOut(){
+        bgImageCity.style.backgroundColor = "red";
+        
+    }
+    */
 }
 
-
+/* trebas da resis oko iskacuceg prozora kada se predje misem onmouseover i onmouseout,
+treba da kada se klikne da se poveca prozor sa detaljnim opisom,
+treba se napraviti niz sa objektima za svaki grad,
+*/
