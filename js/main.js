@@ -17,18 +17,7 @@ var articleNumber = 0;
         tempmainS.style.justifyContent = "center";
         tempmainSection.style.width = a1;
         tempmainSection.style.height = "100%";
-        var tempRow = document.getElementsByClassName("articleGrid");
-        for(var i=0; i<tempRow.length; i++ )
-        {
-            if(i!=0)
-            {
-    
-                tempRow[i].style.height = b/3;
-            }
-            else{
-                tempRow[0].style.height = b*2/3;
-            }
-        } 
+       
         }
     else{
         if(c < d){
@@ -38,19 +27,6 @@ var articleNumber = 0;
             tempmainS.style.alignItems = "center"; 
             tempmainSection.style.height = b1;
             tempmainSection.style.width = "100%";  
-
-            var tempRow = document.getElementsByClassName("articleGrid");
-        for(var i=0; i<tempRow.length; i++ )
-        {
-            if(i!=0)
-            {
-    
-                tempRow[i].style.height = a/3;
-            }
-            else{
-                tempRow[0].style.height = a*2/3;
-            }
-        } 
         }
         else{
             console.log("trece if ostalo isto ako je rezultat 0: " + g);
@@ -124,7 +100,7 @@ function addArticle(){
         if(i!=0)
         {
 
-            tempRow[i].style.height = "600px";
+            tempRow[i].style.height = "300px";
         }
         else{
             tempRow[0].style.height = "600px";
