@@ -3,13 +3,11 @@ window.addEventListener("resize", setResolution);
 
 var articleNumber = 0;
 
-//ovo je samo privremeno 
-var slika1 = "../images/berlin.jpg";
-var slika2 = "../images/london.jpg";
+
 
     function setResolution(){
-    var tempmainS = document.getElementById('mainS');
-    var tempmainSection = document.getElementById('mainSection');
+    var tempmainS = document.getElementById("mainS");
+    var tempmainSection = document.getElementById("mainSection");
     var a = mainS.clientWidth;
     var b = mainS.clientHeight;
     var c = a/b;
@@ -41,18 +39,31 @@ var slika2 = "../images/london.jpg";
 
 function addArticle(){
     articleNumber++;
-    var temprightSection = document.getElementById('rightSection');
+    var temprightSection = document.getElementById("rightSection");
     var newArticle = document.createElement("article");
     newArticle.id = "article" + articleNumber;
+    newArticle.className = "articleGrid";
     
     temprightSection.style.display = "grid";
     temprightSection.style.gridTemplateColumns = "33% 33% 33%";
-    temprightSection.style.gridTemplateRows = "300px 300px 300px";
+
     temprightSection.style.gridGap = "0.5%";
     temprightSection.style.padding = "0.5%";
     newArticle.style.backgroundColor = "skyblue";
+   // newArticle.style.height = "300px";
 
+/*
+    var tempRow = document.getElementsByClassName("articleGrid");
+    for(var i=0; i<tempRow.length; i++ )
+    {
+        tempRow[i].style.height = "300px";
+        newArticle.appendChild(tempRow[i]);
+    }
+    
+*/
     temprightSection.appendChild(newArticle);
+
+
 
     var firstArticle = document.getElementById("article1");
     firstArticle.style.gridColumnStart = 1;
