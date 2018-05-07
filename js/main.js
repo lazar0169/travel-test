@@ -1,9 +1,6 @@
 window.addEventListener("resize", setResolution);
 
-
 var articleNumber = 0;
-
-
 
     function setResolution(){
     var tempmainS = document.getElementById("mainS");
@@ -50,20 +47,8 @@ function addArticle(){
     temprightSection.style.gridGap = "0.5%";
     temprightSection.style.padding = "0.5%";
     newArticle.style.backgroundColor = "skyblue";
-   // newArticle.style.height = "300px";
 
-/*
-    var tempRow = document.getElementsByClassName("articleGrid");
-    for(var i=0; i<tempRow.length; i++ )
-    {
-        tempRow[i].style.height = "300px";
-        newArticle.appendChild(tempRow[i]);
-    }
-    
-*/
     temprightSection.appendChild(newArticle);
-
-
 
     var firstArticle = document.getElementById("article1");
     firstArticle.style.gridColumnStart = 1;
@@ -72,7 +57,7 @@ function addArticle(){
     firstArticle.style.gridRowEnd = 3;
 
     var bgImageCity = document.getElementById("article" + articleNumber);
-    bgImageCity.style.backgroundImage = "url('london.jpg')";
+    bgImageCity.style.backgroundImage = "url('C:/Users/User02/Desktop/travel-test/images/london.jpg')";
     bgImageCity.style.backgroundSize = "100% 100%";
 
     /*
@@ -101,6 +86,11 @@ function addArticle(){
     tempcityName.style.color = "white";
 
     bgImageCity.appendChild(tempcityName);
+    var tempRow = document.getElementsByClassName("articleGrid");
+    for(var i=1; i<tempRow.length; i++ )
+    {
+        tempRow[i].style.height = "300px";
+    } 
 }
 
 
