@@ -17,7 +17,19 @@ var articleNumber = 0;
         tempmainS.style.justifyContent = "center";
         tempmainSection.style.width = a1;
         tempmainSection.style.height = "100%";
-         }
+        var tempRow = document.getElementsByClassName("articleGrid");
+        for(var i=0; i<tempRow.length; i++ )
+        {
+            if(i!=0)
+            {
+    
+                tempRow[i].style.height = b/3;
+            }
+            else{
+                tempRow[0].style.height = b*2/3;
+            }
+        } 
+        }
     else{
         if(c < d){
             let b1;
@@ -26,6 +38,19 @@ var articleNumber = 0;
             tempmainS.style.alignItems = "center"; 
             tempmainSection.style.height = b1;
             tempmainSection.style.width = "100%";  
+
+            var tempRow = document.getElementsByClassName("articleGrid");
+        for(var i=0; i<tempRow.length; i++ )
+        {
+            if(i!=0)
+            {
+    
+                tempRow[i].style.height = a/3;
+            }
+            else{
+                tempRow[0].style.height = a*2/3;
+            }
+        } 
         }
         else{
             console.log("trece if ostalo isto ako je rezultat 0: " + g);
@@ -36,13 +61,19 @@ var articleNumber = 0;
 
 function addArticle(){
     articleNumber++;
+    var tempmainSection = document.getElementById("mainSection");
+    var a = mainSection.clientWidth;
+    var b = mainSection.clientHeight;
+    var a1 = a/3;
+    var b2 = b/3;
+
     var temprightSection = document.getElementById("rightSection");
     var newArticle = document.createElement("article");
     newArticle.id = "article" + articleNumber;
     newArticle.className = "articleGrid";
     
     temprightSection.style.display = "grid";
-    temprightSection.style.gridTemplateColumns = "33% 33% 33%";
+    temprightSection.style.gridTemplateColumns = "auto auto auto";
 
     temprightSection.style.gridGap = "0.5%";
     temprightSection.style.padding = "0.5%";
@@ -86,11 +117,20 @@ function addArticle(){
     tempcityName.style.color = "white";
 
     bgImageCity.appendChild(tempcityName);
+    
     var tempRow = document.getElementsByClassName("articleGrid");
-    for(var i=1; i<tempRow.length; i++ )
+    for(var i=0; i<tempRow.length; i++ )
     {
-        tempRow[i].style.height = "300px";
+        if(i!=0)
+        {
+
+            tempRow[i].style.height = "600px";
+        }
+        else{
+            tempRow[0].style.height = "600px";
+        }
     } 
+    
 }
 
 
