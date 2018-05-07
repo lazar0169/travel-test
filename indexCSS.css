@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: yellowgreen;
+}
+#mainS{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: brown;
+    display: inline-flex;
+    overflow: hidden;
+
+}
+#mainSection{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: gray;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+#leftSection{
+    position: relative;
+    width: 20%;
+    height: 100%;
+    background-color: blue;
+}
+
+#seasonArticle{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+#logoArticle{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    background-color: transparent;
+}
+
+#language{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    background-color: transparent;
+}
+
+.listOfLinks{
+    position: relative;
+    padding-left: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.listOfLinks:hover{
+    position: relative;
+    cursor: pointer;
+    background-color: darkblue;
+}
+
+#listSeason{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;   
+}
+
+.linkSeason{
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.selectLanguage{
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    color: white;
+    background-color: darkblue;
+    border: none;
+    padding-left: 4%;
+}
+
+#rightSection{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    background-color: forestgreen;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
