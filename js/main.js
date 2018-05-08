@@ -61,7 +61,3 @@ function setResolution(){
         }
     }
 }
-/* trebas da resis oko iskacuceg prozora kada se predje misem onmouseover i onmouseout,
-treba da kada se klikne da se poveca prozor sa detaljnim opisom,
-treba se napraviti niz sa objektima za svaki grad, ...
-*/

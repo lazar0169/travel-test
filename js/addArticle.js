@@ -24,13 +24,12 @@ function addArticle(numbArt){
         firstArticle.style.gridRowEnd = 3;
 
         var bgImageCity = document.getElementById("article" + articleNumber);
-        bgImageCity.style.backgroundImage = "url('C:/Users/User02/Desktop/travel-test/images/london.jpg')";
+        bgImageCity.style.backgroundImage = destinationObject[articleNumber].picture;
 
         var tempcityName = document.createElement("footer");
-        var tekst = document.createTextNode("city name");
         tempcityName.className = "articleFooter"
         tempcityName.id= "articleFooter" + articleNumber;
-        tempcityName.appendChild(tekst);
+        tempcityName.innerHTML = destinationObject[articleNumber].name;
         bgImageCity.appendChild(tempcityName);
 
         addArticleDescription();
