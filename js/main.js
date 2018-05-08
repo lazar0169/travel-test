@@ -1,6 +1,6 @@
 window.addEventListener("resize", setResolution);
 
-    function setResolution(){
+function setResolution(){
     var tempmainS = document.getElementById("mainS");
     var tempmainSection = document.getElementById("mainSection");
     var a = mainS.clientWidth;
@@ -16,56 +16,45 @@ window.addEventListener("resize", setResolution);
         tempmainSection.style.width = a1;
         tempmainSection.style.height = "100%";
         resizeGrid();
-        }
-    else{
-        if(c < d){
-            let b1;
-            b1 = a/(16/9) + "px";
-            tempmainS.style.display = "flex";
-            tempmainS.style.alignItems = "center"; 
-            tempmainSection.style.height = b1;
-            tempmainSection.style.width = "100%";
-            resizeGrid();
-        } 
-        
-    }
-
-
-function resizeGrid(){
-    var tempmainSection = document.getElementById("mainSection");
-    var tempmainSectionA = mainSection.clientWidth;
-    var tempmainSectionB = mainSection.clientHeight;
-    
-    if(tempmainSectionA/tempmainSectionB > 16/9){
-   
-    var tempResize = document.getElementById("rightSection");
-    var tempResizeA = rightSection.clientWidth;
-    var tempResizeB = rightSection.clientHeight;
-
-    var tempArticle = document.getElementsByClassName("articleGrid");
-    for (var i = 0; i < tempArticle.length; i++ ) {
-        if(i!=0){
-            tempArticle[i].style.height = tempResizeB/3 + "px";          
-        }
-    }
     }
     else{
-    var tempResize = document.getElementById("rightSection");
-    var tempResizeA = rightSection.clientWidth;
-    var tempResizeB = rightSection.clientHeight;
-    var tempArticle = document.getElementsByClassName("articleGrid");
-    for (var i = 0; i < tempArticle.length; i++ ) {
-        if(i!=0){
-             tempArticle[i].style.height = tempResizeB/3 + "px";          
+        let b1;
+        b1 = a/(16/9) + "px";
+        tempmainS.style.display = "flex";
+        tempmainS.style.alignItems = "center"; 
+        tempmainSection.style.height = b1;
+        tempmainSection.style.width = "100%";
+        resizeGrid();
+    }        
+
+    function resizeGrid(){
+        var tempmainSection = document.getElementById("mainSection");
+        var tempmainSectionA = mainSection.clientWidth;
+        var tempmainSectionB = mainSection.clientHeight;
+        if(tempmainSectionA/tempmainSectionB > 16/9){   
+            var tempResize = document.getElementById("rightSection");
+            var tempResizeA = rightSection.clientWidth;
+            var tempResizeB = rightSection.clientHeight;
+            var tempArticle = document.getElementsByClassName("articleGrid");
+            for (var i = 0; i < tempArticle.length; i++ ) {
+                if(i!=0){
+                    tempArticle[i].style.height = tempResizeB/3 + "px";          
+                }
             }
+        }
+        else{
+            var tempResize = document.getElementById("rightSection");
+            var tempResizeA = rightSection.clientWidth;
+            var tempResizeB = rightSection.clientHeight;
+            var tempArticle = document.getElementsByClassName("articleGrid");
+            for (var i = 0; i < tempArticle.length; i++ ) {
+                if(i!=0){
+                    tempArticle[i].style.height = tempResizeB/3 + "px";          
+                }
+            }
+        }
     }
 }
-}
-    }
-
-
-
-
 /* trebas da resis oko iskacuceg prozora kada se predje misem onmouseover i onmouseout,
 treba da kada se klikne da se poveca prozor sa detaljnim opisom,
 treba se napraviti niz sa objektima za svaki grad, ...
