@@ -40,6 +40,9 @@ function setResolution(){
                 if(i!=0){
                     tempArticle[i].style.height = tempResizeB/3 + "px";          
                 }
+                else{
+                    tempArticle[i].style.height = tempResizeB*2/3 + "px"
+                }
             }
         }
         else{
@@ -50,6 +53,9 @@ function setResolution(){
             for (var i = 0; i < tempArticle.length; i++ ) {
                 if(i!=0){
                     tempArticle[i].style.height = tempResizeB/3 + "px";          
+                }
+                else{
+                    tempArticle[i].style.height = tempResizeB*2/3 + "px";
                 }
             }
         }
