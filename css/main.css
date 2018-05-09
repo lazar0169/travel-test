@@ -107,7 +107,7 @@ body{
 .articleGrid.articleGridFirst {
     background-color: skyblue;
     position: relative;
-    height: 600px;
+    height: 605px;
 
 }
 
@@ -130,10 +130,10 @@ body{
     background-color: transparent;
     height: 100%;
     overflow: hidden;
-    visibility: hidden;
+    display: none;
 }
-#sectionDescription:hover{
+#sectionDescription:hover > #sectionDescription {
     background-color: blueviolet;
     position: absolute;
-    visibility: visible !important;
+    display: block !important;
 }
