@@ -111,10 +111,10 @@ body{
 
 }
 
-.articleGrid:hover{
-    background-color: black;
-    visibility: visible;
-    
+.articleGrid:hover > #sectionDescription {
+    background-color: blueviolet;
+    position: absolute;
+    display: block;
 }
 
 .articleFooter{
@@ -131,9 +131,5 @@ body{
     height: 100%;
     overflow: hidden;
     display: none;
-}
-#sectionDescription:hover > #sectionDescription {
-    background-color: blueviolet;
-    position: absolute;
-    display: block !important;
+
 }
