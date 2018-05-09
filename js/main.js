@@ -1,13 +1,14 @@
 window.addEventListener("resize", setResolution);
+window.addEventListener("load", setResolution);
 
 function setResolution(){
-    var tempmainS = document.getElementById("mainS");
-    var tempmainSection = document.getElementById("mainSection");
-    var a = mainS.clientWidth;
-    var b = mainS.clientHeight;
-    var c = a/b;
+    let tempmainS = document.getElementById("mainS");
+    let tempmainSection = document.getElementById("mainSection");
+    let a = mainS.clientWidth;
+    let b = mainS.clientHeight;
+    let c = a/b;
     const d = 16/9;
-    var g = d-c;
+    let g = d-c;
     if(c > d){
         let a1;
         a1 = b*(16/9) + "px";
@@ -28,31 +29,40 @@ function setResolution(){
     }        
 
     function resizeGrid(){
-        var tempmainSection = document.getElementById("mainSection");
-        var tempmainSectionA = mainSection.clientWidth;
-        var tempmainSectionB = mainSection.clientHeight;
+        let tempmainSection = document.getElementById("mainSection");
+        let tempmainSectionA = mainSection.clientWidth;
+        let tempmainSectionB = mainSection.clientHeight;
+
+        let tempLanguage = document.getElementsByClassName("selectLanguage");
+        var tempfontSize = tempmainSectionA * 0.015 + "px";
+        tempmainSection.style.fontSize = tempfontSize;
+        for(let i = 0; i < tempLanguage.length; i++){
+            tempLanguage[i].style.fontSize = tempfontSize;
+        }
+        
+        
         if(tempmainSectionA/tempmainSectionB > 16/9){   
-            var tempResize = document.getElementById("rightSection");
-            var tempResizeA = rightSection.clientWidth;
-            var tempResizeB = rightSection.clientHeight;
-            var tempArticle = document.getElementsByClassName("articleGrid");
-            for (var i = 0; i < tempArticle.length; i++ ) {
+            let tempResize = document.getElementById("rightSection");
+            let tempResizeA = rightSection.clientWidth;
+            let tempResizeB = rightSection.clientHeight;
+            let tempArticle = document.getElementsByClassName("articleGrid");
+            for (let i = 0; i < tempArticle.length; i++ ) {
                 if(i!=0){
-                    tempArticle[i].style.height = tempResizeB/3 + "px";          
+                    tempArticle[i].style.height = tempResizeB/3 + "px";
                 }
                 else{
-                    tempArticle[i].style.height = ((tempResizeB+5)*2)/3 + "px"
+                    tempArticle[i].style.height = ((tempResizeB+5)*2)/3 + "px";
                 }
             }
         }
         else{
-            var tempResize = document.getElementById("rightSection");
-            var tempResizeA = rightSection.clientWidth;
-            var tempResizeB = rightSection.clientHeight;
-            var tempArticle = document.getElementsByClassName("articleGrid");
-            for (var i = 0; i < tempArticle.length; i++ ) {
+            let tempResize = document.getElementById("rightSection");
+            let tempResizeA = rightSection.clientWidth;
+            let tempResizeB = rightSection.clientHeight;
+            let tempArticle = document.getElementsByClassName("articleGrid");
+            for (let i = 0; i < tempArticle.length; i++ ) {
                 if(i!=0){
-                    tempArticle[i].style.height = tempResizeB/3 + "px";          
+                    tempArticle[i].style.height = tempResizeB/3 + "px";
                 }
                 else{
                     tempArticle[i].style.height = ((tempResizeB+5)*2) /3 + "px";
