@@ -113,11 +113,15 @@ background-color: brown;
     position: absolute;
     text-decoration: none;
     outline:none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 10%;
 }
 
 #selectLanguage1{  
     margin-left: 90%;
-    width: 10%;
+    width: 20%;
     right: 0;
     height: 15%;
     bottom: 0;
@@ -128,6 +132,10 @@ background-color: brown;
     position: absolute;
     text-decoration: none;
     outline:none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 10%;
 }
 
 .listOfLanguage{
@@ -135,7 +143,10 @@ background-color: brown;
     height: 16%;
     background-color: transparent;
     position: relative;
-    padding-left: 10px;
+    padding-left: 10%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .listOfLanguage:hover{
