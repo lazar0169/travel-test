@@ -1,14 +1,14 @@
-function addArticle(numbArt){
+function addArticle(numbArt) {
 
-    for(let articleNumber = 0; articleNumber < numbArt; articleNumber++){
+    for (let articleNumber = 0; articleNumber < numbArt; articleNumber++) {
         let temprightSection = document.getElementById("rightSection");
         let newArticle = document.createElement("article");
         newArticle.id = "article" + articleNumber;
 
-        if(articleNumber != 0){
+        if (articleNumber != 0) {
             newArticle.className = "articleGrid";
         }
-        else{
+        else {
             newArticle.className = "articleGrid articleGridFirst";
         }
         temprightSection.style.display = "grid";
@@ -28,7 +28,7 @@ function addArticle(numbArt){
 
         let tempcityName = document.createElement("footer");
         tempcityName.className = "articleFooter"
-        tempcityName.id= "articleFooter" + articleNumber;
+        tempcityName.id = "articleFooter" + articleNumber;
         tempcityName.innerHTML = destinationObject[articleNumber].name;
         bgImageCity.appendChild(tempcityName);
 
@@ -37,15 +37,15 @@ function addArticle(numbArt){
     (function () {
         let tempSectionLanguage = document.getElementById("sectionLanguage1");
 
-        for (var i = 0; i<languageObject.length; i++){
+        for (var i = 0; i < languageObject.length; i++) {
             let tempCreateLanguage = document.createElement("article");
             tempCreateLanguage.className = "listOfLanguage";
             tempCreateLanguage.innerHTML = languageObject[i].language;
             tempCreateLanguage.setAttribute("onclick", "chosenLanguage()");
             tempSectionLanguage.appendChild(tempCreateLanguage);
-            
-       }
+
+        }
     })();
     chosenLanguage();
-    
+
 }

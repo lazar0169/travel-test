@@ -147,6 +147,7 @@ background-color: brown;
     display: flex;
     justify-content: left;
     align-items: center;
+    cursor: pointer;
 }
 
 .listOfLanguage:hover{
@@ -181,8 +182,10 @@ background-color: brown;
 .articleGrid:hover > #sectionDescription {
     background-color: blueviolet;
     position: absolute;
-    display: block;
+    display: flex;
+    flex-flow: row wrap;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .articleFooter{
@@ -201,6 +204,7 @@ background-color: brown;
     display: none;
     white-space: wrap;
     overflow: hidden;
+
 }
 
 #fullSize{
