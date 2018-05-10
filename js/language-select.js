@@ -9,9 +9,6 @@ let languageObject = [
         language: 'Croatian'
     },
     {
-        language: 'Francuski'
-    },
-    {
         language: 'French'
     },
     {

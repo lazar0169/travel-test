@@ -186,6 +186,7 @@ background-color: brown;
     flex-flow: row wrap;
     text-overflow: ellipsis;
     cursor: pointer;
+    visibility: visible;
 }
 
 .articleFooter{
@@ -201,7 +202,8 @@ background-color: brown;
 #sectionDescription{
     background-color: transparent;
     height: 100%;
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
     white-space: wrap;
     overflow: hidden;
 
@@ -210,6 +212,8 @@ background-color: brown;
 #fullSize{
     width: 100%;
     height: 100%;
-    position: absolute;
+    
+    position: fixed;
     background-color: blueviolet;
+    pointer-events: none;
 }

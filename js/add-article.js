@@ -4,6 +4,7 @@ function addArticle(numbArt) {
         let temprightSection = document.getElementById("rightSection");
         let newArticle = document.createElement("article");
         newArticle.id = "article" + articleNumber;
+        newArticle.setAttribute("onclick", "fullSize()");
 
         if (articleNumber != 0) {
             newArticle.className = "articleGrid";
