@@ -33,12 +33,13 @@ function setResolution(){
         let tempmainSectionA = mainSection.clientWidth;
         let tempmainSectionB = mainSection.clientHeight;
 
-        let tempLanguage = document.getElementsByClassName("selectLanguage");
+        let tempLanguage = document.getElementById("selectLanguage");
+        let tempLanguage1 = document.getElementById("selectLanguage1");
         var tempfontSize = tempmainSectionA * 0.015 + "px";
         tempmainSection.style.fontSize = tempfontSize;
-        for(let i = 0; i < tempLanguage.length; i++){
-            tempLanguage[i].style.fontSize = tempfontSize;
-        }
+        tempLanguage.style.fontSize = tempfontSize;
+        tempLanguage1.style.fontSize = tempfontSize;
+        
         
         
         if(tempmainSectionA/tempmainSectionB > 16/9){   

@@ -1,21 +1,66 @@
-var languageObject = [
+let languageObject = [
     {
        language: 'Srpski'
     }, 
     {
         language: 'Engleski'
-    } 
+    },
+    {
+        language: 'Hrvatski'
+    }, 
+    {
+        language: 'Francuski'
+    }, 
+    {
+        language: 'Ruski'
+    }, 
+    {
+        language: 'Crnogorski'
+    },
+    {
+        language: 'Bugarski'
+    }, 
+    {
+        language: 'Rumunski'
+    }, 
+    {
+        language: 'Finski'
+    }, 
+    {
+        language: 'Arapski'
+    },
+    {
+        language: 'Kineski'
+    }      
 ]
+let tempShowHide = false;
+function showHideLanguage(){
 
-function selectLanguage(){
-    let tempSectionLanguage = document.getElementById("sectionLanguage");
-    let tempCreateLanguage = document.createElement("article");
-    tempCreateLanguage.className = "listOfLanguage";
-
-    for (let i = 0; i<languageObject.length; i++){
-        tempCreateLanguage.innerHTML = languageObject[i].language;
+    var tempShowHideLanguage = document.getElementById("sectionLanguage1")
+    if(tempShowHide == false){
+        tempShowHide = true;
+        tempShowHideLanguage.style.display = "flex";
     }
-    tempSectionLanguage.appendChild(tempCreateLanguage);
+    else{
+        tempShowHide = false;
+        tempShowHideLanguage.style.display = "none";
+    }
+}
+function chosenLanguage(){
+    let tempchosenLanguage = document.getElementById("selectLanguage");
+    let tempchoseLanguage = document.getElementsByClassName("listOfLanguage");
+   
+    for (var i = 0; i < tempchoseLanguage.length; i++)
+    {
 
+    (function(index){
+        tempchoseLanguage[i].onclick = function(){
+             
+            var x = tempchoseLanguage[index].textContent;
+            tempchosenLanguage.innerText = x;
+            showHideLanguage();
+        }    
+    })(i);
+}
 
 }

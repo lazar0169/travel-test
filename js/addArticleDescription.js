@@ -1,6 +1,5 @@
 function addArticleDescription(){
-    var ArtDesc = document.getElementsByClassName("articleGrid");
-    
+    var ArtDesc = document.getElementsByClassName("articleGrid"); 
     var addSectDesc = document.createElement("section");
     addSectDesc.id = "sectionDescription";
     addSectDesc.setAttribute("onclick", "fullSize()");
@@ -16,7 +15,6 @@ function addArticleDescription(){
                 addSectDesc.innerHTML = destinationObject[k].desc;
             }
         }
-    addSectDesc.innerHTML = destinationObject[k].desc;
     for(let i = 0; i<ArtDesc.length; i++)
     {
         ArtDesc[i].appendChild(addSectDesc);
@@ -27,10 +25,7 @@ function fullSize(){
     let temprightSection = document.getElementById("mainSection");
     let tempfullSize = document.createElement("section");
     tempfullSize.id = "fullSize";
-
     tempfullSize.innerHTML = destinationObject[1].desc
-
     temprightSection.appendChild(tempfullSize);
-    
-    //alert(destinationObject[1].desc);
+
 }
