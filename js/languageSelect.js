@@ -12,11 +12,10 @@ function selectLanguage(){
     let tempCreateLanguage = document.createElement("article");
     tempCreateLanguage.className = "listOfLanguage";
 
-    for (let i = 0; i<languageObject.length; i++)
-    {
+    for (let i = 0; i<languageObject.length; i++){
         tempCreateLanguage.innerHTML = languageObject[i].language;
-        tempSectionLanguage.appendChild(tempCreateLanguage);
     }
+    tempSectionLanguage.appendChild(tempCreateLanguage);
 
 
 }
