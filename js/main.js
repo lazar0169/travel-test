@@ -46,13 +46,13 @@ function setResolution() {
             let tempResize = document.getElementById("rightSection");
             let tempResizeA = rightSection.clientWidth;
             let tempResizeB = rightSection.clientHeight;
-            let tempArticle = document.getElementsByClassName("articleGrid");
-            for (let i = 0; i < tempArticle.length; i++) {
+            let tempSection = document.getElementsByClassName("articleSection");
+            for (let i = 0; i < tempSection.length; i++) {
                 if (i != 0) {
-                    tempArticle[i].style.height = tempResizeB / 3 + "px";
+                    tempSection[i].style.height = tempResizeB / 3 + "px";
                 }
                 else {
-                    tempArticle[i].style.height = ((tempResizeB + 5) * 2) / 3 + "px";
+                    tempSection[i].style.height = ((tempResizeB + 5) * 2) / 3 + "px";
                 }
             }
         }
@@ -60,13 +60,13 @@ function setResolution() {
             let tempResize = document.getElementById("rightSection");
             let tempResizeA = rightSection.clientWidth;
             let tempResizeB = rightSection.clientHeight;
-            let tempArticle = document.getElementsByClassName("articleGrid");
-            for (let i = 0; i < tempArticle.length; i++) {
+            let tempSection = document.getElementsByClassName("articleSection");
+            for (let i = 0; i < tempSection.length; i++) {
                 if (i != 0) {
-                    tempArticle[i].style.height = tempResizeB / 3 + "px";
+                    tempSection[i].style.height = tempResizeB / 3 + "px";
                 }
                 else {
-                    tempArticle[i].style.height = ((tempResizeB + 5) * 2) / 3 + "px";
+                    tempSection[i].style.height = ((tempResizeB + 5) * 2) / 3 + "px";
                 }
             }
         }

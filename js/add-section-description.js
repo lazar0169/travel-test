@@ -1,5 +1,5 @@
-function addArticleDescription() {
-    var ArtDesc = document.getElementsByClassName("articleGrid");
+function addSectionDescription() {
+    var ArtDesc = document.getElementsByClassName("articleSection");
     var addSectDesc = document.createElement("section");
     addSectDesc.id = "sectionDescription";
     addSectDesc.setAttribute("onclick", "fullSize()");

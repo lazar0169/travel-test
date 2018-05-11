@@ -28,7 +28,7 @@ background-color: brown;
     background-color: blue;
 }
 
-#seasonArticle{
+#seasonSection{
     position: relative;
     width: 100%;
     height: 50%;
@@ -168,18 +168,18 @@ background-color: brown;
     height: 100%;
 }
 
-.articleGrid {
+.articleSection {
     background-color: skyblue;
     position: relative;
     height: 300px;
     background-size: 100% 100%;
 }
 
-.articleGrid.articleGridFirst {
+.articleSection.articleSectionFirst {
     height: 605px;
 }
 
-.articleGrid:hover > #sectionDescription {
+.articleSection:hover > #sectionDescription {
     background-color: blueviolet;
     position: absolute;
     display: flex;
