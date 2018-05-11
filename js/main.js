@@ -1,6 +1,8 @@
 window.addEventListener("resize", setResolution);
 window.addEventListener("load", setResolution);
 
+
+
 function setResolution() {
     let tempmainS = document.getElementById("mainS");
     let tempmainSection = document.getElementById("mainSection");
@@ -50,9 +52,11 @@ function setResolution() {
             for (let i = 0; i < tempSection.length; i++) {
                 if (i != 0) {
                     tempSection[i].style.height = tempResizeB / 3 + "px";
+                    tempSection[i].style.width = tempResizeA / 3 + "px";
                 }
                 else {
                     tempSection[i].style.height = ((tempResizeB + 5) * 2) / 3 + "px";
+                    tempSection[i].style.width = ((tempResizeA + 5) * 2) / 3 + "px";
                 }
             }
         }
@@ -64,9 +68,11 @@ function setResolution() {
             for (let i = 0; i < tempSection.length; i++) {
                 if (i != 0) {
                     tempSection[i].style.height = tempResizeB / 3 + "px";
+                    tempSection[i].style.width = tempResizeA / 3 + "px";
                 }
                 else {
                     tempSection[i].style.height = ((tempResizeB + 5) * 2) / 3 + "px";
+                    tempSection[i].style.width = ((tempResizeA + 5) * 2) / 3 + "px";
                 }
             }
         }

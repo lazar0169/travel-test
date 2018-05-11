@@ -37,11 +37,14 @@ function showHideLanguage() {
     if (tempShowHide == false) {
         tempShowHide = true;
         tempShowHideLanguage.style.display = "flex";
+        document.getElementById("selectLanguage1").innerHTML= "&#9660";
     }
     else {
         tempShowHide = false;
         tempShowHideLanguage.style.display = "none";
+        document.getElementById("selectLanguage1").innerHTML= "&#9650";
     }
+    
 }
 function chosenLanguage() {
     let tempchosenLanguage = document.getElementById("selectLanguage");
