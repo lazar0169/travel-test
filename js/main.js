@@ -55,8 +55,8 @@ function setResolution() {
                     tempSection[i].style.width = tempResizeA / 3 + "px";
                 }
                 else {
-                    tempSection[i].style.height = ((tempResizeB + 5) * 2) / 3 + "px";
-                    tempSection[i].style.width = ((tempResizeA + 5) * 2) / 3 + "px";
+                    tempSection[i].style.height = ((tempResizeB  * 2) / 3) + 3 + "px";
+                    tempSection[i].style.width = ((tempResizeA  * 2) / 3) + 3 + "px";
                 }
             }
         }
@@ -71,8 +71,8 @@ function setResolution() {
                     tempSection[i].style.width = tempResizeA / 3 + "px";
                 }
                 else {
-                    tempSection[i].style.height = ((tempResizeB + 5) * 2) / 3 + "px";
-                    tempSection[i].style.width = ((tempResizeA + 5) * 2) / 3 + "px";
+                    tempSection[i].style.height = ((tempResizeB  * 2) / 3) + 3 + "px";
+                    tempSection[i].style.width = ((tempResizeA  * 2) / 3) + 3 + "px";
                 }
             }
         }

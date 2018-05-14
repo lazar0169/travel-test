@@ -27,21 +27,34 @@ function addSectionDescription() {
 
     addSectDesc.setAttribute("onclick", "fullSize()");
 
-        tempText.innerHTML = destinationObject[sectionNumber].desc;
-        tempCity.innerHTML = destinationObject[sectionNumber].name;
+    if (sectionNumber == 0) {
+        let tempK;
+        let tempJ;
+        let j = 0;
+        tempK = destinationObject[j].rating;
+        for (j = 1; j < destinationObject.length; j++) {
+            tempJ = destinationObject[j].rating;
+            if (tempK < tempJ) {
+                tempK = tempJ;
+                tempText.innerHTML = destinationObject[j].desc;
+                tempCity.innerHTML = destinationObject[j].name;
+            }
+        }
+    }
+    else {
+        tempText.innerHTML = destinationObject[sectionNumber - 1].desc;
+        tempCity.innerHTML = destinationObject[sectionNumber - 1].name;
+    }
 
     tempReadMore.appendChild(tempReadMore1);
     tempText.appendChild(tempReadMore);
     addSectDesc.appendChild(tempCity);
     addSectDesc.appendChild(tempText);
-   
-        ArtDesc[sectionNumber].appendChild(addSectDesc);
-    
+    ArtDesc[sectionNumber].appendChild(addSectDesc);
 
     sectionNumber++;
 }
 function fullSize() {
-
     let temprightSection = document.getElementById("mainSection");
     let tempfullSize = document.createElement("section");
     let tempLeftSection = document.getElementById("leftSection");
@@ -49,5 +62,4 @@ function fullSize() {
     tempfullSize.id = "fullSize";
     tempfullSize.innerHTML = destinationObject[3].desc
     temprightSection.appendChild(tempfullSize);
-
 }

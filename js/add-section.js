@@ -12,10 +12,11 @@ function addSection(numbArt) {
         else {
             newSection.className = "articleSection articleSectionFirst";
         }
+        
         temprightSection.style.display = "grid";
         temprightSection.style.gridTemplateColumns = "auto auto auto";
-        temprightSection.style.gridGap = "0.5%";
-        temprightSection.style.padding = "0.5%";
+        temprightSection.style.gridGap = "3px";
+        temprightSection.style.padding = "3px";
         temprightSection.appendChild(newSection);
 
         let firstSection = document.getElementById("section0");
@@ -25,12 +26,29 @@ function addSection(numbArt) {
         firstSection.style.gridRowEnd = 3;
 
         let bgImageCity = document.getElementById("section" + sectionNumber);
-        bgImageCity.style.backgroundImage = destinationObject[sectionNumber].picture;
-
         let tempcityName = document.createElement("footer");
         tempcityName.className = "articleFooter"
         tempcityName.id = "articleFooter" + sectionNumber;
-        tempcityName.innerHTML = destinationObject[sectionNumber].name;
+
+        if (sectionNumber == 0) {
+            let tempK;
+            let tempJ;
+            let j = 0;
+            tempK = destinationObject[j].rating;
+            for (j = 1; j < destinationObject.length; j++) {
+                tempJ = destinationObject[j].rating;
+                if (tempK < tempJ) {
+                    tempK = tempJ;
+                    bgImageCity.style.backgroundImage = destinationObject[j].picture;
+                    tempcityName.innerHTML = destinationObject[j].name;
+                }
+            }
+        }
+        else {
+            bgImageCity.style.backgroundImage = destinationObject[sectionNumber - 1].picture;
+            tempcityName.innerHTML = destinationObject[sectionNumber - 1].name;
+        }
+
         bgImageCity.appendChild(tempcityName);
 
         addSectionDescription();
