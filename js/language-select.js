@@ -33,7 +33,7 @@ let languageObject = [
 let tempShowHide = false;
 function showHideLanguage() {
 
-    var tempShowHideLanguage = document.getElementById("sectionLanguage1")
+    var tempShowHideLanguage = document.getElementById("sectionLanguageX")
     if (tempShowHide == false) {
         tempShowHide = true;
         tempShowHideLanguage.style.display = "flex";

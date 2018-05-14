@@ -26,9 +26,9 @@ function addSection(numbArt) {
         firstSection.style.gridRowEnd = 3;
 
         let bgImageCity = document.getElementById("section" + sectionNumber);
-        let tempcityName = document.createElement("footer");
-        tempcityName.className = "articleFooter"
-        tempcityName.id = "articleFooter" + sectionNumber;
+        let tempcityName = document.createElement("section");
+        tempcityName.className = "sectionFooter"
+        tempcityName.id = "sectionFooter" + sectionNumber;
 
         if (sectionNumber == 0) {
             let tempK;
@@ -54,7 +54,7 @@ function addSection(numbArt) {
         addSectionDescription();
     }
     (function () {
-        let tempSectionLanguage = document.getElementById("sectionLanguage1");
+        let tempSectionLanguage = document.getElementById("sectionLanguageX");
 
         for (var i = 0; i < languageObject.length; i++) {
             let tempCreateLanguage = document.createElement("section");
@@ -66,5 +66,6 @@ function addSection(numbArt) {
         }
     })();
     chosenLanguage();
+    fullSize();
 
 }

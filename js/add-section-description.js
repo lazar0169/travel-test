@@ -14,16 +14,16 @@ function addSectionDescription() {
 
     let tempText = document.createElement("section");
     tempText.className = "sectionDescriptionText";
-    tempCity.id = "sectionDescriptionText" + sectionNumber;
+    tempText.id = "sectionDescriptionText" + sectionNumber;
 
     let tempReadMore = document.createElement("section");
     tempReadMore.className = "readMore";
     tempReadMore.id = "readMore" + sectionNumber;
 
-    let tempReadMore1 = document.createElement("section");
-    tempReadMore1.className = "readMore1";
-    tempReadMore1.id = "readMore1" + sectionNumber;
-    tempReadMore1.innerHTML = "Read more";
+    let tempReadMoreX = document.createElement("section");
+    tempReadMoreX.className = "readMoreX";
+    tempReadMoreX.id = "readMoreX" + sectionNumber;
+    tempReadMoreX.innerHTML = "Read more";
 
     addSectDesc.setAttribute("onclick", "fullSize()");
 
@@ -46,7 +46,7 @@ function addSectionDescription() {
         tempCity.innerHTML = destinationObject[sectionNumber - 1].name;
     }
 
-    tempReadMore.appendChild(tempReadMore1);
+    tempReadMore.appendChild(tempReadMoreX);
     tempText.appendChild(tempReadMore);
     addSectDesc.appendChild(tempCity);
     addSectDesc.appendChild(tempText);
@@ -55,11 +55,45 @@ function addSectionDescription() {
     sectionNumber++;
 }
 function fullSize() {
-    let temprightSection = document.getElementById("mainSection");
-    let tempfullSize = document.createElement("section");
-    let tempLeftSection = document.getElementById("leftSection");
-    tempLeftSection.style.visibility = "hidden";
-    tempfullSize.id = "fullSize";
-    tempfullSize.innerHTML = destinationObject[3].desc
-    temprightSection.appendChild(tempfullSize);
+
+
+    let tempclickedCity = document.getElementsByClassName("articleSection ");
+
+    for (let i = 0; i < tempclickedCity.length; i++) {
+
+        (function (index) {
+
+            tempclickedCity[i].onclick = function () {
+                let tempmainSection = document.getElementById("mainSection");
+                tempmainSection.style.backgroundColor = "gray";
+                tempmainSection.style.overflow = "hidden";
+                let tempfullSize = document.createElement("section");
+                let tempLeftSection = document.getElementById("leftSection");
+                let temprightSection = document.getElementById("rightSec");
+                temprightSection.style.visibility = "hidden";
+                tempLeftSection.style.visibility = "hidden";
+                tempfullSize.id = "fullSize";
+                let tempreadMore = document.getElementById("readMore" + index);
+                tempreadMore.style.visibility = "hidden";
+                let tempsectionDescriptionCity = document.getElementById("sectionDescriptionCity" + index);
+                tempsectionDescriptionCity.style.backgroundColor = "rgb(42, 42, 42)";
+                tempfullSize.style.backgroundColor = "transparent";
+
+
+
+/*
+                let tempsectionDescriptionText = document.getElementById("sectionDescriptionText" + index);
+                tempsectionDescriptionText.style.textOverflow = "auto";
+*/
+                let tempsectionDescription = document.getElementsByClassName("sectionDescription");
+    
+                let x = tempsectionDescription[index].innerHTML;
+                tempfullSize.innerHTML = x;
+
+                tempmainSection.appendChild(tempfullSize);
+                
+            }
+        })(i);
+    }
+
 }
