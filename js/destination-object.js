@@ -33,7 +33,7 @@ var destinationObject = [
     {
         name: 'Luxembourg',
         picture: "url(images/luxembourg.jpg)",
-        rating: 4.2,
+        rating: 4.9,
         desc: 'Luxembourg falli appareat vis, an eum meis oportere constituto, his movet tempor id. Ad utamur lobortis vix, his praesent signiferumque et. Sed bonorum torquatos in, inani everti debitis pro cu, nihil imperdiet vel et. Eam eu augue maiorum apeirian, quo ea menandri eloquentiam, cum at magna rationibus. Duo ne nostrud phaedrum, ea nam reque malorum oportere, dolorum interpretaris ei ius. No fugit ullum probatus has. Et essent facilisi vix, cum assum copiosae eu. Eu vidisse aliquid delenit est, mel et labitur propriae, unum dictas persecuti sea te. Dicta similique posidonium ad quo, an vix causae vocibus ancillae. Per illud honestatis ut. Est an suscipit mnesarchum, qui at nominavi platonem. Dolorem iudicabit concludaturque in nec. Vel te mandamus imperdiet, in eum suas nostrud fierent, cu invidunt cotidieque vituperatoribus sit. An vivendo fuisset electram vix, ea sea congue equidem. Error blandit suscipiantur vix at, ad accusata scripserit pri. Mea maiestatis suscipiantur ut. Id mel antiopam scriptorem. Cum id soleat fierent moderatius. '
     },
     {
