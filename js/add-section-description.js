@@ -76,7 +76,7 @@ function fullSize() {
                 let tempreadMore = document.getElementById("readMore" + index);
                 tempreadMore.style.visibility = "hidden";
                 let tempsectionDescriptionCity = document.getElementById("sectionDescriptionCity" + index);
-                tempsectionDescriptionCity.style.backgroundColor = "rgb(42, 42, 42)";
+                tempsectionDescriptionCity.style.backgroundColor = "rgb(142, 142, 142)";
                 tempfullSize.style.backgroundColor = "transparent";
 
 

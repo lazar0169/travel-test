@@ -7,7 +7,7 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: rgb(42, 42, 42);
+    background-color: rgb(142, 142, 142);
     display: inline-flex;
     overflow: hidden;
 }
@@ -177,13 +177,12 @@ body{
 
 
 .articleSection:hover > .sectionDescription {
-    background-color:  rgb(42, 42, 42);
+    background-color:  rgb(142, 142, 142);
     height: 100%;
     width: 100%;
     position: absolute;
     display: flex;
     flex-flow: row wrap;
-    text-overflow: ellipsis;
     cursor: pointer;
     visibility: visible;
     animation-name: slide;
@@ -204,7 +203,7 @@ body{
     width: 100%;
     height: 20%;
     opacity: 0.8;
-    background-color: black;
+    background-color: rgb(42, 42, 42);
     text-align: center;
 }
 .sectionDescription{
@@ -221,7 +220,7 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color:  rgb(42, 42, 42);
+    background-color:  rgb(142, 142, 142);
     pointer-events: none;
     display: flex;
     flex-flow: column wrap;
@@ -239,14 +238,14 @@ body{
     height: 20%;
     width: 100%;
     background-color: black;
-    background: linear-gradient(black, transparent);
+    background: linear-gradient(rgb(42, 42, 42), transparent);
 }
 
 .sectionDescriptionText{
     color: white;
     height: 80%;
     width: 100%;
-    background-color: rgb(42, 42, 42);
+    background-color: rgb(142, 142, 142);
 }
 
 .readMore{
@@ -257,15 +256,46 @@ body{
     display: flex;
     justify-content: center;
     background-color: black;
-    background: linear-gradient(to top, black, transparent);
+    background: linear-gradient(to top, rgb(42, 42, 42), transparent);
 }
 .readMoreX{
     width: 30%;
     height: 50%;
-    background-color: black;
+    background-color: rgb(42, 42, 42);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     bottom: 0px;
 }
+#rightSec::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+#rightSec::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(142, 142, 142);
+}
+ 
+#rightSec::-webkit-scrollbar-thumb {
+  background-color: rgb(42, 42, 42);
+  border-radius: 50px;
+
+}
+
+
+
+#sectionLanguage::-webkit-scrollbar {
+    width: 3%;
+}
+ 
+#sectionLanguage::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px blue;
+    
+}
+ 
+#sectionLanguage::-webkit-scrollbar-thumb {
+  background-color: darkblue;
+  border-radius: 50px;
+
+}
+
