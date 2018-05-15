@@ -57,7 +57,7 @@ function addSection(numbArt) {
         let tempSectionLanguage = document.getElementById("language");
 
         for (var i = 0; i < languageObject.length; i++) {
-            let tempCreateLanguage = document.createElement("section");
+            let tempCreateLanguage = document.createElement("a");
             tempCreateLanguage.className = "listOfLanguage";
             tempCreateLanguage.innerHTML = languageObject[i].language;
             tempCreateLanguage.setAttribute("onclick", "chosenLanguage()");

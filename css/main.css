@@ -89,6 +89,7 @@ background-color: darkblue;
 #pLanguage{
     padding: 0;
     margin: 0;
+    padding-left: 10%;
 }
 #pButtonOpenClose{
     padding: 0;
@@ -96,7 +97,6 @@ background-color: darkblue;
     right: 0;
     position: absolute;
 }
-
 
 .listOfLanguage{
     width: 100%;
@@ -111,7 +111,6 @@ background-color: darkblue;
     color: white;
     
 }
-
 .listOfLanguage:hover{
     background-color: darkblue;
 }
