@@ -54,7 +54,7 @@ function addSection(numbArt) {
         addSectionDescription();
     }
     (function () {
-        let tempSectionLanguage = document.getElementById("sectionLanguageX");
+        let tempSectionLanguage = document.getElementById("language");
 
         for (var i = 0; i < languageObject.length; i++) {
             let tempCreateLanguage = document.createElement("section");

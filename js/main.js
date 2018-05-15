@@ -1,21 +1,22 @@
+
 window.addEventListener("resize", setResolution);
 window.addEventListener("load", setResolution);
 
 
-
 function setResolution() {
-    let tempmainS = document.getElementById("mainS");
+    let tempBody = document.getElementsByTagName("body");
     let tempmainSection = document.getElementById("mainSection");
-    let a = mainS.clientWidth;
-    let b = mainS.clientHeight;
+    let a = tempBody[0].clientWidth;
+    let b = tempBody[0].clientHeight;
     let c = a / b;
     const d = 16 / 9;
     let g = d - c;
     if (c > d) {
         let a1;
         a1 = b * (16 / 9) + "px";
-        tempmainS.style.display = "flex";
-        tempmainS.style.justifyContent = "center";
+        tempBody[0].style.display = "flex";
+        tempBody[0].style.justifyContent = "center";
+        tempBody[0].style.alignItems = "center";
         tempmainSection.style.width = a1;
         tempmainSection.style.height = "100%";
         resizeGrid();
@@ -23,8 +24,9 @@ function setResolution() {
     else {
         let b1;
         b1 = a / (16 / 9) + "px";
-        tempmainS.style.display = "flex";
-        tempmainS.style.alignItems = "center";
+        tempBody[0].style.display = "flex";
+        tempBody[0].style.justifyContent = "center";
+        tempBody[0].style.alignItems = "center";
         tempmainSection.style.height = b1;
         tempmainSection.style.width = "100%";
         resizeGrid();
@@ -35,8 +37,8 @@ function setResolution() {
         let tempmainSectionA = mainSection.clientWidth;
         let tempmainSectionB = mainSection.clientHeight;
 
-        let tempLanguage = document.getElementById("selectLanguage");
-        let tempLanguage1 = document.getElementById("selectLanguage1");
+        let tempLanguage = document.getElementById("language");
+        let tempLanguage1 = document.getElementById("openCloseLanguage");
         var tempfontSize = tempmainSectionA * 0.015 + "px";
         tempmainSection.style.fontSize = tempfontSize;
         tempLanguage.style.fontSize = tempfontSize;
@@ -51,6 +53,7 @@ function setResolution() {
             let tempSection = document.getElementsByClassName("articleSection");
             for (let i = 0; i < tempSection.length; i++) {
                 if (i != 0) {
+    
                     tempSection[i].style.height = tempResizeB / 3 + "px";
                     tempSection[i].style.width = tempResizeA / 3 + "px";
                 }

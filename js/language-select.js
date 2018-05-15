@@ -33,21 +33,21 @@ let languageObject = [
 let tempShowHide = false;
 function showHideLanguage() {
 
-    var tempShowHideLanguage = document.getElementById("sectionLanguageX")
+    var tempShowHideLanguage = document.getElementById("language")
     if (tempShowHide == false) {
         tempShowHide = true;
-        tempShowHideLanguage.style.display = "flex";
-        document.getElementById("selectLanguage1").innerHTML= "&#9660";
+        tempShowHideLanguage.style.visibility = "visible";
+        document.getElementById("pButtonOpenClose").innerHTML= "&#9660";
     }
     else {
         tempShowHide = false;
-        tempShowHideLanguage.style.display = "none";
-        document.getElementById("selectLanguage1").innerHTML= "&#9650";
+        tempShowHideLanguage.style.visibility = "hidden";
+        document.getElementById("pButtonOpenClose").innerHTML= "&#9650";
     }
     
 }
 function chosenLanguage() {
-    let tempchosenLanguage = document.getElementById("selectLanguage");
+    let tempchosenLanguage = document.getElementById("pLanguage");
     let tempchoseLanguage = document.getElementsByClassName("listOfLanguage");
 
     for (let i = 0; i < tempchoseLanguage.length; i++) {

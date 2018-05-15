@@ -1,69 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html >
 
 <head>
     <title>Travel agency</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="addSection(14)">
-    <section id="mainS">
-        <section id="mainSection">
+<body onload="addSection(14)" >
 
-            <section id="leftSection">
-                <section id="logoSection">
-                    <img src="C:\Users\User02\Desktop\travel-test\images\logo.png" alt="Logo" width="100%" height="100%">
-                </section>
+    <section id="mainSection">
 
-                <section id="seasonSection">
-                    <ul id="listSeason">
-                        <section class="listOfLinks">
-                            <li>
-                                <a class="linkSeason" href="">All</a>
-                            </li>
-                        </section>
-                        <section class="listOfLinks">
-                            <li>
-                                <a class="linkSeason" href="">Winter</a>
-                            </li>
-                        </section>
-                        <section class="listOfLinks">
-                            <li>
-                                <a class="linkSeason" href="">Spring</a>
-                            </li>
-                        </section>
-                        <section class="listOfLinks">
-                            <li>
-                                <a class="linkSeason" href="">Autumn</a>
-                            </li>
-                        </section>
-                        <section class="listOfLinks">
-                            <li>
-                                <a class="linkSeason" href="">Summer</a>
-                            </li>
-                        </section>
-                    </ul>
-                </section>
+        <section id="leftSection">
+            <img id="logoArticle" src="images\logo.png" alt="Logo" width="100%" height="100%">
 
-                <section id="language">
-                    <section id="sectionLanguage">
-                        <section id="sectionLanguageX"></section>
-                    </section>
-                    <button id="selectLanguage" onclick="showHideLanguage()">Language
-                        <button id="selectLanguage1" onclick="showHideLanguage()">&#9650</button>
-                    </button>
+            <div id="seasonSection">
 
-                </section>
-            </section>
+                <a class="linkSeason" href="">All</a>
 
-            <section id="rightSec">
-                <section id="rightSection">
 
-                </section>
-            </section>
+                <a class="linkSeason" href="">Winter</a>
 
+
+                <a class="linkSeason" href="">Spring</a>
+
+
+                <a class="linkSeason" href="">Autumn</a>
+
+
+                <a class="linkSeason" href="">Summer</a>
+
+            </div>
+
+            <div id="language">
+
+            </div>
+            <button id="openCloseLanguage" onclick="showHideLanguage()"><p id="pLanguage">Language</p> <p id="pButtonOpenClose">&#9650</p> </button>
+        </section>
+
+
+
+    <section id="rightSec" >
+        <section id="rightSection">
 
         </section>
+    </section>
+    </section>
+
+
+
+
     </section>
     <script src="js/destination-object.js"></script>
     <script src="js/main.js"></script>
