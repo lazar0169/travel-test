@@ -81,10 +81,12 @@ function fullSize() {
 
 
 
-/*
+
                 let tempsectionDescriptionText = document.getElementById("sectionDescriptionText" + index);
-                tempsectionDescriptionText.style.textOverflow = "auto";
-*/
+                tempsectionDescriptionText.style.overflow = "auto";
+                tempsectionDescriptionText.style.pointerEvents = "auto";
+                tempsectionDescriptionText.style.cursor = "default";
+
                 let tempsectionDescription = document.getElementsByClassName("sectionDescription");
     
                 let x = tempsectionDescription[index].innerHTML;
