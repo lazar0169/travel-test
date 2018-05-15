@@ -68,10 +68,12 @@ function setResolution() {
             let tempResizeA = rightSection.clientWidth;
             let tempResizeB = rightSection.clientHeight;
             let tempSection = document.getElementsByClassName("articleSection");
+            
             for (let i = 0; i < tempSection.length; i++) {
                 if (i != 0) {
                     tempSection[i].style.height = tempResizeB / 3 + "px";
                     tempSection[i].style.width = tempResizeA / 3 + "px";
+                    
                 }
                 else {
                     tempSection[i].style.height = ((tempResizeB  * 2) / 3) + 3 + "px";
@@ -79,5 +81,14 @@ function setResolution() {
                 }
             }
         }
+
+        let tempSection = document.getElementsByClassName("section");
+        let tempcityNameHeaderH2 = document.getElementsByClassName("h2cityNameHeader");
+        for(let i = 0; i < tempSection.length; i++){
+            let tempSectionA = tempSection[i].clientHeight;
+            tempcityNameHeaderH2[i].style.height = tempSectionA * 0.2 + "px";
+        }
+       
+
     }
 }

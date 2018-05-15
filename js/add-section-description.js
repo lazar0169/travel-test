@@ -1,6 +1,3 @@
-let tempX;
-let temparray1 = [];
-let tempArray = [];
 let sectionNumber = 0;
 function addSectionDescription() {
     let ArtDesc = document.getElementsByClassName("articleSection");
@@ -69,8 +66,6 @@ function fullSize() {
                 tempmainSection.style.overflow = "hidden";
                 let tempfullSize = document.createElement("section");
                 let tempLeftSection = document.getElementById("leftSection");
-                let temprightSection = document.getElementById("rightSec");
-                temprightSection.style.visibility = "hidden";
                 tempLeftSection.style.visibility = "hidden";
                 tempfullSize.id = "fullSize";
                 let tempreadMore = document.getElementById("readMore" + index);

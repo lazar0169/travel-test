@@ -1,7 +1,7 @@
 function addSection(numbArt) {
-
+    let temprightSection = document.getElementById("rightSection");
+    
     for (let sectionNumber = 0; sectionNumber < numbArt; sectionNumber++) {
-        let temprightSection = document.getElementById("rightSection");
         let newSection = document.createElement("section");
         newSection.id = "section" + sectionNumber;
         newSection.setAttribute("onclick", "fullSize()");
@@ -13,10 +13,7 @@ function addSection(numbArt) {
             newSection.className = "articleSection articleSectionFirst";
         }
         
-        temprightSection.style.display = "grid";
-        temprightSection.style.gridTemplateColumns = "auto auto auto";
-        temprightSection.style.gridGap = "3px";
-        temprightSection.style.padding = "3px";
+
         temprightSection.appendChild(newSection);
 
         let firstSection = document.getElementById("section0");
@@ -29,6 +26,11 @@ function addSection(numbArt) {
         let tempcityName = document.createElement("section");
         tempcityName.className = "sectionFooter"
         tempcityName.id = "sectionFooter" + sectionNumber;
+        let tempcityNameHeader = document.createElement("h2");
+        tempcityNameHeader.className = "h2cityNameHeader";
+        tempcityNameHeader.id = "h2cityNameHeader" + sectionNumber;
+        let tempcityNamePar = document.createElement("p");
+        tempcityNamePar.className = "descriptionText";
 
         if (sectionNumber == 0) {
             let tempK;
@@ -40,14 +42,19 @@ function addSection(numbArt) {
                 if (tempK < tempJ) {
                     tempK = tempJ;
                     bgImageCity.style.backgroundImage = destinationObject[j].picture;
-                    tempcityName.innerHTML = destinationObject[j].name;
+                    tempcityNamePar.innerText = destinationObject[j].desc;
+                    tempcityNameHeader.innerText = destinationObject[j].name;
                 }
             }
         }
         else {
             bgImageCity.style.backgroundImage = destinationObject[sectionNumber - 1].picture;
-            tempcityName.innerHTML = destinationObject[sectionNumber - 1].name;
+            tempcityNameHeader.innerText = destinationObject[sectionNumber - 1].name;
+            tempcityNamePar.innerText = destinationObject[sectionNumber - 1].desc;
+            
         }
+        tempcityName.appendChild(tempcityNameHeader);
+        tempcityName.appendChild(tempcityNamePar);
 
         bgImageCity.appendChild(tempcityName);
 
