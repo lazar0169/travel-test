@@ -1,3 +1,4 @@
+var highRating = 0;
 function addSection(numbArt) {
     let temprightSection = document.getElementById("rightSection");
 
@@ -15,14 +16,15 @@ function addSection(numbArt) {
 
         temprightSection.appendChild(newSection);
 
-
         let bgImageCity = document.getElementById("section" + sectionNumber);
         let tempcityName = document.createElement("section");
         tempcityName.className = "sectionFooter"
         tempcityName.id = "sectionFooter" + sectionNumber;
+
         let tempcityNameHeader = document.createElement("h2");
         tempcityNameHeader.className = "h2cityNameHeader";
         tempcityNameHeader.id = "h2cityNameHeader" + sectionNumber;
+
         let tempcityNamePar = document.createElement("p");
         tempcityNamePar.className = "descriptionText";
 
@@ -43,6 +45,7 @@ function addSection(numbArt) {
                     bgImageCity.style.backgroundImage = destinationObject[j].picture;
                     tempcityNamePar.innerText = destinationObject[j].desc;
                     tempcityNameHeader.innerText = destinationObject[j].name;
+
                 }
             }
         }
@@ -50,7 +53,6 @@ function addSection(numbArt) {
             bgImageCity.style.backgroundImage = destinationObject[sectionNumber - 1].picture;
             tempcityNameHeader.innerText = destinationObject[sectionNumber - 1].name;
             tempcityNamePar.innerText = destinationObject[sectionNumber - 1].desc;
-
         }
 
         tempcityName.appendChild(tempcityNameHeader);
@@ -60,18 +62,6 @@ function addSection(numbArt) {
         bgImageCity.appendChild(tempcityName);
 
     }
-    (function () {
-        let tempSectionLanguage = document.getElementById("language");
-
-        for (var i = 0; i < languageObject.length; i++) {
-            let tempCreateLanguage = document.createElement("a");
-            tempCreateLanguage.className = "listOfLanguage";
-            tempCreateLanguage.innerHTML = languageObject[i].language;
-            tempCreateLanguage.setAttribute("onclick", "chosenLanguage()");
-            tempSectionLanguage.appendChild(tempCreateLanguage);
-
-        }
-    })();
     chosenLanguage();
     fullSize();
 

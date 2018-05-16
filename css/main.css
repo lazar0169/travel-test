@@ -4,12 +4,83 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: rgb(142, 142, 142);
+    background-color: rgb(42, 42, 42);
     display: flex;
     flex-flow: column wrap;
     overflow: hidden;
 }
-h2{
+
+#fullScreenShow{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color:  rgb(142, 142, 142);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    visibility: hidden;
+    overflow: auto;
+
+}
+
+#fullScreenShow > p {
+    display: block;
+    top: 70%;
+}
+#imageFullScreen{
+   
+    top: 20%;
+    width: 60%;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+    padding: 0 5%;
+
+}
+#h1FullScreenShow{
+    padding: 0;
+    margin: 0;
+    top:0;
+    width: 60%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+#pFullScreen{
+    padding: 0;
+    margin: 0;
+    top:0;
+    padding: 0 5%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    text-align: justify;
+   
+}
+
+#fullScreenBackButton{
+    width: 10%;
+    height: 20%;
+    color: white;
+    background-color: darkblue;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    outline:none;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left:0;
+    font-size: 65.816px;
+}
+
+.h2cityNameHeader{
     position: absolute;
     padding: 0;
     margin: 0;
@@ -18,7 +89,7 @@ h2{
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: blue;
+    background-color: green;
 }
 p.descriptionText {
     position: absolute;
@@ -28,15 +99,15 @@ p.descriptionText {
     padding: 0 5%;;
     display: none;
     overflow: hidden;
+    text-align: justify;
     text-overflow: ellipsis;
     background-color: red;
-
 }
 
 #mainSection{
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
     display: flex;
     overflow: none;
     background-color: white;
@@ -141,7 +212,6 @@ background-color: darkblue;
 #rightSection{
     position: relative;
     width: 100%;
-    height: 98%;
     overflow-y: auto;
     overflow-x: hidden;
     display: grid;
@@ -153,6 +223,7 @@ background-color: darkblue;
 .articleSection {
     position: relative;
     background-size: 100% 100%;
+    overflow: hidden;
 
 }
 
@@ -210,52 +281,6 @@ background-color: darkblue;
     align-items: center;
 }
 
-.sectionDescription{
-    background-color: transparent;
-    height: 100%;
-    visibility: hidden;
-    pointer-events: none;
-    overflow: hidden;
-    display: flex;
-
-}
-
-#fullScreenShow{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color:  rgb(142, 142, 142);
-    pointer-events: none;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    visibility: hidden;
-}
-#fullScreenShow > p {
-
-    display: block;
-}
-
-.sectionDescriptionCity{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 20%;
-    width: 100%;
-    background-color: rgb(42, 42, 42);
-    background: linear-gradient(rgb(42, 42, 42), transparent);
-}
-
-.sectionDescriptionText{
-    color: white;
-    height: 80%;
-    width: 100%;
-    background-color: rgb(142, 142, 142);
-}
-
 .readMore{
     padding: 0;
     margin: 0;
@@ -282,42 +307,51 @@ background-color: darkblue;
 }
 
 
+
 #rightSection::-webkit-scrollbar {
     width: 10px;
 }
  
 #rightSection::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgb(142, 142, 142);
+    box-shadow: inset 0 0 6px rgb(42, 42, 42);
+    background-color: white;
 }
  
 #rightSection::-webkit-scrollbar-thumb {
-  background-color: rgb(42, 42, 42);
-  border-radius: 50px;
-}
-
-.sectionDescriptionText::-webkit-scrollbar {
-    width: 10px;
-}
- 
-.sectionDescriptionText::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgb(142, 142, 142);
-}
- 
-.sectionDescriptionText::-webkit-scrollbar-thumb {
   background-color: rgb(100, 100, 100);
   border-radius: 50px;
 }
+
+
 
 #language::-webkit-scrollbar {
     width: 10px;
 }
  
 #language::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px blue; 
+    box-shadow: inset 0 0 6px darkblue;
+    background-color: blue;
 }
  
 #language::-webkit-scrollbar-thumb {
   background-color: darkblue;
   border-radius: 50px;
 }
+
+
+
+#fullScreenShow::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+#fullScreenShow::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgb(42, 42, 42);
+    background-color: white;
+}
+ 
+#fullScreenShow::-webkit-scrollbar-thumb {
+  background-color: rgb(100, 100, 100);
+  border-radius: 50px;
+}
+
 

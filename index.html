@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
     <title>Travel agency</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="addSection(14)" >
+<body onload="addSection(14)">
 
     <div id="mainSection">
 
@@ -34,20 +34,26 @@
             <div id="language">
 
             </div>
-            <button id="openCloseLanguage" onclick="showHideLanguage()"><p id="pLanguage">Language</p> <p id="pButtonOpenClose">&#9650</p> </button>
+            <button id="openCloseLanguage" onclick="showHideLanguage()">
+                <p id="pLanguage">Language</p>
+                <p id="pButtonOpenClose">&#9650</p>
+            </button>
         </section>
 
         <section id="rightSection">
 
         </section>
-    </section>
 
-
-
-
-</div>
-
-<section id="fullScreenShow"></section>
+        <section id="fullScreenShow">
+            <h1 id="h1FullScreenShow">
+                <button id="fullScreenBackButton" onclick="">&#8678 Back
+                </button>
+            </h1>
+            <img id="imageFullScreen" src="images\logo.png" alt="Image" width="100%" height="auto">
+            <p id="pFullScreen">neki paragraf</p>
+            <button id="fullScreenBackButton" onclick="">&#8678 Back</button>
+        </section>
+    </div>
 
     <script src="js/destination-object.js"></script>
     <script src="js/main.js"></script>
