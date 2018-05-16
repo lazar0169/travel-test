@@ -1,93 +1,28 @@
-let sectionNumber = 0;
-function addSectionDescription() {
-    let ArtDesc = document.getElementsByClassName("articleSection");
-    let addSectDesc = document.createElement("section");
-    addSectDesc.id = "sectionDescription" + sectionNumber;
-    addSectDesc.className = "sectionDescription";
 
-    let tempCity = document.createElement("section");
-    tempCity.className = "sectionDescriptionCity";
-    tempCity.id = "sectionDescriptionCity" + sectionNumber;
-
-    let tempText = document.createElement("section");
-    tempText.className = "sectionDescriptionText";
-    tempText.id = "sectionDescriptionText" + sectionNumber;
-
-    let tempReadMore = document.createElement("section");
-    tempReadMore.className = "readMore";
-    tempReadMore.id = "readMore" + sectionNumber;
-
-    let tempReadMoreX = document.createElement("section");
-    tempReadMoreX.className = "readMoreX";
-    tempReadMoreX.id = "readMoreX" + sectionNumber;
-    tempReadMoreX.innerHTML = "Read more";
-
-    addSectDesc.setAttribute("onclick", "fullSize()");
-
-    if (sectionNumber == 0) {
-        let tempK;
-        let tempJ;
-        let j = 0;
-        tempK = destinationObject[j].rating;
-        for (j = 1; j < destinationObject.length; j++) {
-            tempJ = destinationObject[j].rating;
-            if (tempK < tempJ) {
-                tempK = tempJ;
-                tempText.innerHTML = destinationObject[j].desc;
-                tempCity.innerHTML = destinationObject[j].name;
-            }
-        }
-    }
-    else {
-        tempText.innerHTML = destinationObject[sectionNumber - 1].desc;
-        tempCity.innerHTML = destinationObject[sectionNumber - 1].name;
-    }
-
-    tempReadMore.appendChild(tempReadMoreX);
-    tempText.appendChild(tempReadMore);
-    addSectDesc.appendChild(tempCity);
-    addSectDesc.appendChild(tempText);
-    ArtDesc[sectionNumber].appendChild(addSectDesc);
-
-    sectionNumber++;
-}
 function fullSize() {
 
 
-    let tempclickedCity = document.getElementsByClassName("articleSection ");
+    let tempclickedCity = document.getElementsByClassName("articleSection");
 
     for (let i = 0; i < tempclickedCity.length; i++) {
 
         (function (index) {
 
             tempclickedCity[i].onclick = function () {
-                let tempmainSection = document.getElementById("mainSection");
-                tempmainSection.style.backgroundColor = "gray";
-                tempmainSection.style.overflow = "hidden";
-                let tempfullSize = document.createElement("section");
-                let tempLeftSection = document.getElementById("leftSection");
-                tempLeftSection.style.visibility = "hidden";
-                tempfullSize.id = "fullSize";
-                let tempreadMore = document.getElementById("readMore" + index);
-                tempreadMore.style.visibility = "hidden";
-                let tempsectionDescriptionCity = document.getElementById("sectionDescriptionCity" + index);
-                tempsectionDescriptionCity.style.backgroundColor = "rgb(142, 142, 142)";
-                tempfullSize.style.backgroundColor = "transparent";
+                let tempmainSection = document.getElementById("fullScreenShow");
+                let temph2cityNameHeader = document.getElementsByClassName("h2cityNameHeader");
+             
+                tempmainSection.style.visibility = "visible";
 
+                let tempSectionA = tempmainSection.clientHeight;
+                temph2cityNameHeader[i].style.height = tempSectionA * 0.2 + "px";
+                
 
-
-
-                let tempsectionDescriptionText = document.getElementById("sectionDescriptionText" + index);
-                tempsectionDescriptionText.style.overflow = "auto";
-                tempsectionDescriptionText.style.pointerEvents = "auto";
-                tempsectionDescriptionText.style.cursor = "default";
-
-                let tempsectionDescription = document.getElementsByClassName("sectionDescription");
+                let tempsectionDescription = document.getElementsByClassName("sectionFooter");
     
                 let x = tempsectionDescription[index].innerHTML;
-                tempfullSize.innerHTML = x;
+                tempmainSection.innerHTML = x;
 
-                tempmainSection.appendChild(tempfullSize);
                 
             }
         })(i);

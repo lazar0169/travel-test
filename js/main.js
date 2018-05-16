@@ -82,7 +82,7 @@ function setResolution() {
             }
         }
 
-        let tempSection = document.getElementsByClassName("section");
+        let tempSection = document.getElementsByClassName("articleSection ");
         let tempcityNameHeaderH2 = document.getElementsByClassName("h2cityNameHeader");
         for(let i = 0; i < tempSection.length; i++){
             let tempSectionA = tempSection[i].clientHeight;

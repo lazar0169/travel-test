@@ -1,6 +1,6 @@
 function addSection(numbArt) {
     let temprightSection = document.getElementById("rightSection");
-    
+
     for (let sectionNumber = 0; sectionNumber < numbArt; sectionNumber++) {
         let newSection = document.createElement("section");
         newSection.id = "section" + sectionNumber;
@@ -12,15 +12,9 @@ function addSection(numbArt) {
         else {
             newSection.className = "articleSection articleSectionFirst";
         }
-        
 
         temprightSection.appendChild(newSection);
 
-        let firstSection = document.getElementById("section0");
-        firstSection.style.gridColumnStart = 1;
-        firstSection.style.gridColumnEnd = 3;
-        firstSection.style.gridRowStart = 1;
-        firstSection.style.gridRowEnd = 3;
 
         let bgImageCity = document.getElementById("section" + sectionNumber);
         let tempcityName = document.createElement("section");
@@ -31,6 +25,11 @@ function addSection(numbArt) {
         tempcityNameHeader.id = "h2cityNameHeader" + sectionNumber;
         let tempcityNamePar = document.createElement("p");
         tempcityNamePar.className = "descriptionText";
+
+        let tempReadMore = document.createElement("button");
+        tempReadMore.className = "readMore";
+        tempReadMore.id = "readMore" + sectionNumber;
+        tempReadMore.innerText = "Read more";
 
         if (sectionNumber == 0) {
             let tempK;
@@ -51,14 +50,15 @@ function addSection(numbArt) {
             bgImageCity.style.backgroundImage = destinationObject[sectionNumber - 1].picture;
             tempcityNameHeader.innerText = destinationObject[sectionNumber - 1].name;
             tempcityNamePar.innerText = destinationObject[sectionNumber - 1].desc;
-            
+
         }
+
         tempcityName.appendChild(tempcityNameHeader);
         tempcityName.appendChild(tempcityNamePar);
+        tempcityName.appendChild(tempReadMore);
 
         bgImageCity.appendChild(tempcityName);
 
-        addSectionDescription();
     }
     (function () {
         let tempSectionLanguage = document.getElementById("language");
