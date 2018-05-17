@@ -9,15 +9,12 @@ function fullSize() {
     for (let i = 0; i < tempclickedCity.length; i++) {
 
         tempclickedCity[i].onclick = function () {
-
             tempmainSection.style.visibility = "visible";
-
-               
-                    let tempDataID = tempclickedCity[i].getAttribute("dataID");
-                    let tempDataNo = tempclickedCity[i].getAttribute("dataNO");
-                    temph1FullScreenShow.innerText = destinationObject[tempDataNo].name;
-                    tempimageFullScreen.src = destinationObject[tempDataNo].image;
-                    temppFullScreen.innerText = destinationObject[tempDataNo].desc;   
+            let tempDataID = tempclickedCity[i].getAttribute("dataID");
+            let tempDataNo = tempclickedCity[i].getAttribute("dataNO");
+            temph1FullScreenShow.innerText = destinationObject[tempDataNo].name;
+            tempimageFullScreen.src = destinationObject[tempDataNo].image;
+            temppFullScreen.innerText = destinationObject[tempDataNo].desc;
         }
     }
 }

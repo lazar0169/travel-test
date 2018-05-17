@@ -2,7 +2,6 @@
 window.addEventListener("resize", setResolution);
 window.addEventListener("load", setResolution);
 
-
 function setResolution() {
     let tempBody = document.getElementsByTagName("body");
     let tempmainSection = document.getElementById("mainSection");
@@ -11,6 +10,7 @@ function setResolution() {
     let c = a / b;
     const d = 16 / 9;
     let g = d - c;
+
     if (c > d) {
         let a1;
         a1 = b * (16 / 9) + "px";
@@ -37,7 +37,6 @@ function setResolution() {
         let tempmainSectionA = mainSection.clientWidth;
         let tempmainSectionB = mainSection.clientHeight;
 
-
         let tempLanguage = document.getElementById("language");
         let tempLanguage1 = document.getElementById("openCloseLanguage");
         let temph1FullScreenShow = document.getElementById("h1FullScreenShow");
@@ -59,9 +58,9 @@ function setResolution() {
             let tempResizeA = rightSection.clientWidth;
             let tempResizeB = rightSection.clientHeight;
             let tempSection = document.getElementsByClassName("articleSection");
+
             for (let i = 0; i < tempSection.length; i++) {
                 if (i != 0) {
-
                     tempSection[i].style.height = tempResizeB / 3 + "px";
                     tempSection[i].style.width = tempResizeA / 3 + "px";
                 }
@@ -92,6 +91,7 @@ function setResolution() {
 
         let tempSection = document.getElementsByClassName("articleSection ");
         let tempcityNameHeaderH2 = document.getElementsByClassName("h2cityNameHeader");
+
         for (let i = 0; i < tempSection.length; i++) {
             let tempSectionA = tempSection[i].clientHeight;
             tempcityNameHeaderH2[i].style.height = tempSectionA * 0.2 + "px";

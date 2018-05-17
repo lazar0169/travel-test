@@ -58,7 +58,6 @@ function chosenLanguage() {
         tempCreateLanguage.setAttribute("onclick", "chosenLanguage()");
         tempSectionLanguage.appendChild(tempCreateLanguage);
     }
-
     let tempchosenLanguage = document.getElementById("pLanguage");
     let tempchoseLanguage = document.getElementsByClassName("listOfLanguage");
 
