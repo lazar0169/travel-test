@@ -1,4 +1,4 @@
-window.addEventListener("load", fullSize);
+window.addEventListener("mouseover", fullSize);
 function fullSize() {
     let tempclickedCity = document.getElementsByClassName("articleSection");
     let tempmainSection = document.getElementById("fullScreenShow");

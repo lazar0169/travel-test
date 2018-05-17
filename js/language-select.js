@@ -1,4 +1,4 @@
-window.addEventListener("load", chosenLanguage);
+window.addEventListener("click", chosenLanguage);
 let languageObject = [
     {
         language: 'Serbian'
