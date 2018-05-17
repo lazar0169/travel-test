@@ -93,7 +93,7 @@ var destinationObject = [
         name: 'Venecia',
         image: "images/venecia.jpg",
         picture: "url(images/venecia.jpg)",
-        rating: 4.24,
+        rating: 4.95,
         desc: 'test'
     },
     {

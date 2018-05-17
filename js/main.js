@@ -37,7 +37,7 @@ function setResolution() {
         let tempmainSectionA = mainSection.clientWidth;
         let tempmainSectionB = mainSection.clientHeight;
 
-       
+
         let tempLanguage = document.getElementById("language");
         let tempLanguage1 = document.getElementById("openCloseLanguage");
         let temph1FullScreenShow = document.getElementById("h1FullScreenShow");

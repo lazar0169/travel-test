@@ -1,4 +1,4 @@
-
+window.addEventListener("load", fullSize);
 function fullSize() {
     let tempclickedCity = document.getElementsByClassName("articleSection");
     let tempmainSection = document.getElementById("fullScreenShow");
@@ -9,22 +9,21 @@ function fullSize() {
     for (let i = 0; i < tempclickedCity.length; i++) {
 
         tempclickedCity[i].onclick = function () {
-            tempmainSection.style.visibility = "visible";
-            if (i != 0) {
-                temph1FullScreenShow.innerText = destinationObject[i - 1].name;
-                tempimageFullScreen.src = destinationObject[i - 1].image;
-                temppFullScreen.innerText = destinationObject[i - 1].desc;
-            }
-            // else{temph1FullScreenShow.innerText = destinationObject[hightRating].name;
-            //     tempimageFullScreen.src = destinationObject[hightRating].image;
-            //     temppFullScreen.innerText = destinationObject[hightRating].desc;
 
-            // }
+            tempmainSection.style.visibility = "visible";
+
+               
+                    let tempDataID = tempclickedCity[i].getAttribute("dataID");
+                    let tempDataNo = tempclickedCity[i].getAttribute("dataNO");
+                    temph1FullScreenShow.innerText = destinationObject[tempDataNo].name;
+                    tempimageFullScreen.src = destinationObject[tempDataNo].image;
+                    temppFullScreen.innerText = destinationObject[tempDataNo].desc;       
+                
+            
+       
+    
 
 
         }
-        // (function (index) {
-
-        // })(i);
     }
 }

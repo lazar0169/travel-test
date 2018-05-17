@@ -1,3 +1,3 @@
-function goBack(){
+function goBack() {
     location.reload();
 }

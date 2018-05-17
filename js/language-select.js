@@ -1,3 +1,4 @@
+window.addEventListener("load", chosenLanguage);
 let languageObject = [
     {
         language: 'Serbian'
@@ -61,7 +62,7 @@ function chosenLanguage() {
     let tempchosenLanguage = document.getElementById("pLanguage");
     let tempchoseLanguage = document.getElementsByClassName("listOfLanguage");
 
-    for (let i = 0; i < tempchoseLanguage.length; i++){
+    for (let i = 0; i < tempchoseLanguage.length; i++) {
         tempchoseLanguage[i].onclick = function () {
 
             let x = tempchoseLanguage[i].textContent;

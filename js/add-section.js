@@ -1,4 +1,6 @@
-var highRating = 0;
+
+
+
 function addSection(numbArt) {
     let temprightSection = document.getElementById("rightSection");
 
@@ -17,6 +19,7 @@ function addSection(numbArt) {
         temprightSection.appendChild(newSection);
 
         let bgImageCity = document.getElementById("section" + sectionNumber);
+
         let tempcityName = document.createElement("section");
         tempcityName.className = "sectionFooter"
         tempcityName.id = "sectionFooter" + sectionNumber;
@@ -33,27 +36,13 @@ function addSection(numbArt) {
         tempReadMore.id = "readMore" + sectionNumber;
         tempReadMore.innerText = "Read more";
 
-        if (sectionNumber == 0) {
-            let tempK;
-            let tempJ;
-            let j = 0;
-            tempK = destinationObject[j].rating;
-            for (j = 1; j < destinationObject.length; j++) {
-                tempJ = destinationObject[j].rating;
-                if (tempK < tempJ) {
-                    tempK = tempJ;
-                    bgImageCity.style.backgroundImage = destinationObject[j].picture;
-                    tempcityNamePar.innerText = destinationObject[j].desc;
-                    tempcityNameHeader.innerText = destinationObject[j].name;
+        let tempDataID = document.getElementsByClassName("articleSection");
 
-                }
-            }
-        }
-        else {
-            bgImageCity.style.backgroundImage = destinationObject[sectionNumber - 1].picture;
-            tempcityNameHeader.innerText = destinationObject[sectionNumber - 1].name;
-            tempcityNamePar.innerText = destinationObject[sectionNumber - 1].desc;
-        }
+        bgImageCity.style.backgroundImage = destinationObject[sectionNumber].picture;
+        tempcityNameHeader.innerText = destinationObject[sectionNumber].name;
+        tempcityNamePar.innerText = destinationObject[sectionNumber].desc;
+        tempDataID[sectionNumber].setAttribute("dataID", destinationObject[sectionNumber].id);
+        tempDataID[sectionNumber].setAttribute("dataNO", sectionNumber);
 
         tempcityName.appendChild(tempcityNameHeader);
         tempcityName.appendChild(tempcityNamePar);
@@ -61,8 +50,7 @@ function addSection(numbArt) {
 
         bgImageCity.appendChild(tempcityName);
 
+
     }
-    chosenLanguage();
-    fullSize();
 
 }

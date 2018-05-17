@@ -24,11 +24,6 @@ body{
     overflow: auto;
 
 }
-
-#fullScreenShow > p {
-    display: block;
-    top: 70%;
-}
 #imageFullScreen{
    
     top: 20%;
