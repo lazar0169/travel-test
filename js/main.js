@@ -37,21 +37,22 @@ function setResolution() {
         let tempmainSectionA = mainSection.clientWidth;
         let tempmainSectionB = mainSection.clientHeight;
 
-        let tempfullScreenBackButton = document.getElementById("fullScreenBackButton");
+       
         let tempLanguage = document.getElementById("language");
         let tempLanguage1 = document.getElementById("openCloseLanguage");
         let temph1FullScreenShow = document.getElementById("h1FullScreenShow");
+        let tempfullScreenBackButton = document.getElementById("fullScreenBackButton");
         let temppFullScreen = document.getElementById("pFullScreen");
 
         let tempfontSize = tempmainSectionA * 0.015 + "px";
-        let tempBackButtonFontSize = tempmainSectionA * 0.038 + "px";
+        let tempBackButtonFontSize = mainSection.clientWidth * 0.038 + "px";
         let temph1FontSize = tempmainSectionA * 0.1 + "px";
 
         tempmainSection.style.fontSize = tempfontSize;
-        temph1FullScreenShow.style.fontSize = temph1FontSize;
         tempLanguage1.style.fontSize = tempfontSize;
-        tempfullScreenBackButton.style.fontSize = tempBackButtonFontSize;
         temppFullScreen.style.fontSize = tempfontSize;
+        temph1FullScreenShow.style.fontSize = temph1FontSize;
+        tempfullScreenBackButton.style.fontSize = tempBackButtonFontSize;
 
         if (tempmainSectionA / tempmainSectionB > 16 / 9) {
             let tempResize = document.getElementById("rightSection");

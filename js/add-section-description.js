@@ -2,12 +2,9 @@
 function fullSize() {
     let tempclickedCity = document.getElementsByClassName("articleSection");
     let tempmainSection = document.getElementById("fullScreenShow");
-    let temph2cityNameHeader = document.getElementsByClassName("h2cityNameHeader");
-    let tempSectionA = tempmainSection.clientHeight;
     let tempimageFullScreen = document.getElementById("imageFullScreen");
     let temph1FullScreenShow = document.getElementById("h1FullScreenShow");
     let temppFullScreen = document.getElementById("pFullScreen");
-    let tempsectionDescription = document.getElementsByClassName("sectionFooter");
 
     for (let i = 0; i < tempclickedCity.length; i++) {
 

@@ -68,7 +68,7 @@ body{
     width: 10%;
     height: 20%;
     color: white;
-    background-color: darkblue;
+    background-color: rgb(100, 100, 100);
     border: none;
     cursor: pointer;
     position: absolute;
@@ -77,7 +77,6 @@ body{
     margin: 0;
     top: 0;
     left:0;
-    font-size: 65.816px;
 }
 
 .h2cityNameHeader{
@@ -89,7 +88,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: green;
+    background-color: transparent;
 }
 p.descriptionText {
     position: absolute;
@@ -101,7 +100,7 @@ p.descriptionText {
     overflow: hidden;
     text-align: justify;
     text-overflow: ellipsis;
-    background-color: red;
+    background-color: transparent;
 }
 
 #mainSection{
