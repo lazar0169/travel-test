@@ -69,7 +69,7 @@ var destinationObject = [
         name: 'Paris',
         image: "images/paris.jpg",
         picture: "url(images/paris.jpg)",
-        rating: 2,
+        rating: 4.96,
         desc: 'Paris vidit definitiones eu vim, possit iisque officiis sed ad, eros oratio alterum ea eam. Suas sententiae ea ius. At dicat repudiare per. Docendi voluptatum duo et, mei modus clita mediocrem no, dolorem signiferumque no est. Usu in vocent regione eleifend, ad eum oblique percipitur. An laudem nemore integre nam. Idque scaevola quo ei, vis cu eros viris euripidis. Ut graeci iuvaret pri, no eam integre sanctus feugait. Cu dicant praesent usu, sea te euismod invenire iudicabit. Ei ius stet prima, amet nominavi recteque ad nam, eius lorem minimum eu est. Vim at porro reformidans. Posse melius detraxit id vim, sanctus delenit repudiare cum id. Ea pri cetero animal. Eu qui facilisi definiebas intellegam. Malis contentiones et his.'
     },
     {
@@ -93,7 +93,7 @@ var destinationObject = [
         name: 'Venecia',
         image: "images/venecia.jpg",
         picture: "url(images/venecia.jpg)",
-        rating: 4.95,
+        rating: 4.93,
         desc: 'test'
     },
     {

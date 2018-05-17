@@ -1,10 +1,10 @@
 
+window.addEventListener("load", addSection);
 
-
-function addSection(numbArt) {
+function addSection() {
     let temprightSection = document.getElementById("rightSection");
 
-    for (let sectionNumber = 0; sectionNumber < numbArt; sectionNumber++) {
+    for (let sectionNumber = 0; sectionNumber < destinationObject.length; sectionNumber++) {
         let newSection = document.createElement("section");
         newSection.id = "section" + sectionNumber;
         newSection.setAttribute("onclick", "fullSize()");

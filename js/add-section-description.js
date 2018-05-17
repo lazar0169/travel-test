@@ -17,13 +17,7 @@ function fullSize() {
                     let tempDataNo = tempclickedCity[i].getAttribute("dataNO");
                     temph1FullScreenShow.innerText = destinationObject[tempDataNo].name;
                     tempimageFullScreen.src = destinationObject[tempDataNo].image;
-                    temppFullScreen.innerText = destinationObject[tempDataNo].desc;       
-                
-            
-       
-    
-
-
+                    temppFullScreen.innerText = destinationObject[tempDataNo].desc;   
         }
     }
 }
