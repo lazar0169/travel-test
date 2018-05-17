@@ -9,7 +9,10 @@ body{
     flex-flow: column wrap;
     overflow: hidden;
 }
-
+table{
+    width:60%;
+    background-color: red;
+}
 #fullScreenShow{
     width: 100%;
     height: 100%;
