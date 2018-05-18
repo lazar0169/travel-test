@@ -41,8 +41,7 @@ function addSection() {
         bgImageCity.style.backgroundImage = destinationObject[sectionNumber].picture;
         tempcityNameHeader.innerText = destinationObject[sectionNumber].name;
         tempcityNamePar.innerText = destinationObject[sectionNumber].desc;
-        tempDataID[sectionNumber].setAttribute("dataID", destinationObject[sectionNumber].id);
-        tempDataID[sectionNumber].setAttribute("dataNO", sectionNumber);
+        tempDataID[sectionNumber].setAttribute("data-id", destinationObject[sectionNumber].id);
 
         tempcityName.appendChild(tempcityNameHeader);
         tempcityName.appendChild(tempcityNamePar);
