@@ -17,7 +17,7 @@ function createTable() {
             let temptablePriceTD = document.createElement("td");
             
 
-            temptablePriceTD.innerText = destinationObject[1].seasons["winter"]["January"];
+            temptablePriceTD.innerText = destinationObject[1].seasons;
 
             temptablePriceTR.appendChild(temptablePriceTD);
             temptablePrice.appendChild(temptablePriceTR);
