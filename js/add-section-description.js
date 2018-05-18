@@ -2,6 +2,7 @@ window.addEventListener("load", fullSize);
 function fullSize() {
     let tempclickedCity = document.getElementsByClassName("articleSection");
     let tempmainSection = document.getElementById("fullScreenShow");
+    let temptableDiv = document.getElementById("tableDiv");
 
     for (let i = 0; i < tempclickedCity.length; i++) {
 
@@ -16,17 +17,19 @@ function fullSize() {
                 tempimageFullScreen.src = destinationObject[i].image;
                 temppFullScreen.innerText = destinationObject[i].desc;
 
+                
                 let temptablePriceSpring = document.createElement("table");
                 temptablePriceSpring.id = "tablePriceSpring";
                 let temptablePriceTRSpring = document.createElement("tr");
                 temptablePriceTRSpring.innerText = "SPRING";
                 temptablePriceSpring.appendChild(temptablePriceTRSpring);
-                for (let k = 0; k < 2;k++) {
+                for (let k = 0; k < 2; k++) {
                     let temptablePriceTRSpring = document.createElement("tr");
                     let temptablePriceTDSpringMarch = document.createElement("td");
                     let temptablePriceTDSpringApril = document.createElement("td");
                     let temptablePriceTDSpringMay = document.createElement("td");
                     for (let j = 0; j < 3; j++) {
+                        let temptablePriceTRSpring = document.createElement("tr");
                         if(k==0){                     
                             temptablePriceTDSpringMarch.innerText = "March";
                             temptablePriceTRSpring.appendChild(temptablePriceTDSpringMarch);
@@ -54,7 +57,7 @@ function fullSize() {
                     temptablePriceSpring.appendChild(temptablePriceTRSpring);
                     
                 }
-                tempmainSection.appendChild(temptablePriceSpring);
+                temptableDiv.appendChild(temptablePriceSpring);
 
                 let temptablePriceSummer = document.createElement("table");
                 temptablePriceSummer.id = "tablePriceSummer";
@@ -91,7 +94,7 @@ function fullSize() {
                     }
                     temptablePriceSummer.appendChild(temptablePriceTRSummer);  
                 }
-                tempmainSection.appendChild(temptablePriceSummer);
+                temptableDiv.appendChild(temptablePriceSummer);
 
                 let temptablePriceAutumn = document.createElement("table");
                 temptablePriceAutumn.id = "tablePriceAutumn";
@@ -127,7 +130,7 @@ function fullSize() {
                     }
                     temptablePriceAutumn.appendChild(temptablePriceTRAutumn);   
                 }
-                tempmainSection.appendChild(temptablePriceAutumn);
+                temptableDiv.appendChild(temptablePriceAutumn);
 
                 let temptablePriceWinter = document.createElement("table");
                 temptablePriceWinter.id = "tablePriceWinter";
@@ -163,10 +166,8 @@ function fullSize() {
                     }
                     temptablePriceWinter.appendChild(temptablePriceTRWinter);  
                 }
-                tempmainSection.appendChild(temptablePriceWinter);
-
-
-
+                temptableDiv.appendChild(temptablePriceWinter);
+                tempmainSection.appendChild(tableDiv);
                 tempmainSection.style.visibility = "visible";
             }
         }

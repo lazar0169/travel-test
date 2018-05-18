@@ -9,36 +9,35 @@ body{
     flex-flow: column wrap;
     overflow: hidden;
 }
+#tableDiv{
+    width: 60%;
+}
 #tablePriceSpring{
+
     background-color: forestgreen;
 }
 #tablePriceSummer{
+
     background-color: yellow;
 }
 #tablePriceAutumn{
+
     background-color: burlywood;
 }
 #tablePriceWinter{
+
     background-color: white;
 }
-table{
-    color:black;
-    width:60%;
-    text-align: center;
-}
-td{
-    text-align: center;
-    width: 50%;
-}
-tr{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-table, tr, td{
+table, td, th {
     border: 1px solid black;
 }
+
+table {
+    color :black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
 #fullScreenShow{
     width: 100%;
     height: 100%;
