@@ -9,17 +9,19 @@ function createTable() {
     // temptablePrice.appendChild(temptablePriceTR);
 
     for (let i = 0; i < 12; i++) {
-        let temptablePriceTR = document.createElement("tr")
-        let temptablePriceTD = document.createElement("td");
-
-        temptablePriceTD.innerText = destinationObject[i].seasons["spring"]["May"];
-
-        temptablePriceTR.appendChild(temptablePriceTD);
-        temptablePrice.appendChild(temptablePriceTR);
+        let temptablePriceTR = document.createElement("tr");
+        for (let j = 0; j < 12; j++) {
 
 
 
+            let temptablePriceTD = document.createElement("td");
+            
 
+            temptablePriceTD.innerText = destinationObject[1].seasons["winter"]["January"];
+
+            temptablePriceTR.appendChild(temptablePriceTD);
+            temptablePrice.appendChild(temptablePriceTR);
+        }
 
     }
 
