@@ -15,7 +15,6 @@ function highRate() {
         if (tempRating < tempRatingX) {
             tempRating = tempRatingX;
             temphighRateID = destinationObject[i].id;
-
         }
     }
 }

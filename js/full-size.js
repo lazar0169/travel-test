@@ -24,16 +24,6 @@ function fullSize(tempthis) {
             for (let q = 0; q < tempSeasons.length; q++) {
                 let tempParSeason = document.createElement("h1");
                 tempParSeason.className = "h1tablePrice";
-
-
-
-
-
-
-
-
-
-
                 let temptablePrice = document.createElement("table");
                 for (let w = 0; w < 2; w++) {
                     let temptablePriceTR = document.createElement("tr");

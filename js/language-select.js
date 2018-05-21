@@ -63,7 +63,6 @@ function chosenLanguage() {
 
     for (let i = 0; i < tempchoseLanguage.length; i++) {
         tempchoseLanguage[i].onclick = function () {
-
             let x = tempchoseLanguage[i].textContent;
             tempchosenLanguage.innerText = x;
             showHideLanguage();
