@@ -8,10 +8,10 @@ function fullSize(tempthis) {
     for (let i = 0; i < tempclickedCity.length; i++) {
         if (tempdataID == destinationObject[i].id) {
             let tempSeasons = Object.keys(destinationObject[i].seasons);
-            let tempSpring = Object.keys(destinationObject[i].seasons.spring);
-            let tempSummer = Object.keys(destinationObject[i].seasons.summer);
-            let tempAutumn = Object.keys(destinationObject[i].seasons.autumn);
-            let tempWinter = Object.keys(destinationObject[i].seasons.winter);
+           
+            
+            
+            
 
             let tempimageFullScreen = document.getElementById("imageFullScreen");
             let temph1FullScreenShow = document.getElementById("h1FullScreenShow");
@@ -24,14 +24,25 @@ function fullSize(tempthis) {
             for (let q = 0; q < tempSeasons.length; q++) {
                 let tempParSeason = document.createElement("h1");
                 tempParSeason.className = "h1tablePrice";
-                tempParSeason.innerText = tempSeasons[q];
-                temptableDiv.appendChild(tempParSeason);
+
+
+
+
+
+
+
+
+
 
                 let temptablePrice = document.createElement("table");
                 for (let w = 0; w < 2; w++) {
                     let temptablePriceTR = document.createElement("tr");
                     if (tempSeasons[q] == "spring") {
+                        let tempSpring = Object.keys(destinationObject[i].seasons.spring);
                         for (let spr = 0; spr < tempSpring.length; spr++) {
+
+                            tempParSeason.innerText = tempSeasons[q];
+
                             let temptablePriceTDSpring = document.createElement("td");
                             if (w == 0) {
                                 temptablePriceTDSpring.innerText = tempSpring[spr];
@@ -44,7 +55,11 @@ function fullSize(tempthis) {
                         temptablePrice.appendChild(temptablePriceTR);
                     }
                     else if (tempSeasons[q] == "summer") {
+                        let tempSummer = Object.keys(destinationObject[i].seasons.summer);
                         for (let sum = 0; sum < tempSummer.length; sum++) {
+
+                            tempParSeason.innerText = tempSeasons[q];
+
                             let temptablePriceTDSummer = document.createElement("td");
 
                             if (w == 0) {
@@ -58,7 +73,11 @@ function fullSize(tempthis) {
                         temptablePrice.appendChild(temptablePriceTR);
                     }
                     else if (tempSeasons[q] == "autumn") {
+                        let tempAutumn = Object.keys(destinationObject[i].seasons.autumn);
                         for (let aut = 0; aut < tempAutumn.length; aut++) {
+
+                            tempParSeason.innerText = tempSeasons[q];
+
                             let temptablePriceTDAutumn = document.createElement("td");
 
                             if (w == 0) {
@@ -72,7 +91,11 @@ function fullSize(tempthis) {
                         temptablePrice.appendChild(temptablePriceTR);
                     }
                     else if (tempSeasons[q] == "winter") {
+                        let tempWinter = Object.keys(destinationObject[i].seasons.winter);
                         for (let win = 0; win < tempWinter.length; win++) {
+
+                            tempParSeason.innerText = tempSeasons[q];
+
                             let temptablePriceTDWinter = document.createElement("td");
 
                             if (w == 0) {
@@ -87,6 +110,7 @@ function fullSize(tempthis) {
                         temptablePrice.appendChild(temptablePriceTR);
                     }
                 }
+                temptableDiv.appendChild(tempParSeason)
                 temptableDiv.appendChild(temptablePrice);
             }
             tempmainSection.style.visibility = "visible";

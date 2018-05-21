@@ -21,6 +21,7 @@ var destinationObject = [
                 'November': 19
             },
             'winter': {
+
                 'January': 111,
                 'February': 112
             },
@@ -40,11 +41,7 @@ var destinationObject = [
                 'April': 22,
                 'May': 23
             },
-            'summer': {
-                'June': 24,
-                'July': 25,
-                'August': 26
-            },
+            
             'autumn': {
                 'September': 27,
                 'October': 28,
