@@ -14,12 +14,6 @@ function highRate() {
 
         if (tempRating < tempRatingX) {
             tempRating = tempRatingX;
-            // tempObjX = destinationObject[i];
-            // tempObjMove = tempObjX;
-            // tempObjX = tempObj;
-            // tempObj = tempObjMove;
-            // destinationObject[i] = tempObjX;
-            // destinationObject[0] = tempObj;
             temphighRateID = destinationObject[i].id;
 
         }

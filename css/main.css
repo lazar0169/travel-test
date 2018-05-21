@@ -9,6 +9,7 @@ body{
     flex-flow: column wrap;
     overflow: hidden;
 }
+
 #tableDiv{
     width: 60%;
 }
@@ -18,9 +19,22 @@ table, td, th {
 }
 
 table {
-    color :black;
     border-collapse: collapse;
     width: 100%;
+}
+
+td{
+    width: 200px;
+}
+
+.h1tablePrice{
+    padding: 0;
+    margin: 0;
+    top:0;
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    text-transform: uppercase;
 }
 
 #fullScreenShow{
@@ -35,8 +49,8 @@ table {
     color: white;
     visibility: hidden;
     overflow: auto;
-
 }
+
 #imageFullScreen{
    
     top: 20%;
@@ -45,31 +59,26 @@ table {
     margin: 0;
     pointer-events: none;
     padding: 0 5%;
-
 }
+
 #h1FullScreenShow{
     padding: 0;
     margin: 0;
     top:0;
     width: 60%;
     height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     pointer-events: none;
 }
+
 #pFullScreen{
     padding: 0;
     margin: 0;
     top:0;
     padding: 0 5%;
     width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     pointer-events: none;
     text-align: justify;
-   
 }
 
 #fullScreenBackButton{
@@ -92,12 +101,11 @@ table {
     padding: 0;
     margin: 0;
     top:0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   text-align: center;
     width: 100%;
     background-color: transparent;
 }
+
 p.descriptionText {
     position: absolute;
     top:20%;
@@ -187,11 +195,13 @@ background-color: darkblue;
     padding: 0;
     margin: 0;
 }
+
 #pLanguage{
     padding: 0;
     margin: 0;
     padding-left: 10%;
 }
+
 #pButtonOpenClose{
     padding: 0;
     margin: 0;
@@ -212,6 +222,7 @@ background-color: darkblue;
     color: white;
     
 }
+
 .listOfLanguage:hover{
     background-color: darkblue;
 }
@@ -313,12 +324,10 @@ background-color: darkblue;
     grid-row-end: 3;
 }
 
-
-
 #rightSection::-webkit-scrollbar {
     width: 10px;
 }
- 
+
 #rightSection::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(42, 42, 42);
     background-color: white;
@@ -328,8 +337,6 @@ background-color: darkblue;
   background-color: rgb(100, 100, 100);
   border-radius: 50px;
 }
-
-
 
 #language::-webkit-scrollbar {
     width: 10px;
@@ -344,8 +351,6 @@ background-color: darkblue;
   background-color: darkblue;
   border-radius: 50px;
 }
-
-
 
 #fullScreenShow::-webkit-scrollbar {
     width: 10px;
