@@ -20,7 +20,7 @@ function highRate() {
             // tempObj = tempObjMove;
             // destinationObject[i] = tempObjX;
             // destinationObject[0] = tempObj;
-            temphighRate = destinationObject[i].id;
+            temphighRateID = destinationObject[i].id;
 
         }
     }
