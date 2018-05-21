@@ -3,6 +3,7 @@ window.addEventListener("load", highRate);
 let tempRatingX
 let tempObjMove;
 let tempObjX
+var temophighRate
 
 function highRate() {
     let tempObj = destinationObject[0];
@@ -13,12 +14,14 @@ function highRate() {
 
         if (tempRating < tempRatingX) {
             tempRating = tempRatingX;
-            tempObjX = destinationObject[i];
-            tempObjMove = tempObjX;
-            tempObjX = tempObj;
-            tempObj = tempObjMove;
-            destinationObject[i] = tempObjX;
-            destinationObject[0] = tempObj;
+            // tempObjX = destinationObject[i];
+            // tempObjMove = tempObjX;
+            // tempObjX = tempObj;
+            // tempObj = tempObjMove;
+            // destinationObject[i] = tempObjX;
+            // destinationObject[0] = tempObj;
+            temphighRate = destinationObject[i].id;
+
         }
     }
 }

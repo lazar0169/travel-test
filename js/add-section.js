@@ -36,12 +36,7 @@ function addSection() {
         tempReadMore.id = "readMore" + sectionNumber;
         tempReadMore.innerText = "Read more";
 
-        let tempDataID = document.getElementsByClassName("articleSection");
-
-        bgImageCity.style.backgroundImage = destinationObject[sectionNumber].picture;
-        tempcityNameHeader.innerText = destinationObject[sectionNumber].name;
-        tempcityNamePar.innerText = destinationObject[sectionNumber].desc;
-        tempDataID[sectionNumber].setAttribute("data-id", destinationObject[sectionNumber].id);
+        
 
         tempcityName.appendChild(tempcityNameHeader);
         tempcityName.appendChild(tempcityNamePar);
