@@ -110,7 +110,6 @@ td{
 }
 
 p.descriptionText {
-    position: absolute;
     top:20%;
     height: 59%;
     margin: 0;
