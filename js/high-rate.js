@@ -2,8 +2,8 @@ window.addEventListener("load", highRate);
 
 let tempRatingX
 let tempObjMove;
-let tempObjX
-var temophighRate
+let tempObjX;
+var temophighRateID;
 
 function highRate() {
     let tempObj = destinationObject[0];

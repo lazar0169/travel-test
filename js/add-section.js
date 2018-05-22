@@ -5,6 +5,7 @@ function addSection() {
     let temprightSection = document.getElementById("rightSection");
 
     for (let sectionNumber = 0; sectionNumber < destinationObject.length; sectionNumber++) {
+        
         let newSection = document.createElement("section");
         newSection.id = "section" + sectionNumber;
 
@@ -19,15 +20,13 @@ function addSection() {
 
         temprightSection.appendChild(newSection);
 
-        let bgImageCity = document.getElementById("section" + sectionNumber);
+        let bgImageCity = document.getElementsByClassName("articleSection");
 
         let tempcityName = document.createElement("section");
         tempcityName.className = "sectionFooter"
-        tempcityName.id = "sectionFooter" + sectionNumber;
 
         let tempcityNameHeader = document.createElement("h2");
         tempcityNameHeader.className = "h2cityNameHeader";
-        tempcityNameHeader.id = "h2cityNameHeader" + sectionNumber;
 
 
         let tempcityNamePar = document.createElement("p");
@@ -36,7 +35,6 @@ function addSection() {
 
         let tempReadMore = document.createElement("button");
         tempReadMore.className = "readMore";
-        tempReadMore.id = "readMore" + sectionNumber;
         tempReadMore.innerText = "Read more";
 
 
@@ -46,7 +44,7 @@ function addSection() {
         tempcityName.appendChild(tempcityNamePar);
         tempcityName.appendChild(tempReadMore);
 
-        bgImageCity.appendChild(tempcityName);
+        bgImageCity[sectionNumber].appendChild(tempcityName);
 
 
     }
