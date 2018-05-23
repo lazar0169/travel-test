@@ -1,6 +1,5 @@
 
 window.addEventListener("resize", setResolution);
-window.addEventListener("load", setResolution);
 
 function setResolution() {
     let tempBody = document.getElementsByTagName("body");

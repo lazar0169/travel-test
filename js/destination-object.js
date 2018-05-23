@@ -42,7 +42,7 @@ var destinationObject = [
                 'April': [22],
                 'May': [23]
             },
-            
+
             'autumn': {
                 'September': [27],
                 'October': [28],
@@ -139,11 +139,7 @@ var destinationObject = [
                 'October': [58],
                 'November': [59]
             },
-            'winter': {
-                'December': [510],
-                'January': [511],
-                'February': [512]
-            },
+
         },
         desc: 'Luxembourg falli appareat vis, an eum meis oportere constituto, his movet tempor id. Ad utamur lobortis vix, his praesent signiferumque et. Sed bonorum torquatos in, inani everti debitis pro cu, nihil imperdiet vel et. Eam eu augue maiorum apeirian, quo ea menandri eloquentiam, cum at magna rationibus. Duo ne nostrud phaedrum, ea nam reque malorum oportere, dolorum interpretaris ei ius. No fugit ullum probatus has. Et essent facilisi vix, cum assum copiosae eu. Eu vidisse aliquid delenit est, mel et labitur propriae, unum dictas persecuti sea te. Dicta similique posidonium ad quo, an vix causae vocibus ancillae. Per illud honestatis ut. Est an suscipit mnesarchum, qui at nominavi platonem. Dolorem iudicabit concludaturque in nec. Vel te mandamus imperdiet, in eum suas nostrud fierent, cu invidunt cotidieque vituperatoribus sit. An vivendo fuisset electram vix, ea sea congue equidem. Error blandit suscipiantur vix at, ad accusata scripserit pri. Mea maiestatis suscipiantur ut. Id mel antiopam scriptorem. Cum id soleat fierent moderatius. '
     },
@@ -154,11 +150,7 @@ var destinationObject = [
         picture: "url(images/madrid.jpg)",
         rating: 4.9,
         seasons: {
-            'spring': {
-                'March': [61],
-                'April': [62],
-                'May': [63]
-            },
+
             'summer': {
                 'June': [64],
                 'July': [65],
@@ -194,11 +186,7 @@ var destinationObject = [
                 'July': [75],
                 'August': [76]
             },
-            'autumn': {
-                'September': [77],
-                'October': [78],
-                'November': [79]
-            },
+            
             'winter': {
                 'December': [710],
                 'January': [711],
@@ -259,11 +247,7 @@ var destinationObject = [
                 'October': [98],
                 'November': [99]
             },
-            'winter': {
-                'December': [910],
-                'January': [911],
-                'February': [912]
-            },
+
         },
         desc: 'Prague falli appareat vis, an eum meis oportere constituto, his movet tempor id. Ad utamur lobortis vix, his praesent signiferumque et. Sed bonorum torquatos in, inani everti debitis pro cu, nihil imperdiet vel et. Eam eu augue maiorum apeirian, quo ea menandri eloquentiam, cum at magna rationibus. Duo ne nostrud phaedrum, ea nam reque malorum oportere, dolorum interpretaris ei ius. No fugit ullum probatus has. Et essent facilisi vix, cum assum copiosae eu. Eu vidisse aliquid delenit est, mel et labitur propriae, unum dictas persecuti sea te. Dicta similique posidonium ad quo, an vix causae vocibus ancillae. Per illud honestatis ut. Est an suscipit mnesarchum, qui at nominavi platonem. Dolorem iudicabit concludaturque in nec. Vel te mandamus imperdiet, in eum suas nostrud fierent, cu invidunt cotidieque vituperatoribus sit. An vivendo fuisset electram vix, ea sea congue equidem. Error blandit suscipiantur vix at, ad accusata scripserit pri. Mea maiestatis suscipiantur ut. Id mel antiopam scriptorem. Cum id soleat fierent moderatius.'
     },
@@ -274,11 +258,7 @@ var destinationObject = [
         picture: "url(images/rome.jpg)",
         rating: 4.55,
         seasons: {
-            'spring': {
-                'March': [101],
-                'April': [102],
-                'May': [103]
-            },
+
             'summer': {
                 'June': [104],
                 'July': [105],
@@ -304,21 +284,13 @@ var destinationObject = [
         picture: "url(images/venecia.jpg)",
         rating: 4.93,
         seasons: {
-            'spring': {
-                'March': [111],
-                'April': [112],
-                'May': [113]
-            },
+
             'summer': {
                 'June': [114],
                 'July': [115],
                 'August': [116]
             },
-            'autumn': {
-                'September': [117],
-                'October': [118],
-                'November': [119]
-            },
+
             'winter': {
                 'December': [1110],
                 'January': [1111],
@@ -344,11 +316,7 @@ var destinationObject = [
                 'July': [125],
                 'August': [126]
             },
-            'autumn': {
-                'September': [127],
-                'October': [128],
-                'November': [129]
-            },
+
             'winter': {
                 'December': [1210],
                 'January': [1211],
@@ -379,6 +347,7 @@ var destinationObject = [
                 'October': [138],
                 'November': [139]
             },
+
             'winter': {
                 'December': [1310],
                 'January': [1311],

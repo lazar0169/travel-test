@@ -1,10 +1,8 @@
 
-window.addEventListener("load", addSection);
-
-function addSection() {
+function addSection(tempelements) {
     let temprightSection = document.getElementById("rightSection");
 
-    for (let sectionNumber = 0; sectionNumber < destinationObject.length; sectionNumber++) {
+    for (let sectionNumber = 0; sectionNumber < tempelements.length; sectionNumber++) {
         
         let newSection = document.createElement("section");
         newSection.id = "section" + sectionNumber;

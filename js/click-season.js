@@ -12,6 +12,11 @@ function clickSeason() {
     temprightSection.innerHTML = "";
     let tempSeasonID = this.dataset.season;
 
+    if(tempSeasonID == "all"){
+        arrayID();
+        
+    }
+else{
     for (let i = 0; i < destinationObject.length; i++) {
         let tempSeasonsArray = Object.keys(destinationObject[i].seasons);
         for (let j = 0; j < tempSeasonsArray.length; j++) {
@@ -19,8 +24,16 @@ function clickSeason() {
                 tempIdArray[x] = destinationObject[i].id;
                 x++;
             }
+          
         }
     }
+    addSection(tempIdArray);
+    setResolution();
+    addCity(tempIdArray);
+
+}
+
+    
 
 
     
