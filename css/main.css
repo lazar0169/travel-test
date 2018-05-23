@@ -108,18 +108,22 @@ td{
     width: 100%;
     background-color: transparent;
 }
-
-p.descriptionText {
+.descriptionText {
     top:20%;
-    height: 59%;
+    height: 57%;
     margin: 0;
-    padding: 0 5%;;
+    padding: 0 10%;
     display: none;
     overflow: hidden;
     text-align: justify;
-    text-overflow: ellipsis;
-    background-color: transparent;
 }
+
+.descriptionText::before{
+    content: '...';
+    position: absolute;
+    right: 7%;
+    top: 69%;
+  }
 
 #mainSection{
     width: 100%;
@@ -327,7 +331,7 @@ background-color: darkblue;
 }
 
 #rightSection::-webkit-scrollbar {
-    width: 10px;
+    width: 1%;
 }
 
 #rightSection::-webkit-scrollbar-track {
@@ -341,7 +345,7 @@ background-color: darkblue;
 }
 
 #language::-webkit-scrollbar {
-    width: 10px;
+    width: 3%;
 }
  
 #language::-webkit-scrollbar-track {
@@ -355,7 +359,7 @@ background-color: darkblue;
 }
 
 #fullScreenShow::-webkit-scrollbar {
-    width: 10px;
+    width: 3%;
 }
  
 #fullScreenShow::-webkit-scrollbar-track {
