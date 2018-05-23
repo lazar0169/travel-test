@@ -27,6 +27,7 @@ else{
           
         }
     }
+    highRate(tempIdArray);
     addSection(tempIdArray);
     setResolution();
     addCity(tempIdArray);

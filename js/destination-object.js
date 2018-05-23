@@ -35,14 +35,8 @@ var destinationObject = [
         name: 'Budapest',
         image: "images/budapest.jpg",
         picture: "url(images/budapest.jpg)",
-        rating: 4.6,
+        rating: 5,
         seasons: {
-            'spring': {
-                'March': [21],
-                'April': [22],
-                'May': [23]
-            },
-
             'autumn': {
                 'September': [27],
                 'October': [28],
@@ -61,7 +55,7 @@ var destinationObject = [
         name: 'Krakov',
         image: "images/krakov.jpg",
         picture: "url(images/krakov.jpg)",
-        rating: 4.3,
+        rating: 4,
         seasons: {
             'spring': {
                 'March': [31],
@@ -186,7 +180,7 @@ var destinationObject = [
                 'July': [75],
                 'August': [76]
             },
-            
+
             'winter': {
                 'December': [710],
                 'January': [711],

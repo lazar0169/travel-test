@@ -1,13 +1,14 @@
 window.addEventListener("load", arrayID);
-let temparrayID = [];
+let tempID = [];
 
 function arrayID(){
     let x = 0;
     for (let i = 0; i < destinationObject.length; i++) {
-        temparrayID[x] = destinationObject[i].id;
+        tempID[x] = destinationObject[i].id;
         x++;
     }
-    addSection(temparrayID);
-    addCity(temparrayID);
+    highRate(tempID);
+    addSection(tempID);
+    addCity(tempID);
     setResolution();
 }

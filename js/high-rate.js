@@ -1,20 +1,25 @@
-window.addEventListener("load", highRate);
 
-let tempRatingX
-let tempObjMove;
-let tempObjX;
-var temophighRateID;
+var temphighRateID;
+let tempRating;
 
-function highRate() {
-    let tempObj = destinationObject[0];
-    let tempRating = destinationObject[0].rating;
+function highRate(temp) {
 
-    for (let i = 1; i < destinationObject.length; i++) {
-        tempRatingX = destinationObject[i].rating;
+    for (let q = 0; q < destinationObject.length; q++) {
+        if (temp[0] == destinationObject[q].id) {
+            tempRating = destinationObject[q].rating;
+        }
+    }
+    for (let i = 1; i < temp.length; i++) {
+        for (let j = 0; j < destinationObject.length; j++) {
 
-        if (tempRating < tempRatingX) {
-            tempRating = tempRatingX;
-            temphighRateID = destinationObject[i].id;
+            if (temp[i] == destinationObject[j].id) {
+                let tempRatingX = destinationObject[j].rating;
+
+                if (tempRating < tempRatingX) {
+                    tempRating = tempRatingX;
+                    temphighRateID = destinationObject[j].id;
+                }
+            }
         }
     }
 }
