@@ -359,7 +359,7 @@ background-color: darkblue;
 }
 
 #fullScreenShow::-webkit-scrollbar {
-    width: 3%;
+    width: 1%;
 }
  
 #fullScreenShow::-webkit-scrollbar-track {
