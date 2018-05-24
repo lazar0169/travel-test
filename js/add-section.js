@@ -15,6 +15,7 @@ function addSection(tempelements) {
             newSection.className = "articleSection articleSectionFirst";
         }
         newSection.setAttribute("onclick", "fullSize(this)");
+        
 
         temprightSection.appendChild(newSection);
 
@@ -22,6 +23,7 @@ function addSection(tempelements) {
 
         let tempcityName = document.createElement("section");
         tempcityName.className = "sectionFooter"
+        tempcityName.setAttribute("href", "https://www.w3schools.com/html/");
 
         let tempcityNameHeader = document.createElement("h2");
         tempcityNameHeader.className = "h2cityNameHeader";

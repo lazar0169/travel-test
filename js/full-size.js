@@ -1,6 +1,5 @@
-
-function fullSize(tempthis) {
-    let tempclickedCity = document.getElementsByClassName("sectionFooter");
+window.addEventListener("load", fullSize);
+function fullSize() {
     let tempmainSection = document.getElementById("fullScreenShow");
     let temptableDiv = document.getElementById("tableDiv");
 
@@ -17,10 +16,10 @@ function fullSize(tempthis) {
     let maxNov;
     let maxDec;
 
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let tempdataID = params.get("id");
 
-
-    let tempdataID = tempthis.dataset.id;
-    for (let i = 0; i < tempclickedCity.length; i++) {
+    for (let i = 0; i < destinationObject.length; i++) {
         if (tempdataID == destinationObject[i].id) {
             let tempSeasons = Object.keys(destinationObject[i].seasons);
 
@@ -212,7 +211,7 @@ function fullSize(tempthis) {
                 temptableDiv.appendChild(tempParSeason)
                 temptableDiv.appendChild(temptablePrice);
             }
-            tempmainSection.style.visibility = "visible";
+
         }
     }
 }
