@@ -10,21 +10,6 @@ body{
     overflow: hidden;
 }
 
-#fullScreenBackButton{
-    width: 10%;
-    height: 20%;
-    color: white;
-    background-color: rgb(100, 100, 100);
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    outline:none;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    left:0;
-}
-
 .h2cityNameHeader{
     position: absolute;
     padding: 0;
@@ -37,22 +22,17 @@ body{
     width: 100%;
     background-color: transparent;
 }
+
 .descriptionText {
+    position: absolute;
     top:20%;
-    height: 57%;
+    height: 80%;
     margin: 0;
     padding: 0 10%;
     display: none;
     overflow: hidden;
     text-align: justify;
 }
-
-.descriptionText::before{
-    content: '...';
-    position: absolute;
-    right: 7%;
-    top: 69%;
-  }
 
 #mainSection{
     width: 100%;
@@ -287,18 +267,6 @@ background-color: darkblue;
   border-radius: 50px;
 }
 
-#fullScreenShow::-webkit-scrollbar {
-    width: 1%;
-}
- 
-#fullScreenShow::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgb(42, 42, 42);
-    background-color: white;
-}
- 
-#fullScreenShow::-webkit-scrollbar-thumb {
-  background-color: rgb(100, 100, 100);
-  border-radius: 50px;
-}
+
 
 

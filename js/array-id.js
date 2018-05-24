@@ -11,4 +11,5 @@ function arrayID(){
     addSection(tempID);
     addCity(tempID);
     setResolution();
+    resizeGrid();
 }
