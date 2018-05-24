@@ -57,5 +57,6 @@ function resizeGrid() {
     for (let i = 0; i < tempSection.length; i++) {
         let tempSectionA = tempSection[i].clientHeight;
         tempcityNameHeaderH2[i].style.height = tempSectionA * 0.2 + "px";
+        tempcityNameHeaderH2[i].style.fontSize = tempSectionA * 0.15 + "px"
     }
 }

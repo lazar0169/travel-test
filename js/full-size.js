@@ -1,4 +1,5 @@
 window.addEventListener("load", fullSize);
+
 function fullSize() {
     let tempmainSection = document.getElementById("fullScreenShow");
     let temptableDiv = document.getElementById("tableDiv");
@@ -215,7 +216,3 @@ function fullSize() {
         }
     }
 }
-
-// let tempParSeason = document.createElement("h5");
-// tempParSeason = tempSeasons[q];
-// temptableDiv.appendChild(tempParSeason);
