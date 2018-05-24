@@ -28,7 +28,6 @@ var destinationObject = [
             },
         },
         desc: 'Berlin cibo dicam qui, case ubique essent eum id. Ius nulla utroque laboramus eu. Sea porro persius ullamcorper no. Mei ei nobis perfecto, inani dicam aliquam eu est. Vivendo reprehendunt mel at, prima erant gloriatur nec ei. Velit fuisset conceptam ea qui, cu qui modus constituam definitiones, usu ei saepe periculis.Rebum dicat tollit eos ne, purto vide legere mei eu. In suas solum viderer usu. Ei nam eligendi insolens menandri. Ipsum latine mei ei, mel ne dicam copiosae repudiare. '
-
     },
     {
         id: 1001,
@@ -107,7 +106,6 @@ var destinationObject = [
                 'January': [411],
                 'February': [412]
             },
-
         },
         desc: 'Lisbon atqui propriae phaedrum usu. In duo virtute discere omittam. Per et prima persius accusamus. An dicunt vocent consequat vix, nam at sonet moderatius, at has quas voluptua interesset. Probo oratio an mei, vidit offendit est ex. Pro cu amet populo similique, meis populo option pro te. Eu his consul eligendi, ea tale dolore mel. Vidisse laoreet has at, qui possim everti deleniti ei. Possim singulis praesent mel ei. Eum odio disputationi ad, aperiam nonumes repudiare vis te. Nam dictas quaestio id, id omnesque expetenda vulputate pro. Cum delenit ocurreret ut, no veri vitae consequat qui. An aliquid veritus nominati mei. Cum ad virtute quaeque adolescens, at aeque scribentur has, ea per tation sensibus. Reque primis lobortis eum at, nam diam soleat omittantur at, id quem sumo repudiare pri. Duo elitr equidem repudiandae ex, senserit praesent deseruisse at cum. Id epicuri quaestio signiferumque ius, usu et unum omnis electram. Ex pro ferri falli deserunt. Usu affert omnium at, aperiam volumus mea ei, cum iusto audire an. Vel quas quidam eu, ludus dolorem appellantur vim ne. Tamquam definitionem has ei, ad vis justo audire eloquentiam. Ad affert doctus lucilius sit, an case volumus adipisci quo. Pri propriae postulant cu, in dolore eleifend efficiendi cum, ex mei viris officiis. Ut nec augue ceteros, ea has regione maluisset. Quem labore eum at, in tacimates adversarium nec. Senserit dissentiunt consectetuer ne nec. Odio feugiat te eos. Ad ius probatus senserit torquatos, quo ut veniam laudem gloriatur. Sed an case partiendo, mea no iudico placerat honestatis, qui ne aeque labore officiis. Mucius vituperata sadipscing ad pro. Fugit summo harum ex vis, in discere debitis pro. Vidisse ceteros contentiones ea his, et mei dicit diceret, quodsi fuisset omittantur vim cu. Qui quem tritani et, ludus percipitur eu his. Nam dicat dicam suscipit ut. Ex sit laoreet expetenda rationibus, in labitur incorrupte mei, his ei erat homero philosophia. In his dicat pertinacia, novum instructior ut qui, has ridens propriae aliquando no. Sint discere qui ex, impetus fabulas vivendo mel in. Est id alii eripuit. No ferri omnis eam, elitr inimicus suavitate mel no. Accusata assueverit qui an, has in dicant senserit consulatu. No unum ignota contentiones vix. Nibh delicata nam in. At mel prima vitae. Quo ne nonumes eloquentiam, dicit consequuntur et sit, vim eu tation interesset. Accusamus intellegam definitiones ex has. Euismod antiopam efficiantur mei cu, phaedrum maluisset eu his, detracto officiis cum ex. Ne vidisse inciderint duo, ne altera nonumes qui. Nam ut soleat albucius repudiare. In meis harum detracto nec. Ius ne adipisci explicari referrentur, vim ne vide possit prompta, eos omittam persecuti voluptatibus et. Te mei detracto expetendis. Nec ut doming complectitur, prima menandri maiestatis an sea. Mea ne purto nihil doming. Eam ne epicuri concludaturque, ex qui dicat zril copiosae.  Ex decore principes eam, ad consequat conceptam vis. Qui torquatos conclusionemque id, eos in mollis tamquam docendi. Ex mundi delenit philosophia quo. Id usu minim graece dolorum.'
     },
@@ -133,7 +131,6 @@ var destinationObject = [
                 'October': [58],
                 'November': [59]
             },
-
         },
         desc: 'Luxembourg falli appareat vis, an eum meis oportere constituto, his movet tempor id. Ad utamur lobortis vix, his praesent signiferumque et. Sed bonorum torquatos in, inani everti debitis pro cu, nihil imperdiet vel et. Eam eu augue maiorum apeirian, quo ea menandri eloquentiam, cum at magna rationibus. Duo ne nostrud phaedrum, ea nam reque malorum oportere, dolorum interpretaris ei ius. No fugit ullum probatus has. Et essent facilisi vix, cum assum copiosae eu. Eu vidisse aliquid delenit est, mel et labitur propriae, unum dictas persecuti sea te. Dicta similique posidonium ad quo, an vix causae vocibus ancillae. Per illud honestatis ut. Est an suscipit mnesarchum, qui at nominavi platonem. Dolorem iudicabit concludaturque in nec. Vel te mandamus imperdiet, in eum suas nostrud fierent, cu invidunt cotidieque vituperatoribus sit. An vivendo fuisset electram vix, ea sea congue equidem. Error blandit suscipiantur vix at, ad accusata scripserit pri. Mea maiestatis suscipiantur ut. Id mel antiopam scriptorem. Cum id soleat fierent moderatius. '
     },
@@ -144,7 +141,6 @@ var destinationObject = [
         picture: "url(images/madrid.jpg)",
         rating: 4.9,
         seasons: {
-
             'summer': {
                 'June': [64],
                 'July': [65],
@@ -241,7 +237,6 @@ var destinationObject = [
                 'October': [98],
                 'November': [99]
             },
-
         },
         desc: 'Prague falli appareat vis, an eum meis oportere constituto, his movet tempor id. Ad utamur lobortis vix, his praesent signiferumque et. Sed bonorum torquatos in, inani everti debitis pro cu, nihil imperdiet vel et. Eam eu augue maiorum apeirian, quo ea menandri eloquentiam, cum at magna rationibus. Duo ne nostrud phaedrum, ea nam reque malorum oportere, dolorum interpretaris ei ius. No fugit ullum probatus has. Et essent facilisi vix, cum assum copiosae eu. Eu vidisse aliquid delenit est, mel et labitur propriae, unum dictas persecuti sea te. Dicta similique posidonium ad quo, an vix causae vocibus ancillae. Per illud honestatis ut. Est an suscipit mnesarchum, qui at nominavi platonem. Dolorem iudicabit concludaturque in nec. Vel te mandamus imperdiet, in eum suas nostrud fierent, cu invidunt cotidieque vituperatoribus sit. An vivendo fuisset electram vix, ea sea congue equidem. Error blandit suscipiantur vix at, ad accusata scripserit pri. Mea maiestatis suscipiantur ut. Id mel antiopam scriptorem. Cum id soleat fierent moderatius.'
     },
@@ -252,7 +247,6 @@ var destinationObject = [
         picture: "url(images/rome.jpg)",
         rating: 4.55,
         seasons: {
-
             'summer': {
                 'June': [104],
                 'July': [105],
@@ -278,13 +272,11 @@ var destinationObject = [
         picture: "url(images/venecia.jpg)",
         rating: 4.93,
         seasons: {
-
             'summer': {
                 'June': [114],
                 'July': [115],
                 'August': [116]
             },
-
             'winter': {
                 'December': [1110],
                 'January': [1111],

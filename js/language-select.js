@@ -1,4 +1,5 @@
-window.addEventListener("load", chosenLanguage);
+window.addEventListener("load", createLanguage);
+window.addEventListener("load", showHideLanguage);
 let languageObject = [
     {
         language: 'Serbian'
@@ -38,34 +39,37 @@ function showHideLanguage() {
 
     if (tempShowHide == false) {
         tempShowHide = true;
-        tempShowHideLanguage.style.visibility = "visible";
+        tempShowHideLanguage.style.visibility = "hidden";
         document.getElementById("pButtonOpenClose").innerHTML = "&#9660";
     }
     else {
         tempShowHide = false;
-        tempShowHideLanguage.style.visibility = "hidden";
+        tempShowHideLanguage.style.visibility = "visible";
         document.getElementById("pButtonOpenClose").innerHTML = "&#9650";
     }
 }
 
-function chosenLanguage() {
+function createLanguage() {
     let tempSectionLanguage = document.getElementById("language");
 
     for (var i = 0; i < languageObject.length; i++) {
         let tempCreateLanguage = document.createElement("a");
         tempCreateLanguage.className = "listOfLanguage";
         tempCreateLanguage.innerHTML = languageObject[i].language;
-        tempCreateLanguage.setAttribute("onclick", "chosenLanguage()");
+        tempCreateLanguage.setAttribute("data-language", languageObject[i].language)
+        tempCreateLanguage.setAttribute("onclick", "chosenLanguage(this)");
         tempSectionLanguage.appendChild(tempCreateLanguage);
     }
-    let tempchosenLanguage = document.getElementById("pLanguage");
-    let tempchoseLanguage = document.getElementsByClassName("listOfLanguage");
+}
 
-    for (let i = 0; i < tempchoseLanguage.length; i++) {
-        tempchoseLanguage[i].onclick = function () {
-            let x = tempchoseLanguage[i].textContent;
-            tempchosenLanguage.innerText = x;
-            showHideLanguage();
+function chosenLanguage(temp) {
+    let tempdataLanguage = temp.dataset.language;
+
+    for (let i = 0; i < languageObject.length; i++) {
+        if (tempdataLanguage == languageObject[i].language) {
+            let temppLanguage = document.getElementById("pLanguage");
+            pLanguage.innerHTML = tempdataLanguage;
+            showHideLanguage()
         }
     }
 }

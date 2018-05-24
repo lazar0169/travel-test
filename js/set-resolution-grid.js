@@ -8,10 +8,7 @@ function resizeGrid() {
     let tempLanguage = document.getElementById("language");
     let tempLanguage1 = document.getElementById("openCloseLanguage");
 
-
     let tempfontSize = tempmainSectionA * 0.015 + "px";
-   
-
     tempmainSection.style.fontSize = tempfontSize;
     tempLanguage1.style.fontSize = tempfontSize;
 
@@ -32,6 +29,7 @@ function resizeGrid() {
             }
         }
     }
+
     else {
         let tempResize = document.getElementById("rightSection");
         let tempResizeA = rightSection.clientWidth;

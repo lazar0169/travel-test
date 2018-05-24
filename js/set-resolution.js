@@ -19,6 +19,7 @@ function setResolution() {
         tempmainSection.style.height = "100%";
 
     }
+
     else {
         let b1;
         b1 = a / (16 / 9) + "px";
@@ -27,7 +28,6 @@ function setResolution() {
         tempBody[0].style.alignItems = "center";
         tempmainSection.style.height = b1;
         tempmainSection.style.width = "100%";
-
     }
 }
 

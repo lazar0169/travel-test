@@ -1,11 +1,9 @@
-
 var tempSeasons = document.getElementsByClassName("linkSeason");
 for (let i = 0; i < tempSeasons.length; i++) {
     tempSeasons[i].addEventListener("click", clickSeason);
 }
 
 function clickSeason() {
-
     let tempIdArray = [];
     let x = 0;
     let temprightSection = document.getElementById("rightSection");
@@ -23,7 +21,6 @@ function clickSeason() {
                     tempIdArray[x] = destinationObject[i].id;
                     x++;
                 }
-
             }
         }
         highRate(tempIdArray);

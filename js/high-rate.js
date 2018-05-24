@@ -9,6 +9,7 @@ function highRate(temp) {
             tempRating = destinationObject[q].rating;
         }
     }
+
     for (let i = 1; i < temp.length; i++) {
         for (let j = 0; j < destinationObject.length; j++) {
 

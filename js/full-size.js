@@ -79,8 +79,8 @@ function fullSize() {
                         temptablePrice.appendChild(temptablePriceTR);
                     }
                 }
-                else if (tempSeasons[q] == "summer") {
 
+                else if (tempSeasons[q] == "summer") {
                     let maxValue;
                     let tempSummer = Object.keys(destinationObject[i].seasons.summer);
 
@@ -165,8 +165,8 @@ function fullSize() {
                         temptablePrice.appendChild(temptablePriceTR);
                     }
                 }
-                else if (tempSeasons[q] == "winter") {
 
+                else if (tempSeasons[q] == "winter") {
                     let maxValue;
                     let tempWinter = Object.keys(destinationObject[i].seasons.winter);
 
@@ -208,11 +208,9 @@ function fullSize() {
                         temptablePrice.appendChild(temptablePriceTR);
                     }
                 }
-
                 temptableDiv.appendChild(tempParSeason)
                 temptableDiv.appendChild(temptablePrice);
             }
-
         }
     }
 }

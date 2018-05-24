@@ -4,9 +4,9 @@ function addCity(temp) {
     let tempcityNameHeader = document.getElementsByClassName("h2cityNameHeader");
     let tempcityNamePar = document.getElementsByClassName("descriptionText");
     let tempX = 1;
-
+    
     for (let i = 0; i < temp.length; i++) {
-        for (let k = 0; k < destinationObject.length; k++){
+        for (let k = 0; k < destinationObject.length; k++) {
             if (temp[i] == destinationObject[k].id) {
                 if (temphighRateID != destinationObject[k].id) {
                     tempData[tempX].style.backgroundImage = destinationObject[k].picture;
@@ -20,12 +20,8 @@ function addCity(temp) {
                     tempcityNameHeader[0].innerText = destinationObject[k].name;
                     tempcityNamePar[0].innerText = destinationObject[k].desc;
                     tempData[0].setAttribute("data-id", destinationObject[k].id);
-
                 }
             }
-
         }
-            
-
     }
 }
