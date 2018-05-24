@@ -225,6 +225,7 @@ background-color: darkblue;
     font-size: 3vw;
     border: none;
     cursor: pointer;
+    outline: none;
 }
 
 #section0{

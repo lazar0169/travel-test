@@ -69,7 +69,9 @@ function chosenLanguage(temp) {
         if (tempdataLanguage == languageObject[i].language) {
             let temppLanguage = document.getElementById("pLanguage");
             pLanguage.innerHTML = tempdataLanguage;
-            showHideLanguage()
+            showHideLanguage();
+            
+
         }
     }
 }
