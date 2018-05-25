@@ -1,4 +1,3 @@
-window.addEventListener("load", resizeGrid);
 window.addEventListener("resize", resizeGrid);
 function resizeGrid() {
     let tempmainSection = document.getElementById("mainSection");
@@ -12,11 +11,14 @@ function resizeGrid() {
     tempmainSection.style.fontSize = tempfontSize;
     tempLanguage1.style.fontSize = tempfontSize;
 
+    let tempSection = document.getElementsByClassName("articleSection");
+    let tempResize = document.getElementById("rightSection");
+    let tempResizeA = rightSection.clientWidth;
+    let tempResizeB = rightSection.clientHeight;
+
     if (tempmainSectionA / tempmainSectionB > 16 / 9) {
-        let tempResize = document.getElementById("rightSection");
-        let tempResizeA = rightSection.clientWidth;
-        let tempResizeB = rightSection.clientHeight;
-        let tempSection = document.getElementsByClassName("articleSection");
+        
+        
 
         for (let i = 0; i < tempSection.length; i++) {
             if (i != 0) {
@@ -31,11 +33,6 @@ function resizeGrid() {
     }
 
     else {
-        let tempResize = document.getElementById("rightSection");
-        let tempResizeA = rightSection.clientWidth;
-        let tempResizeB = rightSection.clientHeight;
-        let tempSection = document.getElementsByClassName("articleSection");
-
         for (let i = 0; i < tempSection.length; i++) {
             if (i != 0) {
                 tempSection[i].style.height = tempResizeB / 3 + "px";
@@ -48,8 +45,6 @@ function resizeGrid() {
             }
         }
     }
-
-    let tempSection = document.getElementsByClassName("articleSection ");
     let tempcityNameHeaderH2 = document.getElementsByClassName("h2cityNameHeader");
 
     for (let i = 0; i < tempSection.length; i++) {

@@ -1,4 +1,3 @@
-window.addEventListener("load", setResolution);
 window.addEventListener("resize", setResolution);
 function setResolution() {
     let tempBody = document.getElementsByTagName("body");
@@ -9,9 +8,9 @@ function setResolution() {
     const d = 16 / 9;
     let g = d - c;
 
-    if (c > d) {
+    if (c >= d) {
         let a1;
-        a1 = b * (16 / 9) + "px";
+        a1 = b * d + "px";
         tempBody[0].style.display = "flex";
         tempBody[0].style.justifyContent = "center";
         tempBody[0].style.alignItems = "center";
@@ -19,10 +18,9 @@ function setResolution() {
         tempmainSection.style.height = "100%";
 
     }
-
     else {
         let b1;
-        b1 = a / (16 / 9) + "px";
+        b1 = a / d + "px";
         tempBody[0].style.display = "flex";
         tempBody[0].style.justifyContent = "center";
         tempBody[0].style.alignItems = "center";

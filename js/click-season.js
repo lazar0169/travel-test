@@ -25,8 +25,9 @@ function clickSeason() {
         }
         highRate(tempIdArray);
         addSection(tempIdArray);
+        addCity(tempIdArray);
         setResolution();
         resizeGrid();
-        addCity(tempIdArray);
+        
     }
 }
