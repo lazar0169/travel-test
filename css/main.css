@@ -1,22 +1,77 @@
+@media screen and (max-width: 960px){
+
+    #mainSection{
+        height: 100% !important;
+    }
+
+#leftSection {
+    position: absolute;
+    width: 50% !important;
+    height: 100%;
+    display: none !important;
+}
+
+#rightSection{
+    width: 100% !important;
+    height: 100% !important;
+    grid-template-columns: auto !important;
+}
+
+.articleSection{
+    width: 100% !important;
+    
+}
+
+#section0{
+    grid-column-start: 1 !important;
+    grid-column-end: 1 !important;
+    grid-row-start: 1 !important;
+    grid-row-end: 1 !important;
+}
+
+}
+
 body{
     margin: 0;
     padding: 0;
-}
-
-#mainS{
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: rgb(142, 142, 142);
-    display: inline-flex;
+    background-color: rgb(70, 70, 70);
+    display: flex;
+    flex-flow: column wrap;
     overflow: hidden;
+}
+
+.h2cityNameHeader{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top:0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+}
+
+.descriptionText {
+    position: absolute;
+    top:20%;
+    height: 80%;
+    margin: 0;
+    padding: 0 10%;
+    display: none;
+    overflow: hidden;
+    text-align: justify;
 }
 
 #mainSection{
     width: 100%;
     height: 100%;
-    position: relative;
-    display: inline-flex;
+    position: absolute;
+    display: flex;
     overflow: none;
     background-color: white;
 }
@@ -25,89 +80,59 @@ body{
     position: relative;
     width: 20%;
     height: 100%;
-    background-color: blue;
+    background-color: rgb(30, 100, 200);
+}
+#logoArticle{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    background-color: transparent;
 }
 
 #seasonSection{
     position: relative;
     width: 100%;
-    height: 50%;
+    height: 20%;
     background-color: transparent;
-    display: inline-flex;
-    justify-content: center;
-}
-
-#logoArticle{
-    position: relative;
-    width: 100%;
-    height: 15%;
-    background-color: transparent;
-}
-
-.listOfLinks{
-    position: relative;
-    padding-left: 20%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-.listOfLinks:hover{
-    position: relative;
-    cursor: pointer;
-    background-color: darkblue;
-}
-
-#listSeason{
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    list-style-type: none;   
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .linkSeason{
-    position: relative;
+    padding-left: 10%;
     color: white;
+    width: 100%;
     text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.linkSeason:hover{
+background-color: rgb(15, 50, 200);
 }
 
 #language{
     position: absolute;
-    bottom: 0px;
+    bottom: 10%;
     width: 100%;
     height: 40%;
-    display: inline-flex;
+    display: flex;
     flex-flow: row wrap;
-    background-color: transparent;
-}
-
-#sectionLanguage{
-    width: 100%;
-    height: 85%;
-    position: absolute;
-    bottom: 15%;
-    background-color: blue;
-    overflow-x: hidden;
+    background-color: rgb(15, 50, 200);
     overflow-y: auto;
-
-}
-#sectionLanguageX{
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    position: absolute;
-    background-color: blue;
-    flex-flow: row wrap;
-    display: none;
-    color: white;
+    visibility: hidden;
 }
 
-#selectLanguage{
+#openCloseLanguage{
     width: 100%;
-    height: 15%;
+    height: 10%;
     bottom: 0;
     color: white;
-    background-color: darkblue;
+    background-color: rgb(15, 50, 200);
     border: none;
     cursor: pointer;
     position: absolute;
@@ -116,66 +141,58 @@ body{
     display: flex;
     justify-content: left;
     align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#pLanguage{
+    padding: 0;
+    margin: 0;
     padding-left: 10%;
 }
 
-#selectLanguage1{  
-    margin-left: 80%;
-    width: 20%;
+#pButtonOpenClose{
+    padding: 0;
+    margin: 0;
     right: 0;
-    height: 15%;
-    bottom: 0;
-    color: rgb(42, 42, 42);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
     position: absolute;
-    text-decoration: none;
-    outline:none;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-left: 10%;
 }
 
 .listOfLanguage{
     width: 100%;
     height: 16%;
-    background-color: transparent;
     position: relative;
     padding-left: 10%;
     display: flex;
     justify-content: left;
     align-items: center;
     cursor: pointer;
+    color: white; 
 }
 
 .listOfLanguage:hover{
-    background-color: darkblue;
-}
-
-#rightSec{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    background-color: rgb(30, 100, 200);
 }
 
 #rightSection{
     position: relative;
     width: 100%;
-    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 3px;
+    padding: 3px;
 }
 
 .articleSection {
     position: relative;
     background-size: 100% 100%;
+    overflow: hidden;
 
 }
 
-.articleSection:hover > .sectionDescription {
-    background-color:  rgb(142, 142, 142);
+.articleSection:hover > .sectionFooter {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -188,11 +205,26 @@ body{
     animation-delay: -3s;
 }
 
-@keyframes slide {
+.articleSection:hover > .sectionFooter p {
+    display: block;
+}
 
-    0%   { left:0px; top:0px;}
-    75%  { left:0px; top:100%;}
-    100% { left:0px; top:0px;}
+.articleSection:hover > .sectionFooter button {
+    display: block;
+    border: none;
+    cursor: pointer; 
+}
+
+@keyframes slide {
+    0%{
+        height: 20%;
+      }
+    75%{
+        height: 20%;
+      }
+    100%{
+        height: 100%;
+      }
 }
 
 .sectionFooter{
@@ -203,109 +235,66 @@ body{
     height: 20%;
     opacity: 0.8;
     background-color: rgb(42, 42, 42);
-    text-align: center;
-}
-
-.sectionDescription{
-    background-color: transparent;
-    height: 100%;
-    visibility: hidden;
-    pointer-events: none;
-    overflow: hidden;
     display: flex;
-
-}
-
-#fullSize{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color:  rgb(142, 142, 142);
-    pointer-events: none;
-    display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    color: white;
-    background-color: gray;
-}
-
-.sectionDescriptionCity{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 20%;
-    width: 100%;
-    background-color: rgb(42, 42, 42);
-    background: linear-gradient(rgb(42, 42, 42), transparent);
-}
-
-.sectionDescriptionText{
-    color: white;
-    height: 80%;
-    width: 100%;
-    background-color: rgb(142, 142, 142);
 }
 
 .readMore{
+    padding: 0;
+    margin: 0;
     position: absolute;
     bottom: 0px;
     width: 100%;
     height: 20%;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(42, 42, 42);
-    background: linear-gradient(to top, rgb(42, 42, 42), transparent);
-}
-.readMoreX{
-    width: 30%;
-    height: 50%;
-    background-color: rgb(42, 42, 42);
-    display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0px;
+    background-color: rgb(42, 42, 42);
     background: linear-gradient(to top, rgb(42, 42, 42), transparent);
+    display: none;
+    color: white;
+    font-size: 3vw;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
 
-#rightSec::-webkit-scrollbar {
-    width: 10px;
+#section0{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#rightSection::-webkit-scrollbar {
+    width: 1%;
+}
+
+#rightSection::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgb(42, 42, 42);
+    background-color: rgb(100, 100, 100);
 }
  
-#rightSec::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgb(142, 142, 142);
-}
- 
-#rightSec::-webkit-scrollbar-thumb {
+#rightSection::-webkit-scrollbar-thumb {
   background-color: rgb(42, 42, 42);
   border-radius: 50px;
 }
 
-.sectionDescriptionText::-webkit-scrollbar {
-    width: 10px;
+#language::-webkit-scrollbar {
+    width: 3%;
 }
  
-.sectionDescriptionText::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgb(142, 142, 142);
+#language::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgb(15, 50, 200);
+    background-color: rgb(30, 100, 200);
 }
  
-.sectionDescriptionText::-webkit-scrollbar-thumb {
-  background-color: rgb(100, 100, 100);
+#language::-webkit-scrollbar-thumb {
+  background-color: rgb(15, 50, 200);
   border-radius: 50px;
 }
 
-#sectionLanguage::-webkit-scrollbar {
-    width: 10px;
-}
- 
-#sectionLanguage::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px blue; 
-}
- 
-#sectionLanguage::-webkit-scrollbar-thumb {
-  background-color: darkblue;
-  border-radius: 50px;
-}
+
+
 

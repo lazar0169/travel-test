@@ -1,10 +1,9 @@
-function addSection(numbArt) {
+function addSection(tempelements) {
+    let temprightSection = document.getElementById("rightSection");
 
-    for (let sectionNumber = 0; sectionNumber < numbArt; sectionNumber++) {
-        let temprightSection = document.getElementById("rightSection");
+    for (let sectionNumber = 0; sectionNumber < tempelements.length; sectionNumber++) {
         let newSection = document.createElement("section");
         newSection.id = "section" + sectionNumber;
-        newSection.setAttribute("onclick", "fullSize()");
 
         if (sectionNumber != 0) {
             newSection.className = "articleSection";
@@ -12,60 +11,29 @@ function addSection(numbArt) {
         else {
             newSection.className = "articleSection articleSectionFirst";
         }
-        
-        temprightSection.style.display = "grid";
-        temprightSection.style.gridTemplateColumns = "auto auto auto";
-        temprightSection.style.gridGap = "3px";
-        temprightSection.style.padding = "3px";
+        newSection.setAttribute("onclick", "fullSize(this)");
         temprightSection.appendChild(newSection);
 
-        let firstSection = document.getElementById("section0");
-        firstSection.style.gridColumnStart = 1;
-        firstSection.style.gridColumnEnd = 3;
-        firstSection.style.gridRowStart = 1;
-        firstSection.style.gridRowEnd = 3;
+        let bgImageCity = document.getElementsByClassName("articleSection");
 
-        let bgImageCity = document.getElementById("section" + sectionNumber);
         let tempcityName = document.createElement("section");
         tempcityName.className = "sectionFooter"
-        tempcityName.id = "sectionFooter" + sectionNumber;
+        tempcityName.setAttribute("href", "https://www.w3schools.com/html/");
 
-        if (sectionNumber == 0) {
-            let tempK;
-            let tempJ;
-            let j = 0;
-            tempK = destinationObject[j].rating;
-            for (j = 1; j < destinationObject.length; j++) {
-                tempJ = destinationObject[j].rating;
-                if (tempK < tempJ) {
-                    tempK = tempJ;
-                    bgImageCity.style.backgroundImage = destinationObject[j].picture;
-                    tempcityName.innerHTML = destinationObject[j].name;
-                }
-            }
-        }
-        else {
-            bgImageCity.style.backgroundImage = destinationObject[sectionNumber - 1].picture;
-            tempcityName.innerHTML = destinationObject[sectionNumber - 1].name;
-        }
+        let tempcityNameHeader = document.createElement("h2");
+        tempcityNameHeader.className = "h2cityNameHeader";
 
-        bgImageCity.appendChild(tempcityName);
+        let tempcityNamePar = document.createElement("p");
+        tempcityNamePar.className = "descriptionText";
 
-        addSectionDescription();
+        let tempReadMore = document.createElement("button");
+        tempReadMore.className = "readMore";
+        tempReadMore.innerText = "Read more";
+
+        tempcityName.appendChild(tempcityNameHeader);
+        tempcityName.appendChild(tempcityNamePar);
+        tempcityName.appendChild(tempReadMore);
+
+        bgImageCity[sectionNumber].appendChild(tempcityName);
     }
-    (function () {
-        let tempSectionLanguage = document.getElementById("sectionLanguageX");
-
-        for (var i = 0; i < languageObject.length; i++) {
-            let tempCreateLanguage = document.createElement("section");
-            tempCreateLanguage.className = "listOfLanguage";
-            tempCreateLanguage.innerHTML = languageObject[i].language;
-            tempCreateLanguage.setAttribute("onclick", "chosenLanguage()");
-            tempSectionLanguage.appendChild(tempCreateLanguage);
-
-        }
-    })();
-    chosenLanguage();
-    fullSize();
-
 }
