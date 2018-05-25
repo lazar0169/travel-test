@@ -1,10 +1,43 @@
+@media screen and (max-width: 960px){
+
+    #mainSection{
+        height: 100% !important;
+    }
+
+#leftSection {
+    position: absolute;
+    width: 50% !important;
+    height: 100%;
+    display: none !important;
+}
+
+#rightSection{
+    width: 100% !important;
+    height: 100% !important;
+    grid-template-columns: auto !important;
+}
+
+.articleSection{
+    width: 100% !important;
+    
+}
+
+#section0{
+    grid-column-start: 1 !important;
+    grid-column-end: 1 !important;
+    grid-row-start: 1 !important;
+    grid-row-end: 1 !important;
+}
+
+}
+
 body{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: rgb(42, 42, 42);
+    background-color: rgb(70, 70, 70);
     display: flex;
     flex-flow: column wrap;
     overflow: hidden;
@@ -47,7 +80,7 @@ body{
     position: relative;
     width: 20%;
     height: 100%;
-    background-color: blue;
+    background-color: rgb(30, 100, 200);
 }
 #logoArticle{
     position: relative;
@@ -72,14 +105,14 @@ body{
     text-decoration: none;
     position: relative;
     cursor: pointer;
-    background-color: blue;
+    background-color: transparent;
     justify-content: center;
     align-items: center;
     margin: auto;
 }
 
 .linkSeason:hover{
-background-color: darkblue;
+background-color: rgb(15, 50, 200);
 }
 
 #language{
@@ -89,7 +122,7 @@ background-color: darkblue;
     height: 40%;
     display: flex;
     flex-flow: row wrap;
-    background-color: transparent;
+    background-color: rgb(15, 50, 200);
     overflow-y: auto;
     visibility: hidden;
 }
@@ -99,7 +132,7 @@ background-color: darkblue;
     height: 10%;
     bottom: 0;
     color: white;
-    background-color: darkblue;
+    background-color: rgb(15, 50, 200);
     border: none;
     cursor: pointer;
     position: absolute;
@@ -128,7 +161,6 @@ background-color: darkblue;
 .listOfLanguage{
     width: 100%;
     height: 16%;
-    background-color: transparent;
     position: relative;
     padding-left: 10%;
     display: flex;
@@ -139,7 +171,7 @@ background-color: darkblue;
 }
 
 .listOfLanguage:hover{
-    background-color: darkblue;
+    background-color: rgb(30, 100, 200);
 }
 
 #rightSection{
@@ -241,11 +273,11 @@ background-color: darkblue;
 
 #rightSection::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(42, 42, 42);
-    background-color: white;
+    background-color: rgb(100, 100, 100);
 }
  
 #rightSection::-webkit-scrollbar-thumb {
-  background-color: rgb(100, 100, 100);
+  background-color: rgb(42, 42, 42);
   border-radius: 50px;
 }
 
@@ -254,12 +286,12 @@ background-color: darkblue;
 }
  
 #language::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px darkblue;
-    background-color: blue;
+    box-shadow: inset 0 0 6px rgb(15, 50, 200);
+    background-color: rgb(30, 100, 200);
 }
  
 #language::-webkit-scrollbar-thumb {
-  background-color: darkblue;
+  background-color: rgb(15, 50, 200);
   border-radius: 50px;
 }
 

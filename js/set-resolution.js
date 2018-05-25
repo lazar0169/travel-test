@@ -8,6 +8,8 @@ function setResolution() {
     const d = 16 / 9;
     let g = d - c;
 
+    
+// if a<960 
     if (c >= d) {
         let a1;
         a1 = b * d + "px";

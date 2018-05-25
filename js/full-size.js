@@ -213,4 +213,5 @@ function fullSize() {
             }
         }
     }
+    setResolution();
 }
