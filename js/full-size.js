@@ -1,8 +1,7 @@
-window.addEventListener("load", fullSize);
+window.addEventListener('load', fullSize);
 
 function fullSize() {
-    let tempmainSection = document.getElementById("fullScreenShow");
-    let temptableDiv = document.getElementById("tableDiv");
+    let temptableDiv = document.getElementById('table-div');
 
     let maxJan;
     let maxFeb;
@@ -18,26 +17,26 @@ function fullSize() {
     let maxDec;
 
     let params = new URLSearchParams(document.location.search.substring(1));
-    let tempdataID = params.get("id");
+    let tempDataID = params.get('id');
 
     for (let i = 0; i < destinationObject.length; i++) {
-        if (tempdataID == destinationObject[i].id) {
+        if (Number(tempDataID) === destinationObject[i].id) {
             let tempSeasons = Object.keys(destinationObject[i].seasons);
 
-            let tempimageFullScreen = document.getElementById("imageFullScreen");
-            let temph1FullScreenShow = document.getElementById("h1FullScreenShow");
-            let temppFullScreen = document.getElementById("pFullScreen");
+            let tempimageFullScreen = document.getElementById('image-full-screen');
+            let tempH1FullScreenShow = document.getElementById('h1-full-screen-show');
+            let temppFullScreen = document.getElementById('p-full-screen');
 
-            temph1FullScreenShow.innerText = destinationObject[i].name;
+            tempH1FullScreenShow.innerText = destinationObject[i].name;
             tempimageFullScreen.src = destinationObject[i].image;
             temppFullScreen.innerText = destinationObject[i].desc;
 
             for (let q = 0; q < tempSeasons.length; q++) {
-                let tempParSeason = document.createElement("h1");
-                tempParSeason.className = "h1tablePrice";
-                let temptablePrice = document.createElement("table");
+                let tempParSeason = document.createElement('h1');
+                tempParSeason.className = 'h1-table-price';
+                let temptablePrice = document.createElement('table');
 
-                if (tempSeasons[q] == "spring") {
+                if (tempSeasons[q] === 'spring') {
                     let maxValue;
                     let tempSpring = Object.keys(destinationObject[i].seasons.spring);
 
@@ -56,23 +55,23 @@ function fullSize() {
                     }
 
                     for (let w = 0; w < maxValue + 1; w++) {
-                        let temptablePriceTR = document.createElement("tr");
+                        let temptablePriceTR = document.createElement('tr');
 
                         for (let spr = 0; spr < tempSpring.length; spr++) {
                             tempParSeason.innerText = tempSeasons[q];
-                            let temptablePriceTDSpring = document.createElement("td");
+                            let temptablePriceTDSpring = document.createElement('td');
 
-                            if (w == 0) {
+                            if (w === 0) {
                                 temptablePriceTDSpring.innerText = tempSpring[spr];
                             }
                             else {
                                 temptablePriceTDSpring.innerText = destinationObject[i].seasons.spring[tempSpring[spr]][w - 1];
                             }
-                            if (temptablePriceTDSpring.textContent != "undefined") {
+                            if (temptablePriceTDSpring.textContent !== 'undefined') {
                                 temptablePriceTR.appendChild(temptablePriceTDSpring);
                             }
                             else {
-                                temptablePriceTDSpring.innerText = "/"
+                                temptablePriceTDSpring.innerText = '/';
                                 temptablePriceTR.appendChild(temptablePriceTDSpring);
                             }
                         }
@@ -80,7 +79,7 @@ function fullSize() {
                     }
                 }
 
-                else if (tempSeasons[q] == "summer") {
+                else if (tempSeasons[q] === 'summer') {
                     let maxValue;
                     let tempSummer = Object.keys(destinationObject[i].seasons.summer);
 
@@ -99,23 +98,23 @@ function fullSize() {
                     }
 
                     for (let w = 0; w < maxValue + 1; w++) {
-                        let temptablePriceTR = document.createElement("tr");
+                        let temptablePriceTR = document.createElement('tr');
 
                         for (let sum = 0; sum < tempSummer.length; sum++) {
                             tempParSeason.innerText = tempSeasons[q];
-                            let temptablePriceTDSummer = document.createElement("td");
+                            let temptablePriceTDSummer = document.createElement('td');
 
-                            if (w == 0) {
+                            if (w === 0) {
                                 temptablePriceTDSummer.innerText = tempSummer[sum];
                             }
                             else {
                                 temptablePriceTDSummer.innerText = destinationObject[i].seasons.summer[tempSummer[sum]][w - 1];;
                             }
-                            if (temptablePriceTDSummer.textContent != "undefined") {
+                            if (temptablePriceTDSummer.textContent != 'undefined') {
                                 temptablePriceTR.appendChild(temptablePriceTDSummer);
                             }
                             else {
-                                temptablePriceTDSummer.innerText = "/"
+                                temptablePriceTDSummer.innerText = '/'
                                 temptablePriceTR.appendChild(temptablePriceTDSummer);
                             }
                         }
@@ -123,7 +122,7 @@ function fullSize() {
                     }
                 }
 
-                else if (tempSeasons[q] == "autumn") {
+                else if (tempSeasons[q] === 'autumn') {
                     let maxValue;
                     let tempAutumn = Object.keys(destinationObject[i].seasons.autumn);
 
@@ -142,23 +141,23 @@ function fullSize() {
                     }
 
                     for (let w = 0; w < maxValue + 1; w++) {
-                        let temptablePriceTR = document.createElement("tr");
+                        let temptablePriceTR = document.createElement('tr');
 
                         for (let aut = 0; aut < tempAutumn.length; aut++) {
                             tempParSeason.innerText = tempSeasons[q];
-                            let temptablePriceTDAutumn = document.createElement("td");
+                            let temptablePriceTDAutumn = document.createElement('td');
 
-                            if (w == 0) {
+                            if (w === 0) {
                                 temptablePriceTDAutumn.innerText = tempAutumn[aut];
                             }
                             else {
                                 temptablePriceTDAutumn.innerText = destinationObject[i].seasons.autumn[tempAutumn[aut]][w - 1];
                             }
-                            if (temptablePriceTDAutumn.textContent != "undefined") {
+                            if (temptablePriceTDAutumn.textContent !== 'undefined') {
                                 temptablePriceTR.appendChild(temptablePriceTDAutumn);
                             }
                             else {
-                                temptablePriceTDAutumn.innerText = "/"
+                                temptablePriceTDAutumn.innerText = '/';
                                 temptablePriceTR.appendChild(temptablePriceTDAutumn);
                             }
                         }
@@ -166,7 +165,7 @@ function fullSize() {
                     }
                 }
 
-                else if (tempSeasons[q] == "winter") {
+                else if (tempSeasons[q] === 'winter') {
                     let maxValue;
                     let tempWinter = Object.keys(destinationObject[i].seasons.winter);
 
@@ -185,23 +184,23 @@ function fullSize() {
                     }
 
                     for (let w = 0; w < maxValue + 1; w++) {
-                        let temptablePriceTR = document.createElement("tr");
+                        let temptablePriceTR = document.createElement('tr');
 
                         for (let win = 0; win < tempWinter.length; win++) {
                             tempParSeason.innerText = tempSeasons[q];
-                            let temptablePriceTDWinter = document.createElement("td");
+                            let temptablePriceTDWinter = document.createElement('td');
 
-                            if (w == 0) {
+                            if (w === 0) {
                                 temptablePriceTDWinter.innerText = tempWinter[win];
                             }
                             else {
                                 temptablePriceTDWinter.innerText = destinationObject[i].seasons.winter[tempWinter[win]][w - 1];
                             }
-                            if (temptablePriceTDWinter.textContent != "undefined") {
+                            if (temptablePriceTDWinter.textContent !== 'undefined') {
                                 temptablePriceTR.appendChild(temptablePriceTDWinter);
                             }
                             else {
-                                temptablePriceTDWinter.innerText = "/"
+                                temptablePriceTDWinter.innerText = '/';
                                 temptablePriceTR.appendChild(temptablePriceTDWinter);
                             }
                         }

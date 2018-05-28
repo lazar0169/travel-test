@@ -1,9 +1,9 @@
 
 function goBack() {
-    let tempfullScreenShow = document.getElementById("fullScreenShow");
-    tempfullScreenShow.style.visibility = "hidden";
+    let tempFullScreenShow = document.getElementById('fullScreenShow');
+    tempFullScreenShow.style.visibility = 'hidden';
 
-    let temptableDiv = document.getElementById("tableDiv");
-    temptableDiv.innerHTML = "";
+    let tempTableDiv = document.getElementById('tableDiv');
+    tempTableDiv.innerHTML = '';
 
 }

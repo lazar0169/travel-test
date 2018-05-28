@@ -1,11 +1,11 @@
 
-var temphighRateID;
+var tempHighRateID;
 let tempRating;
 
 function highRate(temp) {
 
     for (let q = 0; q < destinationObject.length; q++) {
-        if (temp[0] == destinationObject[q].id) {
+        if (temp[0] === destinationObject[q].id) {
             tempRating = destinationObject[q].rating;
         }
     }
@@ -13,12 +13,12 @@ function highRate(temp) {
     for (let i = 1; i < temp.length; i++) {
         for (let j = 0; j < destinationObject.length; j++) {
 
-            if (temp[i] == destinationObject[j].id) {
+            if (temp[i] === destinationObject[j].id) {
                 let tempRatingX = destinationObject[j].rating;
 
                 if (tempRating < tempRatingX) {
                     tempRating = tempRatingX;
-                    temphighRateID = destinationObject[j].id;
+                    tempHighRateID = destinationObject[j].id;
                 }
             }
         }

@@ -1,17 +1,17 @@
-window.addEventListener("load", arrayID);
+window.addEventListener('load', arrayId);
 
-let tempID = [];
+let tempId = [];
 
-function arrayID(){
+function arrayId(){
     let x = 0;
 
     for (let i = 0; i < destinationObject.length; i++) {
-        tempID[x] = destinationObject[i].id;
+        tempId[x] = destinationObject[i].id;
         x++;
     }
-    highRate(tempID);
-    addSection(tempID);
-    addCity(tempID);
+    highRate(tempId);
+    addSection(tempId);
+    addCity(tempId);
     setResolution();
     resizeGrid();
 }

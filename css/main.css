@@ -1,36 +1,36 @@
-@media screen and (max-width: 960px){
+/* @media screen and (max-width: 960px){
 
-    #mainSection{
+    #main-section{
         height: 100% !important;
     }
-    
 
-#leftSection {
+
+#left-section {
     position: absolute;
     width: 50% !important;
     height: 100%;
     display: none !important;
 }
 
-#rightSection{
+#right-section{
     width: 100% !important;
     height: 100% !important;
     grid-template-columns: auto !important;
 }
 
-.articleSection{
+.article-section{
     width: 100% !important;
     
 }
 
-#section0{
+#section-0{
     grid-column-start: 1 !important;
     grid-column-end: 1 !important;
     grid-row-start: 1 !important;
     grid-row-end: 1 !important;
 }
 
-}
+} */
 
 body{
     margin: 0;
@@ -41,10 +41,12 @@ body{
     background-color: rgb(70, 70, 70);
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
-.h2cityNameHeader{
+.h2-city-name-header{
     position: absolute;
     padding: 0;
     margin: 0;
@@ -57,7 +59,7 @@ body{
     background-color: transparent;
 }
 
-.descriptionText {
+.description-text {
     position: absolute;
     top:20%;
     height: 80%;
@@ -68,7 +70,7 @@ body{
     text-align: justify;
 }
 
-#mainSection{
+#main-section{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -77,20 +79,20 @@ body{
     background-color: white;
 }
 
-#leftSection{
+#left-section{
     position: relative;
     width: 20%;
     height: 100%;
     background-color: rgb(30, 100, 200);
 }
-#logoArticle{
+#logo-article{
     position: relative;
     width: 100%;
     height: 20%;
     background-color: transparent;
 }
 
-#seasonSection{
+#season-section{
     position: relative;
     width: 100%;
     height: 20%;
@@ -99,7 +101,7 @@ body{
     flex-flow: row wrap;
 }
 
-.linkSeason{
+.link-season{
     padding-left: 10%;
     color: white;
     width: 100%;
@@ -112,7 +114,7 @@ body{
     margin: auto;
 }
 
-.linkSeason:hover{
+.link-season:hover{
 background-color: rgb(15, 50, 200);
 }
 
@@ -128,7 +130,7 @@ background-color: rgb(15, 50, 200);
     visibility: hidden;
 }
 
-#openCloseLanguage{
+#open-close-language{
     width: 100%;
     height: 10%;
     bottom: 0;
@@ -146,20 +148,20 @@ background-color: rgb(15, 50, 200);
     margin: 0;
 }
 
-#pLanguage{
+#p-language{
     padding: 0;
     margin: 0;
     padding-left: 10%;
 }
 
-#pButtonOpenClose{
+#p-button-open-close{
     padding: 0;
     margin: 0;
     right: 0;
     position: absolute;
 }
 
-.listOfLanguage{
+.list-of-language{
     width: 100%;
     height: 16%;
     position: relative;
@@ -171,11 +173,11 @@ background-color: rgb(15, 50, 200);
     color: white; 
 }
 
-.listOfLanguage:hover{
+.list-of-language:hover{
     background-color: rgb(30, 100, 200);
 }
 
-#rightSection{
+#right-section{
     position: relative;
     width: 100%;
     overflow-y: auto;
@@ -186,14 +188,14 @@ background-color: rgb(15, 50, 200);
     padding: 3px;
 }
 
-.articleSection {
+.article-section {
     position: relative;
     background-size: 100% 100%;
     overflow: hidden;
 
 }
 
-.articleSection:hover > .sectionFooter {
+.article-section:hover > .section-footer {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -206,11 +208,11 @@ background-color: rgb(15, 50, 200);
     animation-delay: -3s;
 }
 
-.articleSection:hover > .sectionFooter p {
+.article-section:hover > .section-footer p {
     display: block;
 }
 
-.articleSection:hover > .sectionFooter button {
+.article-section:hover > .section-footer button {
     display: block;
     border: none;
     cursor: pointer; 
@@ -228,10 +230,10 @@ background-color: rgb(15, 50, 200);
       }
 }
 
-.sectionFooter{
+.section-footer{
     color: white;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     height: 20%;
     opacity: 0.8;
@@ -242,11 +244,11 @@ background-color: rgb(15, 50, 200);
     align-items: center;
 }
 
-.readMore{
+.read-more{
     padding: 0;
     margin: 0;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     height: 20%;
     justify-content: center;
@@ -261,23 +263,23 @@ background-color: rgb(15, 50, 200);
     outline: none;
 }
 
-#section0{
+#section-0{
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
-#rightSection::-webkit-scrollbar {
+#right-section::-webkit-scrollbar {
     width: 1%;
 }
 
-#rightSection::-webkit-scrollbar-track {
+#right-section::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(42, 42, 42);
     background-color: rgb(100, 100, 100);
 }
  
-#rightSection::-webkit-scrollbar-thumb {
+#right-section::-webkit-scrollbar-thumb {
   background-color: rgb(42, 42, 42);
   border-radius: 50px;
 }

@@ -1,5 +1,5 @@
-window.addEventListener("load", createLanguage);
-window.addEventListener("load", showHideLanguage);
+window.addEventListener('load', createLanguage);
+window.addEventListener('load', showHideLanguage);
 let languageObject = [
     {
         language: 'Serbian'
@@ -35,40 +35,40 @@ let languageObject = [
 
 let tempShowHide = false;
 function showHideLanguage() {
-    var tempShowHideLanguage = document.getElementById("language")
+    var tempShowHideLanguage = document.getElementById('language')
 
-    if (tempShowHide == false) {
+    if (!tempShowHide) {
         tempShowHide = true;
-        tempShowHideLanguage.style.visibility = "hidden";
-        document.getElementById("pButtonOpenClose").innerHTML = "&#9660";
+        tempShowHideLanguage.style.visibility = 'hidden';
+        document.getElementById('p-button-open-close').innerHTML = '&#9660';
     }
     else {
         tempShowHide = false;
-        tempShowHideLanguage.style.visibility = "visible";
-        document.getElementById("pButtonOpenClose").innerHTML = "&#9650";
+        tempShowHideLanguage.style.visibility = 'visible';
+        document.getElementById('p-button-open-close').innerHTML =' &#9650';
     }
 }
 
 function createLanguage() {
-    let tempSectionLanguage = document.getElementById("language");
+    let tempSectionLanguage = document.getElementById('language');
 
     for (var i = 0; i < languageObject.length; i++) {
-        let tempCreateLanguage = document.createElement("a");
-        tempCreateLanguage.className = "listOfLanguage";
+        let tempCreateLanguage = document.createElement('a');
+        tempCreateLanguage.className = 'list-of-language';
         tempCreateLanguage.innerHTML = languageObject[i].language;
-        tempCreateLanguage.setAttribute("data-language", languageObject[i].language)
-        tempCreateLanguage.setAttribute("onclick", "chosenLanguage(this)");
+        tempCreateLanguage.setAttribute('data-language', languageObject[i].language)
+        tempCreateLanguage.setAttribute('onclick', 'chosenLanguage(this)');
         tempSectionLanguage.appendChild(tempCreateLanguage);
     }
 }
 
 function chosenLanguage(temp) {
-    let tempdataLanguage = temp.dataset.language;
+    let tempDataLanguage = temp.dataset.language;
 
     for (let i = 0; i < languageObject.length; i++) {
-        if (tempdataLanguage == languageObject[i].language) {
-            let temppLanguage = document.getElementById("pLanguage");
-            pLanguage.innerHTML = tempdataLanguage;
+        if (tempDataLanguage === languageObject[i].language) {
+            let temppLanguage = document.getElementById('p-language');
+            temppLanguage.innerHTML = tempDataLanguage;
             showHideLanguage();
             
 
