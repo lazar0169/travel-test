@@ -3,23 +3,23 @@ function addCity(temp) {
     let tempData = document.getElementsByClassName('article-section');
     let tempCityNameHeader = document.getElementsByClassName('h2-city-name-header');
     let tempCityNamePar = document.getElementsByClassName('description-text');
-    let tempX = 1;
+    let tempSectionNumber = 1;
     
-    for (let i = 0; i < temp.length; i++) {
-        for (let k = 0; k < destinationObject.length; k++) {
-            if (temp[i] === destinationObject[k].id) {
-                if (tempHighRateID != destinationObject[k].id) {
-                    tempData[tempX].style.backgroundImage = destinationObject[k].picture;
-                    tempCityNameHeader[tempX].innerText = destinationObject[k].name;
-                    tempCityNamePar[tempX].innerText = destinationObject[k].desc;
-                    tempData[tempX].setAttribute('data-id', destinationObject[k].id);
-                    tempX++;
+    for (let tempIdArray = 0; tempIdArray < temp.length; tempIdArray++) {
+        for (let tempObjectLength = 0; tempObjectLength < destinationObject.length;tempObjectLength++) {
+            if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
+                if (tempHighRateID != destinationObject[tempObjectLength].id) {
+                    tempData[tempSectionNumber].style.backgroundImage = destinationObject[tempObjectLength].picture;
+                    tempCityNameHeader[tempSectionNumber].innerText = destinationObject[tempObjectLength].name;
+                    tempCityNamePar[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
+                    tempData[tempSectionNumber].setAttribute('data-id', destinationObject[tempObjectLength].id);
+                    tempSectionNumber++;
                 }
                 else {
-                    tempData[0].style.backgroundImage = destinationObject[k].picture;
-                    tempCityNameHeader[0].innerText = destinationObject[k].name;
-                    tempCityNamePar[0].innerText = destinationObject[k].desc;
-                    tempData[0].setAttribute('data-id', destinationObject[k].id);
+                    tempData[0].style.backgroundImage = destinationObject[tempObjectLength].picture;
+                    tempCityNameHeader[0].innerText = destinationObject[tempObjectLength].name;
+                    tempCityNamePar[0].innerText = destinationObject[tempObjectLength].desc;
+                    tempData[0].setAttribute('data-id', destinationObject[tempObjectLength].id);
                 }
             }
         }

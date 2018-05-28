@@ -82,7 +82,7 @@ var destinationObject = [
     {
         id: 1003,
         name: 'Lisbon',
-        image: 'images/berlin.jpg',
+        image: 'images/lisbon.jpg',
         picture: 'url(images/lisbon.jpg)',
         rating: 4,
         seasons: {
@@ -162,7 +162,7 @@ var destinationObject = [
     {
         id: 1006,
         name: 'Moscow',
-        image: 'images/berlin.jpg',
+        image: 'images/moscow.jpg',
         picture: 'url(images/moscow.jpg)',
         rating: 4.8,
         seasons: {

@@ -52,11 +52,11 @@ function showHideLanguage() {
 function createLanguage() {
     let tempSectionLanguage = document.getElementById('language');
 
-    for (var i = 0; i < languageObject.length; i++) {
+    for (var tempObjectLanguageLength = 0; tempObjectLanguageLength < languageObject.length; tempObjectLanguageLength++) {
         let tempCreateLanguage = document.createElement('a');
         tempCreateLanguage.className = 'list-of-language';
-        tempCreateLanguage.innerHTML = languageObject[i].language;
-        tempCreateLanguage.setAttribute('data-language', languageObject[i].language)
+        tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
+        tempCreateLanguage.setAttribute('data-language', languageObject[tempObjectLanguageLength].language)
         tempCreateLanguage.setAttribute('onclick', 'chosenLanguage(this)');
         tempSectionLanguage.appendChild(tempCreateLanguage);
     }
@@ -65,8 +65,8 @@ function createLanguage() {
 function chosenLanguage(temp) {
     let tempDataLanguage = temp.dataset.language;
 
-    for (let i = 0; i < languageObject.length; i++) {
-        if (tempDataLanguage === languageObject[i].language) {
+    for (let tempObjectLanguageLength = 0; tempObjectLanguageLength < languageObject.length; tempObjectLanguageLength++) {
+        if (tempDataLanguage === languageObject[tempObjectLanguageLength].language) {
             let temppLanguage = document.getElementById('p-language');
             temppLanguage.innerHTML = tempDataLanguage;
             showHideLanguage();

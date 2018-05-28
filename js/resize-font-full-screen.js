@@ -9,8 +9,8 @@ function resizeFontFullScreen() {
     let tempFont = tempH1.clientWidth;
     tempH1.style.fontSize =` ${tempFont * 0.15}px`;
     tempP.style.fontSize = `${tempFont * 0.03}px`;
-    for (let i = 0; i < tempH1tablePrice.length; i++) {
-        tempH1tablePrice[i].style.fontSize =  `${tempFont * 0.05}px`;
-        tempTable[i].style.fontSize = `${tempFont * 0.03}px`;
+    for (let tempTableLenght = 0; tempTableLenght < tempH1tablePrice.length; tempTableLenght++) {
+        tempH1tablePrice[tempTableLenght].style.fontSize =  `${tempFont * 0.05}px`;
+        tempTable[tempTableLenght].style.fontSize = `${tempFont * 0.03}px`;
     }
 }

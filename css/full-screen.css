@@ -12,6 +12,10 @@ body{
     justify-content: center;
     align-items: center;
 }
+#load-images{
+    display: none;
+}
+
 
 #table-div{
     width: 60%; 

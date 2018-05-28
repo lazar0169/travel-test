@@ -1,24 +1,24 @@
 
 var tempHighRateID;
-let tempRating;
 
-function highRate(temp) {
-
-    for (let q = 0; q < destinationObject.length; q++) {
-        if (temp[0] === destinationObject[q].id) {
-            tempRating = destinationObject[q].rating;
+function highRate(tempArray) {
+    
+    let tempRating;
+    for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
+        if (tempArray[0] === destinationObject[tempObjectLength].id) {
+            tempRating = destinationObject[tempObjectLength].rating;
         }
     }
 
-    for (let i = 1; i < temp.length; i++) {
-        for (let j = 0; j < destinationObject.length; j++) {
+    for (let tempNumberOfArray = 1; tempNumberOfArray < tempArray.length; tempNumberOfArray++) {
+        for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
 
-            if (temp[i] === destinationObject[j].id) {
-                let tempRatingX = destinationObject[j].rating;
+            if (tempArray[tempNumberOfArray] === destinationObject[tempObjectLength].id) {
+                let tempRatingX = destinationObject[tempObjectLength].rating;
 
                 if (tempRating < tempRatingX) {
                     tempRating = tempRatingX;
-                    tempHighRateID = destinationObject[j].id;
+                    tempHighRateID = destinationObject[tempObjectLength].id;
                 }
             }
         }

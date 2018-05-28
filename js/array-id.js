@@ -1,17 +1,18 @@
 window.addEventListener('load', arrayId);
 
-let tempId = [];
+
+
 
 function arrayId(){
-    let x = 0;
-
-    for (let i = 0; i < destinationObject.length; i++) {
-        tempId[x] = destinationObject[i].id;
-        x++;
+    let tempIdArray = [];
+    let tempNumberOfArray = 0;
+    for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
+        tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
+        tempNumberOfArray++;
     }
-    highRate(tempId);
-    addSection(tempId);
-    addCity(tempId);
+    highRate(tempIdArray);
+    addSection(tempIdArray);
+    addCity(tempIdArray);
     setResolution();
     resizeGrid();
 }

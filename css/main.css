@@ -45,6 +45,10 @@ body{
     align-items: center;
     overflow: hidden;
 }
+#load-images{
+    display: none;
+}
+
 
 .h2-city-name-header{
     position: absolute;
@@ -65,7 +69,7 @@ body{
     height: 80%;
     margin: 0;
     padding: 0 10%;
-    display: none;
+    visibility: hidden;
     overflow: hidden;
     text-align: justify;
 }
@@ -209,11 +213,11 @@ background-color: rgb(15, 50, 200);
 }
 
 .article-section:hover > .section-footer p {
-    display: block;
+    visibility: visible;
 }
 
 .article-section:hover > .section-footer button {
-    display: block;
+    visibility: visible;
     border: none;
     cursor: pointer; 
 }
@@ -255,7 +259,7 @@ background-color: rgb(15, 50, 200);
     align-items: center;
     background-color: rgb(42, 42, 42);
     background: linear-gradient(to top, rgb(42, 42, 42), transparent);
-    display: none;
+    visibility: hidden;
     color: white;
     font-size: 3vw;
     border: none;

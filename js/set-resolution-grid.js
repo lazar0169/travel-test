@@ -20,36 +20,36 @@ function resizeGrid() {
         
         
 
-        for (let i = 0; i < tempSection.length; i++) {
-            if (i !== 0) {
-                tempSection[i].style.height = `${tempResizeB / 3}px`;
-                tempSection[i].style.width = `${tempResizeA / 3}px`;
+        for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
+            if (tempArticleSectionLength !== 0) {
+                tempSection[tempArticleSectionLength].style.height = `${tempResizeB / 3}px`;
+                tempSection[tempArticleSectionLength].style.width = `${tempResizeA / 3}px`;
             }
             else {
-                tempSection[i].style.height = `${((tempResizeB * 2) / 3) + 3}px`;
-                tempSection[i].style.width = `${((tempResizeA * 2) / 3) + 3}px`;
+                tempSection[tempArticleSectionLength].style.height = `${((tempResizeB * 2) / 3) + 3}px`;
+                tempSection[tempArticleSectionLength].style.width = `${((tempResizeA * 2) / 3) + 3}px`;
             }
         }
     }
 
     else {
-        for (let i = 0; i < tempSection.length; i++) {
-            if (i !== 0) {
-                tempSection[i].style.height = `${tempResizeB / 3}px`;
-                tempSection[i].style.width = `${tempResizeA / 3}px`;
+        for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
+            if (tempArticleSectionLength !== 0) {
+                tempSection[tempArticleSectionLength].style.height = `${tempResizeB / 3}px`;
+                tempSection[tempArticleSectionLength].style.width = `${tempResizeA / 3}px`;
 
             }
             else {
-                tempSection[i].style.height = `${((tempResizeB * 2) / 3) + 3}px`;
-                tempSection[i].style.width = `${((tempResizeA * 2) / 3) + 3}px`;
+                tempSection[tempArticleSectionLength].style.height = `${((tempResizeB * 2) / 3) + 3}px`;
+                tempSection[tempArticleSectionLength].style.width = `${((tempResizeA * 2) / 3) + 3}px`;
             }
         }
     }
     let tempCityNameHeaderH2 = document.getElementsByClassName('h2-city-name-header');
 
-    for (let i = 0; i < tempSection.length; i++) {
-        let tempSectionA = tempSection[i].clientHeight;
-        tempCityNameHeaderH2[i].style.height = `${tempSectionA * 0.2}px`;
-        tempCityNameHeaderH2[i].style.fontSize = `${tempSectionA * 0.15}px`;
+    for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
+        let tempSectionA = tempSection[tempArticleSectionLength].clientHeight;
+        tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionA * 0.2}px`;
+        tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionA * 0.15}px`;
     }
 }
