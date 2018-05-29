@@ -3,7 +3,6 @@ var destinationObject = [
         id: 1000,
         name: 'Berlin',
         image: 'images/berlin.jpg',
-        picture: 'url(images/berlin.jpg)',
         rating: 4.4,
         seasons: {
             'spring': {
@@ -33,7 +32,6 @@ var destinationObject = [
         id: 1001,
         name: 'Budapest',
         image: 'images/budapest.jpg',
-        picture: 'url(images/budapest.jpg)',
         rating: 5,
         seasons: {
             'autumn': {
@@ -53,7 +51,6 @@ var destinationObject = [
         id: 1002,
         name: 'Krakov',
         image: 'images/krakov.jpg',
-        picture: 'url(images/krakov.jpg)',
         rating: 4,
         seasons: {
             'spring': {
@@ -83,7 +80,6 @@ var destinationObject = [
         id: 1003,
         name: 'Lisbon',
         image: 'images/lisbon.jpg',
-        picture: 'url(images/lisbon.jpg)',
         rating: 4,
         seasons: {
             'spring': {
@@ -113,7 +109,6 @@ var destinationObject = [
         id: 1004,
         name: 'Luxembourg',
         image: 'images/luxembourg.jpg',
-        picture: 'url(images/luxembourg.jpg)',
         rating: 4.9,
         seasons: {
             'spring': {
@@ -138,7 +133,6 @@ var destinationObject = [
         id: 1005,
         name: 'Madrid',
         image: 'images/madrid.jpg',
-        picture: 'url(images/madrid.jpg)',
         rating: 4.9,
         seasons: {
             'summer': {
@@ -163,7 +157,6 @@ var destinationObject = [
         id: 1006,
         name: 'Moscow',
         image: 'images/moscow.jpg',
-        picture: 'url(images/moscow.jpg)',
         rating: 4.8,
         seasons: {
             'spring': {
@@ -189,7 +182,6 @@ var destinationObject = [
         id: 1007,
         name: 'Paris',
         image: 'images/paris.jpg',
-        picture: 'url(images/paris.jpg)',
         rating: 4.96,
         seasons: {
             'spring': {
@@ -219,7 +211,6 @@ var destinationObject = [
         id: 1008,
         name: 'Prague',
         image: 'images/prague.jpg',
-        picture: 'url(images/prague.jpg)',
         rating: 4.5,
         seasons: {
             'spring': {
@@ -244,7 +235,6 @@ var destinationObject = [
         id: 1009,
         name: 'Rome',
         image: 'images/rome.jpg',
-        picture: 'url(images/rome.jpg)',
         rating: 4.55,
         seasons: {
             'summer': {
@@ -269,7 +259,6 @@ var destinationObject = [
         id: 1010,
         name: 'Venecia',
         image: 'images/venecia.jpg',
-        picture: 'url(images/venecia.jpg)',
         rating: 4.93,
         seasons: {
             'summer': {
@@ -289,7 +278,6 @@ var destinationObject = [
         id: 1011,
         name: 'Vienna',
         image: 'images/vienna.jpg',
-        picture: 'url(images/vienna.jpg)',
         rating: 4.35,
         seasons: {
             'spring': {
@@ -315,7 +303,6 @@ var destinationObject = [
         id: 1012,
         name: 'London',
         image: 'images/london.jpg',
-        picture: 'url(images/london.jpg)',
         rating: 4.1,
         seasons: {
             'spring': {

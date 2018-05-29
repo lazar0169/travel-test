@@ -1,23 +1,26 @@
-var tempSeasons = document.getElementsByClassName('link-season');
-for (let tempSeasonLength = 0; tempSeasonLength < tempSeasons.length; tempSeasonLength++) {
-    tempSeasons[tempSeasonLength].addEventListener('click', clickSeason);
+{var tempSeasons = document.getElementsByClassName('link-season');
+for (let tempSeasonLength of tempSeasons) {
+    tempSeasonLength.addEventListener('click', () => {
+        let tempSeasonID = tempSeasonLength.dataset.season;
+        clickSeason(tempSeasonID);
+    });
+}
 }
 
-function clickSeason() {
+function clickSeason(tempSeason) {
     let tempIdArray = [];
     let tempNumberOfArray = 0;
     let tempRightSection = document.getElementById('right-section');
     tempRightSection.innerHTML = '';
-    let tempSeasonID = this.dataset.season;
 
-    if (tempSeasonID === 'all') {
+    if (tempSeason === 'all') {
         arrayId();
     }
     else {
-        for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
+        for (let tempObjectLength in destinationObject) {
             let tempSeasonsArray = Object.keys(destinationObject[tempObjectLength].seasons);
-            for (let tempSeasonsArrayLength = 0; tempSeasonsArrayLength < tempSeasonsArray.length; tempSeasonsArrayLength++) {
-                if (String(tempSeasonID) === String(tempSeasonsArray[tempSeasonsArrayLength])) {
+            for (let tempSeasonsArrayLength in tempSeasonsArray) {
+                if (String(tempSeason) === String(tempSeasonsArray[tempSeasonsArrayLength])) {
                     tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
                     tempNumberOfArray++;
                 }
@@ -28,6 +31,5 @@ function clickSeason() {
         addCity(tempIdArray);
         setResolution();
         resizeGrid();
-        
     }
 }

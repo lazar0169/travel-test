@@ -9,14 +9,14 @@ function addCity(temp) {
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length;tempObjectLength++) {
             if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
                 if (tempHighRateID != destinationObject[tempObjectLength].id) {
-                    tempData[tempSectionNumber].style.backgroundImage = destinationObject[tempObjectLength].picture;
+                    tempData[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
                     tempCityNameHeader[tempSectionNumber].innerText = destinationObject[tempObjectLength].name;
                     tempCityNamePar[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
                     tempData[tempSectionNumber].setAttribute('data-id', destinationObject[tempObjectLength].id);
                     tempSectionNumber++;
                 }
                 else {
-                    tempData[0].style.backgroundImage = destinationObject[tempObjectLength].picture;
+                    tempData[0].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
                     tempCityNameHeader[0].innerText = destinationObject[tempObjectLength].name;
                     tempCityNamePar[0].innerText = destinationObject[tempObjectLength].desc;
                     tempData[0].setAttribute('data-id', destinationObject[tempObjectLength].id);
