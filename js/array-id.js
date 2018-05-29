@@ -1,9 +1,6 @@
 window.addEventListener('load', arrayId);
 
-
-
-
-function arrayId(){
+function arrayId() {
     let tempIdArray = [];
     let tempNumberOfArray = 0;
     for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {

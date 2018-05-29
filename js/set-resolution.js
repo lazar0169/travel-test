@@ -7,12 +7,11 @@ function setResolution() {
     let tempClientHeight = tempBody[0].clientHeight;
     let tempResolution = tempClientWidth / tempClientHeight;
 
-    
-// if a<960 
+
+    // if a<960 
     if (tempResolution >= SCREEN_RESOLUTION) {
         let tempNewClientWidth;
         tempNewClientWidth = `${tempClientHeight * SCREEN_RESOLUTION}px`;
-        
         tempMainSection.style.width = tempNewClientWidth;
         tempMainSection.style.height = '100%';
 
@@ -20,7 +19,6 @@ function setResolution() {
     else {
         let tempNewClientHeight;
         tempNewClientHeight = `${tempClientWidth / SCREEN_RESOLUTION}px`;
-      
         tempMainSection.style.height = tempNewClientHeight;
         tempMainSection.style.width = '100%';
     }

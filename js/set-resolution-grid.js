@@ -17,9 +17,6 @@ function resizeGrid() {
     let tempResizeB = tempResize.clientHeight;
 
     if (tempMainSectionA / tempMainSectionB > SCREEN_RESOLUTION) {
-        
-        
-
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
             if (tempArticleSectionLength !== 0) {
                 tempSection[tempArticleSectionLength].style.height = `${tempResizeB / 3}px`;
@@ -37,7 +34,6 @@ function resizeGrid() {
             if (tempArticleSectionLength !== 0) {
                 tempSection[tempArticleSectionLength].style.height = `${tempResizeB / 3}px`;
                 tempSection[tempArticleSectionLength].style.width = `${tempResizeA / 3}px`;
-
             }
             else {
                 tempSection[tempArticleSectionLength].style.height = `${((tempResizeB * 2) / 3) + 3}px`;

@@ -2,7 +2,7 @@
 var tempHighRateID;
 
 function highRate(tempArray) {
-    
+
     let tempRating;
     for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
         if (tempArray[0] === destinationObject[tempObjectLength].id) {

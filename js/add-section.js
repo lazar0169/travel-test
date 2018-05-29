@@ -11,7 +11,7 @@ function addSection(temp) {
         else {
             newSection.className = 'article-section article-section-first';
         }
-        newSection.setAttribute('onclick', 'fullSize(this)');
+        newSection.addEventListener('click', fullSize);
         tempRightSection.appendChild(newSection);
 
         let bgImageCity = document.getElementsByClassName('article-section');
