@@ -1,15 +1,22 @@
-window.addEventListener('load', arrayId);
+const makeArrayId = (function () {
+    let arrayIdPrivate = function () {
+        let tempIdArray = [];
+        let tempNumberOfArray = 0;
+        for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
+            tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
+            tempNumberOfArray++;
+        }
+        highRate.highRateId(tempIdArray);
+        makeSection.addSection(tempIdArray);
+        makeCity.addCity(tempIdArray);
+    };
 
-function arrayId() {
-    let tempIdArray = [];
-    let tempNumberOfArray = 0;
-    for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
-        tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
-        tempNumberOfArray++;
-    }
-    highRate(tempIdArray);
-    addSection(tempIdArray);
-    addCity(tempIdArray);
-    setResolution();
-    resizeGrid();
-}
+    let arrayIdPublic = function () {
+        arrayIdPrivate();
+    };
+
+    return {
+        arrayId: arrayIdPublic
+    };
+})();
+

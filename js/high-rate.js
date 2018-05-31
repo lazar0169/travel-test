@@ -1,28 +1,38 @@
+const highRate = (function () {
+    let highRateID;
+    let highRatePrivate = function (tempArray) {
+        let tempRating;
 
-var tempHighRateID;
-
-function highRate(tempArray) {
-
-    let tempRating;
-    for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
-        if (tempArray[0] === destinationObject[tempObjectLength].id) {
-            tempRating = destinationObject[tempObjectLength].rating;
-        }
-    }
-
-    for (let tempNumberOfArray = 1; tempNumberOfArray < tempArray.length; tempNumberOfArray++) {
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
+            if (tempArray[0] === destinationObject[tempObjectLength].id) {
+                tempRating = destinationObject[tempObjectLength].rating;
+            }
+        }
 
-            if (tempArray[tempNumberOfArray] === destinationObject[tempObjectLength].id) {
-                let tempRatingX = destinationObject[tempObjectLength].rating;
+        for (let tempNumberOfArray = 1; tempNumberOfArray < tempArray.length; tempNumberOfArray++) {
+            for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
 
-                if (tempRating < tempRatingX) {
-                    tempRating = tempRatingX;
-                    tempHighRateID = destinationObject[tempObjectLength].id;
+                if (tempArray[tempNumberOfArray] === destinationObject[tempObjectLength].id) {
+                    let tempRatingX = destinationObject[tempObjectLength].rating;
+
+                    if (tempRating < tempRatingX) {
+                        tempRating = tempRatingX;
+                        highRateID = destinationObject[tempObjectLength].id;
+                    }
                 }
             }
         }
-    }
-}
-
-
+    };
+    let highRatePublic = function (tempArray) {
+        highRatePrivate(tempArray);
+    };
+    let highId = function () {
+        return {
+            highRateID
+        };
+    };
+    return {
+        highRateId: highRatePublic,
+        highId: highId
+    };
+})();
