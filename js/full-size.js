@@ -219,11 +219,7 @@ const makeFullSize = (function () {
         }
     }
 
-    let fullSizePublic = function () {
-        fullSizePrivate();
-    };
-
     return {
-        fullSize: fullSizePublic
+        fullSize: fullSizePrivate
     };
 })();

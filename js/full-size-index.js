@@ -9,11 +9,7 @@ const fullSizeIndex = (function () {
         }
     };
 
-    let indexPublic = function (temp){
-        indexPrivate(temp);
-    };
-
     return{
-        index: indexPublic
+        index: indexPrivate
     };
 })();

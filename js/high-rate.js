@@ -23,16 +23,11 @@ const highRate = (function () {
             }
         }
     };
-    let highRatePublic = function (tempArray) {
-        highRatePrivate(tempArray);
-    };
-    let highId = function () {
-        return {
-            highRateID
-        };
-    };
+
     return {
-        highRateId: highRatePublic,
-        highId: highId
+        highRateId: highRatePrivate,
+        get highId () {
+            return highRateID;
+        }
     };
 })();

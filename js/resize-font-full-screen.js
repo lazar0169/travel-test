@@ -1,7 +1,11 @@
+
+
 window.addEventListener('load', () => {
+    resizeResolution.setResolution();
     resizeFont.resizeFontFullScreen();
 });
 window.addEventListener('resize', () => {
+    resizeResolution.setResolution();
     resizeFont.resizeFontFullScreen();
 });
 
@@ -21,12 +25,8 @@ const resizeFont = (function () {
         }
     };
 
-    let resizeFontPublic = function () {
-        resizeFontPrivate();
-    };
-
     return {
-        resizeFontFullScreen: resizeFontPublic
+        resizeFontFullScreen: resizeFontPrivate
     };
 
 

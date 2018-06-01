@@ -8,29 +8,25 @@ const makeCity = (function () {
         for (let tempIdArray in temp) {
             for (let tempObjectLength in destinationObject) {
                 if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
-                    if (highRate.highId().highRateID != destinationObject[tempObjectLength].id) {
+                    if (highRate.highId != destinationObject[tempObjectLength].id) {
                         tempData[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
                         tempCityNameHeader[tempSectionNumber].innerText = destinationObject[tempObjectLength].name;
                         tempCityNamePar[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
-                        tempData[tempSectionNumber].setAttribute('data-id', destinationObject[tempObjectLength].id);
+                        tempData[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
                         tempSectionNumber++;
                     }
                     else {
                         tempData[0].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
                         tempCityNameHeader[0].innerText = destinationObject[tempObjectLength].name;
                         tempCityNamePar[0].innerText = destinationObject[tempObjectLength].desc;
-                        tempData[0].setAttribute('data-id', destinationObject[tempObjectLength].id);
+                        tempData[0].dataset.id = destinationObject[tempObjectLength].id;
                     }
                 }
             }
         }
     };
-    let addCityPublic = function (temp) {
-        addCityPrivate(temp);
-    };
 
     return {
-        addCity: addCityPublic
+        addCity: addCityPrivate
     };
 })();
-

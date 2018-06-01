@@ -9,20 +9,17 @@ const showHideLanguage = (function () {
         if (!tempShowHide) {
             tempShowHide = true;
             tempShowHideLanguage.style.visibility = 'visible';
-            document.getElementById('p-button-open-close').innerHTML = '&#9650';
+            document.getElementById('p-button-open-close').innerHTML = '&#9660';
         }
         else {
             tempShowHide = false;
             tempShowHideLanguage.style.visibility = 'hidden';
-            document.getElementById('p-button-open-close').innerHTML = ' &#9660';
+            document.getElementById('p-button-open-close').innerHTML = ' &#9650';
         }
     };
 
-    let showHidePublic = function () {
-        showHidePrivate();
-    };
     return {
-        showHide: showHidePublic
+        showHide: showHidePrivate
     };
 
 })();
@@ -35,7 +32,7 @@ const createLanguage = (function () {
             let tempCreateLanguage = document.createElement('a');
             tempCreateLanguage.className = 'list-of-language';
             tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
-            tempCreateLanguage.setAttribute('data-language', languageObject[tempObjectLanguageLength].language);
+            tempCreateLanguage.dataset.language = languageObject[tempObjectLanguageLength].language;
             tempSectionLanguage.appendChild(tempCreateLanguage);
         }
         for (let tempIdLanguage of document.getElementsByClassName('list-of-language')) {
@@ -52,11 +49,8 @@ const createLanguage = (function () {
         }
     };
 
-    let createLanguagePublic = function () {
-        createLanguagePrivate();
-    };
     return {
-        choseLanguage: createLanguagePublic
+        choseLanguage: createLanguagePrivate
     };
 })();
 

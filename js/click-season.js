@@ -14,12 +14,8 @@ const setClickSeason = (function () {
         }
     };
 
-    let setClickSeasonPublic = function () {
-        setClickSeasonPrivate();
-    }
-
     return {
-        clickedSeason: setClickSeasonPublic,
+        clickedSeason: setClickSeasonPrivate,
     };
 })();
 
@@ -52,12 +48,7 @@ const chosenSeason = (function () {
         }
     }
 
-    let clickSeasonPublic = function (tempSeason) {
-        clickSeasonPrivate(tempSeason);
-    };
-
     return {
-        clickSeason: clickSeasonPublic
+        clickSeason: clickSeasonPrivate
     };
-
 })();

@@ -55,12 +55,8 @@ const resizeGrid = (function () {
 
     };
 
-    let resizeGridPublic = function () {
-        resizeGridPrivate();
-
-    };
     return {
-        setResizeGrid: resizeGridPublic
+        setResizeGrid: resizeGridPrivate
     };
 
 })();

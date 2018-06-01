@@ -11,12 +11,8 @@ const makeArrayId = (function () {
         makeCity.addCity(tempIdArray);
     };
 
-    let arrayIdPublic = function () {
-        arrayIdPrivate();
-    };
-
     return {
-        arrayId: arrayIdPublic
+        arrayId: arrayIdPrivate
     };
 })();
 

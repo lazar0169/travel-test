@@ -1,4 +1,3 @@
-
 const makeSection = (function () {
     let addSectionPrivate = function (temp) {
         let tempRightSection = document.getElementById('right-section');
@@ -45,13 +44,9 @@ const makeSection = (function () {
             });
         }
     };
-    
-    let addSectionPublic = function(temp){
-        addSectionPrivate(temp);
-    };
 
     return{
-        addSection: addSectionPublic
+        addSection: addSectionPrivate
     };
 })();
 

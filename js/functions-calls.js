@@ -1,5 +1,7 @@
 window.addEventListener('load', () => {
     makeArrayId.arrayId();
+    let i = 1;
+    // trigger('proba', { est_podatak: i });
 });
 
 window.addEventListener('load', () => {
@@ -23,4 +25,8 @@ window.addEventListener('resize', () => {
 });
 window.addEventListener('load', () => {
 resizeGrid.setResizeGrid();
+});
+
+on('proba', function (event, data) {
+    console.log(data.test_podatak);
 });

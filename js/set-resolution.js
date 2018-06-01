@@ -26,9 +26,6 @@ const resizeResolution = (function () {
         }
     };
 
-    let setResolutionPublic = function () {
-        setResolutionPrivate();
-    };
     let setWidthHeight =  function(){
         return {
             width: width,
@@ -37,7 +34,7 @@ const resizeResolution = (function () {
     };
 
     return {
-        setResolution: setResolutionPublic,
+        setResolution: setResolutionPrivate,
         setWidthHeight: setWidthHeight
     };
 })();
