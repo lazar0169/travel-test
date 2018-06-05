@@ -15,10 +15,9 @@ const resizeFont = (function () {
             tempTable[tempTableLenght].style.fontSize = `${tempFont * 0.03}px`;
         }
     };
-    on('resizeFont', function (event, data) {
+    on('resizeFont', function () {
         resizeFontPrivate();
     });
-
 
 })();
 windowListener('load', function (){

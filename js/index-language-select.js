@@ -14,9 +14,9 @@ const showHideLanguage = (function () {
         }
     };
 
-    return {
-        showHide: showHidePrivate
-    };
+   on('showHideLanguage', function(){
+        showHidePrivate();
+   });
 
 })();
 
@@ -38,7 +38,7 @@ const createLanguage = (function () {
                     if (tempDataLanguage === languageObject[tempObjectLanguageLength].language) {
                         let temppLanguage = get('#', 'p-language');
                         temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
-                        showHideLanguage.showHide();
+                        trigger('showHideLanguage', {});
                     }
                 }
             });

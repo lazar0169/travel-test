@@ -25,19 +25,16 @@ const highRate = (function () {
     };
     // trigger('highRateID', {data: highRateID});
 
-    on('highRate', function (event, tempData){
-        highRatePrivate(tempData.data); 
-        
-       
+    on('highRate', function (event, tempData) {
+        highRatePrivate(tempData.data);
+        trigger('makeSection', { data: tempData.data });
+        trigger('makeCity', { data: tempData.data, highRateID: highRateID });
+        trigger('resizeGrid', {});
     });
-   
-    // on('highRateID', function(){
-    //     return highRateID;
-    // });
 
-    return {
-        get highId () {
-            return highRateID;
-        }
-    };
+    // return {
+    //     get highId () {
+    //         return highRateID;
+    //     }
+    // };
 })();

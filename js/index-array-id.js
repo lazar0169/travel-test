@@ -5,17 +5,12 @@ const makeArrayId = (function () {
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
             tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
             tempNumberOfArray++;
-        }
-        
+        } 
         trigger('highRate', { data: tempIdArray});
-        makeSection.addSection(tempIdArray);
-        makeCity.addCity(tempIdArray);
-
-
+      
     };
-
-    return {
-        arrayId: arrayIdPrivate
-    };
+   on('makeArrayId', function(){
+    arrayIdPrivate();
+   });
 })();
 

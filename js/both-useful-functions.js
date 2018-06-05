@@ -10,21 +10,20 @@ function get(tempSelector, tempName) {
     }
 
 }
-function addListener(tempSelector,tempName, tempEvent, tempFunction ) {
-    get(tempSelector, tempName).addEventListener(tempEvent, ()=>{
-        tempFunction();
-    });
 
-}
-
-function addListenerData(tempSelector, tempName, tempEvent, tempFunction) {
+function addListener(tempSelector, tempName, tempEvent, tempFunction) {
     let tempDiv = get(tempSelector, tempName);
-    for (let tempDivLenght of tempDiv)
-        tempDivLenght.addEventListener(tempEvent, () => {
-            tempFunction(tempDivLenght.dataset.id);
+    if(tempSelector === '#'){
+        tempDiv.addEventListener(tempEvent, ()=>{
+            trigger(tempFunction, {});
         });
-
-
+    }
+    else{ 
+        for (let tempDivLenght of tempDiv)
+            tempDivLenght.addEventListener(tempEvent, () => {
+                trigger(tempFunction, {data: tempDivLenght.dataset.id});
+            });
+    }
 }
 
 function windowListener(tempEvent, tempFunction) {

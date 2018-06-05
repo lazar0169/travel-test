@@ -1,10 +1,9 @@
 
 const setClickSeason = (function () {
 
-    let setClickedSeasonPrivate = function () {
-
-        addListenerData('.', 'link-season', 'click', setClickSeason.clickSeason);
-    };
+    on('clickedSeason', function () {
+        addListener('.', 'link-season', 'click', 'clickSeason');
+    });
 
     let clickSeasonPrivate = function (tempSeason) {
         let tempIdArray = [];
@@ -13,8 +12,7 @@ const setClickSeason = (function () {
         tempRightSection.innerHTML = '';
 
         if (tempSeason === 'all') {
-            makeArrayId.arrayId();
-            trigger('resizeGrid', { });
+            trigger('makeArrayId', {});
         }
         else {
             for (let tempObjectLength in destinationObject) {
@@ -26,18 +24,16 @@ const setClickSeason = (function () {
                     }
                 }
             }
-            trigger('highRate', { data: tempIdArray});
-            makeSection.addSection(tempIdArray);
-            makeCity.addCity(tempIdArray);
-            trigger('resizeGrid', { });  
+            trigger('highRate', { data: tempIdArray });
 
         }
     }
 
-return {
-    clickedSeason: setClickedSeasonPrivate,
-    clickSeason: clickSeasonPrivate
-};
+    on('clickSeason', function (event, tempData) {
+        clickSeasonPrivate(tempData.data);
+    })
+
+
 })();
 
 
