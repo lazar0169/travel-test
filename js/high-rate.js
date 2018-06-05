@@ -23,9 +23,19 @@ const highRate = (function () {
             }
         }
     };
+    // trigger('highRateID', {data: highRateID});
+
+    on('highRate', function (event, tempData){
+        highRatePrivate(tempData.data); 
+        
+       
+    });
+   
+    // on('highRateID', function(){
+    //     return highRateID;
+    // });
 
     return {
-        highRateId: highRatePrivate,
         get highId () {
             return highRateID;
         }

@@ -1,5 +1,3 @@
-let eventList = [];
-
 function on(event, callback) {
     if (eventList == null)
         eventList = {};

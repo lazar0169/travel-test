@@ -1,20 +1,16 @@
-
-
-//global
-let tempShowHide;
 const showHideLanguage = (function () {
 
     let showHidePrivate = function () {
-        let tempShowHideLanguage = document.getElementById('language');
+        let tempShowHideLanguage = get('#', 'language');
         if (!tempShowHide) {
             tempShowHide = true;
             tempShowHideLanguage.style.visibility = 'visible';
-            document.getElementById('p-button-open-close').innerHTML = '&#9660';
+            get('#', 'p-button-open-close').innerHTML = '&#9660';
         }
         else {
             tempShowHide = false;
             tempShowHideLanguage.style.visibility = 'hidden';
-            document.getElementById('p-button-open-close').innerHTML = ' &#9650';
+            get('p-button-open-close').innerHTML = ' &#9650';
         }
     };
 
@@ -27,20 +23,20 @@ const showHideLanguage = (function () {
 const createLanguage = (function () {
 
     let createLanguagePrivate = function () {
-        let tempSectionLanguage = document.getElementById('language');
+        let tempSectionLanguage = get('#', 'language');
         for (let tempObjectLanguageLength in languageObject) {
             let tempCreateLanguage = document.createElement('a');
             tempCreateLanguage.className = 'list-of-language';
             tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
-            tempCreateLanguage.dataset.language = languageObject[tempObjectLanguageLength].language;
+            tempCreateLanguage.dataset.id = languageObject[tempObjectLanguageLength].language;
             tempSectionLanguage.appendChild(tempCreateLanguage);
         }
-        for (let tempIdLanguage of document.getElementsByClassName('list-of-language')) {
+        for (let tempIdLanguage of get('.', 'list-of-language')) {
             tempIdLanguage.addEventListener('click', () => {
-                let tempDataLanguage = tempIdLanguage.dataset.language;
+                let tempDataLanguage = tempIdLanguage.dataset.id;
                 for (let tempObjectLanguageLength = 0; tempObjectLanguageLength < languageObject.length; tempObjectLanguageLength++) {
                     if (tempDataLanguage === languageObject[tempObjectLanguageLength].language) {
-                        let temppLanguage = document.getElementById('p-language');
+                        let temppLanguage = get('#', 'p-language');
                         temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
                         showHideLanguage.showHide();
                     }
@@ -48,9 +44,8 @@ const createLanguage = (function () {
             });
         }
     };
-
-    return {
-        choseLanguage: createLanguagePrivate
-    };
+    on('language', function () {
+        createLanguagePrivate();
+    })
 })();
 

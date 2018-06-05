@@ -1,10 +1,6 @@
-window.addEventListener('load', () => {
-    makeFullSize.fullSize();
-});
-
 const makeFullSize = (function () {
     let fullSizePrivate = function () {
-        let temptableDiv = document.getElementById('table-div');
+        let temptableDiv = get('#', 'table-div');
 
         let maxJan;
         let maxFeb;
@@ -26,9 +22,9 @@ const makeFullSize = (function () {
             if (Number(tempDataID) === destinationObject[tempObjectLength].id) {
                 let tempSeasons = Object.keys(destinationObject[tempObjectLength].seasons);
 
-                let tempimageFullScreen = document.getElementById('image-full-screen');
-                let tempH1FullScreenShow = document.getElementById('h1-full-screen-show');
-                let temppFullScreen = document.getElementById('p-full-screen');
+                let tempimageFullScreen = get('#', 'image-full-screen');
+                let tempH1FullScreenShow = get('#', 'h1-full-screen-show');
+                let temppFullScreen = get('#', 'p-full-screen');
 
                 tempH1FullScreenShow.innerText = destinationObject[tempObjectLength].name;
                 tempimageFullScreen.src = destinationObject[tempObjectLength].image;
@@ -219,7 +215,10 @@ const makeFullSize = (function () {
         }
     }
 
-    return {
-        fullSize: fullSizePrivate
-    };
+   on('fullSize', function (){
+    fullSizePrivate();
+   })
 })();
+windowListener('load', function(){
+    trigger('fullSize', { });
+});

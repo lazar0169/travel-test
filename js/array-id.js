@@ -6,9 +6,12 @@ const makeArrayId = (function () {
             tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
             tempNumberOfArray++;
         }
-        highRate.highRateId(tempIdArray);
+        
+        trigger('highRate', { data: tempIdArray});
         makeSection.addSection(tempIdArray);
         makeCity.addCity(tempIdArray);
+
+
     };
 
     return {

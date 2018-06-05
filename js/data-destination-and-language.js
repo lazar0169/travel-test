@@ -514,3 +514,36 @@ let destinationObject = [
         vim ut pericula appellantur, debet evertitur cu vim. Cu cibo omnes delicatissimi quo. Ex tota audire sit. His saperet legimus utroque te.`
     }
 ]
+
+let languageObject = [
+    {
+        language: 'Serbian'
+    },
+    {
+        language: 'English'
+    },
+    {
+        language: 'Croatian'
+    },
+    {
+        language: 'French'
+    },
+    {
+        language: 'Montenegrin'
+    },
+    {
+        language: 'Bulgarian'
+    },
+    {
+        language: 'Romanian'
+    },
+    {
+        language: 'Finnish'
+    },
+    {
+        language: 'Arabic'
+    },
+    {
+        language: 'Chinese'
+    }
+]

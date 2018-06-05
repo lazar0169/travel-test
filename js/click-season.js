@@ -1,34 +1,20 @@
-window.addEventListener('load', () => {
-    setClickSeason.clickedSeason();
-});
 
 const setClickSeason = (function () {
 
-    let setClickSeasonPrivate = function () {
-        let tempSeasons = document.getElementsByClassName('link-season');
-        for (let tempSeasonLength of tempSeasons) {
-            tempSeasonLength.addEventListener('click', () => {
-                let tempSeasonID = tempSeasonLength.dataset.season;
-                chosenSeason.clickSeason(tempSeasonID);
-            });
-        }
+    let setClickedSeasonPrivate = function () {
+
+        addListenerData('.', 'link-season', 'click', setClickSeason.clickSeason);
     };
 
-    return {
-        clickedSeason: setClickSeasonPrivate,
-    };
-})();
-
-const chosenSeason = (function () {
     let clickSeasonPrivate = function (tempSeason) {
         let tempIdArray = [];
         let tempNumberOfArray = 0;
-        let tempRightSection = document.getElementById('right-section');
+        let tempRightSection = get('#', 'right-section');
         tempRightSection.innerHTML = '';
 
         if (tempSeason === 'all') {
             makeArrayId.arrayId();
-            resizeGrid.setResizeGrid();
+            trigger('resizeGrid', { });
         }
         else {
             for (let tempObjectLength in destinationObject) {
@@ -40,15 +26,19 @@ const chosenSeason = (function () {
                     }
                 }
             }
-            highRate.highRateId(tempIdArray);
+            trigger('highRate', { data: tempIdArray});
             makeSection.addSection(tempIdArray);
             makeCity.addCity(tempIdArray);
-            resizeResolution.setResolution();
-            resizeGrid.setResizeGrid();
+            trigger('resizeGrid', { });  
+
         }
     }
 
-    return {
-        clickSeason: clickSeasonPrivate
-    };
+return {
+    clickedSeason: setClickedSeasonPrivate,
+    clickSeason: clickSeasonPrivate
+};
 })();
+
+
+

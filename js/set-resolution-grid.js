@@ -1,21 +1,19 @@
-
-
 const resizeGrid = (function () {
 
     let resizeGridPrivate = function () {
-        let tempMainSection = document.getElementById('main-section');
+        let tempMainSection = get('#', 'main-section');
         let tempMainSectionA = tempMainSection.clientWidth;
         let tempMainSectionB = tempMainSection.clientHeight;
 
-        let tempLanguage = document.getElementById('language');
-        let tempLanguage1 = document.getElementById('open-close-language');
+        let tempLanguage = get('#', 'language');
+        let tempLanguage1 = get('#', 'open-close-language');
 
         let tempFontSize = tempMainSectionA * 0.015 + 'px';
         tempMainSection.style.fontSize = tempFontSize;
         tempLanguage1.style.fontSize = tempFontSize;
 
-        let tempSection = document.getElementsByClassName('article-section');
-        let tempResize = document.getElementById('right-section');
+        let tempSection = get('.', 'article-section');
+        let tempResize = get('#', 'right-section');
         let tempResizeA = tempResize.clientWidth;
         let tempResizeB = tempResize.clientHeight;
 
@@ -44,7 +42,7 @@ const resizeGrid = (function () {
                 }
             }
         }
-        let tempCityNameHeaderH2 = document.getElementsByClassName('h2-city-name-header');
+        let tempCityNameHeaderH2 = get('.', 'h2-city-name-header');
 
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
             let tempSectionA = tempSection[tempArticleSectionLength].clientHeight;
@@ -54,9 +52,7 @@ const resizeGrid = (function () {
 
 
     };
-
-    return {
-        setResizeGrid: resizeGridPrivate
-    };
-
+    on('resizeGrid', function (event, data) {
+        resizeGridPrivate();
+    });
 })();
