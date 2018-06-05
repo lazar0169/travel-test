@@ -14,6 +14,7 @@ const setClickSeason = (function () {
         if (tempSeason === 'all') {
             trigger('makeArrayId', {});
         }
+
         else {
             for (let tempObjectLength in destinationObject) {
                 let tempSeasonsArray = Object.keys(destinationObject[tempObjectLength].seasons);
@@ -25,15 +26,12 @@ const setClickSeason = (function () {
                 }
             }
             trigger('highRate', { data: tempIdArray });
-
         }
     }
 
     on('clickSeason', function (event, tempData) {
         clickSeasonPrivate(tempData.data);
     })
-
-
 })();
 
 

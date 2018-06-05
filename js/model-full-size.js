@@ -1,7 +1,6 @@
 const makeFullSize = (function () {
     let fullSizePrivate = function () {
         let temptableDiv = get('#', 'table-div');
-
         let maxJan;
         let maxFeb;
         let maxMarch;
@@ -21,7 +20,6 @@ const makeFullSize = (function () {
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
             if (Number(tempDataID) === destinationObject[tempObjectLength].id) {
                 let tempSeasons = Object.keys(destinationObject[tempObjectLength].seasons);
-
                 let tempimageFullScreen = get('#', 'image-full-screen');
                 let tempH1FullScreenShow = get('#', 'h1-full-screen-show');
                 let temppFullScreen = get('#', 'p-full-screen');
@@ -34,15 +32,12 @@ const makeFullSize = (function () {
                     let tempParSeason = document.createElement('h1');
                     tempParSeason.className = 'h1-table-price';
                     let temptablePrice = document.createElement('table');
-
                     if (tempSeasons[tempSeasonLength] === 'spring') {
                         let maxValue;
                         let tempSpring = Object.keys(destinationObject[tempObjectLength].seasons.spring);
-
                         maxMarch = destinationObject[tempObjectLength].seasons.spring.March.length;
                         maxApril = destinationObject[tempObjectLength].seasons.spring.April.length;
                         maxMay = destinationObject[tempObjectLength].seasons.spring.May.length;
-
                         if (maxMarch > maxApril && maxMarch > maxMay) {
                             maxValue = maxMarch;
                         }
@@ -52,10 +47,8 @@ const makeFullSize = (function () {
                         else {
                             maxValue = maxMay;
                         }
-
                         for (let tempSpringLength = 0; tempSpringLength <= maxValue; tempSpringLength++) {
                             let temptablePriceTR = document.createElement('tr');
-
                             for (let spring = 0; spring < tempSpring.length; spring++) {
                                 tempParSeason.innerText = tempSeasons[tempSeasonLength];
                                 let temptablePriceTDSpring = document.createElement('td');
@@ -73,9 +66,7 @@ const makeFullSize = (function () {
                                     temptablePriceTDSpring.innerText = '/';
                                     temptablePriceTR.appendChild(temptablePriceTDSpring);
                                 }
-
                             }
-
                             temptablePrice.appendChild(temptablePriceTR);
                         }
                     }
@@ -97,7 +88,6 @@ const makeFullSize = (function () {
                         else {
                             maxValue = maxAugust;
                         }
-
                         for (let tempSummerLength = 0; tempSummerLength <= maxValue; tempSummerLength++) {
                             let temptablePriceTR = document.createElement('tr');
 
@@ -140,7 +130,6 @@ const makeFullSize = (function () {
                         else {
                             maxValue = maxNov;
                         }
-
                         for (let tempAutumnLength = 0; tempAutumnLength <= maxValue; tempAutumnLength++) {
                             let temptablePriceTR = document.createElement('tr');
 
@@ -183,7 +172,6 @@ const makeFullSize = (function () {
                         else {
                             maxValue = maxDec;
                         }
-
                         for (let tempWinterLength = 0; tempWinterLength <= maxValue; tempWinterLength++) {
                             let temptablePriceTR = document.createElement('tr');
 
@@ -213,12 +201,10 @@ const makeFullSize = (function () {
                 }
             }
         }
-    }
-
+    };
+    
    on('fullSize', function (){
     fullSizePrivate();
    })
 })();
-windowListener('load', function(){
-    trigger('fullSize', { });
-});
+

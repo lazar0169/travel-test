@@ -8,8 +8,7 @@ function get(tempSelector, tempName) {
     else {
         return document.getElementsByTagName(tempName);
     }
-
-}
+};
 
 function addListener(tempSelector, tempName, tempEvent, tempFunction) {
     let tempDiv = get(tempSelector, tempName);
@@ -18,13 +17,14 @@ function addListener(tempSelector, tempName, tempEvent, tempFunction) {
             trigger(tempFunction, {});
         });
     }
+    
     else{ 
         for (let tempDivLenght of tempDiv)
             tempDivLenght.addEventListener(tempEvent, () => {
                 trigger(tempFunction, {data: tempDivLenght.dataset.id});
             });
     }
-}
+};
 
 function windowListener(tempEvent, tempFunction) {
     window.addEventListener(tempEvent, () => {

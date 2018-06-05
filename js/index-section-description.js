@@ -12,10 +12,7 @@ const makeSection = (function () {
             else {
                 newSection.className = 'article-section article-section-first';
             }
-
             tempRightSection.appendChild(newSection);
-
-            let bgImageCity = get('.', 'article-section');
 
             let tempCityName = document.createElement('section');
             tempCityName.className = 'section-footer';
@@ -34,21 +31,12 @@ const makeSection = (function () {
             tempCityName.appendChild(tempCityNamePar);
             tempCityName.appendChild(tempReadMore);
 
-            bgImageCity[sectionNumber].appendChild(tempCityName);
+            let tempArticleSection = get('.', 'article-section');
+            tempArticleSection[sectionNumber].appendChild(tempCityName);
         }
-
-
         addListener('.', 'article-section', 'click', 'fullSizeIndex');
-
-
-        // for (let sectionNumberId of get('article-section')) {
-        //     sectionNumberId.addEventListener('click', () => {
-        //         fullSizeIndex.index(sectionNumberId.dataset.id);
-        //     });
-        // }
     };
-
-
+    
     on('makeSection', function (event, tempData) {
         addSectionPrivate(tempData.data);
     })
@@ -71,6 +59,7 @@ const makeCity = (function () {
                             tempSection[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
                             tempSectionNumber++;
                         }
+
                         else {
                             tempSection[0].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
                             tempCityNameHeader[0].innerText = destinationObject[tempObjectLength].name;
@@ -80,9 +69,7 @@ const makeCity = (function () {
                     }
                 }
             }
-
     };
-
 
     on('makeCity', function (event, tempData) {
         let highRateID= tempData.highRateID;

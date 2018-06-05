@@ -1,5 +1,4 @@
 const resizeResolution = (function () {
-    let width, height;
 
     let setResolutionPrivate = function () {
         let tempBody = get('tag', 'body');
@@ -22,19 +21,17 @@ const resizeResolution = (function () {
             tempMainSection.style.height = tempNewClientHeightPx;
             tempMainSection.style.width = `${tempClientWidth}px`;
         }
-
     };
+
     on('setResolution', function () {
         setResolutionPrivate();
 
         let tempLoading = get('#', 'loading');
         let tempMainSection = get('#', 'main-section');
-        if(tempMainSection.style.visibility != 'visible'){
+
+        if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
         }
-        
-
-
     });
 })();
