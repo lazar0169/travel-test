@@ -49,10 +49,9 @@ const resizeGrid = (function () {
             tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionA * 0.2}px`;
             tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionA * 0.15}px`;
         }
-
-
     };
     on('resizeGrid', function (event, data) {
         resizeGridPrivate();
+        
     });
 })();
