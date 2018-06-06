@@ -1,4 +1,5 @@
 const makeSection = (function () {
+    let tempArticleSection = get('.', 'article-section');
     let addSectionPrivate = function (temp) {
         let tempRightSection = get('#', 'right-section');
 
@@ -31,7 +32,7 @@ const makeSection = (function () {
             tempCityName.appendChild(tempCityNamePar);
             tempCityName.appendChild(tempReadMore);
 
-            let tempArticleSection = get('.', 'article-section');
+            
             tempArticleSection[sectionNumber].appendChild(tempCityName);
         }
         addListener('.', 'article-section', 'click', 'fullSizeIndex');

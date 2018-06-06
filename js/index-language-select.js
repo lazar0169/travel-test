@@ -1,18 +1,21 @@
 const showHideLanguage = (function () {
-
+    let tempShowHide = false;
     let showHidePrivate = function () {
         let tempShowHideLanguage = get('#', 'language');
-
+        tempOpenClose = get('#', 'p-button-open-close')
         if (!tempShowHide) {
             tempShowHide = true;
             tempShowHideLanguage.style.visibility = 'visible';
-            get('#', 'p-button-open-close').innerHTML = '&#9660';
+            
+            tempOpenClose.innerHTML = '';
+            tempOpenClose.innerHTML = '&#9660';
         }
 
         else {
             tempShowHide = false;
             tempShowHideLanguage.style.visibility = 'hidden';
-            get('p-button-open-close').innerHTML = ' &#9650';
+            tempOpenClose.innerHTML = '';
+            tempOpenClose.innerHTML = ' &#9650';
         }
     };
    on('showHideLanguage', function(){

@@ -1,6 +1,9 @@
 const resizeGrid = (function () {
-
+    
+    let tempCityNameHeaderH2 = get('.', 'h2-city-name-header');
     let resizeGridPrivate = function () {
+
+        let tempBody = get('tag', 'body');
         let tempMainSection = get('#', 'main-section');
         let tempMainSectionA = tempMainSection.clientWidth;
         let tempMainSectionB = tempMainSection.clientHeight;
@@ -14,38 +17,41 @@ const resizeGrid = (function () {
 
         tempMainSection.style.fontSize = tempFontSize;
         tempLanguage1.style.fontSize = tempFontSize;
-       
-        if (tempMainSectionA / tempMainSectionB > SCREEN_RESOLUTION) {
-            for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
-                if (tempArticleSectionLength !== 0) {
-                    tempSection[tempArticleSectionLength].style.height = `${tempResizeB / 3}px`;
-                    tempSection[tempArticleSectionLength].style.width = `${tempResizeA / 3}px`;
-                }
-                else {
-                    tempSection[tempArticleSectionLength].style.height = `${((tempResizeB * 2) / 3) + 3}px`;
-                    tempSection[tempArticleSectionLength].style.width = `${((tempResizeA * 2) / 3) + 3}px`;
+
+        if(tempBody[0].clientWidth >900){
+            if (tempMainSectionA / tempMainSectionB > SCREEN_RESOLUTION) {
+                for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
+                    if (tempArticleSectionLength !== 0) {
+                        tempSection[tempArticleSectionLength].style.height = `${tempResizeB / 3}px`;
+                        tempSection[tempArticleSectionLength].style.width = `${tempResizeA / 3}px`;
+                    }
+                    else {
+                        tempSection[tempArticleSectionLength].style.height = `${((tempResizeB * 2) / 3) + 3}px`;
+                        tempSection[tempArticleSectionLength].style.width = `${((tempResizeA * 2) / 3) + 3}px`;
+                    }
                 }
             }
-        }
-
-        else {
-            for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
-                if (tempArticleSectionLength !== 0) {
-                    tempSection[tempArticleSectionLength].style.height = `${tempResizeB / 3}px`;
-                    tempSection[tempArticleSectionLength].style.width = `${tempResizeA / 3}px`;
-                }
-                else {
-                    tempSection[tempArticleSectionLength].style.height = `${((tempResizeB * 2) / 3) + 3}px`;
-                    tempSection[tempArticleSectionLength].style.width = `${((tempResizeA * 2) / 3) + 3}px`;
+    
+            else {
+                for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
+                    if (tempArticleSectionLength !== 0) {
+                        tempSection[tempArticleSectionLength].style.height = `${tempResizeB / 3}px`;
+                        tempSection[tempArticleSectionLength].style.width = `${tempResizeA / 3}px`;
+                    }
+                    else {
+                        tempSection[tempArticleSectionLength].style.height = `${((tempResizeB * 2) / 3) + 3}px`;
+                        tempSection[tempArticleSectionLength].style.width = `${((tempResizeA * 2) / 3) + 3}px`;
+                    }
                 }
             }
+
         }
 
-        let tempCityNameHeaderH2 = get('.', 'h2-city-name-header');
+        
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
-            let tempSectionA = tempSection[tempArticleSectionLength].clientHeight;
-            tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionA * 0.2}px`;
-            tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionA * 0.15}px`;
+            let tempSectionHeight = tempSection[tempArticleSectionLength].clientHeight;
+            tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionHeight * 0.2}px`;
+            tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionHeight * 0.15}px`;
         }
     };
     

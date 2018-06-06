@@ -4,15 +4,40 @@
     height: 100%;
     background-color: rgb(30, 100, 200);
 }
+
+#show-bar{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    visibility: hidden;
+    font-size: 10vw;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    text-decoration: none;
+    outline:none;
+    background: transparent;
+}
+#show-bar p{
+    margin: 0;
+padding: 0;
+
+color: white;
+}
 #logo-article{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 20%;
     background-color: transparent;
+    top:0;
+    right: 0;
 }
 
 #season-section{
-    position: relative;
+    position: absolute;
+    top: 20%;
     width: 100%;
     height: 20%;
     background-color: transparent;
