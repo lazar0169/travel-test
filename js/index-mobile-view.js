@@ -1,19 +1,14 @@
 const mobileView = (function () {
-    let tempBody = get('tag', 'body');
-    let tempLogo = get('#', 'logo-article');
-    let tempShowBar = get('#', 'show-bar');
-    let tempMobileView = get('#', 'index-mobile-view-css');
-    let tempLeftSection = get('#', 'left-section');
-    let tempRightSection = get('#', 'right-section');
-    let temppLanguage = get('#', 'p-language');
-    let tempLanguageList = get('.', 'list-of-language');
-
     let mobileViewPrivate = function () {
 
         if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
-            tempMobileView.disabled = false;
+            tempIndexMobileView.disabled = false;
             tempLogo.style.visibility = 'hidden';
             tempShowBar.style.visibility = 'visible';
+
+            for(let tempSeasonsListLength of tempSeasonsList){
+                tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id.substring(0, 3); 
+            }
 
             if (tempLanguageList.length != 0) {
                 for (let tempLanguageID of languageObject) {
@@ -36,12 +31,15 @@ const mobileView = (function () {
 
         }
         else {
-            tempMobileView.disabled = true;
+            tempIndexMobileView.disabled = true;
             tempLogo.style.visibility = 'visible';
             tempShowBar.style.visibility = 'hidden';
             tempLeftSection.style.width = '20%';
             tempLeftSection.style.position = 'relative';
             tempRightSection.style.visibility = 'visible';
+            for(let tempSeasonsListLength of tempSeasonsList){
+                tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id; 
+            }
 
             if (tempLanguageList.length != 0) {
                 for (let tempLanguageID of languageObject) {

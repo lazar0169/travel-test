@@ -1,13 +1,11 @@
 const mobileView = (function () {
-    let tempBody = get('tag', 'body');
-    let tempMobileView = get('#', 'model-mobile-view-css');
 
     let mobileViewPrivate = function () {
         if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
-            tempMobileView.disabled = false;
+            tempModelMobileView.disabled = false;
         }
         else {
-            tempMobileView.disabled = true;
+            tempModelMobileView.disabled = true;
         }
     };
 

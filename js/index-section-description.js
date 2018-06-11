@@ -1,7 +1,5 @@
 const makeSection = (function () {
-    let tempArticleSection = get('.', 'article-section');
     let addSectionPrivate = function (temp) {
-        let tempRightSection = get('#', 'right-section');
 
         for (let sectionNumber in temp) {
             let newSection = document.createElement('section');
@@ -21,15 +19,15 @@ const makeSection = (function () {
             let tempCityNameHeader = document.createElement('h2');
             tempCityNameHeader.className = 'h2-city-name-header';
 
-            let tempCityNamePar = document.createElement('p');
-            tempCityNamePar.className = 'description-text';
+            let tempCityDescTxt = document.createElement('p');
+            tempCityDescTxt.className = 'description-text';
 
             let tempReadMore = document.createElement('button');
             tempReadMore.className = 'read-more';
             tempReadMore.innerText = 'Read more';
 
             tempCityName.appendChild(tempCityNameHeader);
-            tempCityName.appendChild(tempCityNamePar);
+            tempCityName.appendChild(tempCityDescTxt);
             tempCityName.appendChild(tempReadMore);
 
             
@@ -45,28 +43,26 @@ const makeSection = (function () {
 
 const makeCity = (function () {
     let addCityPrivate = function (temp, tempID) {
-            let tempSection = get('.', 'article-section');
-            let tempCityNameHeader = get('.', 'h2-city-name-header');
-            let tempCityNamePar = get('.', 'description-text');
+            
             let tempSectionNumber = 1;
 
             for (let tempIdArray in temp) {
                 for (let tempObjectLength in destinationObject) {
                     if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
                         if (tempID != destinationObject[tempObjectLength].id) {
-                            tempSection[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
-                            tempCityNameHeader[tempSectionNumber].innerText = destinationObject[tempObjectLength].name;
-                            tempCityNamePar[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
-                            tempSection[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
+                            tempArticleSection[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
+                            tempCityNameHeaderH2[tempSectionNumber].innerText = destinationObject[tempObjectLength].name;
+                            tempCityDescTxt[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
+                            tempArticleSection[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
                             tempSectionNumber++;
                             break;
                         }
 
                         else {
-                            tempSection[0].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
-                            tempCityNameHeader[0].innerText = destinationObject[tempObjectLength].name;
-                            tempCityNamePar[0].innerText = destinationObject[tempObjectLength].desc;
-                            tempSection[0].dataset.id = destinationObject[tempObjectLength].id;
+                            tempArticleSection[0].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
+                            tempCityNameHeaderH2[0].innerText = destinationObject[tempObjectLength].name;
+                            tempCityDescTxt[0].innerText = destinationObject[tempObjectLength].desc;
+                            tempArticleSection[0].dataset.id = destinationObject[tempObjectLength].id;
                             break;
                         }
                     }

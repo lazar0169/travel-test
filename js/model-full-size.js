@@ -1,6 +1,6 @@
 const makeFullSize = (function () {
     let fullSizePrivate = function () {
-        let temptableDiv = get('#', 'table-div');
+        
         let maxJan;
         let maxFeb;
         let maxMarch;
@@ -20,13 +20,13 @@ const makeFullSize = (function () {
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
             if (Number(tempDataID) === destinationObject[tempObjectLength].id) {
                 let tempSeasons = Object.keys(destinationObject[tempObjectLength].seasons);
-                let tempimageFullScreen = get('#', 'image-full-screen');
-                let tempH1FullScreenShow = get('#', 'h1-full-screen-show');
-                let temppFullScreen = get('#', 'p-full-screen');
+                
+                
+
 
                 tempH1FullScreenShow.innerText = destinationObject[tempObjectLength].name;
-                tempimageFullScreen.src = destinationObject[tempObjectLength].image;
-                temppFullScreen.innerText = destinationObject[tempObjectLength].desc;
+                tempImageFullScreen.src = destinationObject[tempObjectLength].image;
+                tempParFullScreen.innerText = destinationObject[tempObjectLength].desc;
 
                 for (let tempSeasonLength = 0; tempSeasonLength < tempSeasons.length; tempSeasonLength++) {
                     let tempParSeason = document.createElement('h1');
@@ -196,8 +196,8 @@ const makeFullSize = (function () {
                             temptablePrice.appendChild(temptablePriceTR);
                         }
                     }
-                    temptableDiv.appendChild(tempParSeason)
-                    temptableDiv.appendChild(temptablePrice);
+                    tempTableDiv.appendChild(tempParSeason)
+                    tempTableDiv.appendChild(temptablePrice);
                 }
             }
         }

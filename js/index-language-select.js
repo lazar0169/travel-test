@@ -1,21 +1,20 @@
 const showHideLanguage = (function () {
     let tempShowHide = false;
     let showHidePrivate = function () {
-        let tempShowHideLanguage = get('#', 'language');
-        tempOpenClose = get('#', 'p-button-open-close')
+        
         if (!tempShowHide) {
             tempShowHide = true;
-            tempShowHideLanguage.style.visibility = 'visible';
+            tempLanguage.style.visibility = 'visible';
 
-            tempOpenClose.innerHTML = '';
-            tempOpenClose.innerHTML = '&#9660';
+            tempOpenCloseButton.innerHTML = '';
+            tempOpenCloseButton.innerHTML = '&#9660';
         }
 
         else {
             tempShowHide = false;
-            tempShowHideLanguage.style.visibility = 'hidden';
-            tempOpenClose.innerHTML = '';
-            tempOpenClose.innerHTML = ' &#9650';
+            tempLanguage.style.visibility = 'hidden';
+            tempOpenCloseButton.innerHTML = '';
+            tempOpenCloseButton.innerHTML = ' &#9650';
         }
     };
     on('showHideLanguage', function () {
@@ -27,11 +26,7 @@ const showHideLanguage = (function () {
 const createLanguage = (function () {
 
     let createLanguagePrivate = function () {
-
-        let tempSectionLanguage = get('#', 'language');
-        
-        let tempBody = get('tag', 'body');
-        let tempLeftSection = get('#', 'left-section');
+    
 
         for (let tempObjectLanguageLength in languageObject) {
             let tempCreateLanguage = document.createElement('a');
@@ -40,23 +35,21 @@ const createLanguage = (function () {
             if (tempBody[0].clientWidth < tempBody[0].clientHeight && tempLeftSection.style.width != '100%') {
                 tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
                 tempCreateLanguage.dataset.id = languageObject[tempObjectLanguageLength].id;
-                tempSectionLanguage.appendChild(tempCreateLanguage);
+                tempLanguage.appendChild(tempCreateLanguage);
             }
             else {
                 tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
                 tempCreateLanguage.dataset.id = languageObject[tempObjectLanguageLength].id;
-                tempSectionLanguage.appendChild(tempCreateLanguage);
+                tempLanguage.appendChild(tempCreateLanguage);
 
             }
         }
 
-        for (let tempIdLanguage of get('.', 'list-of-language')) {
+        for (let tempIdLanguage of tempLanguageList) {
             tempIdLanguage.addEventListener('click', () => {
-                let tempBody = get('tag', 'body');
                 let tempDataLanguage = tempIdLanguage.dataset.id;
                 for (let tempObjectLanguageLength = 0; tempObjectLanguageLength < languageObject.length; tempObjectLanguageLength++) {
                     if (tempDataLanguage === languageObject[tempObjectLanguageLength].id) {
-                        let temppLanguage = get('#', 'p-language');
                         if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
                             temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
                             temppLanguage.dataset.id=tempDataLanguage;

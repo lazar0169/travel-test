@@ -8,7 +8,7 @@ const setClickSeason = (function () {
     let clickSeasonPrivate = function (tempSeason) {
         let tempIdArray = [];
         let tempNumberOfArray = 0;
-        let tempRightSection = get('#', 'right-section');
+
         tempRightSection.innerHTML = '';
 
         if (tempSeason === 'all') {

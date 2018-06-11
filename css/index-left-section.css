@@ -56,6 +56,9 @@
     align-items: center;
     margin: auto;
 }
+.link-season::first-letter{
+    text-transform: capitalize;
+}
 
 .link-season:hover{
 background-color: rgb(15, 50, 200);
@@ -121,7 +124,7 @@ background-color: rgb(15, 50, 200);
 }
 
 #language::-webkit-scrollbar {
-    width: 3%;
+    width: 1%;
 }
  
 #language::-webkit-scrollbar-track {
