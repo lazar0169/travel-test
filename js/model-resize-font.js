@@ -1,10 +1,6 @@
 const resizeFont = (function () {
-
     let resizeFontPrivate = function () {
-
-
         let tempFont = tempH1FullScreenShow.clientWidth;
-
         tempH1FullScreenShow.style.fontSize = ` ${tempFont * 0.15}px`;
         tempParFullScreen.style.fontSize = `${tempFont * 0.03}px`;
 

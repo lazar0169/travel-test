@@ -1,15 +1,13 @@
 const showHideLanguage = (function () {
     let tempShowHide = false;
     let showHidePrivate = function () {
-        
+
         if (!tempShowHide) {
             tempShowHide = true;
             tempLanguage.style.visibility = 'visible';
-
             tempOpenCloseButton.innerHTML = '';
             tempOpenCloseButton.innerHTML = '&#9660';
         }
-
         else {
             tempShowHide = false;
             tempLanguage.style.visibility = 'hidden';
@@ -24,9 +22,7 @@ const showHideLanguage = (function () {
 })();
 
 const createLanguage = (function () {
-
     let createLanguagePrivate = function () {
-    
 
         for (let tempObjectLanguageLength in languageObject) {
             let tempCreateLanguage = document.createElement('a');
@@ -41,7 +37,6 @@ const createLanguage = (function () {
                 tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
                 tempCreateLanguage.dataset.id = languageObject[tempObjectLanguageLength].id;
                 tempLanguage.appendChild(tempCreateLanguage);
-
             }
         }
 
@@ -52,18 +47,17 @@ const createLanguage = (function () {
                     if (tempDataLanguage === languageObject[tempObjectLanguageLength].id) {
                         if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
                             temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
-                            temppLanguage.dataset.id=tempDataLanguage;
+                            temppLanguage.dataset.id = tempDataLanguage;
                             trigger('showHideLanguage', {});
                         }
                         else {
                             temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
-                            temppLanguage.dataset.id=tempDataLanguage;
+                            temppLanguage.dataset.id = tempDataLanguage;
                             trigger('showHideLanguage', {});
                         }
-
                     }
                 }
-                trigger('hideBar', { });
+                trigger('hideBar', {});
             });
         }
     };

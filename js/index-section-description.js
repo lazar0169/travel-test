@@ -30,12 +30,12 @@ const makeSection = (function () {
             tempCityName.appendChild(tempCityDescTxt);
             tempCityName.appendChild(tempReadMore);
 
-            
+
             tempArticleSection[sectionNumber].appendChild(tempCityName);
         }
         addListener('.', 'article-section', 'click', 'fullSizeIndex');
     };
-    
+
     on('makeSection', function (event, tempData) {
         addSectionPrivate(tempData.data);
     })
@@ -43,35 +43,33 @@ const makeSection = (function () {
 
 const makeCity = (function () {
     let addCityPrivate = function (temp, tempID) {
-            
-            let tempSectionNumber = 1;
+        let tempSectionNumber = 1;
 
-            for (let tempIdArray in temp) {
-                for (let tempObjectLength in destinationObject) {
-                    if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
-                        if (tempID != destinationObject[tempObjectLength].id) {
-                            tempArticleSection[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
-                            tempCityNameHeaderH2[tempSectionNumber].innerText = destinationObject[tempObjectLength].name;
-                            tempCityDescTxt[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
-                            tempArticleSection[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
-                            tempSectionNumber++;
-                            break;
-                        }
-
-                        else {
-                            tempArticleSection[0].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
-                            tempCityNameHeaderH2[0].innerText = destinationObject[tempObjectLength].name;
-                            tempCityDescTxt[0].innerText = destinationObject[tempObjectLength].desc;
-                            tempArticleSection[0].dataset.id = destinationObject[tempObjectLength].id;
-                            break;
-                        }
+        for (let tempIdArray in temp) {
+            for (let tempObjectLength in destinationObject) {
+                if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
+                    if (tempID != destinationObject[tempObjectLength].id) {
+                        tempArticleSection[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
+                        tempCityNameHeaderH2[tempSectionNumber].innerText = destinationObject[tempObjectLength].name;
+                        tempCityDescTxt[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
+                        tempArticleSection[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
+                        tempSectionNumber++;
+                        break;
+                    }
+                    else {
+                        tempArticleSection[0].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
+                        tempCityNameHeaderH2[0].innerText = destinationObject[tempObjectLength].name;
+                        tempCityDescTxt[0].innerText = destinationObject[tempObjectLength].desc;
+                        tempArticleSection[0].dataset.id = destinationObject[tempObjectLength].id;
+                        break;
                     }
                 }
             }
+        }
     };
 
     on('makeCity', function (event, tempData) {
-        let highRateID= tempData.highRateID;
+        let highRateID = tempData.highRateID;
         addCityPrivate(tempData.data, highRateID);
     })
 })();

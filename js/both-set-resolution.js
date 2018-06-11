@@ -1,7 +1,6 @@
 const resizeResolution = (function () {
 
     let setResolutionPrivate = function () {
-
         let tempClientWidth = tempBody[0].clientWidth;
         let tempClientHeight = tempBody[0].clientHeight;
         let tempResolution = tempClientWidth / tempClientHeight;
@@ -11,7 +10,7 @@ const resizeResolution = (function () {
             let tempNewClientWidthPx = `${tempNewClientWidth}px`;
             tempMainSection.style.width = tempNewClientWidthPx;
             tempMainSection.style.height = `${tempClientHeight}px`;
-            trigger('mobileView', { });
+            trigger('mobileView', {});
         }
         else {
             let tempNewClientHeight = tempClientWidth / SCREEN_RESOLUTION
@@ -20,7 +19,7 @@ const resizeResolution = (function () {
             height = tempNewClientHeight;
             tempMainSection.style.height = tempNewClientHeightPx;
             tempMainSection.style.width = `${tempClientWidth}px`;
-            trigger('mobileView', { });
+            trigger('mobileView', {});
         }
     };
 

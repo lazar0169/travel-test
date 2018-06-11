@@ -6,8 +6,8 @@ const mobileView = (function () {
             tempLogo.style.visibility = 'hidden';
             tempShowBar.style.visibility = 'visible';
 
-            for(let tempSeasonsListLength of tempSeasonsList){
-                tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id.substring(0, 3); 
+            for (let tempSeasonsListLength of tempSeasonsList) {
+                tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id.substring(0, 3);
             }
 
             if (tempLanguageList.length != 0) {
@@ -15,20 +15,13 @@ const mobileView = (function () {
                     if (tempLanguageID.id === temppLanguage.dataset.id) {
                         temppLanguage.innerHTML = tempLanguageID.id;
                     }
-
-
-
-
                     for (let tempLanguageListLength of tempLanguageList) {
                         if (tempLanguageID.id === tempLanguageListLength.dataset.id) {
                             tempLanguageListLength.innerHTML = tempLanguageID.id;
                         }
                     }
-
                 }
-
             }
-
         }
         else {
             tempIndexMobileView.disabled = true;
@@ -37,8 +30,8 @@ const mobileView = (function () {
             tempLeftSection.style.width = '20%';
             tempLeftSection.style.position = 'relative';
             tempRightSection.style.visibility = 'visible';
-            for(let tempSeasonsListLength of tempSeasonsList){
-                tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id; 
+            for (let tempSeasonsListLength of tempSeasonsList) {
+                tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id;
             }
 
             if (tempLanguageList.length != 0) {
@@ -56,10 +49,8 @@ const mobileView = (function () {
             }
         }
     };
+
     addListener('#', 'show-bar', 'click', 'showBar');
-
-
-
 
     on('mobileView', function (event, tempData) {
         mobileViewPrivate(tempData.data);

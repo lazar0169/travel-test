@@ -1,6 +1,6 @@
 const makeFullSize = (function () {
     let fullSizePrivate = function () {
-        
+
         let maxJan;
         let maxFeb;
         let maxMarch;
@@ -20,9 +20,6 @@ const makeFullSize = (function () {
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
             if (Number(tempDataID) === destinationObject[tempObjectLength].id) {
                 let tempSeasons = Object.keys(destinationObject[tempObjectLength].seasons);
-                
-                
-
 
                 tempH1FullScreenShow.innerText = destinationObject[tempObjectLength].name;
                 tempImageFullScreen.src = destinationObject[tempObjectLength].image;
@@ -202,9 +199,9 @@ const makeFullSize = (function () {
             }
         }
     };
-    
-   on('fullSize', function (){
-    fullSizePrivate();
-   })
+
+    on('fullSize', function () {
+        fullSizePrivate();
+    })
 })();
 

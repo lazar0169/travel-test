@@ -1,10 +1,5 @@
 const resizeGrid = (function () {
-    
-    
-    
     let resizeGridPrivate = function () {
-
-        
         let tempMainSectionWidth = tempMainSection.clientWidth;
         let tempMainSectionHeight = tempMainSection.clientHeight;
 
@@ -15,7 +10,7 @@ const resizeGrid = (function () {
         tempMainSection.style.fontSize = tempFontSize;
         tempOpenCloseLanguage.style.fontSize = tempFontSize;
 
-        if(tempBody[0].clientWidth > tempBody[0].clientHeight){
+        if (tempBody[0].clientWidth > tempBody[0].clientHeight) {
             if (tempMainSectionWidth / tempMainSectionHeight > SCREEN_RESOLUTION) {
                 for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
                     if (tempArticleSectionLength !== 0) {
@@ -28,7 +23,6 @@ const resizeGrid = (function () {
                     }
                 }
             }
-    
             else {
                 for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
                     if (tempArticleSectionLength !== 0) {
@@ -44,16 +38,15 @@ const resizeGrid = (function () {
 
         }
 
-        
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
             let tempSectionHeight = tempArticleSection[tempArticleSectionLength].clientHeight;
             tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionHeight * 0.2}px`;
             tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionHeight * 0.15}px`;
         }
     };
-    
+
     on('resizeGrid', function (event, data) {
         resizeGridPrivate();
-        
+
     });
 })();

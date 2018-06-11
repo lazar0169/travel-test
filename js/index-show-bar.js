@@ -13,17 +13,13 @@ const showBar = (function () {
                     if (tempLanguageID.id === temppLanguage.dataset.id) {
                         temppLanguage.innerHTML = tempLanguageID.language;
                     }
-
                     for (let tempLanguageListLength of tempLanguageList) {
                         if (tempLanguageID.id === tempLanguageListLength.dataset.id) {
                             tempLanguageListLength.innerHTML = tempLanguageID.language;
                         }
                     }
-
                 }
-
             }
-
         }
         else {
             trigger('hideBar', {});
@@ -35,7 +31,6 @@ const showBar = (function () {
             tempLeftSection.style.width = '20%';
             tempLeftSection.style.position = 'relative';
             tempRightSection.style.visibility = 'visible';
-
             for (let tempSeasonsListLength of tempSeasonsList) {
                 tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id.substring(0, 3);
             }
@@ -45,23 +40,15 @@ const showBar = (function () {
                     if (tempLanguageID.id === temppLanguage.dataset.id) {
                         temppLanguage.innerHTML = tempLanguageID.id;
                     }
-
-
-
-
                     for (let tempLanguageListLength of tempLanguageList) {
                         if (tempLanguageID.id === tempLanguageListLength.dataset.id) {
                             tempLanguageListLength.innerHTML = tempLanguageID.id;
                         }
                     }
-
                 }
-
             }
         }
-
     };
-
 
     on('hideBar', function () {
         hideBarPrivate();

@@ -12,16 +12,15 @@ function get(tempSelector, tempName) {
 
 function addListener(tempSelector, tempName, tempEvent, tempFunction) {
     let tempDiv = get(tempSelector, tempName);
-    if(tempSelector === '#'){
-        tempDiv.addEventListener(tempEvent, ()=>{
+    if (tempSelector === '#') {
+        tempDiv.addEventListener(tempEvent, () => {
             trigger(tempFunction, {});
         });
     }
-    
-    else{ 
+    else {
         for (let tempDivLength of tempDiv)
             tempDivLength.addEventListener(tempEvent, () => {
-                trigger(tempFunction, {data: tempDivLength.dataset.id});
+                trigger(tempFunction, { data: tempDivLength.dataset.id });
             });
     }
 };
