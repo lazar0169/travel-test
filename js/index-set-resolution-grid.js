@@ -1,5 +1,6 @@
 const resizeGrid = (function () {
     
+    
     let tempCityNameHeaderH2 = get('.', 'h2-city-name-header');
     let resizeGridPrivate = function () {
 
@@ -18,7 +19,7 @@ const resizeGrid = (function () {
         tempMainSection.style.fontSize = tempFontSize;
         tempLanguage1.style.fontSize = tempFontSize;
 
-        if(tempBody[0].clientWidth >900){
+        if(tempBody[0].clientWidth > tempBody[0].clientHeight){
             if (tempMainSectionA / tempMainSectionB > SCREEN_RESOLUTION) {
                 for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempSection.length; tempArticleSectionLength++) {
                     if (tempArticleSectionLength !== 0) {

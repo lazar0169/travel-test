@@ -1,6 +1,9 @@
 windowListener("load", function () {
     trigger('setResolution', {});
 });
+windowListener("load", function () {
+    trigger('language', {});
+});
 
 windowListener("resize", function () {
     trigger('setResolution', {});
@@ -10,9 +13,6 @@ windowListener('load', function () {
     trigger('clickedSeason', {})
 });
 
-windowListener('load', function () {
-    trigger('language', {});
-});
 
 windowListener('load', function (){
     trigger('makeArrayId', {})

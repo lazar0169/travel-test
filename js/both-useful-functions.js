@@ -19,9 +19,9 @@ function addListener(tempSelector, tempName, tempEvent, tempFunction) {
     }
     
     else{ 
-        for (let tempDivLenght of tempDiv)
-            tempDivLenght.addEventListener(tempEvent, () => {
-                trigger(tempFunction, {data: tempDivLenght.dataset.id});
+        for (let tempDivLength of tempDiv)
+            tempDivLength.addEventListener(tempEvent, () => {
+                trigger(tempFunction, {data: tempDivLength.dataset.id});
             });
     }
 };

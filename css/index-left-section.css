@@ -9,22 +9,21 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    
     visibility: hidden;
     font-size: 10vw;
     text-align: center;
     border: none;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     text-decoration: none;
     outline:none;
     background: transparent;
 }
 #show-bar p{
     margin: 0;
-padding: 0;
+    padding: 0;
+    color: white;
 
-color: white;
 }
 #logo-article{
     position: absolute;

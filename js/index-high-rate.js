@@ -6,6 +6,7 @@ const highRate = (function () {
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
             if (tempArray[0] === destinationObject[tempObjectLength].id) {
                 tempRating = destinationObject[tempObjectLength].rating;
+                break;
             }
         }
 
@@ -16,6 +17,7 @@ const highRate = (function () {
                     if (tempRating < tempRatingX) {
                         tempRating = tempRatingX;
                         highRateID = destinationObject[tempObjectLength].id;
+                        break;
                     }
                 }
             }

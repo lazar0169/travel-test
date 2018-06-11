@@ -1,0 +1,39 @@
+.article-section{
+    width: 100% !important;
+    height: 50vh!important;
+}
+#section-0{
+    grid-column-start: 1 !important;
+    grid-column-end: 1 !important;
+    grid-row-start: 1 !important;
+    grid-row-end: 1 !important;
+}
+#right-section{
+    grid-template-columns: auto !important;
+}
+#main-section{
+    height: 100% !important;
+    width: 100% !important;
+}
+.h2-city-name-header{
+    font-size: 9vw !important;
+}
+.description-text{
+    font-size: 3vw !important;
+}
+.read-more{
+    font-size: 9vw !important;
+}
+.link-season
+{
+    font-size: 4vw !important;
+}
+.list-of-language{
+    font-size: 4vw !important;
+}
+#open-close-language{
+    font-size: 4vw !important;
+}
+#show-bar p {
+    text-align: left !important;
+}

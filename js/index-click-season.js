@@ -13,6 +13,7 @@ const setClickSeason = (function () {
 
         if (tempSeason === 'all') {
             trigger('makeArrayId', {});
+            trigger('hideBar', { });
         }
 
         else {
@@ -26,6 +27,7 @@ const setClickSeason = (function () {
                 }
             }
             trigger('highRate', { data: tempIdArray });
+            trigger('hideBar', { });
         }
     }
 

@@ -15,11 +15,6 @@ let destinationObject = [
                 'July': [],
                 'August': [16]
             },
-            'autumn': {
-                'September': [17, 5],
-                'October': [18, 15],
-                'November': [19]
-            },
             'winter': {
                 'January': [111],
                 'February': [112, 1, 2, 6, 8],
@@ -517,33 +512,43 @@ let destinationObject = [
 
 let languageObject = [
     {
+        id: 'Srb',
         language: 'Serbian'
     },
     {
+        id: 'Eng',
         language: 'English'
     },
     {
+        id:'Cro',
         language: 'Croatian'
     },
     {
+        id: 'Fre',
         language: 'French'
     },
     {
+        id: 'Mon',
         language: 'Montenegrin'
     },
     {
+        id: 'Bul',
         language: 'Bulgarian'
     },
     {
+        id: 'Rom',
         language: 'Romanian'
     },
     {
+        id: 'Fin',
         language: 'Finnish'
     },
     {
+        id: 'Ara',
         language: 'Arabic'
     },
     {
+        id: 'Chi',
         language: 'Chinese'
     }
 ]

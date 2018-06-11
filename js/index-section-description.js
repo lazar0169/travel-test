@@ -59,6 +59,7 @@ const makeCity = (function () {
                             tempCityNamePar[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
                             tempSection[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
                             tempSectionNumber++;
+                            break;
                         }
 
                         else {
@@ -66,6 +67,7 @@ const makeCity = (function () {
                             tempCityNameHeader[0].innerText = destinationObject[tempObjectLength].name;
                             tempCityNamePar[0].innerText = destinationObject[tempObjectLength].desc;
                             tempSection[0].dataset.id = destinationObject[tempObjectLength].id;
+                            break;
                         }
                     }
                 }

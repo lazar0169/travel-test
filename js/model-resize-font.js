@@ -10,9 +10,9 @@ const resizeFont = (function () {
         tempH1.style.fontSize = ` ${tempFont * 0.15}px`;
         tempP.style.fontSize = `${tempFont * 0.03}px`;
 
-        for (let tempTableLenght = 0; tempTableLenght < tempH1tablePrice.length; tempTableLenght++) {
-            tempH1tablePrice[tempTableLenght].style.fontSize = `${tempFont * 0.05}px`;
-            tempTable[tempTableLenght].style.fontSize = `${tempFont * 0.03}px`;
+        for (let tempTableLength = 0; tempTableLength < tempH1tablePrice.length; tempTableLength++) {
+            tempH1tablePrice[tempTableLength].style.fontSize = `${tempFont * 0.05}px`;
+            tempTable[tempTableLength].style.fontSize = `${tempFont * 0.03}px`;
         }
     };
     

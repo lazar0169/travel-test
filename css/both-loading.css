@@ -9,10 +9,7 @@
     border-top: 4vh solid #3498db !important;
     width: 20vh !important;
     height: 20vh !important;
-
-    }
-
-    
+    }  
 }
 
 #loading{
@@ -36,6 +33,7 @@
     width: 5vw;
     height: 5vw;
     animation: spin 2s linear infinite;
+    MARGIN: 10%;
 }
 @keyframes spin {
     0% { transform: rotate(0deg); }
