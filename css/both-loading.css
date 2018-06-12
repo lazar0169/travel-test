@@ -33,7 +33,7 @@
     width: 5vw;
     height: 5vw;
     animation: spin 2s linear infinite;
-    MARGIN: 10%;
+    margin: 15%;
 }
 @keyframes spin {
     0% { transform: rotate(0deg); }

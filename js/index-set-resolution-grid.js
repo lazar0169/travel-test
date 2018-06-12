@@ -1,4 +1,10 @@
 const resizeGrid = (function () {
+    let tempBody = get('body');
+    let tempMainSection = get('#main-section');
+    let tempRightSection = get('#right-section');
+    let tempOpenCloseLanguage = get('#open-close-language');
+    let tempCityNameHeaderH2 = get('.h2-city-name-header');
+    let tempArticleSection = get('.article-section');
     let resizeGridPrivate = function () {
         let tempMainSectionWidth = tempMainSection.clientWidth;
         let tempMainSectionHeight = tempMainSection.clientHeight;

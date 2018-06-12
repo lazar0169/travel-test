@@ -9,20 +9,17 @@ windowListener("resize", function () {
     trigger('setResolution', {});
 });
 
-windowListener('load', function () {
-    trigger('clickedSeason', {})
-});
-
-
 windowListener('load', function (){
-    trigger('makeArrayId', {})
+    trigger('makeArrayId', {season: 'all'})
 });
+
 
 windowListener("resize", function () {
     trigger('resizeGrid', {});
 });
 
-addListener('#', 'open-close-language', 'click', 'showHideLanguage')
-
+addListener('#open-close-language', 'click', 'showHideLanguage');
+addListener('#show-bar', 'click', 'showBar');
+addListener('.link-season', 'click', 'clickSeason');
 
 

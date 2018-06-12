@@ -1,4 +1,7 @@
 const resizeFont = (function () {
+    let tempH1FullScreenShow = get('#h1-full-screen-show');
+    let tempParFullScreen = get('#p-full-screen');
+    let tempH1tablePrice = get('.h1-table-price');
     let resizeFontPrivate = function () {
         let tempFont = tempH1FullScreenShow.clientWidth;
         tempH1FullScreenShow.style.fontSize = ` ${tempFont * 0.15}px`;

@@ -246,7 +246,7 @@ let destinationObject = [
         id: 1007,
         name: 'Paris',
         image: 'images/paris.jpg',
-        rating: 4.96,
+        rating: 4.16,
         seasons: {
             'spring': {
                 'March': [81],

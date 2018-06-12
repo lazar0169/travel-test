@@ -1,5 +1,6 @@
 const showHideLanguage = (function () {
-    let tempShowHide = false;
+    let tempOpenCloseButton = get('#p-button-open-close');
+    let tempLanguage = get('#language');
     let showHidePrivate = function () {
 
         if (!tempShowHide) {
@@ -22,6 +23,11 @@ const showHideLanguage = (function () {
 })();
 
 const createLanguage = (function () {
+    let tempBody = get('body');
+    let tempLeftSection = get('#left-section');
+    let tempLanguageList = get('.list-of-language');
+    let temppLanguage = get('#p-language');
+    let tempLanguage = get('#language');
     let createLanguagePrivate = function () {
 
         for (let tempObjectLanguageLength in languageObject) {

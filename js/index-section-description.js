@@ -1,4 +1,7 @@
 const makeSection = (function () {
+    let tempRightSection = get('#right-section');
+    let tempArticleSection = get('.article-section');
+    let tempCityDescTxt = get('.description-text');
     let addSectionPrivate = function (temp) {
 
         for (let sectionNumber in temp) {
@@ -33,7 +36,7 @@ const makeSection = (function () {
 
             tempArticleSection[sectionNumber].appendChild(tempCityName);
         }
-        addListener('.', 'article-section', 'click', 'fullSizeIndex');
+        addListener('.article-section', 'click', 'fullSizeIndex');
     };
 
     on('makeSection', function (event, tempData) {
@@ -42,6 +45,7 @@ const makeSection = (function () {
 })();
 
 const makeCity = (function () {
+    let tempCityNameHeaderH2 = get('.h2-city-name-header');
     let addCityPrivate = function (temp, tempID) {
         let tempSectionNumber = 1;
 

@@ -1,4 +1,8 @@
 const makeFullSize = (function () {
+    let tempImageFullScreen = get('#image-full-screen');
+    let tempTableDiv = get('#table-div');
+    let tempH1FullScreenShow = get('#h1-full-screen-show');
+    let tempParFullScreen = get('#p-full-screen');
     let fullSizePrivate = function () {
 
         let maxJan;

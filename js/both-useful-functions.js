@@ -1,17 +1,20 @@
-function get(tempSelector, tempName) {
+function get(tempName) {
+    let tempSelector = tempName.charAt(0);
+
     if (tempSelector === '#') {
-        return document.getElementById(tempName);
+        return document.getElementById(tempName.substring(1, 50));
     }
     else if (tempSelector === '.') {
-        return document.getElementsByClassName(tempName);
+        return document.getElementsByClassName(tempName.substring(1, 50));
     }
     else {
         return document.getElementsByTagName(tempName);
     }
 };
 
-function addListener(tempSelector, tempName, tempEvent, tempFunction) {
-    let tempDiv = get(tempSelector, tempName);
+function addListener(tempName, tempEvent, tempFunction) {
+    let tempDiv = get(tempName);
+    let tempSelector = tempName.charAt(0);
     if (tempSelector === '#') {
         tempDiv.addEventListener(tempEvent, () => {
             trigger(tempFunction, {});
