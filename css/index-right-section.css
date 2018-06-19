@@ -100,11 +100,17 @@
     text-align: justify;
 }
 
-#section-0{
+#section-0F{
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
+}
+#section-0M{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
 }
 
 #right-section::-webkit-scrollbar {

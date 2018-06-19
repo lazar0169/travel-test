@@ -6,8 +6,10 @@ const description = (function () {
     let tempCityNameHeaderH2 = get('.h2-city-name-header');
     let tempArticleSection = get('.article-section');
     let tempCityDescTxt = get('.description-text');
+    let tempLink = get('#season-section');
+    let tempLanguage = get('#language');
 
-    let arrayIdPrivate = function (tempSeason) {
+    let arrayId = function (tempSeason) {
         let tempIdArray = [];
         let tempNumberOfArray = 0;
         if (tempSeason == 'all') {
@@ -28,11 +30,10 @@ const description = (function () {
             }
 
         }
-        trigger('highRate', { data: tempIdArray });
+        highRate(tempIdArray);
     };
 
-
-    let highRatePrivate = function (tempArray) {
+    let highRate = function (tempArray) {
         let tempRating;
         let highRateID;
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
@@ -55,11 +56,11 @@ const description = (function () {
                 }
             }
         }
-        trigger('makeSection', { data: tempArray });
-        trigger('makeCity', { data: tempArray, highRateID: highRateID });
+        addSection(tempArray);
+        addCity(tempArray, highRateID);
     };
 
-    let addSectionPrivate = function (temp) {
+    let addSection = function (temp) {
 
         for (let sectionNumber in temp) {
             let newSection = document.createElement('section');
@@ -90,14 +91,15 @@ const description = (function () {
             tempCityName.appendChild(tempCityDescTxt);
             tempCityName.appendChild(tempReadMore);
 
-
             tempArticleSection[sectionNumber].appendChild(tempCityName);
+
+            tempArticleSection[sectionNumber].addEventListener('click', () => {
+                index(tempArticleSection[sectionNumber].dataset.id);
+            })
         }
-        addListener('.article-section', 'click', 'fullSizeIndex');
     };
 
-
-    let addCityPrivate = function (temp, tempID) {
+    let addCity = function (temp, tempID) {
         let tempSectionNumber = 1;
 
         for (let tempIdArray in temp) {
@@ -123,107 +125,76 @@ const description = (function () {
         }
     };
 
-    let resizeGridPrivate = function () {
-        let tempMainSectionWidth = tempMainSection.clientWidth;
-        let tempMainSectionHeight = tempMainSection.clientHeight;
-
-        let tempFontSize = tempMainSectionWidth * 0.015 + 'px';
-        let tempResizeWidth = tempRightSection.clientWidth;
-        let tempResizeHeight = tempRightSection.clientHeight;
-
-        tempMainSection.style.fontSize = tempFontSize;
-        tempOpenCloseLanguage.style.fontSize = tempFontSize;
-
-        if (tempBody[0].clientWidth > tempBody[0].clientHeight) {
-            if (tempMainSectionWidth / tempMainSectionHeight > SCREEN_RESOLUTION) {
-                for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
-                    if (tempArticleSectionLength !== 0) {
-                        tempArticleSection[tempArticleSectionLength].style.height = `${tempResizeHeight / 3}px`;
-                        tempArticleSection[tempArticleSectionLength].style.width = `${tempResizeWidth / 3}px`;
-                    }
-                    else {
-                        tempArticleSection[tempArticleSectionLength].style.height = `${((tempResizeHeight * 2) / 3) + 3}px`;
-                        tempArticleSection[tempArticleSectionLength].style.width = `${((tempResizeWidth * 2) / 3) + 3}px`;
-                    }
-                }
-            }
-            else {
-                for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
-                    if (tempArticleSectionLength !== 0) {
-                        tempArticleSection[tempArticleSectionLength].style.height = `${tempResizeHeight / 3}px`;
-                        tempArticleSection[tempArticleSectionLength].style.width = `${tempResizeWidth / 3}px`;
-                    }
-                    else {
-                        tempArticleSection[tempArticleSectionLength].style.height = `${((tempResizeHeight * 2) / 3) + 3}px`;
-                        tempArticleSection[tempArticleSectionLength].style.width = `${((tempResizeWidth * 2) / 3) + 3}px`;
-                    }
-                }
-            }
-            trigger('resize/desktopView', {});
-        }
-        else{
-            trigger('resize/mobileView', {});
-        }
-        
-
-
-
-    };
-
     let index = function (temp) {
         window.open(`full-size.html?id=${temp}`, '_self');
     };
 
+    let setFont = function () {
 
-
-    let setH2 = function () {
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
             let tempSectionHeight = tempArticleSection[tempArticleSectionLength].clientHeight;
             tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionHeight * 0.2}px`;
             tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionHeight * 0.15}px`;
+            tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempSectionHeight * 0.07}px`;
         }
 
+        let tempLinkWidth = tempLink.clientWidth;
+        tempLink.style.fontSize = `${tempLinkWidth * 0.12}px`;
+
+        let tempLanguageWidth = tempOpenCloseLanguage.clientWidth;
+        tempOpenCloseLanguage.style.fontSize = `${tempLanguageWidth * 0.12}px`;
+        tempLanguage.style.fontSize = `${tempLanguageWidth * 0.12}px`;
     };
 
-    on('setH2', function () {
-        setH2();
+    let rows = function (tempRows, tempCol) {
+        let rowsNumber = parseInt(tempArticleSection.length / tempRows);
+        let rowsHeight = tempRightSection.clientHeight / tempRows;
+        let columnWidth = tempRightSection.clientWidth / tempCol;
+        if (tempArticleSection.length % tempRows != 0) {
+            rowsNumber = rowsNumber + 2;
+        }
+        else {
+            rowsNumber++;
+        }
+        tempRightSection.style.gridTemplateColumns = `repeat(${tempCol}, ${columnWidth}px)`;
+        tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber}, ${rowsHeight}px)`;
+        for (let elemNumber in tempArticleSection) {
+            if (elemNumber == 0) {
+                tempArticleSection[elemNumber].id = 'section-0F';
+                break;
+            }
+        }
+
+    }
+
+    let columns = function () {
+        if (tempRightSection.clientWidth < tempRightSection.clientHeight) {
+            let rowsNumber = tempArticleSection.length;
+            tempRightSection.style.gridTemplateColumns = `${tempRightSection.clientWidth}px`;
+            for (let elemNumber in tempArticleSection) {
+                if (elemNumber == 0) {
+                    tempArticleSection[elemNumber].id = 'section-0M';
+                    break;
+                }
+            }
+            tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber }, 50%)`;
+        }
+
+    }
+
+    on('setFont', function () {
+        setFont();
     });
 
-    on('fullSizeIndex', function (event, tempData) {
-        index(tempData.data);
+    on('setRows', function (event, tempData) {
+        rows(tempData.row, tempData.column);
     });
 
-    on('resizeGrid', function (event, data) {
-        resizeGridPrivate();
-        
-
+    on('setColumns', function (event, tempData) {
+        columns();
     });
-
-    on('makeCity', function (event, tempData) {
-        let highRateID = tempData.highRateID;
-        addCityPrivate(tempData.data, highRateID);
-    });
-
-
-
-
-
-    on('makeSection', function (event, tempData) {
-        addSectionPrivate(tempData.data);
-    })
-
-
-
-    on('highRate', function (event, tempData) {
-        highRatePrivate(tempData.data);
-        trigger('resizeGrid', {});
-
-    });
-
-
-
 
     on('makeArrayId', function (event, tempData) {
-        arrayIdPrivate(tempData.season);
+        arrayId(tempData.season);
     });
 })();

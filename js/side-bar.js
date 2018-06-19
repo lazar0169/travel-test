@@ -15,20 +15,34 @@ const bar = (function () {
     let clickSeasonPrivate = function (tempSeason) {
 
         tempRightSection.innerHTML = '';
-
-        if (tempSeason === 'all') {
-            trigger('makeArrayId', { season: tempSeason });
-            trigger('hideBar', {});
+        if (tempBody[0].clientHeight > tempBody[0].clientWidth) {
+            if (tempSeason === 'all') {
+                trigger('makeArrayId', { season: tempSeason });
+                trigger('setColumns', {});
+                hideBar();  
+            }
+            else {
+                trigger('makeArrayId', { season: tempSeason });
+                trigger('setColumns', {});
+                hideBar();  
+            }
         }
-
         else {
+            if (tempSeason === 'all') {
+                trigger('makeArrayId', { season: tempSeason });
+                trigger('setRows', {});
+                hideBar();   
+            }
+            else {
+                trigger('makeArrayId', { season: tempSeason });
+                trigger('setRows', {});
+                hideBar();
+            }
 
-            trigger('makeArrayId', { season: tempSeason });
-            trigger('hideBar', {});
         }
     }
 
-    let showHidePrivate = function () {
+    let showHideLanguage = function () {
 
         if (!tempShowHide) {
             tempShowHide = true;
@@ -50,15 +64,17 @@ const bar = (function () {
             let tempCreateLanguage = document.createElement('a');
             tempCreateLanguage.className = 'list-of-language';
 
-            if (tempBody[0].clientWidth < tempBody[0].clientHeight && tempLeftSection.style.width != '100%') {
+            if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
                 tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
                 tempCreateLanguage.dataset.id = languageObject[tempObjectLanguageLength].id;
                 tempLanguage.appendChild(tempCreateLanguage);
+
             }
             else {
                 tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
                 tempCreateLanguage.dataset.id = languageObject[tempObjectLanguageLength].id;
                 tempLanguage.appendChild(tempCreateLanguage);
+
             }
         }
 
@@ -70,39 +86,43 @@ const bar = (function () {
                         if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
                             temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
                             temppLanguage.dataset.id = tempDataLanguage;
-                            trigger('showHideLanguage', {});
+                            showHideLanguage();
                         }
                         else {
                             temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
                             temppLanguage.dataset.id = tempDataLanguage;
-                            trigger('showHideLanguage', {});
+                            showHideLanguage();
                         }
                     }
                 }
-                trigger('hideBar', {});
+                hideBar();
             });
         }
     };
 
-    let showBarPrivate = function () {
+    tempShowBar.addEventListener('click', ()=>{
+        showBar();
+    });
+
+    let showBar = function () {
         if (tempLeftSection.style.width != '100%') {
             tempLeftSection.style.width = '100%';
             tempLeftSection.style.position = 'absolute';
             tempRightSection.style.visibility = 'hidden';
-            trigger('fullName', {});
+            fullName();
 
         }
         else {
-            trigger('hideBar', {});
+            hideBar();
         }
     };
 
-    let hideBarPrivate = function () {
+    let hideBar = function () {
         if (tempLeftSection.style.width != '20%') {
             tempLeftSection.style.width = '20%';
             tempLeftSection.style.position = 'relative';
             tempRightSection.style.visibility = 'visible';
-            trigger('substring', {});
+            substring();
         }
     };
 
@@ -110,22 +130,22 @@ const bar = (function () {
 
 
     let mobileView = function () {
-        tempIndexMobileView.disabled = false;
+
         tempLogo.style.visibility = 'hidden';
         tempShowBar.style.visibility = 'visible';
         if (tempLeftSection.style.width != '100%') {
-            trigger('substring', {});
+            substring();
         }
     };
 
     let desktopView = function () {
-        tempIndexMobileView.disabled = true;
+
         tempLogo.style.visibility = 'visible';
         tempShowBar.style.visibility = 'hidden';
         tempLeftSection.style.width = '20%';
         tempLeftSection.style.position = 'relative';
         tempRightSection.style.visibility = 'visible';
-        trigger('fullName', {});
+        fullName();
     };
 
 
@@ -169,25 +189,13 @@ const bar = (function () {
         }
     };
 
-    on('substring', function () {
-        substring();
+    on('resize/mobileView', function (event, data) {
+        mobileView();
     });
 
-    on('fullName', function () {
-        fullName();
-    })
-
-    
-
-    on('hideBar', function () {
-        hideBarPrivate();
+    on('resize/desktopView', function (event, data) {
+        desktopView();
     });
-
-    on('showBar', function () {
-        showBarPrivate();
-    });
-
-
 
 
 
@@ -198,14 +206,9 @@ const bar = (function () {
     })
 
 
-
-
-
     on('showHideLanguage', function () {
-        showHidePrivate();
+        showHideLanguage();
     });
-
-
 
 
     on('clickSeason', function (event, tempData) {

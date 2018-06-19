@@ -1,8 +1,9 @@
+
 #main-section{
     visibility: hidden;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
     display: flex;
     overflow: none;
     background-color: white;
@@ -18,10 +19,10 @@
 #right-section{
     position: relative;
     width: 100%;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     display: grid;
-    grid-template-columns: auto auto auto;
     gap: 3px;
-    padding: 3px;
+
 }

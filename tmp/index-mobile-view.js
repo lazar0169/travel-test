@@ -5,7 +5,7 @@ const view = (function () {
     let tempShowBar = get('#show-bar');
     let tempLogo = get('#logo-article');
     let mobileView = function () {
-        tempIndexMobileView.disabled = false;
+       
         tempLogo.style.visibility = 'hidden';
         tempShowBar.style.visibility = 'visible';   
         trigger('setH2', {});    
@@ -23,13 +23,16 @@ const view = (function () {
         tempRightSection.style.visibility = 'visible';
         trigger('setH2', {});
         trigger('fullName', {});
+        
     };
 
     on('resize/mobileView', function (event, tempData) {
         mobileView(tempData.data);
+     
     });
 
     on('resize/desktopView', function (event, tempData) {
         desktopView(tempData.data);
+   
     });
 })();
