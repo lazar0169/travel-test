@@ -1,3 +1,4 @@
+
 const resizeResolution = (function () {
     let tempBody = get('body');
     let tempLoading = get('#loading');
@@ -29,14 +30,10 @@ const resizeResolution = (function () {
         if (tempClientWidth < tempClientHeight) {
             tempMainSection.style.width = `${tempClientWidth}px`;
             tempMainSection.style.height = `${tempClientHeight}px`;
-            trigger('resize/mobileView', {});
-            trigger('setColumns', {});
-            trigger('setFont', {});
+            trigger('resize/mobileView', {});  
         }
         else {
             trigger('resize/desktopView', {});
-            trigger('setRows', { row: 3, column: 3 });
-            trigger('setFont', {});
         }
     };
 

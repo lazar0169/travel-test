@@ -1,5 +1,6 @@
 windowListener('load', function () {
     trigger('fullSize', {});
+    
 });
 
 windowListener('load', function () {

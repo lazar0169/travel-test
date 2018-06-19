@@ -2,7 +2,7 @@ const description = (function () {
     let tempBody = get('body');
     let tempMainSection = get('#main-section');
     let tempRightSection = get('#right-section');
-    let tempOpenCloseLanguage = get('#open-close-language');
+    
     let tempCityNameHeaderH2 = get('.h2-city-name-header');
     let tempArticleSection = get('.article-section');
     let tempCityDescTxt = get('.description-text');
@@ -123,6 +123,7 @@ const description = (function () {
                 }
             }
         }
+        
     };
 
     let index = function (temp) {
@@ -130,20 +131,13 @@ const description = (function () {
     };
 
     let setFont = function () {
-
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
             let tempSectionHeight = tempArticleSection[tempArticleSectionLength].clientHeight;
+            let tempSectionWidth = tempArticleSection[tempArticleSectionLength].clientWidth;
             tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionHeight * 0.2}px`;
-            tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionHeight * 0.15}px`;
-            tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempSectionHeight * 0.07}px`;
+            tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.11}px`;
+            tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.05}px`;
         }
-
-        let tempLinkWidth = tempLink.clientWidth;
-        tempLink.style.fontSize = `${tempLinkWidth * 0.12}px`;
-
-        let tempLanguageWidth = tempOpenCloseLanguage.clientWidth;
-        tempOpenCloseLanguage.style.fontSize = `${tempLanguageWidth * 0.12}px`;
-        tempLanguage.style.fontSize = `${tempLanguageWidth * 0.12}px`;
     };
 
     let rows = function (tempRows, tempCol) {
@@ -160,26 +154,31 @@ const description = (function () {
         tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber}, ${rowsHeight}px)`;
         for (let elemNumber in tempArticleSection) {
             if (elemNumber == 0) {
-                tempArticleSection[elemNumber].id = 'section-0F';
+                tempArticleSection[elemNumber].id = 'section-0';
                 break;
             }
         }
 
     }
 
-    let columns = function () {
+    let columns = function (tempCol) {
+        let columnWidth = tempRightSection.clientWidth / tempCol;
         if (tempRightSection.clientWidth < tempRightSection.clientHeight) {
-            let rowsNumber = tempArticleSection.length;
-            tempRightSection.style.gridTemplateColumns = `${tempRightSection.clientWidth}px`;
+            let rowsNumber = parseInt(tempArticleSection.length / tempCol);
+            tempRightSection.style.gridTemplateColumns = `none`;
+            tempRightSection.style.gridTemplateColumns = `repeat(${tempCol}, $100% )`;
             for (let elemNumber in tempArticleSection) {
                 if (elemNumber == 0) {
                     tempArticleSection[elemNumber].id = 'section-0M';
                     break;
                 }
             }
-            tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber }, 50%)`;
-        }
+            if (tempArticleSection.length % tempCol != 0) {
+                rowsNumber++;
+            }
 
+            tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
+        }
     }
 
     on('setFont', function () {
@@ -191,7 +190,7 @@ const description = (function () {
     });
 
     on('setColumns', function (event, tempData) {
-        columns();
+        columns(tempData.column);
     });
 
     on('makeArrayId', function (event, tempData) {
