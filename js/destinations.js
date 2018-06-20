@@ -68,21 +68,21 @@ const description = (function () {
         for (let sectionNumber in temp) {
             let newSection = document.createElement('section');
             newSection.id = `section-${Number(sectionNumber)}`;
-            newSection.className = 'article-section';
+            newSection.classList.add('article-section');
 
             tempRightSection.appendChild(newSection);
 
             let tempCityName = document.createElement('section');
-            tempCityName.className = 'section-footer';
+            tempCityName.classList.add('section-footer');
 
             let tempCityNameHeader = document.createElement('h2');
-            tempCityNameHeader.className = 'h2-city-name-header';
+            tempCityNameHeader.classList.add('h2-city-name-header');
 
             let tempCityDescTxt = document.createElement('p');
-            tempCityDescTxt.className = 'description-text';
+            tempCityDescTxt.classList.add('description-text');
 
             let tempReadMore = document.createElement('button');
-            tempReadMore.className = 'read-more';
+            tempReadMore.classList.add('read-more'); 
             tempReadMore.innerText = 'Read more';
 
             tempCityName.appendChild(tempCityNameHeader);

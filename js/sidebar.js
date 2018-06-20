@@ -49,7 +49,7 @@ const bar = (function () {
     function createLanguagePrivate() {
         for (let tempObjectLanguageLength in languageObject) {
             let tempCreateLanguage = document.createElement('a');
-            tempCreateLanguage.className = 'list-of-language';
+            tempCreateLanguage.classList.add('list-of-language')
 
             if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
                 tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;

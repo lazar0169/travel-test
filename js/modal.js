@@ -39,7 +39,7 @@ const makeModal = (function () {
 
                 for (let tempSeasonLength = 0; tempSeasonLength < tempSeasons.length; tempSeasonLength++) {
                     let tempParSeason = document.createElement('h1');
-                    tempParSeason.className = 'h1-table-price';
+                    tempParSeason.classList.add('h1-table-price');
                     let temptablePrice = document.createElement('table');
                     if (tempSeasons[tempSeasonLength] === 'spring') {
                         let maxValue;
@@ -221,11 +221,11 @@ const makeModal = (function () {
         }
     };
     function mobileView() {
-        tempMainSection.id = 'main-section-mobile';
-        tempH1.id = 'h1-modal-show-mobile';
-        tempImage.id = 'image-modal-mobile';
-        tempPar.id = 'p-modal-mobile';
-        tempTable.id = 'table-div-mobile';
+        tempMainSection.classList.add('mobile');
+        tempH1.classList.add('mobile');
+        tempImage.classList.add('mobile');
+        tempPar.classList.add('mobile');
+        tempTable.classList.add('mobile');
         trigger('resizeFont', {});
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
@@ -234,11 +234,11 @@ const makeModal = (function () {
     };
 
     function desktopView() {
-        tempMainSection.id = 'main-section';
-        tempH1.id = 'h1-modal-show';
-        tempImage.id = 'image-modal';
-        tempPar.id = 'p-modal';
-        tempTable.id = 'table-div';
+        tempMainSection.classList.remove('mobile');
+        tempH1.classList.remove('mobile');
+        tempImage.classList.remove('mobile');
+        tempPar.classList.remove('mobile');
+        tempTable.classList.remove('mobile');
         trigger('resizeFont', {})
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
