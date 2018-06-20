@@ -1,7 +1,7 @@
 
 const resizeResolution = (function () {
     let tempBody = get('body');
-    let tempLoading = get('#loading');
+    
     let tempMainSection = get('#main-section');
 
     let setResolutionPrivate = function () {
@@ -39,9 +39,6 @@ const resizeResolution = (function () {
 
     on('setResolution', function () {
         setResolutionPrivate();
-        if (tempMainSection.style.visibility != 'visible') {
-            tempLoading.style.display = 'none';
-            tempMainSection.style.visibility = 'visible';
-        }
+
     });
 })();

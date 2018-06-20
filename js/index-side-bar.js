@@ -3,14 +3,16 @@ const bar = (function () {
     let tempBody = get('body');
     let tempLeftSection = get('#left-section');
     let tempLanguageList = get('.list-of-language');
-    let temppLanguage = get('#p-language');
+    let tempPLanguage = get('#p-language');
     let tempOpenCloseButton = get('#p-button-open-close');
     let tempOpenCloseLanguage = get('#open-close-language');
     let tempLanguage = get('#language');
     let tempShowBar = get('#show-bar');
     let tempLogo = get('#logo-article');
     let tempSeasonsList = get('.link-season');
-    let tempSeasonLink = get('#season-section')
+    let tempSeasonLink = get('#season-section');
+    let tempMainSection = get('#main-section');
+    let tempLoading = get('#loading');
 
 
     let clickSeason = function (tempSeason) {
@@ -66,13 +68,13 @@ const bar = (function () {
                 for (let tempObjectLanguageLength = 0; tempObjectLanguageLength < languageObject.length; tempObjectLanguageLength++) {
                     if (tempDataLanguage === languageObject[tempObjectLanguageLength].id) {
                         if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
-                            temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
-                            temppLanguage.dataset.id = tempDataLanguage;
+                            tempPLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
+                            tempPLanguage.dataset.id = tempDataLanguage;
                             showHideLanguage();
                         }
                         else {
-                            temppLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
-                            temppLanguage.dataset.id = tempDataLanguage;
+                            tempPLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
+                            tempPLanguage.dataset.id = tempDataLanguage;
                             showHideLanguage();
                         }
                     }
@@ -109,6 +111,10 @@ const bar = (function () {
     };
 
     let mobileView = function () {
+        if (tempMainSection.style.visibility != 'visible') {
+            tempLoading.style.display = 'none';
+            tempMainSection.style.visibility = 'visible';
+        }
         tempLogo.style.visibility = 'hidden';
         tempShowBar.style.visibility = 'visible';
         if (tempLeftSection.style.width != '100%') {
@@ -120,15 +126,20 @@ const bar = (function () {
     };
 
     let desktopView = function () {
-        tempLogo.style.visibility = 'visible';
-        tempShowBar.style.visibility = 'hidden';
         tempLeftSection.style.width = '20%';
-        tempLeftSection.style.position = 'relative';
-        tempRightSection.style.visibility = 'visible';
         fullName();
         trigger('setRows', { row: 3, column: 3 });
         trigger('setFont', {});
         fontSideBarMobile();
+        if (tempMainSection.style.visibility != 'visible') {
+            tempLoading.style.display = 'none';
+            tempMainSection.style.visibility = 'visible';
+        }
+        tempLeftSection.style.position = 'relative';
+        tempRightSection.style.visibility = 'visible';
+        tempLogo.style.visibility = 'visible';
+        tempShowBar.style.visibility = 'hidden';
+       
     };
 
     let substring = function () {
@@ -138,12 +149,13 @@ const bar = (function () {
 
         if (tempLanguageList.length != 0) {
             for (let tempLanguageID of languageObject) {
-                if (tempLanguageID.id === temppLanguage.dataset.id) {
-                    temppLanguage.innerHTML = tempLanguageID.id;
+                if (tempLanguageID.id === tempPLanguage.dataset.id) {
+                    tempPLanguage.innerHTML = tempLanguageID.id;
                 }
                 for (let tempLanguageListLength of tempLanguageList) {
                     if (tempLanguageID.id === tempLanguageListLength.dataset.id) {
                         tempLanguageListLength.innerHTML = tempLanguageID.id;
+                        break;
                     }
                 }
             }
@@ -157,12 +169,13 @@ const bar = (function () {
 
         if (tempLanguageList.length != 0) {
             for (let tempLanguageID of languageObject) {
-                if (tempLanguageID.id === temppLanguage.dataset.id) {
-                    temppLanguage.innerHTML = tempLanguageID.language;
+                if (tempLanguageID.id === tempPLanguage.dataset.id) {
+                    tempPLanguage.innerHTML = tempLanguageID.language;
                 }
                 for (let tempLanguageListLength of tempLanguageList) {
                     if (tempLanguageID.id === tempLanguageListLength.dataset.id) {
                         tempLanguageListLength.innerHTML = tempLanguageID.language;
+                        break;
                     }
                 }
             }

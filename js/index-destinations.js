@@ -2,7 +2,7 @@ const description = (function () {
     let tempBody = get('body');
     let tempMainSection = get('#main-section');
     let tempRightSection = get('#right-section');
-    
+
     let tempCityNameHeaderH2 = get('.h2-city-name-header');
     let tempArticleSection = get('.article-section');
     let tempCityDescTxt = get('.description-text');
@@ -53,6 +53,9 @@ const description = (function () {
                         highRateID = destinationObject[tempObjectLength].id;
                         break;
                     }
+                    else {
+                        break;
+                    }
                 }
             }
         }
@@ -65,13 +68,8 @@ const description = (function () {
         for (let sectionNumber in temp) {
             let newSection = document.createElement('section');
             newSection.id = `section-${Number(sectionNumber)}`;
+            newSection.className = 'article-section';
 
-            if (Number(sectionNumber) !== 0) {
-                newSection.className = 'article-section';
-            }
-            else {
-                newSection.className = 'article-section article-section-first';
-            }
             tempRightSection.appendChild(newSection);
 
             let tempCityName = document.createElement('section');
@@ -123,7 +121,7 @@ const description = (function () {
                 }
             }
         }
-        
+
     };
 
     let index = function (temp) {
