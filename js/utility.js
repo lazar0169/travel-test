@@ -1,3 +1,15 @@
+windowListener('load', function (){
+    trigger('makeArrayId', {season: 'all'});
+    trigger('language', {});
+    trigger('setResolution', {});
+    trigger('modal', {});
+});
+windowListener("resize", function () {
+    trigger('setResolution', {});
+});
+
+
+
 function get(tempName) {
     let tempSelector = tempName.charAt(0);
 
@@ -33,3 +45,7 @@ function windowListener(tempEvent, tempFunction) {
         tempFunction();
     });
 }
+
+addListener('#show-bar', 'click', 'showBar');
+addListener('.link-season', 'click', 'clickSeason');
+addListener('#open-close-language', 'click', 'showHideLanguage');

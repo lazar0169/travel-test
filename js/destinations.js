@@ -144,8 +144,7 @@ const description = (function () {
         let columnWidth = tempRightSection.clientWidth / tempCol;
         if (tempArticleSection.length % tempRows != 0) {
             rowsNumber = rowsNumber + 2;
-        }
-        else {
+        } else {
             rowsNumber++;
         }
         tempRightSection.style.gridTemplateColumns = `repeat(${tempCol}, ${columnWidth}px)`;
