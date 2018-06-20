@@ -1,8 +1,5 @@
 const makeModal = (function () {
-    let tempImageFullScreen = get('#image-modal');
     let tempTableDiv = get('#table-div');
-    let tempH1FullScreenShow = get('#h1-modal-show');
-    let tempParFullScreen = get('#p-modal');
     let tempTable = get('#table-div');
     let tempMainSection = get('#main-section');
     let tempImage = get('#image-modal');
@@ -33,9 +30,9 @@ const makeModal = (function () {
             if (Number(tempDataID) === destinationObject[tempObjectLength].id) {
                 let tempSeasons = Object.keys(destinationObject[tempObjectLength].seasons);
 
-                tempH1FullScreenShow.innerText = destinationObject[tempObjectLength].name;
-                tempImageFullScreen.src = destinationObject[tempObjectLength].image;
-                tempParFullScreen.innerText = destinationObject[tempObjectLength].desc;
+                tempH1.innerText = destinationObject[tempObjectLength].name;
+                tempImage.src = destinationObject[tempObjectLength].image;
+                tempPar.innerText = destinationObject[tempObjectLength].desc;
 
                 for (let tempSeasonLength = 0; tempSeasonLength < tempSeasons.length; tempSeasonLength++) {
                     let tempParSeason = document.createElement('h1');
@@ -213,11 +210,11 @@ const makeModal = (function () {
     };
     function resizeFontPrivate() {
         let tempFont = tempBody[0].clientHeight;
-        tempH1FullScreenShow.style.fontSize = ` ${tempFont * 0.1}px`;
-        tempParFullScreen.style.fontSize = `${tempFont * 0.025}px`;
+        tempH1.style.fontSize = ` ${tempFont * 0.1}px`;
+        tempPar.style.fontSize = `${tempFont * 0.025}px`;
 
         for (let tempTableLength = 0; tempTableLength < tempH1tablePrice.length; tempTableLength++) {
-            tempH1tablePrice[tempTableLength].style.fontSize = `${tempFont * 0.05}px`;
+            tempH1[tempTableLength].style.fontSize = `${tempFont * 0.05}px`;
         }
     };
     function mobileView() {
