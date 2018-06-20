@@ -9,7 +9,7 @@ const description = (function () {
     let tempLink = get('#season-section');
     let tempLanguage = get('#language');
 
-    let arrayId = function (tempSeason) {
+    function arrayId(tempSeason) {
         let tempIdArray = [];
         let tempNumberOfArray = 0;
         if (tempSeason == 'all') {
@@ -33,7 +33,7 @@ const description = (function () {
         highRate(tempIdArray);
     };
 
-    let highRate = function (tempArray) {
+    function highRate(tempArray) {
         let tempRating;
         let highRateID;
         for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
@@ -63,7 +63,7 @@ const description = (function () {
         addCity(tempArray, highRateID);
     };
 
-    let addSection = function (temp) {
+    function addSection(temp) {
 
         for (let sectionNumber in temp) {
             let newSection = document.createElement('section');
@@ -97,7 +97,7 @@ const description = (function () {
         }
     };
 
-    let addCity = function (temp, tempID) {
+    function addCity(temp, tempID) {
         let tempSectionNumber = 1;
 
         for (let tempIdArray in temp) {
@@ -124,11 +124,11 @@ const description = (function () {
 
     };
 
-    let index = function (temp) {
+    function index(temp) {
         window.open(`modal.html?id=${temp}`, '_self');
     };
 
-    let setFont = function () {
+    function setFont() {
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
             let tempSectionHeight = tempArticleSection[tempArticleSectionLength].clientHeight;
             let tempSectionWidth = tempArticleSection[tempArticleSectionLength].clientWidth;
@@ -138,7 +138,7 @@ const description = (function () {
         }
     };
 
-    let rows = function (tempRows, tempCol) {
+    function rows(tempRows, tempCol) {
         let rowsNumber = parseInt(tempArticleSection.length / tempRows);
         let rowsHeight = tempRightSection.clientHeight / tempRows;
         let columnWidth = tempRightSection.clientWidth / tempCol;
@@ -158,7 +158,7 @@ const description = (function () {
 
     }
 
-    let columns = function (tempCol) {
+    function columns(tempCol) {
         let columnWidth = tempRightSection.clientWidth / tempCol;
         if (tempRightSection.clientWidth < tempRightSection.clientHeight) {
             let rowsNumber = parseInt(tempArticleSection.length / tempCol);

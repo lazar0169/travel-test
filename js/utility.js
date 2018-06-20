@@ -45,7 +45,3 @@ function windowListener(tempEvent, tempFunction) {
         tempFunction();
     });
 }
-
-addListener('#show-bar', 'click', 'showBar');
-addListener('.link-season', 'click', 'clickSeason');
-addListener('#open-close-language', 'click', 'showHideLanguage');

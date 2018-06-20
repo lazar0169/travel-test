@@ -1,10 +1,9 @@
 
 const resizeResolution = (function () {
     let tempBody = get('body');
-    
     let tempMainSection = get('#main-section');
 
-    let setResolutionPrivate = function () {
+   function setResolutionPrivate() {
         let tempClientWidth = tempBody[0].clientWidth;
         let tempClientHeight = tempBody[0].clientHeight;
         let tempResolution = tempClientWidth / tempClientHeight;

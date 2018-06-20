@@ -14,8 +14,11 @@ const bar = (function () {
     let tempMainSection = get('#main-section');
     let tempLoading = get('#loading');
 
+    addListener('#show-bar', 'click', 'showBar');
+    addListener('.link-season', 'click', 'clickSeason');
+    addListener('#open-close-language', 'click', 'showHideLanguage');
 
-    let clickSeason = function (tempSeason) {
+    function clickSeason(tempSeason) {
         tempRightSection.innerHTML = '';
         trigger('makeArrayId', { season: tempSeason });
         if (tempBody[0].clientHeight > tempBody[0].clientWidth) {
@@ -28,7 +31,7 @@ const bar = (function () {
         trigger('setFont', {});
     }
 
-    let showHideLanguage = function () {
+    function showHideLanguage() {
         if (!tempShowHide) {
             tempShowHide = true;
             tempLanguage.style.visibility = 'visible';
@@ -43,7 +46,7 @@ const bar = (function () {
         }
     };
 
-    let createLanguagePrivate = function () {
+    function createLanguagePrivate() {
         for (let tempObjectLanguageLength in languageObject) {
             let tempCreateLanguage = document.createElement('a');
             tempCreateLanguage.className = 'list-of-language';
@@ -87,7 +90,7 @@ const bar = (function () {
         showBar();
     });
 
-    let showBar = function () {
+    function showBar() {
         if (tempLeftSection.style.width != '100%') {
             tempLeftSection.style.width = '100%';
             tempLeftSection.style.position = 'absolute';
@@ -100,17 +103,16 @@ const bar = (function () {
         }
     };
 
-    let hideBar = function () {
+    function hideBar() {
         if (tempLeftSection.style.width != '20%') {
             tempLeftSection.style.width = '20%';
             tempLeftSection.style.position = 'relative';
             tempRightSection.style.visibility = 'visible';
             substring();
         }
-
     };
 
-    let mobileView = function () {
+    function mobileView() {
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
@@ -125,7 +127,7 @@ const bar = (function () {
         fontSideBarMobile();
     };
 
-    let desktopView = function () {
+    function desktopView() {
         tempLeftSection.style.width = '20%';
         fullName();
         trigger('setRows', { row: 3, column: 3 });
@@ -139,10 +141,10 @@ const bar = (function () {
         tempRightSection.style.visibility = 'visible';
         tempLogo.style.visibility = 'visible';
         tempShowBar.style.visibility = 'hidden';
-       
+
     };
 
-    let substring = function () {
+    function substring() {
         for (let tempSeasonsListLength of tempSeasonsList) {
             tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id.substring(0, 3);
         }
@@ -162,7 +164,7 @@ const bar = (function () {
         }
     };
 
-    let fullName = function () {
+    function fullName() {
         for (let tempSeasonsListLength of tempSeasonsList) {
             tempSeasonsListLength.innerHTML = tempSeasonsListLength.dataset.id;
         }
@@ -182,7 +184,7 @@ const bar = (function () {
         }
     };
 
-    let fontSideBarMobile = function () {
+    function fontSideBarMobile() {
         let tempLinkHeight = tempSeasonLink.clientHeight;
         let tempChosenLanguageHeight = tempOpenCloseLanguage.clientHeight;
         if (tempLeftSection.style.width == '100%') {

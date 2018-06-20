@@ -3,6 +3,14 @@ const makeModal = (function () {
     let tempTableDiv = get('#table-div');
     let tempH1FullScreenShow = get('#h1-modal-show');
     let tempParFullScreen = get('#p-modal');
+    let tempTable = get('#table-div');
+    let tempMainSection = get('#main-section');
+    let tempImage = get('#image-modal');
+    let tempH1 = get('#h1-modal-show');
+    let tempPar = get('#p-modal');
+    let tempBody = get('body');
+    let tempH1tablePrice = get('.h1-table-price');
+    let tempLoading = get('#loading');
     function modal() {
 
         let maxJan;
@@ -212,22 +220,30 @@ const makeModal = (function () {
             tempH1tablePrice[tempTableLength].style.fontSize = `${tempFont * 0.05}px`;
         }
     };
-    let mobileView = function () {
+    function mobileView() {
         tempMainSection.id = 'main-section-mobile';
         tempH1.id = 'h1-modal-show-mobile';
         tempImage.id = 'image-modal-mobile';
         tempPar.id = 'p-modal-mobile';
         tempTable.id = 'table-div-mobile';
         trigger('resizeFont', {});
+        if (tempMainSection.style.visibility != 'visible') {
+            tempLoading.style.display = 'none';
+            tempMainSection.style.visibility = 'visible';
+        }
     };
 
-    let desktopView = function () {
+    function desktopView() {
         tempMainSection.id = 'main-section';
         tempH1.id = 'h1-modal-show';
         tempImage.id = 'image-modal';
         tempPar.id = 'p-modal';
         tempTable.id = 'table-div';
         trigger('resizeFont', {})
+        if (tempMainSection.style.visibility != 'visible') {
+            tempLoading.style.display = 'none';
+            tempMainSection.style.visibility = 'visible';
+        }
     };
     on('resize/mobileView', function (event, tempData) {
         mobileView(tempData.data);
