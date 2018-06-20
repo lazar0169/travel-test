@@ -36,7 +36,7 @@ const makeSection = (function () {
 
             tempArticleSection[sectionNumber].appendChild(tempCityName);
         }
-        addListener('.article-section', 'click', 'fullSizeIndex');
+        addListener('.article-section', 'click', 'modalIndex');
     };
 
     on('makeSection', function (event, tempData) {

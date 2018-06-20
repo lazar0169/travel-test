@@ -1,9 +1,9 @@
-const fullSizeIndex = (function () {
+const modalIndex = (function () {
     let indexPrivate = function (temp) {
         window.open(`full-size.html?id=${temp}`, '_self');
     };
 
-    on('fullSizeIndex', function (event, tempData) {
+    on('modalIndex', function (event, tempData) {
         indexPrivate(tempData.data);
     });
 })();

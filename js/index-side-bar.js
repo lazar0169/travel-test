@@ -91,7 +91,7 @@ const bar = (function () {
             tempLeftSection.style.position = 'absolute';
             tempRightSection.style.visibility = 'hidden';
             fullName();
-            fontSideBar();
+            fontSideBarMobile();
         }
         else {
             hideBar();
@@ -116,7 +116,7 @@ const bar = (function () {
         }
         trigger('setColumns', { column: 1 });
         trigger('setFont', {});
-        fontSideBar();
+        fontSideBarMobile();
     };
 
     let desktopView = function () {
@@ -128,7 +128,7 @@ const bar = (function () {
         fullName();
         trigger('setRows', { row: 3, column: 3 });
         trigger('setFont', {});
-        fontSideBar();
+        fontSideBarMobile();
     };
 
     let substring = function () {
@@ -169,18 +169,18 @@ const bar = (function () {
         }
     };
 
-    let fontSideBar = function () {
-        let tempLinkWidth = tempSeasonLink.clientWidth;
+    let fontSideBarMobile = function () {
+        let tempLinkHeight = tempSeasonLink.clientHeight;
+        let tempChosenLanguageHeight = tempOpenCloseLanguage.clientHeight;
         if (tempLeftSection.style.width == '100%') {
-            tempSeasonLink.style.fontSize = `${tempLinkWidth * 0.04}px`;
-            tempOpenCloseLanguage.style.fontSize = `${tempLinkWidth * 0.04}px`;
-            tempLanguage.style.fontSize = `${tempLinkWidth * 0.04}px`;
+            tempSeasonLink.style.fontSize = `${tempLinkHeight * 0.17}px`;
+            tempOpenCloseLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.3}px`;
+            tempLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.5}px`;
         }
         else {
-            tempSeasonLink.style.fontSize = `${tempLinkWidth * 0.1}px`;
-
-            tempOpenCloseLanguage.style.fontSize = `${tempLinkWidth * 0.1}px`;
-            tempLanguage.style.fontSize = `${tempLinkWidth * 0.1}px`;
+            tempSeasonLink.style.fontSize = `${tempLinkHeight * 0.17}px`;
+            tempOpenCloseLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.3}px`;
+            tempLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.5}px`;
         }
 
     };

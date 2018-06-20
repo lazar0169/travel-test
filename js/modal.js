@@ -1,9 +1,9 @@
-const makeFullSize = (function () {
-    let tempImageFullScreen = get('#image-full-screen');
+const makeModal = (function () {
+    let tempImageFullScreen = get('#image-modal');
     let tempTableDiv = get('#table-div');
-    let tempH1FullScreenShow = get('#h1-full-screen-show');
-    let tempParFullScreen = get('#p-full-screen');
-    let fullSizePrivate = function () {
+    let tempH1FullScreenShow = get('#h1-modal-show');
+    let tempParFullScreen = get('#p-modal');
+    let modal = function () {
 
         let maxJan;
         let maxFeb;
@@ -204,8 +204,8 @@ const makeFullSize = (function () {
         }
     };
 
-    on('fullSize', function () {
-        fullSizePrivate();
+    on('modal', function () {
+        modal();
     })
 })();
 

@@ -25,7 +25,7 @@
     border-radius: 50px;
 }
 
-#image-full-screen{
+#image-modal{
     top: 20%;
     width: 60%;
     padding: 0;
@@ -33,7 +33,7 @@
     pointer-events: none;
 }
 
-#h1-full-screen-show{
+#h1-modal-show{
     padding: 0;
     margin: 0;
     top:0;
@@ -46,7 +46,7 @@
     align-items: center;
 }
 
-#p-full-screen{
+#p-modal{
     padding: 0;
     margin: 0;
     top:0;
@@ -54,4 +54,56 @@
     pointer-events: none;
     text-align: justify;
     font-size: 2.5vw;
+}
+
+#main-section-mobile{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100% !important;
+    width: 80% !important;
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color:  rgb(100, 100, 100);
+}
+#main-section-mobile::-webkit-scrollbar {
+    width: 3px;
+}
+ 
+#main-section-mobile::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgb(42, 42, 42);
+    background-color: white;
+}
+ 
+#main-section-mobile::-webkit-scrollbar-thumb {
+    background-color: rgb(42, 42, 42);
+    border-radius: 50px;
+}
+
+
+
+#image-modal-mobile{
+    top: 20%;
+    width: 90%;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+#h1-modal-show-mobile{
+    width: 90%;
+    text-align: center ;
+    margin: 0;
+    padding: 0;
+ 
+}
+
+#p-modal-mobile{ 
+    margin: 0;
+    width: 90%;
+    text-align: justify;
+    
 }

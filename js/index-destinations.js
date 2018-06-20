@@ -127,7 +127,7 @@ const description = (function () {
     };
 
     let index = function (temp) {
-        window.open(`full-size.html?id=${temp}`, '_self');
+        window.open(`modal.html?id=${temp}`, '_self');
     };
 
     let setFont = function () {

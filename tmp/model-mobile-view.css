@@ -1,22 +1,22 @@
 #main-section{
-    display: block;
+    display: block !important;
     height: 100% !important;
     width: 80% !important;
   
     text-align: center !important;
 }
-#image-full-screen{
+#image-modal{
     width: 100% !important;
 }
 
-#h1-full-screen-show{
+#h1-modal-show{
     text-align: center !important;
     width: auto !important;
     height: auto !important;
  
 }
 
-#p-full-screen{ 
+#p-modal{ 
     width: 100% !important;
     
 }
@@ -29,7 +29,7 @@ table, td, th {
     font-size: 2.5vw !important;
 }
 
-#p-full-screen{
+#p-modal{
     font-size: 2.5vw !important;
 }
 

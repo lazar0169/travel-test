@@ -2,11 +2,14 @@
     width: 60%; 
     
 }
+#table-div-mobile{
+    width: 90%; 
+}
 
 table, td, th {
     border: 1px solid black;
     pointer-events: none;
-    font-size: 2.5vw;
+    font-size: 3vh;
 }
 
 table {
@@ -30,3 +33,6 @@ td{
     text-transform: uppercase;
     pointer-events: none;
 }
+
+
+     
