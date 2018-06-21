@@ -1,6 +1,5 @@
 const description = (function () {
     let tempBody = get('body');
-    let tempMainSection = get('#main-section');
     let tempRightSection = get('#right-section');
 
     let tempCityNameHeaderH2 = get('.h2-city-name-header');

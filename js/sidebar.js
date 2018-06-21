@@ -112,7 +112,8 @@ const bar = (function () {
         }
     };
 
-    function mobileView() {
+    function mobileView( tempWidth, tempHeight) {
+       
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
@@ -127,7 +128,8 @@ const bar = (function () {
         fontSideBarMobile();
     };
 
-    function desktopView() {
+    function desktopView(tempWidth, tempHeight) {
+        
         tempLeftSection.style.width = '20%';
         fullName();
         trigger('setRows', { row: 3, column: 3 });
@@ -201,11 +203,11 @@ const bar = (function () {
     };
 
     on('resize/mobileView', function (event, data) {
-        mobileView();
+        mobileView(data.height, data.width);
     });
 
     on('resize/desktopView', function (event, data) {
-        desktopView();
+        desktopView(data.height, data.width);
     });
 
     on('language', function () {
