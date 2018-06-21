@@ -221,17 +221,7 @@ const makeModal = (function () {
             tempH1[tempTableLength].style.fontSize = `${tempFont * 0.05}px`;
         }
     };
-    function mobileView(tempWidth, tempHeight, tempResolution) {
-        if (1/tempResolution > SCREEN_RESOLUTION) {
-            tempMainSection.style.width = `${tempWidth}px`;
-            let tempNewHeight = tempWidth * SCREEN_RESOLUTION;        
-            tempMainSection.style.height = `${tempNewHeight}px`;
-        }
-        else {   
-            tempMainSection.style.height = `${tempHeight}px`;
-            let tempNewWidth = tempHeight * 1/SCREEN_RESOLUTION;
-            tempMainSection.style.width = `${tempNewWidth}px`;
-        }
+    function mobileView(tempWidth, tempHeight, tempResolution) {   
         tempMainSection.classList.add('mobile');
         tempH1.classList.add('mobile');
         tempImage.classList.add('mobile');
@@ -245,17 +235,6 @@ const makeModal = (function () {
     };
 
     function desktopView(tempWidth, tempHeight, tempResolution) {
-
-        if (tempResolution > SCREEN_RESOLUTION) {
-            let tempNewClientWidth = tempHeight * SCREEN_RESOLUTION;
-            tempMainSection.style.width = `${tempNewClientWidth}px`;
-            tempMainSection.style.height = `${tempHeight}px`;
-        }
-        else {
-            let tempNewClientHeight = tempWidth / SCREEN_RESOLUTION;
-            tempMainSection.style.height = `${tempNewClientHeight}px`;
-            tempMainSection.style.width = `${tempWidth}px`;
-        }
         tempMainSection.classList.remove('mobile');
         tempH1.classList.remove('mobile');
         tempImage.classList.remove('mobile');

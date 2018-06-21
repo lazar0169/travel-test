@@ -27,7 +27,6 @@ const description = (function () {
                     }
                 }
             }
-
         }
         highRate(tempIdArray);
     };
@@ -120,7 +119,6 @@ const description = (function () {
                 }
             }
         }
-
     };
 
     function index(temp) {
@@ -154,8 +152,7 @@ const description = (function () {
                 break;
             }
         }
-
-    }
+    };
 
     function columns(tempCol) {
         let columnWidth = tempRightSection.clientWidth / tempCol;
@@ -175,7 +172,7 @@ const description = (function () {
 
             tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
         }
-    }
+    };
 
     on('setFont', function () {
         setFont();

@@ -114,17 +114,6 @@ const bar = (function () {
 
     function mobileView(tempWidth, tempHeight, tempResolution) {
 
-        if (1/tempResolution > SCREEN_RESOLUTION) {
-            tempMainSection.style.width = `${tempWidth}px`;
-            let tempNewHeight = tempWidth * SCREEN_RESOLUTION;        
-            tempMainSection.style.height = `${tempNewHeight}px`;
-        }
-        else {   
-            tempMainSection.style.height = `${tempHeight}px`;
-            let tempNewWidth = tempHeight * 1/SCREEN_RESOLUTION;
-            tempMainSection.style.width = `${tempNewWidth}px`;
-        }
-
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
@@ -141,16 +130,7 @@ const bar = (function () {
 
     function desktopView(tempWidth, tempHeight, tempResolution) {
 
-        if (tempResolution > SCREEN_RESOLUTION) {
-            let tempNewClientWidth = tempHeight * SCREEN_RESOLUTION;
-            tempMainSection.style.width = `${tempNewClientWidth}px`;
-            tempMainSection.style.height = `${tempHeight}px`;
-        }
-        else {
-            let tempNewClientHeight = tempWidth / SCREEN_RESOLUTION;
-            tempMainSection.style.height = `${tempNewClientHeight}px`;
-            tempMainSection.style.width = `${tempWidth}px`;
-        }
+       
 
         tempLeftSection.style.width = '20%';
         fullName();
