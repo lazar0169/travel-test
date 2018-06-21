@@ -5,7 +5,7 @@ const resizeResolution = (function () {
     let width;
     let height;
 
-    function setResolutionPrivate() {
+    function setResolution() {
         let tempClientWidth = tempBody[0].clientWidth;
         let tempClientHeight = tempBody[0].clientHeight;
         let tempResolution = tempClientWidth / tempClientHeight;
@@ -42,7 +42,7 @@ const resizeResolution = (function () {
     };
 
     on('setResolution', function () {
-        setResolutionPrivate();
+        setResolution();
 
     });
 })();

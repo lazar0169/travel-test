@@ -1,5 +1,5 @@
 const makeArrayId = (function () {
-    let arrayIdPrivate = function (tempSeason) {
+    let arrayId = function (tempSeason) {
         let tempIdArray = [];
         let tempNumberOfArray = 0;
         if(tempSeason == 'all'){
@@ -24,7 +24,7 @@ const makeArrayId = (function () {
     };
 
     on('makeArrayId', function (event, tempData) {
-        arrayIdPrivate(tempData.season);
+        arrayId(tempData.season);
     });
 })();
 

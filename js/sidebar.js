@@ -46,7 +46,7 @@ const bar = (function () {
         }
     };
 
-    function createLanguagePrivate() {
+    function createLanguage() {
         for (let tempObjectLanguageLength in languageObject) {
             let tempCreateLanguage = document.createElement('a');
             tempCreateLanguage.classList.add('list-of-language')
@@ -130,7 +130,7 @@ const bar = (function () {
 
     function desktopView(tempWidth, tempHeight, tempResolution) {
 
-       
+
 
         tempLeftSection.style.width = '20%';
         fullName();
@@ -213,7 +213,7 @@ const bar = (function () {
     });
 
     on('language', function () {
-        createLanguagePrivate();
+        createLanguage();
     });
 
     on('showHideLanguage', function () {
