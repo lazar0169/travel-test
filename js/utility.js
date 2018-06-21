@@ -1,5 +1,5 @@
-windowListener('load', function (){
-    trigger('makeArrayId', {season: 'all'});
+windowListener('load', function () {
+    trigger('makeArrayId', { season: 'all' });
     trigger('language', {});
     trigger('setResolution', {});
     trigger('modal', {});
@@ -13,15 +13,19 @@ windowListener("resize", function () {
 function get(tempName) {
     let tempSelector = tempName.charAt(0);
 
-    if (tempSelector === '#') {
-        return document.getElementById(tempName.substring(1, 50));
+    switch (tempSelector) {
+        case '#':
+            return document.getElementById(tempName.substring(1, 50));
+            break;
+
+        case '.':
+            return document.getElementsByClassName(tempName.substring(1, 50));
+            break;
+
+        default:
+            return document.getElementsByTagName(tempName);
     }
-    else if (tempSelector === '.') {
-        return document.getElementsByClassName(tempName.substring(1, 50));
-    }
-    else {
-        return document.getElementsByTagName(tempName);
-    }
+
 };
 
 function addListener(tempName, tempEvent, tempFunction) {
