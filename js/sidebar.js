@@ -112,8 +112,19 @@ const bar = (function () {
         }
     };
 
-    function mobileView( tempWidth, tempHeight) {
-       
+    function mobileView(tempWidth, tempHeight, tempResolution) {
+
+        if (1/tempResolution > SCREEN_RESOLUTION) {
+            tempMainSection.style.width = `${tempWidth}px`;
+            let tempNewHeight = tempWidth * SCREEN_RESOLUTION;        
+            tempMainSection.style.height = `${tempNewHeight}px`;
+        }
+        else {   
+            tempMainSection.style.height = `${tempHeight}px`;
+            let tempNewWidth = tempHeight * 1/SCREEN_RESOLUTION;
+            tempMainSection.style.width = `${tempNewWidth}px`;
+        }
+
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
@@ -128,8 +139,19 @@ const bar = (function () {
         fontSideBarMobile();
     };
 
-    function desktopView(tempWidth, tempHeight) {
-        
+    function desktopView(tempWidth, tempHeight, tempResolution) {
+
+        if (tempResolution > SCREEN_RESOLUTION) {
+            let tempNewClientWidth = tempHeight * SCREEN_RESOLUTION;
+            tempMainSection.style.width = `${tempNewClientWidth}px`;
+            tempMainSection.style.height = `${tempHeight}px`;
+        }
+        else {
+            let tempNewClientHeight = tempWidth / SCREEN_RESOLUTION;
+            tempMainSection.style.height = `${tempNewClientHeight}px`;
+            tempMainSection.style.width = `${tempWidth}px`;
+        }
+
         tempLeftSection.style.width = '20%';
         fullName();
         trigger('setRows', { row: 3, column: 3 });
@@ -190,24 +212,24 @@ const bar = (function () {
         let tempLinkHeight = tempSeasonLink.clientHeight;
         let tempChosenLanguageHeight = tempOpenCloseLanguage.clientHeight;
         if (tempLeftSection.style.width == '100%') {
-            tempSeasonLink.style.fontSize = `${tempLinkHeight * 0.17}px`;
+            tempSeasonLink.style.fontSize = `${tempLinkHeight * 0.12}px`;
             tempOpenCloseLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.3}px`;
-            tempLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.5}px`;
+            tempLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.3}px`;
         }
         else {
-            tempSeasonLink.style.fontSize = `${tempLinkHeight * 0.17}px`;
+            tempSeasonLink.style.fontSize = `${tempLinkHeight * 0.12}px`;
             tempOpenCloseLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.3}px`;
-            tempLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.5}px`;
+            tempLanguage.style.fontSize = `${tempChosenLanguageHeight * 0.3}px`;
         }
 
     };
 
     on('resize/mobileView', function (event, data) {
-        mobileView(data.height, data.width);
+        mobileView(data.width, data.height, data.resolution);
     });
 
     on('resize/desktopView', function (event, data) {
-        desktopView(data.height, data.width);
+        desktopView(data.width, data.height, data.resolution);
     });
 
     on('language', function () {

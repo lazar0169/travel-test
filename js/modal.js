@@ -212,7 +212,7 @@ const makeModal = (function () {
             }
         }
     };
-    function resizeFontPrivate() {
+    function resizeFont() {
         let tempFont = tempBody[0].clientHeight;
         tempH1.style.fontSize = ` ${tempFont * 0.1}px`;
         tempPar.style.fontSize = `${tempFont * 0.025}px`;
@@ -221,42 +221,60 @@ const makeModal = (function () {
             tempH1[tempTableLength].style.fontSize = `${tempFont * 0.05}px`;
         }
     };
-    function mobileView() {
+    function mobileView(tempWidth, tempHeight, tempResolution) {
+        if (1/tempResolution > SCREEN_RESOLUTION) {
+            tempMainSection.style.width = `${tempWidth}px`;
+            let tempNewHeight = tempWidth * SCREEN_RESOLUTION;        
+            tempMainSection.style.height = `${tempNewHeight}px`;
+        }
+        else {   
+            tempMainSection.style.height = `${tempHeight}px`;
+            let tempNewWidth = tempHeight * 1/SCREEN_RESOLUTION;
+            tempMainSection.style.width = `${tempNewWidth}px`;
+        }
         tempMainSection.classList.add('mobile');
         tempH1.classList.add('mobile');
         tempImage.classList.add('mobile');
         tempPar.classList.add('mobile');
         tempTable.classList.add('mobile');
-        trigger('resizeFont', {});
+        resizeFont();
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
         }
     };
 
-    function desktopView() {
+    function desktopView(tempWidth, tempHeight, tempResolution) {
+
+        if (tempResolution > SCREEN_RESOLUTION) {
+            let tempNewClientWidth = tempHeight * SCREEN_RESOLUTION;
+            tempMainSection.style.width = `${tempNewClientWidth}px`;
+            tempMainSection.style.height = `${tempHeight}px`;
+        }
+        else {
+            let tempNewClientHeight = tempWidth / SCREEN_RESOLUTION;
+            tempMainSection.style.height = `${tempNewClientHeight}px`;
+            tempMainSection.style.width = `${tempWidth}px`;
+        }
         tempMainSection.classList.remove('mobile');
         tempH1.classList.remove('mobile');
         tempImage.classList.remove('mobile');
         tempPar.classList.remove('mobile');
         tempTable.classList.remove('mobile');
-        trigger('resizeFont', {})
+        resizeFont();
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
         }
     };
-    on('resize/mobileView', function (event, tempData) {
-        mobileView(tempData.data);
+    on('resize/mobileView', function (event, data) {
+        mobileView(data.width, data.height, data.resolution);
     });
 
-    on('resize/desktopView', function (event, tempData) {
-        desktopView(tempData.data);
+    on('resize/desktopView', function (event, data) {
+        desktopView(data.width, data.height, data.resolution);
     });
 
-    on('resizeFont', function () {
-        resizeFontPrivate();
-    });
     on('modal', function () {
         modal();
     })
