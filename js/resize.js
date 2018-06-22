@@ -14,13 +14,13 @@ const resizeResolution = (function () {
 
         if (tempClientWidth < tempClientHeight) {
             if (1/tempResolution > SCREEN_RESOLUTION) {
+                let tempNewHeight = width * SCREEN_RESOLUTION;  
                 tempMainSection.style.width = `${width}px`;
-                let tempNewHeight = width * SCREEN_RESOLUTION;        
                 tempMainSection.style.height = `${tempNewHeight}px`;
             }
             else {   
-                tempMainSection.style.height = `${height}px`;
                 let tempNewWidth = height * 1/SCREEN_RESOLUTION;
+                tempMainSection.style.height = `${height}px`;
                 tempMainSection.style.width = `${tempNewWidth}px`;
             }
             trigger('resize/mobileView', { width: width, height: height, resolution: tempResolution });
@@ -36,7 +36,6 @@ const resizeResolution = (function () {
                 tempMainSection.style.height = `${tempNewClientHeight}px`;
                 tempMainSection.style.width = `${width}px`;
             }
-
             trigger('resize/desktopView', { width: width, height: height, resolution: tempResolution });
         }
     };

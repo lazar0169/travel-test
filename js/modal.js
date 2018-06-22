@@ -23,6 +23,13 @@ const makeModal = (function () {
         let maxDec;
 
         let maxValue;
+        
+        let SEASONSLIST = {
+            spring: 'spring',
+            winter: 'winter',
+            autumn: 'autumn',
+            summer: 'summer'
+        }
 
         let params = new URLSearchParams(document.location.search.substring(1));
         let tempDataID = params.get('id');
@@ -41,7 +48,7 @@ const makeModal = (function () {
                     let tempTablePrice = document.createElement('table');
                     let tempSeasonName = String(tempSeasons[tempSeasonLength]);
                     switch (tempSeasonName) {
-                        case 'spring':
+                        case SEASONSLIST.spring:
 
                             let tempSpring = Object.keys(destinationObject[tempObjectLength].seasons.spring);
                             maxMarch = destinationObject[tempObjectLength].seasons.spring.March.length;
@@ -80,7 +87,7 @@ const makeModal = (function () {
                             }
                             break;
 
-                        case 'summer':
+                        case SEASONSLIST.summer:
                             let tempSummer = Object.keys(destinationObject[tempObjectLength].seasons.summer);
 
                             maxJune = destinationObject[tempObjectLength].seasons.summer.June.length;
@@ -121,7 +128,7 @@ const makeModal = (function () {
                             }
                             break;
 
-                        case 'autumn':
+                        case SEASONSLIST.autumn:
 
                             let tempAutumn = Object.keys(destinationObject[tempObjectLength].seasons.autumn);
 
@@ -163,7 +170,7 @@ const makeModal = (function () {
                             }
                             break;
 
-                        case 'winter':
+                        case SEASONSLIST.winter:
 
                             let tempWinter = Object.keys(destinationObject[tempObjectLength].seasons.winter);
 
