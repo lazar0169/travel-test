@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'thin';
+    src: url('../fonts/roboto-thin.ttf') format('truetype');
+}
+
+
+
 body{
     margin: 0;
     padding: 0;
@@ -10,6 +17,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden; 
+    font-family: thin;
 }
 
 #load-images{
