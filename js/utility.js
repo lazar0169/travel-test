@@ -1,14 +1,13 @@
 windowListener('load', function () {
     trigger('makeArrayId', { season: 'all' });
-    trigger('language', {});
-    trigger('setResolution', {});
+    trigger('language', { languageID: 1 });
     trigger('modal', {});
+    trigger('setResolution', {});
+
 });
 windowListener("resize", function () {
     trigger('setResolution', {});
 });
-
-
 
 function get(tempName) {
     let tempSelector = tempName.charAt(0);
@@ -16,11 +15,9 @@ function get(tempName) {
     switch (tempSelector) {
         case '#':
             return document.getElementById(tempName.substring(1, 50));
-            break;
 
         case '.':
             return document.getElementsByClassName(tempName.substring(1, 50));
-            break;
 
         default:
             return document.getElementsByTagName(tempName);

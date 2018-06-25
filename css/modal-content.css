@@ -106,8 +106,7 @@
 #table-div{
     width: 60%; 
 }
-
-#table-div-mobile{
+#table-div.mobile{
     width: 90%; 
 }
 

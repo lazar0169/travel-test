@@ -1,12 +1,9 @@
 const description = (function () {
-    let tempBody = get('body');
     let tempRightSection = get('#right-section');
-
-    let tempCityNameHeaderH2 = get('.h2-city-name-header');
     let tempArticleSection = get('.article-section');
+    let tempCityNameHeaderH2 = get('.h2-city-name');
     let tempCityDescTxt = get('.description-text');
-    let tempLink = get('#season-section');
-    let tempLanguage = get('#language');
+    let tempReadMore = get('.read-more');
 
     function arrayId(tempSeason) {
         let tempIdArray = [];
@@ -62,6 +59,7 @@ const description = (function () {
     };
 
     function addSection(temp) {
+        
 
         for (let sectionNumber in temp) {
             let newSection = document.createElement('section');
@@ -73,14 +71,19 @@ const description = (function () {
             let tempCityName = document.createElement('section');
             tempCityName.classList.add('section-footer');
 
+            // tempCityName.innerHTML=`<h2 class="h2-city-name">
+            // <p id= ovo-je${sectionNumber} class="description-text"></p>
+            // <button class= "read-more">Read more</button>
+            // </h2>`;
+
             let tempCityNameHeader = document.createElement('h2');
-            tempCityNameHeader.classList.add('h2-city-name-header');
+            tempCityNameHeader.classList.add('h2-city-name');
 
             let tempCityDescTxt = document.createElement('p');
             tempCityDescTxt.classList.add('description-text');
 
             let tempReadMore = document.createElement('button');
-            tempReadMore.classList.add('read-more'); 
+            tempReadMore.classList.add('read-more');
             tempReadMore.innerText = 'Read more';
 
             tempCityName.appendChild(tempCityNameHeader);
@@ -96,15 +99,15 @@ const description = (function () {
     };
 
     function addCity(temp, tempID) {
+       
         let tempSectionNumber = 1;
-
         for (let tempIdArray in temp) {
             for (let tempObjectLength in destinationObject) {
                 if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
                     if (tempID != destinationObject[tempObjectLength].id) {
                         tempArticleSection[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
-                        tempCityNameHeaderH2[tempSectionNumber].innerText = destinationObject[tempObjectLength].name;
-                        tempCityDescTxt[tempSectionNumber].innerText = destinationObject[tempObjectLength].desc;
+                        tempCityNameHeaderH2[tempSectionNumber].innerHTML = destinationObject[tempObjectLength].name;
+                        tempCityDescTxt[tempSectionNumber].innerHTML = destinationObject[tempObjectLength].desc;
                         tempArticleSection[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
                         tempSectionNumber++;
                         break;
@@ -125,13 +128,14 @@ const description = (function () {
         window.open(`modal.html?id=${temp}`, '_self');
     };
 
-    function setFont() {
+    function setFont(tempWidth, tempHeight) {
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
             let tempSectionHeight = tempArticleSection[tempArticleSectionLength].clientHeight;
             let tempSectionWidth = tempArticleSection[tempArticleSectionLength].clientWidth;
             tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionHeight * 0.2}px`;
-            tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.11}px`;
+            tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.10}px`;
             tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.05}px`;
+            tempReadMore[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.11}px`;
         }
     };
 
@@ -155,17 +159,11 @@ const description = (function () {
     };
 
     function columns(tempCol) {
-        let columnWidth = tempRightSection.clientWidth / tempCol;
         if (tempRightSection.clientWidth < tempRightSection.clientHeight) {
             let rowsNumber = parseInt(tempArticleSection.length / tempCol);
             tempRightSection.style.gridTemplateColumns = `none`;
             tempRightSection.style.gridTemplateColumns = `repeat(${tempCol}, $100% )`;
-            for (let elemNumber in tempArticleSection) {
-                if (elemNumber == 0) {
-                    tempArticleSection[elemNumber].id = 'section-0M';
-                    break;
-                }
-            }
+
             if (tempArticleSection.length % tempCol != 0) {
                 rowsNumber++;
             }
@@ -174,19 +172,19 @@ const description = (function () {
         }
     };
 
-    on('setFont', function () {
-        setFont();
+    on('setFont', function (event, data) {
+        setFont(data.width, data.height);
     });
 
-    on('setRows', function (event, tempData) {
-        rows(tempData.row, tempData.column);
+    on('setRows', function (event, data) {
+        rows(data.row, data.column);
     });
 
-    on('setColumns', function (event, tempData) {
-        columns(tempData.column);
+    on('setColumns', function (event, data) {
+        columns(data.column);
     });
 
-    on('makeArrayId', function (event, tempData) {
-        arrayId(tempData.season);
+    on('makeArrayId', function (event, data) {
+        arrayId(data.season);
     });
 })();

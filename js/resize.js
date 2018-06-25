@@ -13,30 +13,34 @@ const resizeResolution = (function () {
         height = tempClientHeight;
 
         if (tempClientWidth < tempClientHeight) {
-            if (1/tempResolution > SCREEN_RESOLUTION) {
-                let tempNewHeight = width * SCREEN_RESOLUTION;  
+            if (1 / tempResolution > SCREEN_RESOLUTION) {
+                let tempNewHeight = width * SCREEN_RESOLUTION;
                 tempMainSection.style.width = `${width}px`;
                 tempMainSection.style.height = `${tempNewHeight}px`;
+                height = tempNewHeight;
             }
-            else {   
-                let tempNewWidth = height * 1/SCREEN_RESOLUTION;
+            else {
+                let tempNewWidth = height * 1 / SCREEN_RESOLUTION;
                 tempMainSection.style.height = `${height}px`;
                 tempMainSection.style.width = `${tempNewWidth}px`;
+                width = tempNewWidth;
             }
-            trigger('resize/mobileView', { width: width, height: height, resolution: tempResolution });
+            trigger('resize/mobileView', { width: width, height: height });
         }
         else {
             if (tempResolution > SCREEN_RESOLUTION) {
-                let tempNewClientWidth = height * SCREEN_RESOLUTION;
-                tempMainSection.style.width = `${tempNewClientWidth}px`;
+                let tempNewWidth = height * SCREEN_RESOLUTION;
+                tempMainSection.style.width = `${tempNewWidth}px`;
                 tempMainSection.style.height = `${height}px`;
+                width = tempNewWidth;
             }
             else {
-                let tempNewClientHeight = width / SCREEN_RESOLUTION;
-                tempMainSection.style.height = `${tempNewClientHeight}px`;
+                let tempNewHeight = width / SCREEN_RESOLUTION;
+                tempMainSection.style.height = `${tempNewHeight}px`;
                 tempMainSection.style.width = `${width}px`;
+                height = tempNewHeight;
             }
-            trigger('resize/desktopView', { width: width, height: height, resolution: tempResolution });
+            trigger('resize/desktopView', { width: width, height: height });
         }
     };
 

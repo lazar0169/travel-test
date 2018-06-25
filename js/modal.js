@@ -23,7 +23,7 @@ const makeModal = (function () {
         let maxDec;
 
         let maxValue;
-        
+
         let SEASONSLIST = {
             spring: 'spring',
             winter: 'winter',
@@ -73,15 +73,16 @@ const makeModal = (function () {
                                         tempTablePriceTDSpring.innerText = tempSpring[spring];
                                     }
                                     else {
-                                        tempTablePriceTDSpring.innerText = destinationObject[tempObjectLength].seasons.spring[tempSpring[spring]][tempSpringLength - 1];
+                                        if (typeof destinationObject[tempObjectLength].seasons.spring[tempSpring[spring]][tempSpringLength - 1] !== typeof undefined) {
+                                            tempTablePriceTDSpring.innerText = destinationObject[tempObjectLength].seasons.spring[tempSpring[spring]][tempSpringLength - 1];
+
+                                        }
+                                        else {
+                                            tempTablePriceTDSpring.innerText = '/';
+
+                                        }
                                     }
-                                    if (tempTablePriceTDSpring.textContent !== 'undefined') {
-                                        tempTablePriceTR.appendChild(tempTablePriceTDSpring);
-                                    }
-                                    else {
-                                        tempTablePriceTDSpring.innerText = '/';
-                                        tempTablePriceTR.appendChild(tempTablePriceTDSpring);
-                                    }
+                                    tempTablePriceTR.appendChild(tempTablePriceTDSpring);
                                 }
                                 tempTablePrice.appendChild(tempTablePriceTR);
                             }
@@ -114,15 +115,16 @@ const makeModal = (function () {
                                         tempTablePriceTDSummer.innerText = tempSummer[summer];
                                     }
                                     else {
-                                        tempTablePriceTDSummer.innerText = destinationObject[tempObjectLength].seasons.summer[tempSummer[summer]][tempSummerLength - 1];
+                                        if (typeof destinationObject[tempObjectLength].seasons.summer[tempSummer[summer]][tempSummerLength - 1] !== typeof undefined) {
+                                            tempTablePriceTDSummer.innerText = destinationObject[tempObjectLength].seasons.summer[tempSummer[summer]][tempSummerLength - 1];
+
+                                        }
+                                        else {
+                                            tempTablePriceTDSummer.innerText = '/'
+
+                                        }
                                     }
-                                    if (tempTablePriceTDSummer.textContent != 'undefined') {
-                                        tempTablePriceTR.appendChild(tempTablePriceTDSummer);
-                                    }
-                                    else {
-                                        tempTablePriceTDSummer.innerText = '/'
-                                        tempTablePriceTR.appendChild(tempTablePriceTDSummer);
-                                    }
+                                    tempTablePriceTR.appendChild(tempTablePriceTDSummer);
                                 }
                                 tempTablePrice.appendChild(tempTablePriceTR);
                             }
@@ -156,15 +158,15 @@ const makeModal = (function () {
                                         tempTablePriceTDAutumn.innerText = tempAutumn[autumn];
                                     }
                                     else {
-                                        tempTablePriceTDAutumn.innerText = destinationObject[tempObjectLength].seasons.autumn[tempAutumn[autumn]][tempAutumnLength - 1];
+                                        if (typeof destinationObject[tempObjectLength].seasons.autumn[tempAutumn[autumn]][tempAutumnLength - 1] !== typeof undefined) {
+                                            tempTablePriceTDAutumn.innerText = destinationObject[tempObjectLength].seasons.autumn[tempAutumn[autumn]][tempAutumnLength - 1];
+
+                                        }
+                                        else {
+                                            tempTablePriceTDAutumn.innerText = '/';
+                                        }
                                     }
-                                    if (tempTablePriceTDAutumn.textContent !== 'undefined') {
-                                        tempTablePriceTR.appendChild(tempTablePriceTDAutumn);
-                                    }
-                                    else {
-                                        tempTablePriceTDAutumn.innerText = '/';
-                                        tempTablePriceTR.appendChild(tempTablePriceTDAutumn);
-                                    }
+                                    tempTablePriceTR.appendChild(tempTablePriceTDAutumn);
                                 }
                                 tempTablePrice.appendChild(tempTablePriceTR);
                             }
@@ -196,21 +198,20 @@ const makeModal = (function () {
 
                                     if (tempWinterLength === 0) {
                                         tempTablePriceTDWinter.innerText = tempWinter[winter];
+
                                     }
                                     else {
-                                        tempTablePriceTDWinter.innerText = destinationObject[tempObjectLength].seasons.winter[tempWinter[winter]][tempWinterLength - 1];
+                                        if (typeof destinationObject[tempObjectLength].seasons.winter[tempWinter[winter]][tempWinterLength - 1] !== typeof undefined) {
+                                            tempTablePriceTDWinter.innerText = destinationObject[tempObjectLength].seasons.winter[tempWinter[winter]][tempWinterLength - 1];
+                                        }
+                                        else {
+                                            tempTablePriceTDWinter.innerText = '/';
+                                        }
                                     }
-                                    if (tempTablePriceTDWinter.textContent !== 'undefined') {
-                                        tempTablePriceTR.appendChild(tempTablePriceTDWinter);
-                                    }
-                                    else {
-                                        tempTablePriceTDWinter.innerText = '/';
-                                        tempTablePriceTR.appendChild(tempTablePriceTDWinter);
-                                    }
+                                    tempTablePriceTR.appendChild(tempTablePriceTDWinter);
                                 }
                                 tempTablePrice.appendChild(tempTablePriceTR);
                             }
-
                             break;
                     }
                     tempTable.appendChild(tempParSeason)
@@ -219,35 +220,45 @@ const makeModal = (function () {
             }
         }
     };
-    function resizeFont() {
-        let tempFont = tempBody[0].clientHeight;
-        tempH1.style.fontSize = ` ${tempFont * 0.1}px`;
-        tempPar.style.fontSize = `${tempFont * 0.025}px`;
-
-        for (let tempTableLength = 0; tempTableLength < tempH1tablePrice.length; tempTableLength++) {
-            tempH1[tempTableLength].style.fontSize = `${tempFont * 0.05}px`;
+    function resizeFont(tempWidth, tempHeight) {
+        if (tempWidth < tempHeight) {
+            tempH1.style.fontSize = ` ${tempHeight * 0.09}px`;
+            tempPar.style.fontSize = `${tempHeight * 0.0225}px`;
+            for (let tempTableLength = 0; tempTableLength < tempH1tablePrice.length; tempTableLength++) {
+                tempH1tablePrice[tempTableLength].style.fontSize = `${tempHeight * 0.05}px`;
+            }
         }
+        else {
+            tempH1.style.fontSize = ` ${tempWidth * 0.09}px`;
+            tempPar.style.fontSize = `${tempWidth * 0.0225}px`;
+            for (let tempTableLength = 0; tempTableLength < tempH1tablePrice.length; tempTableLength++) {
+                tempH1tablePrice[tempTableLength].style.fontSize = `${tempWidth * 0.05}px`;
+            }
+        }
+
+
+
     };
-    function mobileView(tempWidth, tempHeight, tempResolution) {   
+    function mobileView(tempWidth, tempHeight) {
         tempMainSection.classList.add('mobile');
         tempH1.classList.add('mobile');
         tempImage.classList.add('mobile');
         tempPar.classList.add('mobile');
         tempTable.classList.add('mobile');
-        resizeFont();
+        resizeFont(tempWidth, tempHeight);
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
         }
     };
 
-    function desktopView(tempWidth, tempHeight, tempResolution) {
+    function desktopView(tempWidth, tempHeight) {
         tempMainSection.classList.remove('mobile');
         tempH1.classList.remove('mobile');
         tempImage.classList.remove('mobile');
         tempPar.classList.remove('mobile');
         tempTable.classList.remove('mobile');
-        resizeFont();
+        resizeFont(tempWidth, tempHeight);
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
