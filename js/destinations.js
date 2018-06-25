@@ -71,24 +71,23 @@ const description = (function () {
             let tempCityName = document.createElement('section');
             tempCityName.classList.add('section-footer');
 
-            // tempCityName.innerHTML=`<h2 class="h2-city-name">
-            // <p id= ovo-je${sectionNumber} class="description-text"></p>
-            // <button class= "read-more">Read more</button>
-            // </h2>`;
+            tempCityName.innerHTML=`<h2 class="h2-city-name"></h2>
+            <p id= ovo-je${sectionNumber} class="description-text"></p>
+            <button class= "read-more">Read more</button>`;
 
-            let tempCityNameHeader = document.createElement('h2');
-            tempCityNameHeader.classList.add('h2-city-name');
+            // let tempCityNameHeader = document.createElement('h2');
+            // tempCityNameHeader.classList.add('h2-city-name');
 
-            let tempCityDescTxt = document.createElement('p');
-            tempCityDescTxt.classList.add('description-text');
+            // let tempCityDescTxt = document.createElement('p');
+            // tempCityDescTxt.classList.add('description-text');
 
-            let tempReadMore = document.createElement('button');
-            tempReadMore.classList.add('read-more');
-            tempReadMore.innerText = 'Read more';
+            // let tempReadMore = document.createElement('button');
+            // tempReadMore.classList.add('read-more');
+            // tempReadMore.innerText = 'Read more';
 
-            tempCityName.appendChild(tempCityNameHeader);
-            tempCityName.appendChild(tempCityDescTxt);
-            tempCityName.appendChild(tempReadMore);
+            // tempCityName.appendChild(tempCityNameHeader);
+            // tempCityName.appendChild(tempCityDescTxt);
+            // tempCityName.appendChild(tempReadMore);
 
             tempArticleSection[sectionNumber].appendChild(tempCityName);
 
