@@ -28,8 +28,7 @@ let indexFilesCSS = [
     "css/loading.css",
     "css/index-content.css",
     "css/sidebar.css",
-    "css/destinations.css",
-    "css/materialdesignicons.min.css"
+    "css/destinations.css"
 ];
 
 let modalFilesCSS = [
