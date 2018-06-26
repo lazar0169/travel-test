@@ -4,7 +4,6 @@ const makeModal = (function () {
     let tempImage = get('#image-modal');
     let tempH1 = get('#h1-modal-show');
     let tempPar = get('#p-modal');
-    let tempBody = get('body');
     let tempH1tablePrice = get('.h1-table-price');
     let tempLoading = get('#loading');
     function modal() {
@@ -23,13 +22,6 @@ const makeModal = (function () {
         let maxDec;
 
         let maxValue;
-
-        let SEASONSLIST = {
-            spring: 'spring',
-            winter: 'winter',
-            autumn: 'autumn',
-            summer: 'summer'
-        }
 
         let params = new URLSearchParams(document.location.search.substring(1));
         let tempDataID = params.get('id');

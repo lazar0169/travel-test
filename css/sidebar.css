@@ -49,7 +49,7 @@
 .link-season{
     
     color: white;
-    width: 85%;
+    width: 100%;
     text-decoration: none;
     position: relative;
     cursor: pointer;
@@ -57,12 +57,23 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+    display: inline-flex;
 }
 .icons{
     width: 15%;
+    position: relative;
 }
-.link-season::first-letter{
+.season-name{
+    margin: 0;
+    padding: 0;
+    width: 85%;
+    position: relative;
+}
+.season-name::first-letter{
     text-transform: capitalize;
+}
+.season-name.mobile{
+    visibility: hidden;
 }
 
 .link-season:hover{

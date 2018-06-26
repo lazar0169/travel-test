@@ -59,7 +59,7 @@ const description = (function () {
     };
 
     function addSection(temp) {
-        
+
 
         for (let sectionNumber in temp) {
             let newSection = document.createElement('section');
@@ -71,7 +71,7 @@ const description = (function () {
             let tempCityName = document.createElement('section');
             tempCityName.classList.add('section-footer');
 
-            tempCityName.innerHTML=`<h2 class="h2-city-name"></h2>
+            tempCityName.innerHTML = `<h2 class="h2-city-name"></h2>
             <p id= ovo-je${sectionNumber} class="description-text"></p>
             <button class= "read-more">Read more</button>`;
 
@@ -98,7 +98,7 @@ const description = (function () {
     };
 
     function addCity(temp, tempID) {
-       
+
         let tempSectionNumber = 1;
         for (let tempIdArray in temp) {
             for (let tempObjectLength in destinationObject) {

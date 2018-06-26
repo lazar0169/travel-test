@@ -13,7 +13,7 @@ const bar = (function () {
     let tempSeasonLink = get('#season-section');
     let tempMainSection = get('#main-section');
     let tempLoading = get('#loading');
-    
+
 
     addListener('#show-bar', 'click', 'showBar');
     addListener('.link-season', 'click', 'clickSeason');
@@ -46,7 +46,7 @@ const bar = (function () {
         for (let tempObjectLanguageLength in languageObject) {
             let tempCreateLanguage = document.createElement('a');
             tempCreateLanguage.classList.add('list-of-language');
-            
+
 
             if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
                 tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
@@ -122,20 +122,20 @@ const bar = (function () {
             substring();
         }
         trigger('setColumns', { column: 1 });
-        trigger('setFont', {width: tempWidth, height:tempHeight});
+        trigger('setFont', { width: tempWidth, height: tempHeight });
         fontSideBarMobile(tempWidth, tempHeight);
     };
 
     function desktopView(tempWidth, tempHeight) {
         let tempSection0 = get('#section-0');
-        if(tempSection0.classList){
+        if (tempSection0.classList) {
             tempSection0.classList.remove('mobile');
         }
-        
+
         tempLeftSection.style.width = '20%';
         fullName();
         trigger('setRows', { row: 3, column: 3 });
-        trigger('setFont', {width: tempWidth, height:tempHeight});
+        trigger('setFont', { width: tempWidth, height: tempHeight });
         fontSideBarMobile(tempWidth, tempHeight);
         if (tempMainSection.style.visibility != 'visible') {
             tempLoading.style.display = 'none';
@@ -150,7 +150,27 @@ const bar = (function () {
 
     function substring() {
         for (let tempSeasonsListLength of tempSeasonsList) {
-            tempSeasonsListLength.innerText = tempSeasonsListLength.dataset.id.substring(0, 3);
+            switch (tempSeasonsListLength.dataset.id) {
+                case SEASONSLIST.spring:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-flower icons"></i>`;
+                    break;
+
+                case SEASONSLIST.winter:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-snowflake icons"></i>`;
+                    break;
+
+                case SEASONSLIST.autumn:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-leaf icons"></i>`;
+                    break;
+
+                case SEASONSLIST.summer:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-white-balance-sunny icons"></i>`;
+                    break;
+
+                case SEASONSLIST.all:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-apple-safari icons"></i>`;
+                    break;
+            }
         }
 
         if (tempLanguageList.length != 0) {
@@ -170,7 +190,27 @@ const bar = (function () {
 
     function fullName() {
         for (let tempSeasonsListLength of tempSeasonsList) {
-            tempSeasonsListLength.innerText = tempSeasonsListLength.dataset.id;
+            switch (tempSeasonsListLength.dataset.id) {
+                case SEASONSLIST.spring:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-flower icons"></i> <p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    break;
+
+                case SEASONSLIST.winter:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-snowflake icons"></i> <p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    break;
+
+                case SEASONSLIST.autumn:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-leaf icons"></i> <p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    break;
+
+                case SEASONSLIST.summer:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-white-balance-sunny icons"></i> <p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    break;
+
+                case SEASONSLIST.all:
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-apple-safari icons"></i><p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    break;
+            }
         }
 
         if (tempLanguageList.length != 0) {
@@ -189,12 +229,12 @@ const bar = (function () {
     };
 
     function fontSideBarMobile(tempWidth, tempHeight) {
-        if (tempWidth<tempHeight){
+        if (tempWidth < tempHeight) {
             tempSeasonLink.style.fontSize = `${tempWidth * 0.05}px`;
             tempOpenCloseLanguage.style.fontSize = `${tempWidth * 0.05}px`;
             tempLanguage.style.fontSize = `${tempWidth * 0.05}px`;
         }
-        else{
+        else {
             tempSeasonLink.style.fontSize = `${tempHeight * 0.04}px`;
             tempOpenCloseLanguage.style.fontSize = `${tempHeight * 0.04}px`;
             tempLanguage.style.fontSize = `${tempHeight * 0.04}px`;
