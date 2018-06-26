@@ -170,6 +170,9 @@ const description = (function () {
             tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
         }
     };
+    on('makeArrayId', function (event, data) {
+        arrayId(data.season);
+    });
 
     on('setFont', function (event, data) {
         setFont(data.width, data.height);
@@ -183,7 +186,5 @@ const description = (function () {
         columns(data.column);
     });
 
-    on('makeArrayId', function (event, data) {
-        arrayId(data.season);
-    });
+   
 })();
