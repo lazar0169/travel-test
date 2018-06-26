@@ -1,4 +1,5 @@
 function on(event, callback) {
+    let eventList = [];
     if (eventList == null)
         eventList = {};
     if (eventList[event] == null)

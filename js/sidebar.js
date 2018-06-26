@@ -15,6 +15,7 @@ const bar = (function () {
     let tempLoading = get('#loading');
 
 
+    
     addListener('#show-bar', 'click', 'showBar');
     addListener('.link-season', 'click', 'clickSeason');
     addListener('#open-close-language', 'click', 'showHideLanguage');
