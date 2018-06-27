@@ -3,47 +3,68 @@
 
 <head>
     <title>Travel agency</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="index.css">
+    <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+   
 </head>
 
 <body>
+    <div id="loading">
+        <p>Please wait</p>
+        <div id="loader"></div>
+    </div>
 
-    <div id="mainSection">
+    <div id="load-images">
+        <img src="images/berlin.jpg">
+        <img src="images/budapest.jpg">
+        <img src="images/krakov.jpg">
+        <img src="images/lisbon.jpg">
+        <img src="images/luxembourg.jpg">
+        <img src="images/madrid.jpg">
+        <img src="images/moscow.jpg">
+        <img src="images/paris.jpg">
+        <img src="images/prague.jpg">
+        <img src="images/rome.jpg">
+        <img src="images/venecia.jpg">
+        <img src="images/vienna.jpg">
+        <img src="images/london.jpg">
+    </div>
 
-        <section id="leftSection">
-            <img id="logoArticle" src="images\logo.png" alt="Logo" width="100%" height="100%">
+    <div id="main-section">
 
-            <div id="seasonSection">
-                <a class="linkSeason" data-season="all">All</a>
-                <a class="linkSeason" data-season="winter">Winter</a>
-                <a class="linkSeason" data-season="spring">Spring</a>
-                <a class="linkSeason" data-season="autumn">Autumn</a>
-                <a class="linkSeason" data-season="summer">Summer</a>
+        <section id="left-section">
+            <button id="show-bar">
+                <p>&#9712</p>
+            </button>
+            <img id="logo-article" src="images\logo.png" alt="Logo" width="100%" height="100%">
+
+
+            <div id="season-section">
+               
+                <a class="link-season" data-id="all"></a>
+                
+                <a class="link-season" data-id="winter"></a>
+               
+                <a class="link-season" data-id="spring"></a>
+                
+                <a class="link-season" data-id="autumn"></a>
+                
+                <a class="link-season" data-id="summer"></a>
             </div>
 
             <div id="language">
             </div>
 
-            <button id="openCloseLanguage" onclick="showHideLanguage()">
-                <p id="pLanguage">Language</p>
-                <p id="pButtonOpenClose">&#9650</p>
+            <button id="open-close-language">
+                <p id="p-language"></p>
+                <p id="p-button-open-close">&#9650</p>
             </button>
         </section>
 
-        <section id="rightSection">
+        <section id="right-section">
         </section>
     </div>
-
-    <script src="js/destination-object.js"></script>
-    <script src="js/high-rate.js"></script>
-    <script src="js/array-id.js"></script>
-    <script src="js/add-section.js"></script>
-    <script src="js/add-section-description.js"></script>
-    <script src="js/language-select.js"></script>
-    <script src="js/full-size-index.js"></script>
-    <script src="js/click-season.js"></script>
-    <script src="js/set-resolution.js"></script>
-    <script src="js/set-resolution-grid.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
