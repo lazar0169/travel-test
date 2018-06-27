@@ -89,7 +89,7 @@ const bar = (function () {
     });
 
     function showBar() {
-        if (tempLeftSection.style.width != '100%') {
+        if (tempLeftSection.style.width !== '100%') {
             tempLeftSection.style.width = '100%';
             tempLeftSection.style.position = 'absolute';
             tempRightSection.style.visibility = 'hidden';
@@ -101,7 +101,7 @@ const bar = (function () {
     };
 
     function hideBar() {
-        if (tempLeftSection.style.width != '20%') {
+        if (tempLeftSection.style.width !== '20%') {
             tempLeftSection.style.width = '20%';
             tempLeftSection.style.position = 'relative';
             tempRightSection.style.visibility = 'visible';
@@ -113,13 +113,13 @@ const bar = (function () {
         let tempSection0 = get('#section-0');
         tempSection0.classList.add('mobile');
 
-        if (tempMainSection.style.visibility != 'visible') {
+        if (tempMainSection.style.visibility !== 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
         }
         tempLogo.style.visibility = 'hidden';
         tempShowBar.style.visibility = 'visible';
-        if (tempLeftSection.style.width != '100%') {
+        if (tempLeftSection.style.width !== '100%') {
             substring();
         }
         trigger('setColumns', { column: 1 });
@@ -138,7 +138,7 @@ const bar = (function () {
         trigger('setRows', { row: 3, column: 3 });
         trigger('setFont', { width: tempWidth, height: tempHeight });
         fontSideBarMobile(tempWidth, tempHeight);
-        if (tempMainSection.style.visibility != 'visible') {
+        if (tempMainSection.style.visibility !== 'visible') {
             tempLoading.style.display = 'none';
             tempMainSection.style.visibility = 'visible';
         }
@@ -174,7 +174,7 @@ const bar = (function () {
             }
         }
 
-        if (tempLanguageList.length != 0) {
+        if (tempLanguageList.length !== 0) {
             for (let tempLanguageID of languageObject) {
                 if (tempLanguageID.id === tempPLanguage.dataset.id) {
                     tempPLanguage.innerHTML = tempLanguageID.id;
@@ -214,7 +214,7 @@ const bar = (function () {
             }
         }
 
-        if (tempLanguageList.length != 0) {
+        if (tempLanguageList.length !== 0) {
             for (let tempLanguageID of languageObject) {
                 if (tempLanguageID.id === tempPLanguage.dataset.id) {
                     tempPLanguage.innerHTML = tempLanguageID.language;

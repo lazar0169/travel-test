@@ -8,7 +8,7 @@ const description = (function () {
     function arrayId(tempSeason) {
         let tempIdArray = [];
         let tempNumberOfArray = 0;
-        if (tempSeason == 'all') {
+        if (tempSeason === 'all') {
             for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
                 tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
                 tempNumberOfArray++;
@@ -89,7 +89,7 @@ const description = (function () {
         for (let tempIdArray in temp) {
             for (let tempObjectLength in destinationObject) {
                 if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
-                    if (tempID != destinationObject[tempObjectLength].id) {
+                    if (tempID !== destinationObject[tempObjectLength].id) {
                         tempArticleSection[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
                         tempCityNameHeaderH2[tempSectionNumber].innerHTML = destinationObject[tempObjectLength].name;
                         tempCityDescTxt[tempSectionNumber].innerHTML = destinationObject[tempObjectLength].desc;
@@ -116,7 +116,7 @@ const description = (function () {
     function setFont(tempWidth, tempHeight) {
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
             if (tempWidth > tempHeight) {
-                if (tempArticleSectionLength == 0) {
+                if (tempArticleSectionLength === 0) {
                     tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempHeight * 0.135}px`;
                     tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.06}px`;
                     tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.03}px`;
@@ -142,7 +142,7 @@ const description = (function () {
         let rowsNumber = parseInt(tempArticleSection.length / tempRows);
         let rowsHeight = tempRightSection.clientHeight / tempRows;
         let columnWidth = tempRightSection.clientWidth / tempCol;
-        if (tempArticleSection.length % tempRows != 0) {
+        if (tempArticleSection.length % tempRows !== 0) {
             rowsNumber = rowsNumber + 2;
         } else {
             rowsNumber++;
@@ -150,7 +150,7 @@ const description = (function () {
         tempRightSection.style.gridTemplateColumns = `repeat(${tempCol}, ${columnWidth}px)`;
         tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber}, ${rowsHeight}px)`;
         for (let elemNumber in tempArticleSection) {
-            if (elemNumber == 0) {
+            if (elemNumber === 0) {
                 tempArticleSection[elemNumber].id = 'section-0';
                 break;
             }
@@ -163,7 +163,7 @@ const description = (function () {
             tempRightSection.style.gridTemplateColumns = `none`;
             tempRightSection.style.gridTemplateColumns = `repeat(${tempCol}, $100% )`;
 
-            if (tempArticleSection.length % tempCol != 0) {
+            if (tempArticleSection.length % tempCol !== 0) {
                 rowsNumber++;
             }
 
