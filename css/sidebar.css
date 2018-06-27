@@ -47,7 +47,6 @@
 }
 
 .link-season{
-    
     color: white;
     width: 100%;
     text-decoration: none;
@@ -56,13 +55,20 @@
     background-color: transparent;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 0;
     display: inline-flex;
 }
 .icons{
     width: 15%;
     position: relative;
+    text-align: center;
 }
+.mobileIcons{
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
 .season-name{
     margin: 0;
     padding: 0;

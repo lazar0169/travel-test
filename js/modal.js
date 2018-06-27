@@ -227,9 +227,6 @@ const makeModal = (function () {
                 tempH1tablePrice[tempTableLength].style.fontSize = `${tempWidth * 0.05}px`;
             }
         }
-
-
-
     };
     function mobileView(tempWidth, tempHeight) {
         tempMainSection.classList.add('mobile');

@@ -153,23 +153,23 @@ const bar = (function () {
         for (let tempSeasonsListLength of tempSeasonsList) {
             switch (tempSeasonsListLength.dataset.id) {
                 case SEASONSLIST.spring:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-flower icons"></i>`;
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-flower mobileIcons"></i>`;
                     break;
 
                 case SEASONSLIST.winter:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-snowflake icons"></i>`;
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-snowflake mobileIcons"></i>`;
                     break;
 
                 case SEASONSLIST.autumn:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-leaf icons"></i>`;
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-leaf mobileIcons"></i>`;
                     break;
 
                 case SEASONSLIST.summer:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-white-balance-sunny icons"></i>`;
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-white-balance-sunny mobileIcons"></i>`;
                     break;
 
                 case SEASONSLIST.all:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-apple-safari icons"></i>`;
+                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-apple-safari mobileIcons"></i>`;
                     break;
             }
         }

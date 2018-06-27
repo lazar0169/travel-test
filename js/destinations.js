@@ -72,22 +72,8 @@ const description = (function () {
             tempCityName.classList.add('section-footer');
 
             tempCityName.innerHTML = `<h2 class="h2-city-name"></h2>
-            <p id= ovo-je${sectionNumber} class="description-text"></p>
+            <p class="description-text"></p>
             <button class= "read-more">Read more</button>`;
-
-            // let tempCityNameHeader = document.createElement('h2');
-            // tempCityNameHeader.classList.add('h2-city-name');
-
-            // let tempCityDescTxt = document.createElement('p');
-            // tempCityDescTxt.classList.add('description-text');
-
-            // let tempReadMore = document.createElement('button');
-            // tempReadMore.classList.add('read-more');
-            // tempReadMore.innerText = 'Read more';
-
-            // tempCityName.appendChild(tempCityNameHeader);
-            // tempCityName.appendChild(tempCityDescTxt);
-            // tempCityName.appendChild(tempReadMore);
 
             tempArticleSection[sectionNumber].appendChild(tempCityName);
 
@@ -129,12 +115,26 @@ const description = (function () {
 
     function setFont(tempWidth, tempHeight) {
         for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
-            let tempSectionHeight = tempArticleSection[tempArticleSectionLength].clientHeight;
-            let tempSectionWidth = tempArticleSection[tempArticleSectionLength].clientWidth;
-            tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempSectionHeight * 0.2}px`;
-            tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.10}px`;
-            tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.05}px`;
-            tempReadMore[tempArticleSectionLength].style.fontSize = `${tempSectionWidth * 0.11}px`;
+            if (tempWidth > tempHeight) {
+                if (tempArticleSectionLength == 0) {
+                    tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempHeight * 0.135}px`;
+                    tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.06}px`;
+                    tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.03}px`;
+                    tempReadMore[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.055}px`;
+                }
+                else {
+                    tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempHeight * 0.0675}px`;
+                    tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.03}px`;
+                    tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.015}px`;
+                    tempReadMore[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.025}px`;
+                }
+            }
+            else {
+                tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempHeight * 0.1}px`;
+                tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.14}px`;
+                tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.07}px`;
+                tempReadMore[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.135}px`;
+            }
         }
     };
 
