@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'thin';
-    src: url('../fonts/roboto-thin.ttf') format('truetype');
+    font-family: 'roboto';
+    src: url('fonts/roboto-thin.ttf') format('truetype');
 }
 
 body{
@@ -15,7 +15,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden; 
-    font-family: thin;
+    font-family: roboto;
 }
 
 #load-images{
