@@ -33,7 +33,7 @@
     pointer-events: none;
 }
 
-#h1-modal-show{
+#destination-name{
     padding: 0;
     margin: 0;
     top:0;
@@ -46,7 +46,7 @@
     align-items: center;
 }
 
-#p-modal{
+#description-text{
     padding: 0;
     margin: 0;
     top:0;
@@ -90,14 +90,14 @@
     pointer-events: none;
 }
 
-#h1-modal-show.mobile{
+#destination-name.mobile{
     width: 90%;
     text-align: center ;
     margin: 0;
     padding: 0;
 }
 
-#p-modal.mobile{ 
+#description-text.mobile{ 
     margin: 0;
     width: 90%;
     text-align: justify;
@@ -127,7 +127,7 @@ td{
     text-align: center;
 }
 
-.h1-table-price{
+.season-name{
     padding: 0;
     margin: 0;
     top:0;

@@ -1,51 +1,52 @@
 const description = (function () {
-    let tempRightSection = get('#right-section');
-    let tempArticleSection = get('.article-section');
-    let tempCityNameHeaderH2 = get('.h2-city-name');
-    let tempCityDescTxt = get('.description-text');
-    let tempReadMore = get('.read-more');
+    let destinationWrapper = get('#right-section');
+    let destination = get('.article-section');
+    let destinationName = get('.model-name');
+    let destinationText = get('.description-text');
+    let destinationDescription = get('.read-more');
 
-    function arrayId(tempSeason) {
-        let tempIdArray = [];
-        let tempNumberOfArray = 0;
-        if (tempSeason === 'all') {
-            for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
-                tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
-                tempNumberOfArray++;
+    function arrayId(destinationSeason) {
+        let idArray = [];
+        let numberOfArray = 0;
+        if (destinationSeason === 'all') {
+            for (let object = 0; object < destinationObject.length; object++) {
+                idArray[numberOfArray] = destinationObject[object].id;
+                numberOfArray++;
             }
         }
         else {
-            for (let tempObjectLength in destinationObject) {
-                let tempSeasonsArray = Object.keys(destinationObject[tempObjectLength].seasons);
-                for (let tempSeasonsArrayLength in tempSeasonsArray) {
-                    if (String(tempSeason) === String(tempSeasonsArray[tempSeasonsArrayLength])) {
-                        tempIdArray[tempNumberOfArray] = destinationObject[tempObjectLength].id;
-                        tempNumberOfArray++;
+            for (let object in destinationObject) {
+                let seasonsArray = Object.keys(destinationObject[object].seasons);
+                for (let season in seasonsArray) {
+                    if (String(destinationSeason) === String(seasonsArray[season])) {
+                        idArray[numberOfArray] = destinationObject[object].id;
+                        numberOfArray++;
                     }
                 }
             }
         }
-        highRate(tempIdArray);
+        highRate(idArray);
     };
+    
 
-    function highRate(tempArray) {
-        let tempRating;
+    function highRate(array) {
+        let rating;
         let highRateID;
-        for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
-            if (tempArray[0] === destinationObject[tempObjectLength].id) {
-                tempRating = destinationObject[tempObjectLength].rating;
-                highRateID = destinationObject[tempObjectLength].id;
+        for (let objectNumber = 0; objectNumber < destinationObject.length; objectNumber++) {
+            if (array[0] === destinationObject[objectNumber].id) {
+                rating = destinationObject[objectNumber].rating;
+                highRateID = destinationObject[objectNumber].id;
                 break;
             }
         }
 
-        for (let tempNumberOfArray = 1; tempNumberOfArray < tempArray.length; tempNumberOfArray++) {
-            for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
-                if (tempArray[tempNumberOfArray] === destinationObject[tempObjectLength].id) {
-                    let tempRatingX = destinationObject[tempObjectLength].rating;
-                    if (tempRating < tempRatingX) {
-                        tempRating = tempRatingX;
-                        highRateID = destinationObject[tempObjectLength].id;
+        for (let numberOfArray = 1; numberOfArray < array.length; numberOfArray++) {
+            for (let objectNumber= 0; objectNumber < destinationObject.length; objectNumber++) {
+                if (array[numberOfArray] === destinationObject[objectNumber].id) {
+                    let ratingX = destinationObject[objectNumber].rating;
+                    if (rating < ratingX) {
+                        rating = ratingX;
+                        highRateID = destinationObject[objectNumber].id;
                         break;
                     }
                     else {
@@ -54,54 +55,54 @@ const description = (function () {
                 }
             }
         }
-        addSection(tempArray);
-        addCity(tempArray, highRateID);
+        addSection(array);
+        addCity(array, highRateID);
     };
 
-    function addSection(temp) {
+    function addSection(array) {
 
 
-        for (let sectionNumber in temp) {
+        for (let sectionNumber in array) {
             let newSection = document.createElement('section');
             newSection.id = `section-${Number(sectionNumber)}`;
             newSection.classList.add('article-section');
 
-            tempRightSection.appendChild(newSection);
+            destinationWrapper.appendChild(newSection);
 
-            let tempCityName = document.createElement('section');
-            tempCityName.classList.add('section-footer');
+            let cityName = document.createElement('section');
+            cityName.classList.add('section-footer');
 
-            tempCityName.innerHTML = `<h2 class="h2-city-name"></h2>
+            cityName.innerHTML = `<h2 class="model-name"></h2>
             <p class="description-text"></p>
             <button class= "read-more">Read more</button>`;
 
-            tempArticleSection[sectionNumber].appendChild(tempCityName);
+            destination[sectionNumber].appendChild(cityName);
 
-            tempArticleSection[sectionNumber].addEventListener('click', () => {
-                index(tempArticleSection[sectionNumber].dataset.id);
+            destination[sectionNumber].addEventListener('click', () => {
+                index(destination[sectionNumber].dataset.id);
             })
         }
     };
 
-    function addCity(temp, tempID) {
+    function addCity(array, highRateID) {
 
-        let tempSectionNumber = 1;
-        for (let tempIdArray in temp) {
-            for (let tempObjectLength in destinationObject) {
-                if (temp[tempIdArray] === destinationObject[tempObjectLength].id) {
-                    if (tempID !== destinationObject[tempObjectLength].id) {
-                        tempArticleSection[tempSectionNumber].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
-                        tempCityNameHeaderH2[tempSectionNumber].innerHTML = destinationObject[tempObjectLength].name;
-                        tempCityDescTxt[tempSectionNumber].innerHTML = destinationObject[tempObjectLength].desc;
-                        tempArticleSection[tempSectionNumber].dataset.id = destinationObject[tempObjectLength].id;
-                        tempSectionNumber++;
+        let sectionNumber = 1;
+        for (let id in array) {
+            for (let object in destinationObject) {
+                if (array[id] === destinationObject[object].id) {
+                    if (highRateID !== destinationObject[object].id) {
+                        destination[sectionNumber].style.backgroundImage = `url(${destinationObject[object].image})`;
+                        destinationName[sectionNumber].innerHTML = destinationObject[object].name;
+                        destinationText[sectionNumber].innerHTML = destinationObject[object].desc;
+                        destination[sectionNumber].dataset.id = destinationObject[object].id;
+                        sectionNumber++;
                         break;
                     }
                     else {
-                        tempArticleSection[0].style.backgroundImage = `url(${destinationObject[tempObjectLength].image})`;
-                        tempCityNameHeaderH2[0].innerText = destinationObject[tempObjectLength].name;
-                        tempCityDescTxt[0].innerText = destinationObject[tempObjectLength].desc;
-                        tempArticleSection[0].dataset.id = destinationObject[tempObjectLength].id;
+                        destination[0].style.backgroundImage = `url(${destinationObject[object].image})`;
+                        destinationName[0].innerText = destinationObject[object].name;
+                        destinationText[0].innerText = destinationObject[object].desc;
+                        destination[0].dataset.id = destinationObject[object].id;
                         break;
                     }
                 }
@@ -109,65 +110,60 @@ const description = (function () {
         }
     };
 
-    function index(temp) {
-        window.open(`modal.html?id=${temp}`, '_self');
+    function index(clickedId) {
+        window.open(`modal.html?id=${clickedId}`, '_self');
     };
 
-    function setFont(tempWidth, tempHeight) {
-        for (let tempArticleSectionLength = 0; tempArticleSectionLength < tempArticleSection.length; tempArticleSectionLength++) {
-            if (tempWidth > tempHeight) {
-                if (tempArticleSectionLength === 0) {
-                    tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempHeight * 0.135}px`;
-                    tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.06}px`;
-                    tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.03}px`;
-                    tempReadMore[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.055}px`;
+    function setFont(width, height) {
+        for (let articleNumber = 0; articleNumber < destination.length; articleNumber++) {
+            if (width > height) {
+                if (articleNumber === 0) {
+                    destinationName[articleNumber].style.height = `${height * 0.135}px`;
+                    destinationName[articleNumber].style.fontSize = `${width * 0.06}px`;
+                    destinationText[articleNumber].style.fontSize = `${width * 0.03}px`;
+                    destinationDescription[articleNumber].style.fontSize = `${width * 0.055}px`;
                 }
                 else {
-                    tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempHeight * 0.0675}px`;
-                    tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.03}px`;
-                    tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.015}px`;
-                    tempReadMore[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.025}px`;
+                    destinationName[articleNumber].style.height = `${height * 0.0675}px`;
+                    destinationName[articleNumber].style.fontSize = `${width * 0.03}px`;
+                    destinationText[articleNumber].style.fontSize = `${width * 0.015}px`;
+                    destinationDescription[articleNumber].style.fontSize = `${width * 0.025}px`;
                 }
             }
             else {
-                tempCityNameHeaderH2[tempArticleSectionLength].style.height = `${tempHeight * 0.1}px`;
-                tempCityNameHeaderH2[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.14}px`;
-                tempCityDescTxt[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.07}px`;
-                tempReadMore[tempArticleSectionLength].style.fontSize = `${tempWidth * 0.135}px`;
+                destinationName[articleNumber].style.height = `${height * 0.1}px`;
+                destinationName[articleNumber].style.fontSize = `${width * 0.14}px`;
+                destinationText[articleNumber].style.fontSize = `${width * 0.07}px`;
+                destinationDescription[articleNumber].style.fontSize = `${width * 0.135}px`;
             }
         }
     };
 
-    function rows(tempRows, tempCol) {
-        let rowsNumber = parseInt(tempArticleSection.length / tempRows);
-        let rowsHeight = tempRightSection.clientHeight / tempRows;
-        let columnWidth = tempRightSection.clientWidth / tempCol;
-        if (tempArticleSection.length % tempRows !== 0) {
+    function rows(row, col) {
+        let rowsNumber = parseInt(destination.length / row);
+        let rowsHeight = destinationWrapper.clientHeight / row;
+        let columnWidth = destinationWrapper.clientWidth / col;
+        if (destination.length % row !== 0) {
             rowsNumber = rowsNumber + 2;
         } else {
             rowsNumber++;
         }
-        tempRightSection.style.gridTemplateColumns = `repeat(${tempCol}, ${columnWidth}px)`;
-        tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber}, ${rowsHeight}px)`;
-        for (let elemNumber in tempArticleSection) {
-            if (elemNumber === 0) {
-                tempArticleSection[elemNumber].id = 'section-0';
-                break;
-            }
-        }
+        destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${columnWidth}px)`;
+        destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, ${rowsHeight}px)`;
+      
     };
 
-    function columns(tempCol) {
-        if (tempRightSection.clientWidth < tempRightSection.clientHeight) {
-            let rowsNumber = parseInt(tempArticleSection.length / tempCol);
-            tempRightSection.style.gridTemplateColumns = `none`;
-            tempRightSection.style.gridTemplateColumns = `repeat(${tempCol}, $100% )`;
+    function columns(col) {
+        if (destinationWrapper.clientWidth < destinationWrapper.clientHeight) {
+            let rowsNumber = parseInt(destination.length / col);
+            destinationWrapper.style.gridTemplateColumns = `none`;
+            destinationWrapper.style.gridTemplateColumns = `repeat(${col}, $100% )`;
 
-            if (tempArticleSection.length % tempCol !== 0) {
+            if (destination.length % col !== 0) {
                 rowsNumber++;
             }
 
-            tempRightSection.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
+            destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
         }
     };
     on('makeArrayId', function (event, data) {
@@ -185,6 +181,4 @@ const description = (function () {
     on('setColumns', function (event, data) {
         columns(data.column);
     });
-
-   
 })();
