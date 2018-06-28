@@ -27,7 +27,7 @@ const description = (function () {
         }
         highRate(idArray);
     };
-    
+
 
     function highRate(array) {
         let rating;
@@ -41,7 +41,7 @@ const description = (function () {
         }
 
         for (let numberOfArray = 1; numberOfArray < array.length; numberOfArray++) {
-            for (let objectNumber= 0; objectNumber < destinationObject.length; objectNumber++) {
+            for (let objectNumber = 0; objectNumber < destinationObject.length; objectNumber++) {
                 if (array[numberOfArray] === destinationObject[objectNumber].id) {
                     let ratingX = destinationObject[objectNumber].rating;
                     if (rating < ratingX) {
@@ -148,16 +148,18 @@ const description = (function () {
         } else {
             rowsNumber++;
         }
+        destinationWrapper.style.gridTemplateColumns = `none`;
+        destinationWrapper.style.gridTemplateRows = `none`;
         destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${columnWidth}px)`;
         destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, ${rowsHeight}px)`;
-      
+
     };
 
     function columns(col) {
         if (destinationWrapper.clientWidth < destinationWrapper.clientHeight) {
             let rowsNumber = parseInt(destination.length / col);
             destinationWrapper.style.gridTemplateColumns = `none`;
-            destinationWrapper.style.gridTemplateColumns = `repeat(${col}, $100% )`;
+            destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${100/col}% )`;
 
             if (destination.length % col !== 0) {
                 rowsNumber++;
@@ -170,15 +172,15 @@ const description = (function () {
         arrayId(data.season);
     });
 
-    on('setFont', function (event, data) {
+    on('sidebar/setFont', function (event, data) {
         setFont(data.width, data.height);
     });
 
-    on('setRows', function (event, data) {
+    on('sidebar/setRows', function (event, data) {
         rows(data.row, data.column);
     });
 
-    on('setColumns', function (event, data) {
+    on('sidebar/setColumns', function (event, data) {
         columns(data.column);
     });
 })();

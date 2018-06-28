@@ -122,14 +122,14 @@ const bar = (function () {
         if (sidebarWrapper.style.width !== '100%') {
             substring();
         }
-        trigger('setColumns', { column: 1 });
-        trigger('setFont', { width: width, height: height });
+        trigger('sidebar/setColumns', { column: setColumnsMobile });
+        trigger('sidebar/setFont', { width: width, height: height });
         fontSideBarMobile(width, height);
     };
 
     function desktopView(width, height) {
-        trigger('setRows', { row: 3, column: 3 });
-        trigger('setFont', { width: width, height: height });
+        trigger('sidebar/setRows', { row: setRows, column: setColumns });
+        trigger('sidebar/setFont', { width: width, height: height });
         let first = get('#section-0');
         if (first.classList) {
             first.classList.remove('mobile');

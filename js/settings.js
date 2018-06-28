@@ -10,4 +10,9 @@ let SEASONSLIST = {
     summer: 'summer',
     all: 'all'
 }
+// set rows and columns for desktop view
+let setRows = 3;
+let setColumns = 3;
+//set columns for mobile view
+let setColumnsMobile = 1;
 
