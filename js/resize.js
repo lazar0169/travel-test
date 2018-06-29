@@ -25,7 +25,7 @@ const resizeResolution = (function () {
                 mainWrapper.style.width = `${newWidth}px`;
                 width = newWidth;
             }
-            trigger('resize/mobileView', { width: width, height: height });
+            trigger('resize/mobileView', { width: Math.ceil(width), height: Math.ceil(height)  });
         }
         else {
             if (resolution > SCREEN_RESOLUTION) {
@@ -40,7 +40,7 @@ const resizeResolution = (function () {
                 mainWrapper.style.width = `${width}px`;
                 height = newHeight;
             }
-            trigger('resize/desktopView', { width: width, height: height });
+            trigger('resize/desktopView', { width: Math.ceil(width), height: Math.ceil(height) });
         }
     };
 

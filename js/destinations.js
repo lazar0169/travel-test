@@ -140,14 +140,12 @@ const description = (function () {
     };
 
     function rows(row, col) {
-        let rowsNumber = parseInt(destination.length / row);
-        let rowsHeight = destinationWrapper.clientHeight / row;
-        let columnWidth = destinationWrapper.clientWidth / col;
-        if (destination.length % row !== 0) {
-            rowsNumber = rowsNumber + 2;
-        } else {
-            rowsNumber++;
-        }
+        let rowsNumber = Math.ceil(destination.length / row);
+        let rowsHeight = Math.floor(destinationWrapper.clientHeight / row);
+        let columnWidth = Math.floor(destinationWrapper.clientWidth / col);
+
+        rowsNumber++;
+
         destinationWrapper.style.gridTemplateColumns = `none`;
         destinationWrapper.style.gridTemplateRows = `none`;
         destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${columnWidth}px)`;
@@ -157,13 +155,9 @@ const description = (function () {
 
     function columns(col) {
         if (destinationWrapper.clientWidth < destinationWrapper.clientHeight) {
-            let rowsNumber = parseInt(destination.length / col);
+            let rowsNumber = Math.ceil(destination.length / col);
             destinationWrapper.style.gridTemplateColumns = `none`;
-            destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${100/col}% )`;
-
-            if (destination.length % col !== 0) {
-                rowsNumber++;
-            }
+            destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${100 / col}% )`;
 
             destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
         }

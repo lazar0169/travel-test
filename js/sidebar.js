@@ -4,7 +4,7 @@ const bar = (function () {
     let languageWrapper = get('#language');
     let languageList = get('.list-of-language');
     let languageButton = get('#open-close-language');
-    let buttonSymbol = get('#p-button-open-close');
+    let buttonSymbol = get('#p-symbol');
     let buttonName = get('#p-language');
     let barButton = get('#show-bar-button');
     let seasonWrapper = get('#season-section');
@@ -14,9 +14,6 @@ const bar = (function () {
     let logo = get('#logo-article');
     let body = get('body');
 
-
-
-    addListener('#show-bar-button', 'click', 'showBar');
     addListener('.link-season', 'click', 'clickSeason');
     addListener('#open-close-language', 'click', 'showHideLanguage');
 
