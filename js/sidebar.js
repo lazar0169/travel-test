@@ -40,7 +40,7 @@ const bar = (function () {
         }
     };
 
-    function createLanguage(languageID) {
+    function createLanguage(languageId) {
         for (let languageNumber in languageObject) {
             let createLanguage = document.createElement('a');
             createLanguage.classList.add('list-of-language');
@@ -79,31 +79,36 @@ const bar = (function () {
                 hideBar();
             });
         }
-        buttonName.dataset.id = languageObject[languageID].id
+        buttonName.dataset.id = languageObject[languageId].id
     };
     barButton.addEventListener('click', () => {
         showBar();
     });
 
     function showBar() {
-        if (sidebarWrapper.style.width !== '100%') {
-            sidebarWrapper.style.width = '100%';
-            sidebarWrapper.style.position = 'absolute';
+        if (isClose) {
+            isClose = false;
+            sidebarWrapper.classList.add('expand');
             destinationWrapper.style.visibility = 'hidden';
             fullName();
+
         }
         else {
+            sidebarWrapper.classList.remove('expand');
+            destinationWrapper.style.visibility = 'visible';
             hideBar();
+            isClose = true;
         }
     };
 
     function hideBar() {
-        if (sidebarWrapper.style.width !== '20%') {
-            sidebarWrapper.style.width = '20%';
-            sidebarWrapper.style.position = 'relative';
+        if (isOpen) {
+            isClose = true;
+            sidebarWrapper.classList.remove('expand');
             destinationWrapper.style.visibility = 'visible';
             substring();
         }
+
     };
 
     function mobileView(width, height) {
@@ -128,10 +133,7 @@ const bar = (function () {
         trigger('sidebar/setRows', { row: setRows, column: setColumns });
         trigger('sidebar/setFont', { width: width, height: height });
         let first = get('#section-0');
-        if (first.classList) {
-            first.classList.remove('mobile');
-        }
-
+        first.classList.remove('mobile');
         sidebarWrapper.style.width = '20%';
         fullName();
 
@@ -174,13 +176,13 @@ const bar = (function () {
         }
 
         if (languageList.length !== 0) {
-            for (let languageID of languageObject) {
-                if (languageID.id === buttonName.dataset.id) {
-                    buttonName.innerHTML = languageID.id;
+            for (let languageId of languageObject) {
+                if (languageId.id === buttonName.dataset.id) {
+                    buttonName.innerHTML = languageId.id;
                 }
                 for (let languageName of languageList) {
-                    if (languageID.id === languageName.dataset.id) {
-                        languageName.innerHTML = languageID.id;
+                    if (languageId.id === languageName.dataset.id) {
+                        languageName.innerHTML = languageId.id;
                         break;
                     }
                 }
@@ -214,13 +216,13 @@ const bar = (function () {
         }
 
         if (languageList.length !== 0) {
-            for (let languageID of languageObject) {
-                if (languageID.id === buttonName.dataset.id) {
-                    buttonName.innerHTML = languageID.language;
+            for (let languageId of languageObject) {
+                if (languageId.id === buttonName.dataset.id) {
+                    buttonName.innerHTML = languageId.language;
                 }
                 for (let languageName of languageList) {
-                    if (languageID.id === languageName.dataset.id) {
-                        languageName.innerHTML = languageID.language;
+                    if (languageId.id === languageName.dataset.id) {
+                        languageName.innerHTML = languageId.language;
                         break;
                     }
                 }
@@ -230,6 +232,7 @@ const bar = (function () {
 
     function fontSideBarMobile(width, height) {
         if (width < height) {
+            barButton.style.fontSize = `${width * 0.2}px`
             seasonWrapper.style.fontSize = `${width * 0.05}px`;
             languageButton.style.fontSize = `${width * 0.05}px`;
             languageWrapper.style.fontSize = `${width * 0.05}px`;
@@ -250,7 +253,7 @@ const bar = (function () {
     });
 
     on('language', function (event, data) {
-        createLanguage(data.languageID);
+        createLanguage(data.languageId);
     });
 
     on('showHideLanguage', function () {

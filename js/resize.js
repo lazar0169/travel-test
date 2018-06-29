@@ -8,12 +8,12 @@ const resizeResolution = (function () {
     function setResolution() {
         let clientWidth = body[0].clientWidth;
         let clientHeight = body[0].clientHeight;
-        let resolution = clientWidth / clientHeight;
+        let aspectRatio = clientWidth / clientHeight;
         width = clientWidth;
         height = clientHeight;
 
         if (clientWidth < clientHeight) {
-            if (1 / resolution > SCREEN_RESOLUTION) {
+            if (1 / aspectRatio > SCREEN_RESOLUTION) {
                 let newHeight = width * SCREEN_RESOLUTION;
                 mainWrapper.style.width = `${width}px`;
                 mainWrapper.style.height = `${newHeight}px`;
@@ -28,7 +28,7 @@ const resizeResolution = (function () {
             trigger('resize/mobileView', { width: Math.ceil(width), height: Math.ceil(height) });
         }
         else {
-            if (resolution > SCREEN_RESOLUTION) {
+            if (aspectRatio > SCREEN_RESOLUTION) {
                 let newWidth = height * SCREEN_RESOLUTION;
                 mainWrapper.style.width = `${newWidth}px`;
                 mainWrapper.style.height = `${height}px`;

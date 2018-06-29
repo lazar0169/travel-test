@@ -3,7 +3,7 @@
     src: url('fonts/roboto-thin.ttf') format('truetype');
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -14,27 +14,27 @@ body{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
+    overflow: hidden;
     font-family: roboto;
 }
 
-#load-images{
+#load-images {
     display: none;
 }
-@media screen and (max-height: 250px){
-    #loading p{
+@media screen and (max-height: 250px) {
+    #loading p {
         font-size: 20vh !important;
     }
-    #loader{
-    border: 4vh solid #f3f3f3 !important;
-    border-radius: 50% !important;
-    border-top: 4vh solid #3498db !important;
-    width: 20vh !important;
-    height: 20vh !important;
-    }  
+    #loader {
+        border: 4vh solid #f3f3f3 !important;
+        border-radius: 50% !important;
+        border-top: 4vh solid #3498db !important;
+        width: 20vh !important;
+        height: 20vh !important;
+    }
 }
 
-#loading{
+#loading {
     position: absolute;
     color: white;
     display: flex;
@@ -42,13 +42,15 @@ body{
     justify-content: center;
     align-items: center;
 }
-#loading p{
-    text-align:center;
+
+#loading p {
+    text-align: center;
     font-size: 5vw;
     margin: 0;
     padding: 0;
 }
-#loader{
+
+#loader {
     border: 1vw solid #f3f3f3;
     border-radius: 50%;
     border-top: 1vw solid #3498db;
@@ -57,9 +59,14 @@ body{
     animation: spin 2s linear infinite;
     margin: 15%;
 }
+
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 #main-section {
     position: absolute;

@@ -4,6 +4,11 @@
     height: 100%;
     background-color: rgb(30, 100, 200);
 }
+#left-section.expand{
+    position: absolute;
+    width: 100%;
+
+}
 
 #show-bar-button {
     margin: 0;

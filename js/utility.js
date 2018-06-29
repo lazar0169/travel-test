@@ -1,6 +1,6 @@
 windowListener('load', function () {
     trigger('makeArrayId', { season: 'all' });
-    trigger('language', { languageID: 1 });
+    trigger('language', { languageId: 1 });
     trigger('modal', {});
     trigger('setResolution', {});
 
@@ -34,10 +34,11 @@ function addListener(name, event, action) {
         });
     }
     else {
-        for (let divNumber of div)
+        for (let divNumber of div) {
             divNumber.addEventListener(event, () => {
                 trigger(action, { data: divNumber.dataset.id });
             });
+        }
     }
 };
 
