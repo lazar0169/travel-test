@@ -25,7 +25,7 @@ const resizeResolution = (function () {
                 mainWrapper.style.width = `${newWidth}px`;
                 width = newWidth;
             }
-            trigger('resize/mobileView', { width: Math.ceil(width), height: Math.ceil(height)  });
+            trigger('resize/mobileView', { width: Math.ceil(width), height: Math.ceil(height) });
         }
         else {
             if (resolution > SCREEN_RESOLUTION) {

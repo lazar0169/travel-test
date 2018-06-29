@@ -176,7 +176,7 @@ const bar = (function () {
         if (languageList.length !== 0) {
             for (let languageID of languageObject) {
                 if (languageID.id === buttonName.dataset.id) {
-                    buttonName.innerHTML = languageID.id;    
+                    buttonName.innerHTML = languageID.id;
                 }
                 for (let languageName of languageList) {
                     if (languageID.id === languageName.dataset.id) {

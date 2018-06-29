@@ -35,7 +35,7 @@ function addListener(name, event, action) {
     }
     else {
         for (let divNumber of div)
-        divNumber.addEventListener(event, () => {
+            divNumber.addEventListener(event, () => {
                 trigger(action, { data: divNumber.dataset.id });
             });
     }
