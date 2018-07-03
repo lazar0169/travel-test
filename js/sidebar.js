@@ -90,9 +90,7 @@ const bar = (function () {
             isClose = false;
             destinationWrapper.style.visibility = 'hidden';
             sidebarWrapper.classList.add('expand');
-            
             fullName();
-
         }
         else {
             destinationWrapper.style.visibility = 'visible';
@@ -115,6 +113,7 @@ const bar = (function () {
     function mobileView(width, height) {
         let first = get('#section-0');
         first.classList.add('mobile');
+        isOpen = true;
        
 
         if (mainWrapper.style.visibility !== 'visible') {
@@ -132,13 +131,13 @@ const bar = (function () {
     };
 
     function desktopView(width, height) {
-        
+        isOpen = false;
+        isClose = true;
         trigger('sidebar/setRows', { row: setRows, column: setColumns });
         trigger('sidebar/setFont', { width: width, height: height });
         let first = get('#section-0');
         first.classList.remove('mobile');
         sidebarWrapper.classList.remove('expand');
-        isClose = true;
         fullName();
 
 
