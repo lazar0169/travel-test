@@ -88,14 +88,15 @@ const bar = (function () {
     function showBar() {
         if (isClose) {
             isClose = false;
-            sidebarWrapper.classList.add('expand');
             destinationWrapper.style.visibility = 'hidden';
+            sidebarWrapper.classList.add('expand');
+            
             fullName();
 
         }
         else {
-            sidebarWrapper.classList.remove('expand');
             destinationWrapper.style.visibility = 'visible';
+            sidebarWrapper.classList.remove('expand');          
             hideBar();
             isClose = true;
         }
@@ -104,8 +105,8 @@ const bar = (function () {
     function hideBar() {
         if (isOpen) {
             isClose = true;
-            sidebarWrapper.classList.remove('expand');
             destinationWrapper.style.visibility = 'visible';
+            sidebarWrapper.classList.remove('expand');
             substring();
         }
 
@@ -114,6 +115,7 @@ const bar = (function () {
     function mobileView(width, height) {
         let first = get('#section-0');
         first.classList.add('mobile');
+       
 
         if (mainWrapper.style.visibility !== 'visible') {
             loading.style.display = 'none';
@@ -121,7 +123,7 @@ const bar = (function () {
         }
         logo.style.visibility = 'hidden';
         barButton.style.visibility = 'visible';
-        if (sidebarWrapper.style.width !== '100%') {
+        if (isClose) {
             substring();
         }
         trigger('sidebar/setColumns', { column: setColumnsMobile });
@@ -130,11 +132,13 @@ const bar = (function () {
     };
 
     function desktopView(width, height) {
+        
         trigger('sidebar/setRows', { row: setRows, column: setColumns });
         trigger('sidebar/setFont', { width: width, height: height });
         let first = get('#section-0');
         first.classList.remove('mobile');
-        sidebarWrapper.style.width = '20%';
+        sidebarWrapper.classList.remove('expand');
+        isClose = true;
         fullName();
 
 
@@ -142,8 +146,7 @@ const bar = (function () {
         if (mainWrapper.style.visibility !== 'visible') {
             loading.style.display = 'none';
             mainWrapper.style.visibility = 'visible';
-        }
-        sidebarWrapper.style.position = 'relative';
+        }       
         destinationWrapper.style.visibility = 'visible';
         logo.style.visibility = 'visible';
         barButton.style.visibility = 'hidden';
