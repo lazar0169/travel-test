@@ -1,19 +1,12 @@
-function connect() {
-  xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-      dataObject = JSON.parse(xmlhttp.responseText);
+function connect(url, req, method, success) {
+  req = new XMLHttpRequest();
+  req.onreadystatechange =    function () {
+    if (req.readyState == 4 && req.status == 200) {
+      dataObject = JSON.parse(req.responseText);
+      success(dataObject);
     }
   }
-  xmlhttp.open("GET", "http://localhost:1234", true);
-  xmlhttp.setRequestHeader("Access-Control-Allow-Headers", "client");
-  xmlhttp.send();
+  req.open(method, url, true);
+  req.setRequestHeader("Access-Control-Allow-Headers", "client");
+  req.send();
 }
-
-// function connect(url, req, method, success) {
-
-// }
-
-// connect('localhost://', { id: 5 }, function(data) {
-//   return false;
-// });
