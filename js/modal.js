@@ -6,7 +6,7 @@ const makeModal = (function () {
     let destinationText = get('#description-text');
     let destinationSeason = get('.season-name');
     let loading = get('#loading');
-    function modal() {
+    function modal(data) {
 
         let maxJan;
         let maxFeb;
@@ -26,13 +26,13 @@ const makeModal = (function () {
         let params = new URLSearchParams(document.location.search.substring(1));
         let dataId = params.get('id');
 
-        for (let object in destinationObject) {
-            if (Number(dataId) === destinationObject[object].id) {
-                let seasonsArray = Object.keys(destinationObject[object].seasons);
+        for (let object in data.destination) {
+            if (Number(dataId) === data.destination[object].id) {
+                let seasonsArray = Object.keys(data.destination[object].seasons);
 
-                destinationName.innerText = destinationObject[object].name;
-                destinationImage.src = destinationObject[object].image;
-                destinationText.innerText = destinationObject[object].desc;
+                destinationName.innerText = data.destination[object].name;
+                destinationImage.src = data.destination[object].image;
+                destinationText.innerText = data.destination[object].desc;
 
                 for (let season in seasonsArray) {
                     let seasonName = document.createElement('h1');
@@ -42,10 +42,10 @@ const makeModal = (function () {
                     switch (seasonID) {
                         case SEASONSLIST.spring:
 
-                            let seasonSpring = Object.keys(destinationObject[object].seasons.spring);
-                            maxMarch = destinationObject[object].seasons.spring.March.length;
-                            maxApril = destinationObject[object].seasons.spring.April.length;
-                            maxMay = destinationObject[object].seasons.spring.May.length;
+                            let seasonSpring = Object.keys(data.destination[object].seasons.spring);
+                            maxMarch = data.destination[object].seasons.spring.March.length;
+                            maxApril = data.destination[object].seasons.spring.April.length;
+                            maxMay = data.destination[object].seasons.spring.May.length;
                             if (maxMarch > maxApril && maxMarch > maxMay) {
                                 maxValue = maxMarch;
                             }
@@ -65,8 +65,8 @@ const makeModal = (function () {
                                         tableTdSpring.innerText = seasonSpring[spring];
                                     }
                                     else {
-                                        if (typeof destinationObject[object].seasons.spring[seasonSpring[spring]][count - 1] !== typeof undefined) {
-                                            tableTdSpring.innerText = destinationObject[object].seasons.spring[seasonSpring[spring]][count - 1];
+                                        if (typeof data.destination[object].seasons.spring[seasonSpring[spring]][count - 1] !== typeof undefined) {
+                                            tableTdSpring.innerText = data.destination[object].seasons.spring[seasonSpring[spring]][count - 1];
 
                                         }
                                         else {
@@ -81,11 +81,11 @@ const makeModal = (function () {
                             break;
 
                         case SEASONSLIST.summer:
-                            let seasonSummer = Object.keys(destinationObject[object].seasons.summer);
+                            let seasonSummer = Object.keys(data.destination[object].seasons.summer);
 
-                            maxJune = destinationObject[object].seasons.summer.June.length;
-                            maxJuly = destinationObject[object].seasons.summer.July.length;
-                            maxAugust = destinationObject[object].seasons.summer.August.length;
+                            maxJune = data.destination[object].seasons.summer.June.length;
+                            maxJuly = data.destination[object].seasons.summer.July.length;
+                            maxAugust = data.destination[object].seasons.summer.August.length;
 
                             if (maxJune > maxJuly && maxJune > maxAugust) {
                                 maxValue = maxJune;
@@ -107,8 +107,8 @@ const makeModal = (function () {
                                         tableTdSummer.innerText = seasonSummer[summer];
                                     }
                                     else {
-                                        if (typeof destinationObject[object].seasons.summer[seasonSummer[summer]][count - 1] !== typeof undefined) {
-                                            tableTdSummer.innerText = destinationObject[object].seasons.summer[seasonSummer[summer]][count - 1];
+                                        if (typeof data.destination[object].seasons.summer[seasonSummer[summer]][count - 1] !== typeof undefined) {
+                                            tableTdSummer.innerText = data.destination[object].seasons.summer[seasonSummer[summer]][count - 1];
 
                                         }
                                         else {
@@ -124,11 +124,11 @@ const makeModal = (function () {
 
                         case SEASONSLIST.autumn:
 
-                            let seasonAutumn = Object.keys(destinationObject[object].seasons.autumn);
+                            let seasonAutumn = Object.keys(data.destination[object].seasons.autumn);
 
-                            maxSep = destinationObject[object].seasons.autumn.September.length;
-                            maxOct = destinationObject[object].seasons.autumn.October.length;
-                            maxNov = destinationObject[object].seasons.autumn.November.length;
+                            maxSep = data.destination[object].seasons.autumn.September.length;
+                            maxOct = data.destination[object].seasons.autumn.October.length;
+                            maxNov = data.destination[object].seasons.autumn.November.length;
 
                             if (maxSep > maxOct && maxSep > maxNov) {
                                 maxValue = maxSep;
@@ -150,8 +150,8 @@ const makeModal = (function () {
                                         tableTdAutumn.innerText = seasonAutumn[autumn];
                                     }
                                     else {
-                                        if (typeof destinationObject[object].seasons.autumn[seasonAutumn[autumn]][count - 1] !== typeof undefined) {
-                                            tableTdAutumn.innerText = destinationObject[object].seasons.autumn[seasonAutumn[autumn]][count - 1];
+                                        if (typeof data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1] !== typeof undefined) {
+                                            tableTdAutumn.innerText = data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1];
 
                                         }
                                         else {
@@ -166,11 +166,11 @@ const makeModal = (function () {
 
                         case SEASONSLIST.winter:
 
-                            let seasonWinter = Object.keys(destinationObject[object].seasons.winter);
+                            let seasonWinter = Object.keys(data.destination[object].seasons.winter);
 
-                            maxJan = destinationObject[object].seasons.winter.January.length;
-                            maxFeb = destinationObject[object].seasons.winter.February.length;
-                            maxDec = destinationObject[object].seasons.winter.December.length;
+                            maxJan = data.destination[object].seasons.winter.January.length;
+                            maxFeb = data.destination[object].seasons.winter.February.length;
+                            maxDec = data.destination[object].seasons.winter.December.length;
 
                             if (maxJan > maxFeb && maxJan > maxMarch) {
                                 maxValue = maxJan;
@@ -193,8 +193,8 @@ const makeModal = (function () {
 
                                     }
                                     else {
-                                        if (typeof destinationObject[object].seasons.winter[seasonWinter[winter]][count - 1] !== typeof undefined) {
-                                            tableTdWinter.innerText = destinationObject[object].seasons.winter[seasonWinter[winter]][count - 1];
+                                        if (typeof data.destination[object].seasons.winter[seasonWinter[winter]][count - 1] !== typeof undefined) {
+                                            tableTdWinter.innerText = data.destination[object].seasons.winter[seasonWinter[winter]][count - 1];
                                         }
                                         else {
                                             tableTdWinter.innerText = '/';
@@ -261,8 +261,8 @@ const makeModal = (function () {
         desktopView(data.width, data.height);
     });
 
-    on('modal', function () {
-        modal();
+    on('modal', function (event, data) {
+        modal(data.data);
     })
 })();
 

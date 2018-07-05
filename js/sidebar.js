@@ -13,6 +13,9 @@ const bar = (function () {
     let loading = get('#loading');
     let logo = get('#logo-article');
     let body = get('body');
+    //closed show bar
+    let isClose = true;
+    let isOpen = true;
 
     addListener('.link-season', 'click', 'clickSeason');
     addListener('#open-close-language', 'click', 'showHideLanguage');
@@ -20,7 +23,7 @@ const bar = (function () {
     function clickSeason(season) {
 
         destinationWrapper.innerHTML = '';
-        trigger('makeArrayId', { season: season });
+        trigger('makeArrayId', { season: season, data: dataObject });
         hideBar();
         trigger('setResolution', {});
     }
@@ -40,37 +43,35 @@ const bar = (function () {
         }
     };
 
-    function createLanguage(languageId) {
-        for (let languageNumber in languageObject) {
-            let createLanguage = document.createElement('a');
-            createLanguage.classList.add('list-of-language');
-
+    function createLanguage(languageId, data) {
+        for (let languageNumber in data.language) {
+            let languageList = document.createElement('a');
+            languageList.classList.add('list-of-language');
 
             if (body[0].clientWidth < body[0].clientHeight) {
-                createLanguage.innerHTML = languageObject[languageNumber].id;
-                createLanguage.dataset.id = languageObject[languageNumber].id;
-                languageWrapper.appendChild(createLanguage);
-
+                createLanguage.innerHTML = data.language[languageNumber].id;
+                languageList.dataset.id = data.language[languageNumber].id;
+                languageWrapper.appendChild(languageList);
             }
             else {
-                createLanguage.innerHTML = languageObject[languageNumber].language;
-                createLanguage.dataset.id = languageObject[languageNumber].id;
-                languageWrapper.appendChild(createLanguage);
+                createLanguage.innerHTML = data.language[languageNumber].language;
+                languageList.dataset.id = data.language[languageNumber].id;
+                languageWrapper.appendChild(languageList);
             }
         }
 
         for (let languageName of languageList) {
             languageName.addEventListener('click', () => {
                 let languageData = languageName.dataset.id;
-                for (let languageNumber in languageObject) {
-                    if (languageData === languageObject[languageNumber].id) {
+                for (let languageNumber in data.language) {
+                    if (languageData === data.language[languageNumber].id) {
                         if (body[0].clientWidth < body[0].clientHeight) {
-                            buttonName.innerHTML = languageObject[languageNumber].id;
+                            buttonName.innerHTML = data.language[languageNumber].id;
                             buttonName.dataset.id = languageData;
                             showHideLanguage();
                         }
                         else {
-                            buttonName.innerHTML = languageObject[languageNumber].language;
+                            buttonName.innerHTML = data.language[languageNumber].language;
                             buttonName.dataset.id = languageData;
                             showHideLanguage();
                         }
@@ -79,7 +80,7 @@ const bar = (function () {
                 hideBar();
             });
         }
-        buttonName.dataset.id = languageObject[languageId].id
+        buttonName.dataset.id = data.language[languageId].id
     };
     barButton.addEventListener('click', () => {
         showBar();
@@ -94,7 +95,7 @@ const bar = (function () {
         }
         else {
             destinationWrapper.style.visibility = 'visible';
-            sidebarWrapper.classList.remove('expand');          
+            sidebarWrapper.classList.remove('expand');
             hideBar();
             isClose = true;
         }
@@ -114,7 +115,7 @@ const bar = (function () {
         let first = get('#section-0');
         first.classList.add('mobile');
         isOpen = true;
-       
+
 
         if (mainWrapper.style.visibility !== 'visible') {
             loading.style.display = 'none';
@@ -145,7 +146,7 @@ const bar = (function () {
         if (mainWrapper.style.visibility !== 'visible') {
             loading.style.display = 'none';
             mainWrapper.style.visibility = 'visible';
-        }       
+        }
         destinationWrapper.style.visibility = 'visible';
         logo.style.visibility = 'visible';
         barButton.style.visibility = 'hidden';
@@ -178,7 +179,7 @@ const bar = (function () {
         }
 
         if (languageList.length !== 0) {
-            for (let languageId of languageObject) {
+            for (let languageId of dataObject.language) {
                 if (languageId.id === buttonName.dataset.id) {
                     buttonName.innerHTML = languageId.id;
                 }
@@ -218,7 +219,7 @@ const bar = (function () {
         }
 
         if (languageList.length !== 0) {
-            for (let languageId of languageObject) {
+            for (let languageId of dataObject.language) {
                 if (languageId.id === buttonName.dataset.id) {
                     buttonName.innerHTML = languageId.language;
                 }
@@ -255,7 +256,7 @@ const bar = (function () {
     });
 
     on('language', function (event, data) {
-        createLanguage(data.languageId);
+        createLanguage(data.languageId, data.data);
     });
 
     on('showHideLanguage', function () {

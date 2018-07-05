@@ -15,7 +15,6 @@ let setRows = 3;
 let setColumns = 3;
 //set columns for mobile view
 let setColumnsMobile = 1;
-//closed show bar
-let isClose = true;
-let isOpen = true;
 
+// object with data from server
+let dataObject;

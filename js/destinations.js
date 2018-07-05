@@ -5,48 +5,48 @@ const description = (function () {
     let destinationText = get('.description-text');
     let destinationDescription = get('.read-more');
 
-    function arrayId(destinationSeason) {
+    function arrayId(destinationSeason, data) {
         let idArray = [];
         let numberOfArray = 0;
         if (destinationSeason === 'all') {
-            for (let object = 0; object < destinationObject.length; object++) {
-                idArray[numberOfArray] = destinationObject[object].id;
+            for (let object = 0; object < data.destination.length; object++) {
+                idArray[numberOfArray] = data.destination[object].id;
                 numberOfArray++;
             }
         }
         else {
-            for (let object in destinationObject) {
-                let seasonsArray = Object.keys(destinationObject[object].seasons);
+            for (let object in data.destination) {
+                let seasonsArray = Object.keys(data.destination[object].seasons);
                 for (let season in seasonsArray) {
                     if (String(destinationSeason) === String(seasonsArray[season])) {
-                        idArray[numberOfArray] = destinationObject[object].id;
+                        idArray[numberOfArray] = data.destination[object].id;
                         numberOfArray++;
                     }
                 }
             }
         }
-        highRate(idArray);
+        highRate(idArray, data);
     };
 
 
-    function highRate(array) {
+    function highRate(array, data) {
         let rating;
         let highRateID;
-        for (let objectNumber = 0; objectNumber < destinationObject.length; objectNumber++) {
-            if (array[0] === destinationObject[objectNumber].id) {
-                rating = destinationObject[objectNumber].rating;
-                highRateID = destinationObject[objectNumber].id;
+        for (let objectNumber = 0; objectNumber < data.destination.length; objectNumber++) {
+            if (array[0] === data.destination[objectNumber].id) {
+                rating = data.destination[objectNumber].rating;
+                highRateID = data.destination[objectNumber].id;
                 break;
             }
         }
 
         for (let numberOfArray = 1; numberOfArray < array.length; numberOfArray++) {
-            for (let objectNumber = 0; objectNumber < destinationObject.length; objectNumber++) {
-                if (array[numberOfArray] === destinationObject[objectNumber].id) {
-                    let ratingX = destinationObject[objectNumber].rating;
+            for (let objectNumber = 0; objectNumber < data.destination.length; objectNumber++) {
+                if (array[numberOfArray] === data.destination[objectNumber].id) {
+                    let ratingX = data.destination[objectNumber].rating;
                     if (rating < ratingX) {
                         rating = ratingX;
-                        highRateID = destinationObject[objectNumber].id;
+                        highRateID = data.destination[objectNumber].id;
                         break;
                     }
                     else {
@@ -55,11 +55,11 @@ const description = (function () {
                 }
             }
         }
-        addSection(array);
-        addCity(array, highRateID);
+        addSection(array, data);
+        addCity(array, highRateID, data);
     };
 
-    function addSection(array) {
+    function addSection(array, data) {
 
 
         for (let sectionNumber in array) {
@@ -84,25 +84,25 @@ const description = (function () {
         }
     };
 
-    function addCity(array, highRateID) {
+    function addCity(array, highRateID, data) {
 
         let sectionNumber = 1;
         for (let id in array) {
-            for (let object in destinationObject) {
-                if (array[id] === destinationObject[object].id) {
-                    if (highRateID !== destinationObject[object].id) {
-                        destination[sectionNumber].style.backgroundImage = `url(${destinationObject[object].image})`;
-                        destinationName[sectionNumber].innerHTML = destinationObject[object].name;
-                        destinationText[sectionNumber].innerHTML = destinationObject[object].desc;
-                        destination[sectionNumber].dataset.id = destinationObject[object].id;
+            for (let object in data.destination) {
+                if (array[id] === data.destination[object].id) {
+                    if (highRateID !== data.destination[object].id) {
+                        destination[sectionNumber].style.backgroundImage = `url(${data.destination[object].image})`;
+                        destinationName[sectionNumber].innerHTML = data.destination[object].name;
+                        destinationText[sectionNumber].innerHTML = data.destination[object].desc;
+                        destination[sectionNumber].dataset.id = data.destination[object].id;
                         sectionNumber++;
                         break;
                     }
                     else {
-                        destination[0].style.backgroundImage = `url(${destinationObject[object].image})`;
-                        destinationName[0].innerText = destinationObject[object].name;
-                        destinationText[0].innerText = destinationObject[object].desc;
-                        destination[0].dataset.id = destinationObject[object].id;
+                        destination[0].style.backgroundImage = `url(${data.destination[object].image})`;
+                        destinationName[0].innerText = data.destination[object].name;
+                        destinationText[0].innerText = data.destination[object].desc;
+                        destination[0].dataset.id = data.destination[object].id;
                         break;
                     }
                 }
@@ -163,7 +163,7 @@ const description = (function () {
         }
     };
     on('makeArrayId', function (event, data) {
-        arrayId(data.season);
+        arrayId(data.season, data.data);
     });
 
     on('sidebar/setFont', function (event, data) {

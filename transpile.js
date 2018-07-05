@@ -3,20 +3,20 @@ let fs = require('fs');
 let indexFilesJS = [
     "js/event.js",
     "js/utility.js",
-    "js/data.js",
     "js/settings.js",
     "js/destinations.js",
     "js/sidebar.js",
-    "js/resize.js"
+    "js/resize.js",
+    "js/connect.js"
 ];
 
 let modalFilesJS = [
     "js/event.js",
     "js/utility.js",
-    "js/data.js",
     "js/settings.js",
     "js/modal.js",
-    "js/resize.js"
+    "js/resize.js",
+    "js/connect.js"
 ];
 
 let indexFilesCSS = [

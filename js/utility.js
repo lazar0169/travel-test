@@ -1,9 +1,12 @@
 windowListener('load', function () {
-    trigger('makeArrayId', { season: 'all' });
-    trigger('language', { languageId: 1 });
-    trigger('modal', {});
-    trigger('setResolution', {});
-
+    connect();
+    // wait for dataObject from server side, waiting 1sec
+    setTimeout(() => {
+        trigger('modal', { data: dataObject });
+        trigger('makeArrayId', { season: 'all', data: dataObject });
+        trigger('language', { languageId: 1, data: dataObject });
+        trigger('setResolution', {});
+    }, 1000);
 });
 windowListener("resize", function () {
     trigger('setResolution', {});
