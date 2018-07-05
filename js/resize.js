@@ -46,6 +46,5 @@ const resizeResolution = (function () {
 
     on('setResolution', function () {
         setResolution();
-
     });
 })();

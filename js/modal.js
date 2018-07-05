@@ -113,7 +113,6 @@ const makeModal = (function () {
                                         }
                                         else {
                                             tableTdSummer.innerText = '/'
-
                                         }
                                     }
                                     tableTR.appendChild(tableTdSummer);
@@ -123,7 +122,6 @@ const makeModal = (function () {
                             break;
 
                         case SEASONSLIST.autumn:
-
                             let seasonAutumn = Object.keys(data.destination[object].seasons.autumn);
 
                             maxSep = data.destination[object].seasons.autumn.September.length;
@@ -152,7 +150,6 @@ const makeModal = (function () {
                                     else {
                                         if (typeof data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1] !== typeof undefined) {
                                             tableTdAutumn.innerText = data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1];
-
                                         }
                                         else {
                                             tableTdAutumn.innerText = '/';
@@ -165,7 +162,6 @@ const makeModal = (function () {
                             break;
 
                         case SEASONSLIST.winter:
-
                             let seasonWinter = Object.keys(data.destination[object].seasons.winter);
 
                             maxJan = data.destination[object].seasons.winter.January.length;
@@ -253,6 +249,7 @@ const makeModal = (function () {
             mainWrapper.style.visibility = 'visible';
         }
     };
+    
     on('resize/mobileView', function (event, data) {
         mobileView(data.width, data.height);
     });

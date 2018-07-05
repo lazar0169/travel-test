@@ -25,7 +25,6 @@ function get(name) {
         default:
             return document.getElementsByTagName(name);
     }
-
 };
 
 function addListener(name, event, action) {

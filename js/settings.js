@@ -15,6 +15,5 @@ let setRows = 3;
 let setColumns = 3;
 //set columns for mobile view
 let setColumnsMobile = 1;
-
 // object with data from server
 let dataObject;

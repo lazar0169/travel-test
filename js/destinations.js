@@ -28,7 +28,6 @@ const description = (function () {
         highRate(idArray, data);
     };
 
-
     function highRate(array, data) {
         let rating;
         let highRateID;
@@ -60,22 +59,17 @@ const description = (function () {
     };
 
     function addSection(array, data) {
-
-
         for (let sectionNumber in array) {
             let newSection = document.createElement('section');
             newSection.id = `section-${Number(sectionNumber)}`;
             newSection.classList.add('article-section');
-
             destinationWrapper.appendChild(newSection);
 
             let cityName = document.createElement('section');
             cityName.classList.add('section-footer');
-
             cityName.innerHTML = `<h2 class="model-name"></h2>
             <p class="description-text"></p>
             <button class= "read-more">Read more</button>`;
-
             destination[sectionNumber].appendChild(cityName);
 
             destination[sectionNumber].addEventListener('click', () => {
@@ -85,7 +79,6 @@ const description = (function () {
     };
 
     function addCity(array, highRateID, data) {
-
         let sectionNumber = 1;
         for (let id in array) {
             for (let object in data.destination) {
@@ -143,14 +136,11 @@ const description = (function () {
         let rowsNumber = Math.ceil(destination.length / row);
         let rowsHeight = Math.floor(destinationWrapper.clientHeight / row);
         let columnWidth = Math.floor(destinationWrapper.clientWidth / col);
-
         rowsNumber++;
-
         destinationWrapper.style.gridTemplateColumns = `none`;
         destinationWrapper.style.gridTemplateRows = `none`;
         destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${columnWidth}px)`;
         destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, ${rowsHeight}px)`;
-
     };
 
     function columns(col) {
@@ -158,10 +148,10 @@ const description = (function () {
             let rowsNumber = Math.ceil(destination.length / col);
             destinationWrapper.style.gridTemplateColumns = `none`;
             destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${100 / col}% )`;
-
             destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
         }
     };
+
     on('makeArrayId', function (event, data) {
         arrayId(data.season, data.data);
     });

@@ -21,7 +21,6 @@ const bar = (function () {
     addListener('#open-close-language', 'click', 'showHideLanguage');
 
     function clickSeason(season) {
-
         destinationWrapper.innerHTML = '';
         trigger('makeArrayId', { season: season, data: dataObject });
         hideBar();
@@ -108,14 +107,12 @@ const bar = (function () {
             sidebarWrapper.classList.remove('expand');
             substring();
         }
-
     };
 
     function mobileView(width, height) {
         let first = get('#section-0');
         first.classList.add('mobile');
         isOpen = true;
-
 
         if (mainWrapper.style.visibility !== 'visible') {
             loading.style.display = 'none';
@@ -140,8 +137,6 @@ const bar = (function () {
         first.classList.remove('mobile');
         sidebarWrapper.classList.remove('expand');
         fullName();
-
-
         fontSideBarMobile(width, height);
         if (mainWrapper.style.visibility !== 'visible') {
             loading.style.display = 'none';
@@ -150,7 +145,6 @@ const bar = (function () {
         destinationWrapper.style.visibility = 'visible';
         logo.style.visibility = 'visible';
         barButton.style.visibility = 'hidden';
-
     };
 
     function substring() {

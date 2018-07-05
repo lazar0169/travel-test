@@ -557,14 +557,12 @@ let data = {
 }
 
 var http = require('http');
-
 let dataNew = JSON.stringify(data);
 //create a server object:
 http.createServer(function (req, res) {
     res.setHeader("Access-Control-Allow-Origin", "*");
-	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
     res.setHeader('Access-Control-Allow-Headers', "*");
-    
     res.write(dataNew); //write a response to the client
     res.end(); //end the response
 }).listen(1234); //the server object listens on port 1234
