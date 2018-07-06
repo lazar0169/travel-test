@@ -1,12 +1,12 @@
 function connect(url, req, method, success) {
-  req = new XMLHttpRequest();
-  req.onreadystatechange =    function () {
-    if (req.readyState == 4 && req.status == 200) {
-      dataObject = JSON.parse(req.responseText);
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange =    function () {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      dataObject = JSON.parse(xmlhttp.responseText);
       success(dataObject);
     }
   }
-  req.open(method, url, true);
-  req.setRequestHeader("Access-Control-Allow-Headers", "client");
-  req.send();
+  xmlhttp.open(method, url, true);
+  xmlhttp.setRequestHeader("Access-Control-Allow-Headers", "client");
+  xmlhttp.send();
 }

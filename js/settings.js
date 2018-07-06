@@ -17,3 +17,5 @@ let setColumns = 3;
 let setColumnsMobile = 1;
 // object with data from server
 let dataObject;
+// host
+let host = "http://localhost:1234";

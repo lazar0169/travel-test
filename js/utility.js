@@ -1,5 +1,5 @@
 windowListener('load', function () {
-    connect("http://localhost:1234", "xmlhttp" , "GET", function(data){
+    connect(host, "" , "GET", function(data){
         trigger('modal', { data: data });
         trigger('makeArrayId', { season: 'all', data: data });
         trigger('language', { languageId: 1, data: data });
