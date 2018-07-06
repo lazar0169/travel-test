@@ -8,5 +8,5 @@ function connect(url, req, method, success) {
   }
   xmlhttp.open(method, url, true);
   xmlhttp.setRequestHeader("Access-Control-Allow-Headers", "client");
-  xmlhttp.send();
+  xmlhttp.send(req);
 }

@@ -1,11 +1,11 @@
 windowListener('load', function () {
-    connect(host, "" , "GET", function(data){
+    connect(host,  2 , "POST", function (data) {
         trigger('modal', { data: data });
         trigger('makeArrayId', { season: 'all', data: data });
         trigger('language', { languageId: 1, data: data });
         trigger('setResolution', {});
     });
- });
+});
 windowListener("resize", function () {
     trigger('setResolution', {});
 });

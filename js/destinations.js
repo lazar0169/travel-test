@@ -60,17 +60,13 @@ const description = (function () {
 
     function addSection(array, data) {
         for (let sectionNumber in array) {
-            let newSection = document.createElement('section');
-            newSection.id = `section-${Number(sectionNumber)}`;
-            newSection.classList.add('article-section');
-            destinationWrapper.appendChild(newSection);
+            destinationWrapper.innerHTML += `<section id="section-${Number(sectionNumber)}" class="article-section"></section>`
 
-            let cityName = document.createElement('section');
-            cityName.classList.add('section-footer');
-            cityName.innerHTML = `<h2 class="model-name"></h2>
+            destination[sectionNumber].innerHTML =  `<section class="section-footer">
+            <h2 class="model-name"></h2>
             <p class="description-text"></p>
-            <button class= "read-more">Read more</button>`;
-            destination[sectionNumber].appendChild(cityName);
+            <button class= "read-more">Read more</button>
+            </section>`
 
             destination[sectionNumber].addEventListener('click', () => {
                 index(destination[sectionNumber].dataset.id);

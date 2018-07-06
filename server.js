@@ -555,7 +555,7 @@ let data = {
     ],
 
 }
-
+let pera = [];
 var http = require('http');
 let dataNew = JSON.stringify(data);
 //create a server object:
@@ -563,6 +563,15 @@ http.createServer(function (req, res) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
     res.setHeader('Access-Control-Allow-Headers', "*");
+
+    // req.on('data', function (chunk) {
+    //     console.log(chunk);
+    //     pera.push(chunk);
+    //     console.log(pera);
+    // }).on('end', function () {
+    //     console.log(JSON.stringify(pera));
+    // });
+
     res.write(dataNew); //write a response to the client
     res.end(); //end the response
 }).listen(1234); //the server object listens on port 1234
