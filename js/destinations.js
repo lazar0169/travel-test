@@ -59,17 +59,20 @@ const description = (function () {
     };
 
     function addSection(array, data) {
+        destinationWrapper.innerHTML = '';
         for (let sectionNumber in array) {
-            destinationWrapper.innerHTML += `<section id="section-${Number(sectionNumber)}" class="article-section"></section>`
-
-            destination[sectionNumber].innerHTML =  `<section class="section-footer">
+            destinationWrapper.innerHTML += `<section id="section-${Number(sectionNumber)}" class="article-section"></section>`;
+            destination[sectionNumber].innerHTML = `<section class="section-footer">
             <h2 class="model-name"></h2>
             <p class="description-text"></p>
             <button class= "read-more">Read more</button>
-            </section>`
+            </section>`;
 
-            destination[sectionNumber].addEventListener('click', () => {
-                index(destination[sectionNumber].dataset.id);
+
+        }
+        for (let city of destination) {
+            city.addEventListener('click', () => {
+                index(city.dataset.id);
             })
         }
     };

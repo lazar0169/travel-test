@@ -21,7 +21,6 @@ const bar = (function () {
     addListener('#open-close-language', 'click', 'showHideLanguage');
 
     function clickSeason(season) {
-        destinationWrapper.innerHTML = '';
         trigger('makeArrayId', { season: season, data: dataObject });
         hideBar();
         trigger('setResolution', {});
@@ -43,20 +42,10 @@ const bar = (function () {
     };
 
     function createLanguage(languageId, data) {
-        for (let languageNumber in data.language) {
-            let languageList = document.createElement('a');
-            languageList.classList.add('list-of-language');
+        languageWrapper.innerHTML = '';
 
-            if (body[0].clientWidth < body[0].clientHeight) {
-                createLanguage.innerHTML = data.language[languageNumber].id;
-                languageList.dataset.id = data.language[languageNumber].id;
-                languageWrapper.appendChild(languageList);
-            }
-            else {
-                createLanguage.innerHTML = data.language[languageNumber].language;
-                languageList.dataset.id = data.language[languageNumber].id;
-                languageWrapper.appendChild(languageList);
-            }
+        for (let languageNumber in data.language) {
+            languageWrapper.innerHTML += `<a data-id=${data.language[languageNumber].id} class="list-of-language"></a>`;
         }
 
         for (let languageName of languageList) {
