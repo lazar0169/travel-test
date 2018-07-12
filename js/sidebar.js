@@ -14,8 +14,6 @@ const bar = (function () {
     let logo = get('#logo-article');
     let body = get('body');
     //closed show bar
-    let isClose = true;
-    let isOpen = true;
 
     addListener('.link-season', 'click', 'clickSeason');
     addListener('#open-close-language', 'click', 'showHideLanguage');
@@ -112,8 +110,6 @@ const bar = (function () {
     };
 
     function desktopView(width, height) {
-        isOpen = false;
-        isClose = true;
         trigger('sidebar/setRows', { row: setRows, column: setColumns });
         trigger('sidebar/setFont', { width: width, height: height });
         if (isDesktop) {
