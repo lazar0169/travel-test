@@ -1,12 +1,12 @@
 const makeModal = (function () {
-    let tempTable = get('#table-div');
-    let tempMainSection = get('#main-section');
-    let tempImage = get('#image-modal');
-    let tempH1 = get('#h1-modal-show');
-    let tempPar = get('#p-modal');
-    let tempH1tablePrice = get('.h1-table-price');
-    let tempLoading = get('#loading');
-    function modal() {
+    let tableWrapper = get('#table-div');
+    let mainWrapper = get('#main-section');
+    let destinationImage = get('#image-modal');
+    let destinationName = get('#destination-name');
+    let destinationText = get('#description-text');
+    let destinationSeason = get('.season-name');
+    let loading = get('#loading');
+    function modal(data) {
 
         let maxJan;
         let maxFeb;
@@ -24,28 +24,28 @@ const makeModal = (function () {
         let maxValue;
 
         let params = new URLSearchParams(document.location.search.substring(1));
-        let tempDataID = params.get('id');
+        let dataId = params.get('id');
 
-        for (let tempObjectLength = 0; tempObjectLength < destinationObject.length; tempObjectLength++) {
-            if (Number(tempDataID) === destinationObject[tempObjectLength].id) {
-                let tempSeasons = Object.keys(destinationObject[tempObjectLength].seasons);
+        for (let object in data.destination) {
+            if (Number(dataId) === data.destination[object].id) {
+                let seasonsArray = Object.keys(data.destination[object].seasons);
 
-                tempH1.innerText = destinationObject[tempObjectLength].name;
-                tempImage.src = destinationObject[tempObjectLength].image;
-                tempPar.innerText = destinationObject[tempObjectLength].desc;
+                destinationName.innerText = data.destination[object].name;
+                destinationImage.src = data.destination[object].image;
+                destinationText.innerText = data.destination[object].desc;
 
-                for (let tempSeasonLength in tempSeasons) {
-                    let tempParSeason = document.createElement('h1');
-                    tempParSeason.classList.add('h1-table-price');
-                    let tempTablePrice = document.createElement('table');
-                    let tempSeasonName = String(tempSeasons[tempSeasonLength]);
-                    switch (tempSeasonName) {
+                for (let season in seasonsArray) {
+                    let seasonName = document.createElement('h1');
+                    seasonName.classList.add('season-name');
+                    let table = document.createElement('table');
+                    let seasonID = String(seasonsArray[season]);
+                    switch (seasonID) {
                         case SEASONSLIST.spring:
 
-                            let tempSpring = Object.keys(destinationObject[tempObjectLength].seasons.spring);
-                            maxMarch = destinationObject[tempObjectLength].seasons.spring.March.length;
-                            maxApril = destinationObject[tempObjectLength].seasons.spring.April.length;
-                            maxMay = destinationObject[tempObjectLength].seasons.spring.May.length;
+                            let seasonSpring = Object.keys(data.destination[object].seasons.spring);
+                            maxMarch = data.destination[object].seasons.spring.March.length;
+                            maxApril = data.destination[object].seasons.spring.April.length;
+                            maxMay = data.destination[object].seasons.spring.May.length;
                             if (maxMarch > maxApril && maxMarch > maxMay) {
                                 maxValue = maxMarch;
                             }
@@ -55,37 +55,37 @@ const makeModal = (function () {
                             else {
                                 maxValue = maxMay;
                             }
-                            for (let tempSpringLength = 0; tempSpringLength <= maxValue; tempSpringLength++) {
-                                let tempTablePriceTR = document.createElement('tr');
-                                for (let spring = 0; spring < tempSpring.length; spring++) {
-                                    tempParSeason.innerText = tempSeasons[tempSeasonLength];
-                                    let tempTablePriceTDSpring = document.createElement('td');
+                            for (let count = 0; count <= maxValue; count++) {
+                                let tableTR = document.createElement('tr');
+                                for (let spring = 0; spring < seasonSpring.length; spring++) {
+                                    seasonName.innerText = seasonsArray[season];
+                                    let tableTdSpring = document.createElement('td');
 
-                                    if (tempSpringLength === 0) {
-                                        tempTablePriceTDSpring.innerText = tempSpring[spring];
+                                    if (count === 0) {
+                                        tableTdSpring.innerText = seasonSpring[spring];
                                     }
                                     else {
-                                        if (typeof destinationObject[tempObjectLength].seasons.spring[tempSpring[spring]][tempSpringLength - 1] !== typeof undefined) {
-                                            tempTablePriceTDSpring.innerText = destinationObject[tempObjectLength].seasons.spring[tempSpring[spring]][tempSpringLength - 1];
+                                        if (typeof data.destination[object].seasons.spring[seasonSpring[spring]][count - 1] !== typeof undefined) {
+                                            tableTdSpring.innerText = data.destination[object].seasons.spring[seasonSpring[spring]][count - 1];
 
                                         }
                                         else {
-                                            tempTablePriceTDSpring.innerText = '/';
+                                            tableTdSpring.innerText = '/';
 
                                         }
                                     }
-                                    tempTablePriceTR.appendChild(tempTablePriceTDSpring);
+                                    tableTR.appendChild(tableTdSpring);
                                 }
-                                tempTablePrice.appendChild(tempTablePriceTR);
+                                table.appendChild(tableTR);
                             }
                             break;
 
                         case SEASONSLIST.summer:
-                            let tempSummer = Object.keys(destinationObject[tempObjectLength].seasons.summer);
+                            let seasonSummer = Object.keys(data.destination[object].seasons.summer);
 
-                            maxJune = destinationObject[tempObjectLength].seasons.summer.June.length;
-                            maxJuly = destinationObject[tempObjectLength].seasons.summer.July.length;
-                            maxAugust = destinationObject[tempObjectLength].seasons.summer.August.length;
+                            maxJune = data.destination[object].seasons.summer.June.length;
+                            maxJuly = data.destination[object].seasons.summer.July.length;
+                            maxAugust = data.destination[object].seasons.summer.August.length;
 
                             if (maxJune > maxJuly && maxJune > maxAugust) {
                                 maxValue = maxJune;
@@ -96,39 +96,37 @@ const makeModal = (function () {
                             else {
                                 maxValue = maxAugust;
                             }
-                            for (let tempSummerLength = 0; tempSummerLength <= maxValue; tempSummerLength++) {
-                                let tempTablePriceTR = document.createElement('tr');
+                            for (let count = 0; count <= maxValue; count++) {
+                                let tableTR = document.createElement('tr');
 
-                                for (let summer = 0; summer < tempSummer.length; summer++) {
-                                    tempParSeason.innerText = tempSeasons[tempSeasonLength];
-                                    let tempTablePriceTDSummer = document.createElement('td');
+                                for (let summer = 0; summer < seasonSummer.length; summer++) {
+                                    seasonName.innerText = seasonsArray[season];
+                                    let tableTdSummer = document.createElement('td');
 
-                                    if (tempSummerLength === 0) {
-                                        tempTablePriceTDSummer.innerText = tempSummer[summer];
+                                    if (count === 0) {
+                                        tableTdSummer.innerText = seasonSummer[summer];
                                     }
                                     else {
-                                        if (typeof destinationObject[tempObjectLength].seasons.summer[tempSummer[summer]][tempSummerLength - 1] !== typeof undefined) {
-                                            tempTablePriceTDSummer.innerText = destinationObject[tempObjectLength].seasons.summer[tempSummer[summer]][tempSummerLength - 1];
+                                        if (typeof data.destination[object].seasons.summer[seasonSummer[summer]][count - 1] !== typeof undefined) {
+                                            tableTdSummer.innerText = data.destination[object].seasons.summer[seasonSummer[summer]][count - 1];
 
                                         }
                                         else {
-                                            tempTablePriceTDSummer.innerText = '/'
-
+                                            tableTdSummer.innerText = '/'
                                         }
                                     }
-                                    tempTablePriceTR.appendChild(tempTablePriceTDSummer);
+                                    tableTR.appendChild(tableTdSummer);
                                 }
-                                tempTablePrice.appendChild(tempTablePriceTR);
+                                table.appendChild(tableTR);
                             }
                             break;
 
                         case SEASONSLIST.autumn:
+                            let seasonAutumn = Object.keys(data.destination[object].seasons.autumn);
 
-                            let tempAutumn = Object.keys(destinationObject[tempObjectLength].seasons.autumn);
-
-                            maxSep = destinationObject[tempObjectLength].seasons.autumn.September.length;
-                            maxOct = destinationObject[tempObjectLength].seasons.autumn.October.length;
-                            maxNov = destinationObject[tempObjectLength].seasons.autumn.November.length;
+                            maxSep = data.destination[object].seasons.autumn.September.length;
+                            maxOct = data.destination[object].seasons.autumn.October.length;
+                            maxNov = data.destination[object].seasons.autumn.November.length;
 
                             if (maxSep > maxOct && maxSep > maxNov) {
                                 maxValue = maxSep;
@@ -139,38 +137,36 @@ const makeModal = (function () {
                             else {
                                 maxValue = maxNov;
                             }
-                            for (let tempAutumnLength = 0; tempAutumnLength <= maxValue; tempAutumnLength++) {
-                                let tempTablePriceTR = document.createElement('tr');
+                            for (let count = 0; count <= maxValue; count++) {
+                                let tableTR = document.createElement('tr');
 
-                                for (let autumn = 0; autumn < tempAutumn.length; autumn++) {
-                                    tempParSeason.innerText = tempSeasons[tempSeasonLength];
-                                    let tempTablePriceTDAutumn = document.createElement('td');
+                                for (let autumn = 0; autumn < seasonAutumn.length; autumn++) {
+                                    seasonName.innerText = seasonsArray[season];
+                                    let tableTdAutumn = document.createElement('td');
 
-                                    if (tempAutumnLength === 0) {
-                                        tempTablePriceTDAutumn.innerText = tempAutumn[autumn];
+                                    if (count === 0) {
+                                        tableTdAutumn.innerText = seasonAutumn[autumn];
                                     }
                                     else {
-                                        if (typeof destinationObject[tempObjectLength].seasons.autumn[tempAutumn[autumn]][tempAutumnLength - 1] !== typeof undefined) {
-                                            tempTablePriceTDAutumn.innerText = destinationObject[tempObjectLength].seasons.autumn[tempAutumn[autumn]][tempAutumnLength - 1];
-
+                                        if (typeof data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1] !== typeof undefined) {
+                                            tableTdAutumn.innerText = data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1];
                                         }
                                         else {
-                                            tempTablePriceTDAutumn.innerText = '/';
+                                            tableTdAutumn.innerText = '/';
                                         }
                                     }
-                                    tempTablePriceTR.appendChild(tempTablePriceTDAutumn);
+                                    tableTR.appendChild(tableTdAutumn);
                                 }
-                                tempTablePrice.appendChild(tempTablePriceTR);
+                                table.appendChild(tableTR);
                             }
                             break;
 
                         case SEASONSLIST.winter:
+                            let seasonWinter = Object.keys(data.destination[object].seasons.winter);
 
-                            let tempWinter = Object.keys(destinationObject[tempObjectLength].seasons.winter);
-
-                            maxJan = destinationObject[tempObjectLength].seasons.winter.January.length;
-                            maxFeb = destinationObject[tempObjectLength].seasons.winter.February.length;
-                            maxDec = destinationObject[tempObjectLength].seasons.winter.December.length;
+                            maxJan = data.destination[object].seasons.winter.January.length;
+                            maxFeb = data.destination[object].seasons.winter.February.length;
+                            maxDec = data.destination[object].seasons.winter.December.length;
 
                             if (maxJan > maxFeb && maxJan > maxMarch) {
                                 maxValue = maxJan;
@@ -181,88 +177,89 @@ const makeModal = (function () {
                             else {
                                 maxValue = maxDec;
                             }
-                            for (let tempWinterLength = 0; tempWinterLength <= maxValue; tempWinterLength++) {
-                                let tempTablePriceTR = document.createElement('tr');
+                            for (let count = 0; count <= maxValue; count++) {
+                                let tableTR = document.createElement('tr');
 
-                                for (let winter = 0; winter < tempWinter.length; winter++) {
-                                    tempParSeason.innerText = tempSeasons[tempSeasonLength];
-                                    let tempTablePriceTDWinter = document.createElement('td');
+                                for (let winter = 0; winter < seasonWinter.length; winter++) {
+                                    seasonName.innerText = seasonsArray[season];
+                                    let tableTdWinter = document.createElement('td');
 
-                                    if (tempWinterLength === 0) {
-                                        tempTablePriceTDWinter.innerText = tempWinter[winter];
+                                    if (count === 0) {
+                                        tableTdWinter.innerText = seasonWinter[winter];
 
                                     }
                                     else {
-                                        if (typeof destinationObject[tempObjectLength].seasons.winter[tempWinter[winter]][tempWinterLength - 1] !== typeof undefined) {
-                                            tempTablePriceTDWinter.innerText = destinationObject[tempObjectLength].seasons.winter[tempWinter[winter]][tempWinterLength - 1];
+                                        if (typeof data.destination[object].seasons.winter[seasonWinter[winter]][count - 1] !== typeof undefined) {
+                                            tableTdWinter.innerText = data.destination[object].seasons.winter[seasonWinter[winter]][count - 1];
                                         }
                                         else {
-                                            tempTablePriceTDWinter.innerText = '/';
+                                            tableTdWinter.innerText = '/';
                                         }
                                     }
-                                    tempTablePriceTR.appendChild(tempTablePriceTDWinter);
+                                    tableTR.appendChild(tableTdWinter);
                                 }
-                                tempTablePrice.appendChild(tempTablePriceTR);
+                                table.appendChild(tableTR);
                             }
                             break;
                     }
-                    tempTable.appendChild(tempParSeason)
-                    tempTable.appendChild(tempTablePrice);
+                    tableWrapper.appendChild(seasonName)
+                    tableWrapper.appendChild(table);
                 }
             }
         }
     };
-    function resizeFont(tempWidth, tempHeight) {
-        if (tempWidth < tempHeight) {
-            tempH1.style.fontSize = ` ${tempHeight * 0.09}px`;
-            tempPar.style.fontSize = `${tempHeight * 0.0225}px`;
-            for (let tempTableLength = 0; tempTableLength < tempH1tablePrice.length; tempTableLength++) {
-                tempH1tablePrice[tempTableLength].style.fontSize = `${tempHeight * 0.05}px`;
+    function resizeFont(width, height) {
+        if (width < height) {
+            destinationName.style.fontSize = ` ${height * 0.09}px`;
+            destinationText.style.fontSize = `${height * 0.0225}px`;
+            for (let count = 0; count < destinationSeason.length; count++) {
+                destinationSeason[count].style.fontSize = `${height * 0.05}px`;
             }
         }
         else {
-            tempH1.style.fontSize = ` ${tempWidth * 0.09}px`;
-            tempPar.style.fontSize = `${tempWidth * 0.0225}px`;
-            for (let tempTableLength = 0; tempTableLength < tempH1tablePrice.length; tempTableLength++) {
-                tempH1tablePrice[tempTableLength].style.fontSize = `${tempWidth * 0.05}px`;
+            destinationName.style.fontSize = ` ${width * 0.09}px`;
+            destinationText.style.fontSize = `${width * 0.0225}px`;
+            for (let count = 0; count < destinationSeason.length; count++) {
+                destinationSeason[count].style.fontSize = `${width * 0.05}px`;
             }
         }
     };
-    function mobileView(tempWidth, tempHeight) {
-        tempMainSection.classList.add('mobile');
-        tempH1.classList.add('mobile');
-        tempImage.classList.add('mobile');
-        tempPar.classList.add('mobile');
-        tempTable.classList.add('mobile');
-        resizeFont(tempWidth, tempHeight);
-        if (tempMainSection.style.visibility != 'visible') {
-            tempLoading.style.display = 'none';
-            tempMainSection.style.visibility = 'visible';
+    function mobileView(width, height) {
+        mainWrapper.classList.add('mobile');
+        destinationName.classList.add('mobile');
+        destinationImage.classList.add('mobile');
+        destinationText.classList.add('mobile');
+        tableWrapper.classList.add('mobile');
+        resizeFont(width, height);
+        if (mainWrapper.style.visibility != 'visible') {
+            loading.style.display = 'none';
+            mainWrapper.style.visibility = 'visible';
         }
     };
 
-    function desktopView(tempWidth, tempHeight) {
-        tempMainSection.classList.remove('mobile');
-        tempH1.classList.remove('mobile');
-        tempImage.classList.remove('mobile');
-        tempPar.classList.remove('mobile');
-        tempTable.classList.remove('mobile');
-        resizeFont(tempWidth, tempHeight);
-        if (tempMainSection.style.visibility != 'visible') {
-            tempLoading.style.display = 'none';
-            tempMainSection.style.visibility = 'visible';
+    function desktopView(width, height) {
+        mainWrapper.classList.remove('mobile');
+        destinationName.classList.remove('mobile');
+        destinationImage.classList.remove('mobile');
+        destinationText.classList.remove('mobile');
+        tableWrapper.classList.remove('mobile');
+        resizeFont(width, height);
+        if (mainWrapper.style.visibility != 'visible') {
+            loading.style.display = 'none';
+            mainWrapper.style.visibility = 'visible';
         }
     };
+    
     on('resize/mobileView', function (event, data) {
-        mobileView(data.width, data.height, data.resolution);
+        mobileView(data.width, data.height);
     });
 
     on('resize/desktopView', function (event, data) {
-        desktopView(data.width, data.height, data.resolution);
+        desktopView(data.width, data.height);
     });
 
-    on('modal', function () {
-        modal();
+    on('modal', function (event, data) {
+        modal(data.data);
     })
 })();
 

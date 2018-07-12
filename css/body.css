@@ -3,7 +3,7 @@
     src: url('fonts/roboto-thin.ttf') format('truetype');
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -14,10 +14,10 @@ body{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
+    overflow: hidden;
     font-family: roboto;
 }
 
-#load-images{
+#load-images {
     display: none;
 }

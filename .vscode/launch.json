@@ -9,6 +9,12 @@
             "request": "launch",
             "name": "transpile",
             "program": "${workspaceFolder}/transpile.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "server",
+            "program": "${workspaceFolder}/server.js"
         }
     ]
 }

@@ -1,6 +1,6 @@
-#main-section{
+#main-section {
     position: absolute;
-    background-color:  rgb(100, 100, 100);
+    background-color: rgb(100, 100, 100);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -14,18 +14,18 @@
 #main-section::-webkit-scrollbar {
     width: 3px;
 }
- 
+
 #main-section::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(42, 42, 42);
     background-color: white;
 }
- 
+
 #main-section::-webkit-scrollbar-thumb {
     background-color: rgb(42, 42, 42);
     border-radius: 50px;
 }
 
-#image-modal{
+#image-modal {
     top: 20%;
     width: 60%;
     padding: 0;
@@ -33,10 +33,10 @@
     pointer-events: none;
 }
 
-#h1-modal-show{
+#destination-name {
     padding: 0;
     margin: 0;
-    top:0;
+    top: 0;
     width: 60%;
     height: 20%;
     text-align: center;
@@ -46,17 +46,16 @@
     align-items: center;
 }
 
-#p-modal{
+#description-text {
     padding: 0;
     margin: 0;
-    top:0;
+    top: 0;
     width: 60%;
     pointer-events: none;
     text-align: justify;
-    font-size: 2.5vw;
 }
 
-#main-section.mobile{
+#main-section.mobile {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -65,24 +64,24 @@
     color: white;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color:  rgb(100, 100, 100);
+    background-color: rgb(100, 100, 100);
 }
 
 #main-section.mobile::-webkit-scrollbar {
     width: 3px;
 }
- 
+
 #main-section.mobile::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(42, 42, 42);
     background-color: white;
 }
- 
+
 #main-section.mobile::-webkit-scrollbar-thumb {
     background-color: rgb(42, 42, 42);
     border-radius: 50px;
 }
 
-#image-modal.mobile{
+#image-modal.mobile {
     top: 20%;
     width: 90%;
     padding: 0;
@@ -90,24 +89,25 @@
     pointer-events: none;
 }
 
-#h1-modal-show.mobile{
+#destination-name.mobile {
     width: 90%;
-    text-align: center ;
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 
-#p-modal.mobile{ 
+#description-text.mobile {
     margin: 0;
     width: 90%;
     text-align: justify;
 }
 
-#table-div{
-    width: 60%; 
+#table-div {
+    width: 60%;
 }
-#table-div.mobile{
-    width: 90%; 
+
+#table-div.mobile {
+    width: 90%;
 }
 
 table, td, th {
@@ -122,15 +122,15 @@ table {
     color: white;
 }
 
-td{
+td {
     width: 200px;
     text-align: center;
 }
 
-.h1-table-price{
+.season-name {
     padding: 0;
     margin: 0;
-    top:0;
+    top: 0;
     text-align: center;
     width: 100%;
     background-color: transparent;

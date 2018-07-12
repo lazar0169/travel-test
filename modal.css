@@ -3,7 +3,7 @@
     src: url('fonts/roboto-thin.ttf') format('truetype');
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -14,27 +14,27 @@ body{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
+    overflow: hidden;
     font-family: roboto;
 }
 
-#load-images{
+#load-images {
     display: none;
 }
-@media screen and (max-height: 250px){
-    #loading p{
+@media screen and (max-height: 250px) {
+    #loading p {
         font-size: 20vh !important;
     }
-    #loader{
-    border: 4vh solid #f3f3f3 !important;
-    border-radius: 50% !important;
-    border-top: 4vh solid #3498db !important;
-    width: 20vh !important;
-    height: 20vh !important;
-    }  
+    #loader {
+        border: 4vh solid #f3f3f3 !important;
+        border-radius: 50% !important;
+        border-top: 4vh solid #3498db !important;
+        width: 20vh !important;
+        height: 20vh !important;
+    }
 }
 
-#loading{
+#loading {
     position: absolute;
     color: white;
     display: flex;
@@ -42,13 +42,15 @@ body{
     justify-content: center;
     align-items: center;
 }
-#loading p{
-    text-align:center;
+
+#loading p {
+    text-align: center;
     font-size: 5vw;
     margin: 0;
     padding: 0;
 }
-#loader{
+
+#loader {
     border: 1vw solid #f3f3f3;
     border-radius: 50%;
     border-top: 1vw solid #3498db;
@@ -57,13 +59,18 @@ body{
     animation: spin 2s linear infinite;
     margin: 15%;
 }
+
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-#main-section{
+#main-section {
     position: absolute;
-    background-color:  rgb(100, 100, 100);
+    background-color: rgb(100, 100, 100);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -77,18 +84,18 @@ body{
 #main-section::-webkit-scrollbar {
     width: 3px;
 }
- 
+
 #main-section::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(42, 42, 42);
     background-color: white;
 }
- 
+
 #main-section::-webkit-scrollbar-thumb {
     background-color: rgb(42, 42, 42);
     border-radius: 50px;
 }
 
-#image-modal{
+#image-modal {
     top: 20%;
     width: 60%;
     padding: 0;
@@ -96,10 +103,10 @@ body{
     pointer-events: none;
 }
 
-#h1-modal-show{
+#destination-name {
     padding: 0;
     margin: 0;
-    top:0;
+    top: 0;
     width: 60%;
     height: 20%;
     text-align: center;
@@ -109,17 +116,16 @@ body{
     align-items: center;
 }
 
-#p-modal{
+#description-text {
     padding: 0;
     margin: 0;
-    top:0;
+    top: 0;
     width: 60%;
     pointer-events: none;
     text-align: justify;
-    font-size: 2.5vw;
 }
 
-#main-section.mobile{
+#main-section.mobile {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -128,24 +134,24 @@ body{
     color: white;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color:  rgb(100, 100, 100);
+    background-color: rgb(100, 100, 100);
 }
 
 #main-section.mobile::-webkit-scrollbar {
     width: 3px;
 }
- 
+
 #main-section.mobile::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(42, 42, 42);
     background-color: white;
 }
- 
+
 #main-section.mobile::-webkit-scrollbar-thumb {
     background-color: rgb(42, 42, 42);
     border-radius: 50px;
 }
 
-#image-modal.mobile{
+#image-modal.mobile {
     top: 20%;
     width: 90%;
     padding: 0;
@@ -153,24 +159,25 @@ body{
     pointer-events: none;
 }
 
-#h1-modal-show.mobile{
+#destination-name.mobile {
     width: 90%;
-    text-align: center ;
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 
-#p-modal.mobile{ 
+#description-text.mobile {
     margin: 0;
     width: 90%;
     text-align: justify;
 }
 
-#table-div{
-    width: 60%; 
+#table-div {
+    width: 60%;
 }
-#table-div.mobile{
-    width: 90%; 
+
+#table-div.mobile {
+    width: 90%;
 }
 
 table, td, th {
@@ -185,15 +192,15 @@ table {
     color: white;
 }
 
-td{
+td {
     width: 200px;
     text-align: center;
 }
 
-.h1-table-price{
+.season-name {
     padding: 0;
     margin: 0;
-    top:0;
+    top: 0;
     text-align: center;
     width: 100%;
     background-color: transparent;

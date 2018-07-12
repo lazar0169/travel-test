@@ -1,13 +1,12 @@
 .article-section {
     display: flex;
     position: relative;
-    background-size: 100% 100%;
     overflow: hidden;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
-.article-section:hover > .section-footer {
+.article-section:hover>.section-footer {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -20,29 +19,29 @@
     animation-delay: -3s;
 }
 
-.article-section:hover > .section-footer p {
+.article-section:hover>.section-footer p {
     visibility: visible;
 }
 
-.article-section:hover > .section-footer button {
+.article-section:hover>.section-footer button {
     visibility: visible;
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 @keyframes slide {
-    0%{
+    0% {
         height: 20%;
-      }
-    75%{
+    }
+    75% {
         height: 20%;
-      }
-    100%{
+    }
+    100% {
         height: 100%;
-      }
+    }
 }
 
-.section-footer{
+.section-footer {
     color: white;
     position: absolute;
     bottom: 0;
@@ -56,7 +55,7 @@
     align-items: center;
 }
 
-.read-more{
+.read-more {
     padding: 0;
     margin: 0;
     position: absolute;
@@ -74,11 +73,11 @@
     outline: none;
 }
 
-.h2-city-name{
+.model-name {
     position: absolute;
     padding: 0;
     margin: 0;
-    top:0;
+    top: 0;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -90,7 +89,7 @@
 
 .description-text {
     position: absolute;
-    top:20%;
+    top: 20%;
     height: 80%;
     margin: 0;
     padding: 0 10%;
@@ -99,13 +98,14 @@
     text-align: justify;
 }
 
-#section-0{
+#section-0 {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
 }
-#section-0.mobile{
+
+#section-0.mobile {
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 1;
@@ -113,15 +113,15 @@
 }
 
 #right-section::-webkit-scrollbar {
-    width: 1%;
+    width: 3px;
 }
 
 #right-section::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(42, 42, 42);
     background-color: rgb(100, 100, 100);
 }
- 
+
 #right-section::-webkit-scrollbar-thumb {
-  background-color: rgb(42, 42, 42);
-  border-radius: 50px;
+    background-color: rgb(42, 42, 42);
+    border-radius: 50px;
 }

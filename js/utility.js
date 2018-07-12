@@ -1,48 +1,49 @@
 windowListener('load', function () {
-    trigger('makeArrayId', { season: 'all' });
-    trigger('language', { languageID: 1 });
-    trigger('modal', {});
-    trigger('setResolution', {});
-
+    connect(host,  2 , "POST", function (data) {
+        trigger('modal', { data: data });
+        trigger('makeArrayId', { season: 'all', data: data });
+        trigger('createLanguage', { languageId: 1, data: data });
+        trigger('setResolution', {});
+    });
 });
 windowListener("resize", function () {
     trigger('setResolution', {});
 });
 
-function get(tempName) {
-    let tempSelector = tempName.charAt(0);
+function get(name) {
+    let mark = name.charAt(0);
 
-    switch (tempSelector) {
+    switch (mark) {
         case '#':
-            return document.getElementById(tempName.substring(1, 50));
+            return document.getElementById(name.substring(1, 50));
 
         case '.':
-            return document.getElementsByClassName(tempName.substring(1, 50));
+            return document.getElementsByClassName(name.substring(1, 50));
 
         default:
-            return document.getElementsByTagName(tempName);
+            return document.getElementsByTagName(name);
     }
-
 };
 
-function addListener(tempName, tempEvent, tempFunction) {
-    let tempDiv = get(tempName);
-    let tempSelector = tempName.charAt(0);
-    if (tempSelector === '#') {
-        tempDiv.addEventListener(tempEvent, () => {
-            trigger(tempFunction, {});
+function addListener(name, event, action) {
+    let div = get(name);
+    let mark = name.charAt(0);
+    if (mark === '#') {
+        div.addEventListener(event, () => {
+            trigger(action, {});
         });
     }
     else {
-        for (let tempDivLength of tempDiv)
-            tempDivLength.addEventListener(tempEvent, () => {
-                trigger(tempFunction, { data: tempDivLength.dataset.id });
+        for (let divNumber of div) {
+            divNumber.addEventListener(event, () => {
+                trigger(action, { data: divNumber.dataset.id });
             });
+        }
     }
 };
 
-function windowListener(tempEvent, tempFunction) {
-    window.addEventListener(tempEvent, () => {
-        tempFunction();
+function windowListener(event, action) {
+    window.addEventListener(event, () => {
+        action();
     });
 }

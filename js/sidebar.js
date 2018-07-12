@@ -1,187 +1,174 @@
 const bar = (function () {
-    let tempRightSection = get('#right-section');
-    let tempBody = get('body');
-    let tempLeftSection = get('#left-section');
-    let tempLanguageList = get('.list-of-language');
-    let tempPLanguage = get('#p-language');
-    let tempOpenCloseButton = get('#p-button-open-close');
-    let tempOpenCloseLanguage = get('#open-close-language');
-    let tempLanguage = get('#language');
-    let tempShowBar = get('#show-bar');
-    let tempLogo = get('#logo-article');
-    let tempSeasonsList = get('.link-season');
-    let tempSeasonLink = get('#season-section');
-    let tempMainSection = get('#main-section');
-    let tempLoading = get('#loading');
+    let destinationWrapper = get('#right-section');
+    let sidebarWrapper = get('#left-section');
+    let languageWrapper = get('#language');
+    let languageList = get('.list-of-language');
+    let languageButton = get('#open-close-language');
+    let buttonSymbol = get('#p-symbol');
+    let buttonName = get('#p-language');
+    let barButton = get('#show-bar-button');
+    let seasonWrapper = get('#season-section');
+    let linkName = get('.link-season');
+    let mainWrapper = get('#main-section');
+    let loading = get('#loading');
+    let logo = get('#logo-article');
+    let body = get('body');
+    //closed show bar
 
-
-    
-    addListener('#show-bar', 'click', 'showBar');
     addListener('.link-season', 'click', 'clickSeason');
     addListener('#open-close-language', 'click', 'showHideLanguage');
 
-    function clickSeason(tempSeason) {
-
-        tempRightSection.innerHTML = '';
-        trigger('makeArrayId', { season: tempSeason });
-        hideBar();
+    function clickSeason(season) {
+        trigger('makeArrayId', { season: season, data: dataObject });
+        if (sidebarWrapper.classList.contains('expand')) {
+            hideBar();
+        }
         trigger('setResolution', {});
     }
 
     function showHideLanguage() {
-        if (!tempShowHide) {
-            tempShowHide = true;
-            tempLanguage.style.visibility = 'visible';
-            tempOpenCloseButton.innerHTML = '';
-            tempOpenCloseButton.innerHTML = '&#9660';
+        if (!SHOW_HIDE) {
+            SHOW_HIDE = true;
+            languageWrapper.style.visibility = 'visible';
+            buttonSymbol.innerHTML = '';
+            buttonSymbol.innerHTML = '&#9660';
         }
         else {
-            tempShowHide = false;
-            tempLanguage.style.visibility = 'hidden';
-            tempOpenCloseButton.innerHTML = '';
-            tempOpenCloseButton.innerHTML = ' &#9650';
+            SHOW_HIDE = false;
+            languageWrapper.style.visibility = 'hidden';
+            buttonSymbol.innerHTML = '';
+            buttonSymbol.innerHTML = ' &#9650';
         }
     };
 
-    function createLanguage(tempLanguageID) {
-        for (let tempObjectLanguageLength in languageObject) {
-            let tempCreateLanguage = document.createElement('a');
-            tempCreateLanguage.classList.add('list-of-language');
-
-
-            if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
-                tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
-                tempCreateLanguage.dataset.id = languageObject[tempObjectLanguageLength].id;
-                tempLanguage.appendChild(tempCreateLanguage);
-
-            }
-            else {
-                tempCreateLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
-                tempCreateLanguage.dataset.id = languageObject[tempObjectLanguageLength].id;
-                tempLanguage.appendChild(tempCreateLanguage);
-            }
+    function createLanguage(languageId, data) {
+        for (let language of data.language) {
+            languageWrapper.innerHTML += `<a data-id=${language.id} class="list-of-language"></a>`;
         }
-
-        for (let tempIdLanguage of tempLanguageList) {
-            tempIdLanguage.addEventListener('click', () => {
-                let tempDataLanguage = tempIdLanguage.dataset.id;
-                for (let tempObjectLanguageLength = 0; tempObjectLanguageLength < languageObject.length; tempObjectLanguageLength++) {
-                    if (tempDataLanguage === languageObject[tempObjectLanguageLength].id) {
-                        if (tempBody[0].clientWidth < tempBody[0].clientHeight) {
-                            tempPLanguage.innerHTML = languageObject[tempObjectLanguageLength].id;
-                            tempPLanguage.dataset.id = tempDataLanguage;
-                            showHideLanguage();
-                        }
-                        else {
-                            tempPLanguage.innerHTML = languageObject[tempObjectLanguageLength].language;
-                            tempPLanguage.dataset.id = tempDataLanguage;
-                            showHideLanguage();
-                        }
-                    }
+        for (let languageName of languageList) {
+            languageName.addEventListener('click', () => {
+                let languageData = languageName.dataset.id;
+                buttonName.innerHTML = languageName.textContent;
+                buttonName.dataset.id = languageData;
+                showHideLanguage();
+                if (sidebarWrapper.classList.contains('expand')) {
+                    hideBar();
                 }
-                hideBar();
             });
         }
-        tempPLanguage.dataset.id = languageObject[tempLanguageID].id
+        buttonName.dataset.id = data.language[languageId].id
     };
-    tempShowBar.addEventListener('click', () => {
+    barButton.addEventListener('click', () => {
         showBar();
     });
 
     function showBar() {
-        if (tempLeftSection.style.width !== '100%') {
-            tempLeftSection.style.width = '100%';
-            tempLeftSection.style.position = 'absolute';
-            tempRightSection.style.visibility = 'hidden';
+        if (!sidebarWrapper.classList.contains('expand')) {
+
+            destinationWrapper.style.visibility = 'hidden';
+
+            sidebarWrapper.classList.add('expand');
             fullName();
         }
         else {
+            destinationWrapper.style.visibility = 'visible';
+            sidebarWrapper.classList.remove('expand');
             hideBar();
         }
     };
 
     function hideBar() {
-        if (tempLeftSection.style.width !== '20%') {
-            tempLeftSection.style.width = '20%';
-            tempLeftSection.style.position = 'relative';
-            tempRightSection.style.visibility = 'visible';
-            substring();
+        if (sidebarWrapper.classList.contains('expand')) {
+            destinationWrapper.style.visibility = 'visible';
+            sidebarWrapper.classList.remove('expand');
         }
+        substring();
     };
 
-    function mobileView(tempWidth, tempHeight) {
-        let tempSection0 = get('#section-0');
-        tempSection0.classList.add('mobile');
+    function mobileView(width, height) {
 
-        if (tempMainSection.style.visibility !== 'visible') {
-            tempLoading.style.display = 'none';
-            tempMainSection.style.visibility = 'visible';
+        if (isMobile) {
+            if (mainWrapper.style.visibility !== 'visible') {
+                loading.style.display = 'none';
+                mainWrapper.style.visibility = 'visible';
+            }
+            logo.style.visibility = 'hidden';
+            barButton.style.visibility = 'visible';
+            if (linkName[0].childNodes.length === 0 || linkName[0].textContent != "") {
+                substring();
+            }
         }
-        tempLogo.style.visibility = 'hidden';
-        tempShowBar.style.visibility = 'visible';
-        if (tempLeftSection.style.width !== '100%') {
-            substring();
+        let first = get('#section-0');
+        if (!first.classList.contains('mobile')) {
+            first.classList.add('mobile');
         }
-        trigger('setColumns', { column: 1 });
-        trigger('setFont', { width: tempWidth, height: tempHeight });
-        fontSideBarMobile(tempWidth, tempHeight);
+        trigger('sidebar/setColumns', { column: setColumnsMobile });
+        trigger('sidebar/setFont', { width: width, height: height });
+        fontSideBarMobile(width, height);
+        isMobile = false;
+        isDesktop = true;
     };
 
-    function desktopView(tempWidth, tempHeight) {
-        let tempSection0 = get('#section-0');
-        if (tempSection0.classList) {
-            tempSection0.classList.remove('mobile');
-        }
+    function desktopView(width, height) {
+        trigger('sidebar/setRows', { row: setRows, column: setColumns });
+        trigger('sidebar/setFont', { width: width, height: height });
+        if (isDesktop) {
+            let first = get('#section-0');
 
-        tempLeftSection.style.width = '20%';
-        fullName();
-        trigger('setRows', { row: 3, column: 3 });
-        trigger('setFont', { width: tempWidth, height: tempHeight });
-        fontSideBarMobile(tempWidth, tempHeight);
-        if (tempMainSection.style.visibility !== 'visible') {
-            tempLoading.style.display = 'none';
-            tempMainSection.style.visibility = 'visible';
-        }
-        tempLeftSection.style.position = 'relative';
-        tempRightSection.style.visibility = 'visible';
-        tempLogo.style.visibility = 'visible';
-        tempShowBar.style.visibility = 'hidden';
+            if (first.classList.contains('mobile')) {
+                first.classList.remove('mobile')
+            }
 
+            if (sidebarWrapper.classList.contains('expand')) {
+                sidebarWrapper.classList.remove('expand');
+            }
+            fullName();
+            if (mainWrapper.style.visibility !== 'visible') {
+                loading.style.display = 'none';
+                mainWrapper.style.visibility = 'visible';
+            }
+            destinationWrapper.style.visibility = 'visible';
+            logo.style.visibility = 'visible';
+            barButton.style.visibility = 'hidden';
+        }
+        fontSideBarMobile(width, height);
+        isDesktop = false;
+        isMobile = true;
     };
 
     function substring() {
-        for (let tempSeasonsListLength of tempSeasonsList) {
-            switch (tempSeasonsListLength.dataset.id) {
+        for (let season of linkName) {
+            switch (season.dataset.id) {
                 case SEASONSLIST.spring:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-flower mobileIcons"></i>`;
+                    season.innerHTML = `<i class="mdi mdi-flower mobileIcons"></i>`;
                     break;
 
                 case SEASONSLIST.winter:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-snowflake mobileIcons"></i>`;
+                    season.innerHTML = `<i class="mdi mdi-snowflake mobileIcons"></i>`;
                     break;
 
                 case SEASONSLIST.autumn:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-leaf mobileIcons"></i>`;
+                    season.innerHTML = `<i class="mdi mdi-leaf mobileIcons"></i>`;
                     break;
 
                 case SEASONSLIST.summer:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-white-balance-sunny mobileIcons"></i>`;
+                    season.innerHTML = `<i class="mdi mdi-white-balance-sunny mobileIcons"></i>`;
                     break;
 
                 case SEASONSLIST.all:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-apple-safari mobileIcons"></i>`;
+                    season.innerHTML = `<i class="mdi mdi-apple-safari mobileIcons"></i>`;
                     break;
             }
         }
 
-        if (tempLanguageList.length !== 0) {
-            for (let tempLanguageID of languageObject) {
-                if (tempLanguageID.id === tempPLanguage.dataset.id) {
-                    tempPLanguage.innerHTML = tempLanguageID.id;
+        if (languageList.length !== 0) {
+            for (let languageId of dataObject.language) {
+                if (languageId.id === buttonName.dataset.id) {
+                    buttonName.innerHTML = languageId.id;
                 }
-                for (let tempLanguageListLength of tempLanguageList) {
-                    if (tempLanguageID.id === tempLanguageListLength.dataset.id) {
-                        tempLanguageListLength.innerHTML = tempLanguageID.id;
+                for (let languageName of languageList) {
+                    if (languageId.id === languageName.dataset.id) {
+                        languageName.innerHTML = languageId.id;
                         break;
                     }
                 }
@@ -190,38 +177,38 @@ const bar = (function () {
     };
 
     function fullName() {
-        for (let tempSeasonsListLength of tempSeasonsList) {
-            switch (tempSeasonsListLength.dataset.id) {
+        for (let season of linkName) {
+            switch (season.dataset.id) {
                 case SEASONSLIST.spring:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-flower icons"></i> <p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    season.innerHTML = `<i class="mdi mdi-flower icons"></i> <p class="season-name">${season.dataset.id}</p>`;
                     break;
 
                 case SEASONSLIST.winter:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-snowflake icons"></i> <p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    season.innerHTML = `<i class="mdi mdi-snowflake icons"></i> <p class="season-name">${season.dataset.id}</p>`;
                     break;
 
                 case SEASONSLIST.autumn:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-leaf icons"></i> <p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    season.innerHTML = `<i class="mdi mdi-leaf icons"></i> <p class="season-name">${season.dataset.id}</p>`;
                     break;
 
                 case SEASONSLIST.summer:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-white-balance-sunny icons"></i> <p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    season.innerHTML = `<i class="mdi mdi-white-balance-sunny icons"></i> <p class="season-name">${season.dataset.id}</p>`;
                     break;
 
                 case SEASONSLIST.all:
-                    tempSeasonsListLength.innerHTML = `<i class="mdi mdi-apple-safari icons"></i><p class="season-name">${tempSeasonsListLength.dataset.id}</p>`;
+                    season.innerHTML = `<i class="mdi mdi-apple-safari icons"></i><p class="season-name">${season.dataset.id}</p>`;
                     break;
             }
         }
 
-        if (tempLanguageList.length !== 0) {
-            for (let tempLanguageID of languageObject) {
-                if (tempLanguageID.id === tempPLanguage.dataset.id) {
-                    tempPLanguage.innerHTML = tempLanguageID.language;
+        if (languageList.length !== 0) {
+            for (let languageId of dataObject.language) {
+                if (languageId.id === buttonName.dataset.id) {
+                    buttonName.innerHTML = languageId.language;
                 }
-                for (let tempLanguageListLength of tempLanguageList) {
-                    if (tempLanguageID.id === tempLanguageListLength.dataset.id) {
-                        tempLanguageListLength.innerHTML = tempLanguageID.language;
+                for (let languageName of languageList) {
+                    if (languageId.id === languageName.dataset.id) {
+                        languageName.innerHTML = languageId.language;
                         break;
                     }
                 }
@@ -229,16 +216,17 @@ const bar = (function () {
         }
     };
 
-    function fontSideBarMobile(tempWidth, tempHeight) {
-        if (tempWidth < tempHeight) {
-            tempSeasonLink.style.fontSize = `${tempWidth * 0.05}px`;
-            tempOpenCloseLanguage.style.fontSize = `${tempWidth * 0.05}px`;
-            tempLanguage.style.fontSize = `${tempWidth * 0.05}px`;
+    function fontSideBarMobile(width, height) {
+        if (width < height) {
+            barButton.style.fontSize = `${width * 0.2}px`
+            seasonWrapper.style.fontSize = `${width * 0.05}px`;
+            languageButton.style.fontSize = `${width * 0.05}px`;
+            languageWrapper.style.fontSize = `${width * 0.05}px`;
         }
         else {
-            tempSeasonLink.style.fontSize = `${tempHeight * 0.04}px`;
-            tempOpenCloseLanguage.style.fontSize = `${tempHeight * 0.04}px`;
-            tempLanguage.style.fontSize = `${tempHeight * 0.04}px`;
+            seasonWrapper.style.fontSize = `${height * 0.04}px`;
+            languageButton.style.fontSize = `${height * 0.04}px`;
+            languageWrapper.style.fontSize = `${height * 0.04}px`;
         }
     };
 
@@ -250,8 +238,8 @@ const bar = (function () {
         desktopView(data.width, data.height, data.resolution);
     });
 
-    on('language', function (event, data) {
-        createLanguage(data.languageID);
+    on('createLanguage', function (event, data) {
+        createLanguage(data.languageId, data.data);
     });
 
     on('showHideLanguage', function () {

@@ -1,41 +1,46 @@
-#left-section{
+#left-section {
     position: relative;
     width: 20%;
     height: 100%;
     background-color: rgb(30, 100, 200);
 }
+#left-section.expand{
+    position: absolute;
+    width: 100%;
 
-#show-bar{
+}
+
+#show-bar-button {
     margin: 0;
     padding: 0;
     width: 100%;
     visibility: hidden;
-    font-size: 10vw;
     text-align: center;
     border: none;
     cursor: pointer;
     position: relative;
     text-decoration: none;
-    outline:none;
+    outline: none;
     background: transparent;
 }
-#show-bar p{
+
+#show-bar-button p {
     margin: 0;
     padding: 0;
     color: white;
     float: left;
-
 }
-#logo-article{
+
+#logo-article {
     position: absolute;
     width: 100%;
     height: 20%;
     background-color: transparent;
-    top:0;
+    top: 0;
     right: 0;
 }
 
-#season-section{
+#season-section {
     position: absolute;
     top: 20%;
     width: 100%;
@@ -46,7 +51,7 @@
     overflow: hidden;
 }
 
-.link-season{
+.link-season {
     color: white;
     width: 100%;
     text-decoration: none;
@@ -58,35 +63,39 @@
     margin: 0;
     display: inline-flex;
 }
-.icons{
+
+.icons {
     width: 15%;
     position: relative;
     text-align: center;
 }
-.mobileIcons{
+
+.mobileIcons {
     width: 100%;
     position: relative;
     text-align: center;
 }
 
-.season-name{
+.season-name {
     margin: 0;
     padding: 0;
     width: 85%;
     position: relative;
 }
-.season-name::first-letter{
+
+.season-name::first-letter {
     text-transform: capitalize;
 }
-.season-name.mobile{
+
+.season-name.mobile {
     visibility: hidden;
 }
 
-.link-season:hover{
-background-color: rgb(15, 50, 200);
+.link-season:hover {
+    background-color: rgb(15, 50, 200);
 }
 
-#language{
+#language {
     position: absolute;
     bottom: 10%;
     width: 100%;
@@ -99,7 +108,7 @@ background-color: rgb(15, 50, 200);
     overflow-x: hidden;
 }
 
-#open-close-language{
+#open-close-language {
     width: 100%;
     height: 10%;
     bottom: 0;
@@ -109,7 +118,7 @@ background-color: rgb(15, 50, 200);
     cursor: pointer;
     position: absolute;
     text-decoration: none;
-    outline:none;
+    outline: none;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -117,14 +126,13 @@ background-color: rgb(15, 50, 200);
     margin: 0;
 }
 
-#p-language{
+#p-language {
     padding: 0;
     margin: 0;
     padding-left: 10%;
-    
 }
 
-#p-button-open-close{
+#p-symbol {
     padding: 0;
     margin: 0;
     right: 0;
@@ -132,7 +140,7 @@ background-color: rgb(15, 50, 200);
     overflow: hidden;
 }
 
-.list-of-language{
+.list-of-language {
     width: 100%;
     height: 16%;
     position: relative;
@@ -141,23 +149,23 @@ background-color: rgb(15, 50, 200);
     justify-content: left;
     align-items: center;
     cursor: pointer;
-    color: white; 
+    color: white;
 }
 
-.list-of-language:hover{
+.list-of-language:hover {
     background-color: rgb(30, 100, 200);
 }
 
 #language::-webkit-scrollbar {
     width: 1%;
 }
- 
+
 #language::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgb(15, 50, 200);
     background-color: rgb(30, 100, 200);
 }
- 
+
 #language::-webkit-scrollbar-thumb {
-  background-color: rgb(15, 50, 200);
-  border-radius: 50px;
+    background-color: rgb(15, 50, 200);
+    border-radius: 50px;
 }
