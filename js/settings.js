@@ -19,3 +19,6 @@ let setColumnsMobile = 1;
 let dataObject;
 // host
 let host = "http://localhost:1234";
+//
+let isMobile = true;
+let isDesktop = true;

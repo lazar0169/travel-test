@@ -61,14 +61,13 @@ const description = (function () {
     function addSection(array, data) {
         destinationWrapper.innerHTML = '';
         for (let sectionNumber in array) {
-            destinationWrapper.innerHTML += `<section id="section-${Number(sectionNumber)}" class="article-section"></section>`;
-            destination[sectionNumber].innerHTML = `<section class="section-footer">
+            destinationWrapper.innerHTML += `<section id="section-${Number(sectionNumber)}" class="article-section">
+            <section class="section-footer">
             <h2 class="model-name"></h2>
             <p class="description-text"></p>
             <button class= "read-more">Read more</button>
+            </section>
             </section>`;
-
-
         }
         for (let city of destination) {
             city.addEventListener('click', () => {
@@ -92,8 +91,8 @@ const description = (function () {
                     }
                     else {
                         destination[0].style.backgroundImage = `url(${data.destination[object].image})`;
-                        destinationName[0].innerText = data.destination[object].name;
-                        destinationText[0].innerText = data.destination[object].desc;
+                        destinationName[0].innerHTML = data.destination[object].name;
+                        destinationText[0].innerHTML = data.destination[object].desc;
                         destination[0].dataset.id = data.destination[object].id;
                         break;
                     }
@@ -143,12 +142,11 @@ const description = (function () {
     };
 
     function columns(col) {
-        if (destinationWrapper.clientWidth < destinationWrapper.clientHeight) {
             let rowsNumber = Math.ceil(destination.length / col);
             destinationWrapper.style.gridTemplateColumns = `none`;
             destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${100 / col}% )`;
             destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
-        }
+        
     };
 
     on('makeArrayId', function (event, data) {

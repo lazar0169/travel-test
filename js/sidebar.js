@@ -22,7 +22,9 @@ const bar = (function () {
 
     function clickSeason(season) {
         trigger('makeArrayId', { season: season, data: dataObject });
-        hideBar();
+        if (sidebarWrapper.classList.contains('expand')) {
+            hideBar();
+        }
         trigger('setResolution', {});
     }
 
@@ -42,30 +44,18 @@ const bar = (function () {
     };
 
     function createLanguage(languageId, data) {
-        languageWrapper.innerHTML = '';
-
-        for (let languageNumber in data.language) {
-            languageWrapper.innerHTML += `<a data-id=${data.language[languageNumber].id} class="list-of-language"></a>`;
+        for (let language of data.language) {
+            languageWrapper.innerHTML += `<a data-id=${language.id} class="list-of-language"></a>`;
         }
-
         for (let languageName of languageList) {
             languageName.addEventListener('click', () => {
                 let languageData = languageName.dataset.id;
-                for (let languageNumber in data.language) {
-                    if (languageData === data.language[languageNumber].id) {
-                        if (body[0].clientWidth < body[0].clientHeight) {
-                            buttonName.innerHTML = data.language[languageNumber].id;
-                            buttonName.dataset.id = languageData;
-                            showHideLanguage();
-                        }
-                        else {
-                            buttonName.innerHTML = data.language[languageNumber].language;
-                            buttonName.dataset.id = languageData;
-                            showHideLanguage();
-                        }
-                    }
+                buttonName.innerHTML = languageName.textContent;
+                buttonName.dataset.id = languageData;
+                showHideLanguage();
+                if (sidebarWrapper.classList.contains('expand')) {
+                    hideBar();
                 }
-                hideBar();
             });
         }
         buttonName.dataset.id = data.language[languageId].id
@@ -75,9 +65,10 @@ const bar = (function () {
     });
 
     function showBar() {
-        if (isClose) {
-            isClose = false;
+        if (!sidebarWrapper.classList.contains('expand')) {
+
             destinationWrapper.style.visibility = 'hidden';
+
             sidebarWrapper.classList.add('expand');
             fullName();
         }
@@ -85,36 +76,39 @@ const bar = (function () {
             destinationWrapper.style.visibility = 'visible';
             sidebarWrapper.classList.remove('expand');
             hideBar();
-            isClose = true;
         }
     };
 
     function hideBar() {
-        if (isOpen) {
-            isClose = true;
+        if (sidebarWrapper.classList.contains('expand')) {
             destinationWrapper.style.visibility = 'visible';
             sidebarWrapper.classList.remove('expand');
-            substring();
         }
+        substring();
     };
 
     function mobileView(width, height) {
-        let first = get('#section-0');
-        first.classList.add('mobile');
-        isOpen = true;
 
-        if (mainWrapper.style.visibility !== 'visible') {
-            loading.style.display = 'none';
-            mainWrapper.style.visibility = 'visible';
+        if (isMobile) {
+            if (mainWrapper.style.visibility !== 'visible') {
+                loading.style.display = 'none';
+                mainWrapper.style.visibility = 'visible';
+            }
+            logo.style.visibility = 'hidden';
+            barButton.style.visibility = 'visible';
+            if (linkName[0].childNodes.length === 0 || linkName[0].textContent != "") {
+                substring();
+            }
         }
-        logo.style.visibility = 'hidden';
-        barButton.style.visibility = 'visible';
-        if (isClose) {
-            substring();
+        let first = get('#section-0');
+        if (!first.classList.contains('mobile')) {
+            first.classList.add('mobile');
         }
         trigger('sidebar/setColumns', { column: setColumnsMobile });
         trigger('sidebar/setFont', { width: width, height: height });
         fontSideBarMobile(width, height);
+        isMobile = false;
+        isDesktop = true;
     };
 
     function desktopView(width, height) {
@@ -122,18 +116,28 @@ const bar = (function () {
         isClose = true;
         trigger('sidebar/setRows', { row: setRows, column: setColumns });
         trigger('sidebar/setFont', { width: width, height: height });
-        let first = get('#section-0');
-        first.classList.remove('mobile');
-        sidebarWrapper.classList.remove('expand');
-        fullName();
-        fontSideBarMobile(width, height);
-        if (mainWrapper.style.visibility !== 'visible') {
-            loading.style.display = 'none';
-            mainWrapper.style.visibility = 'visible';
+        if (isDesktop) {
+            let first = get('#section-0');
+
+            if (first.classList.contains('mobile')) {
+                first.classList.remove('mobile')
+            }
+
+            if (sidebarWrapper.classList.contains('expand')) {
+                sidebarWrapper.classList.remove('expand');
+            }
+            fullName();
+            if (mainWrapper.style.visibility !== 'visible') {
+                loading.style.display = 'none';
+                mainWrapper.style.visibility = 'visible';
+            }
+            destinationWrapper.style.visibility = 'visible';
+            logo.style.visibility = 'visible';
+            barButton.style.visibility = 'hidden';
         }
-        destinationWrapper.style.visibility = 'visible';
-        logo.style.visibility = 'visible';
-        barButton.style.visibility = 'hidden';
+        fontSideBarMobile(width, height);
+        isDesktop = false;
+        isMobile = true;
     };
 
     function substring() {
@@ -238,7 +242,7 @@ const bar = (function () {
         desktopView(data.width, data.height, data.resolution);
     });
 
-    on('language', function (event, data) {
+    on('createLanguage', function (event, data) {
         createLanguage(data.languageId, data.data);
     });
 
