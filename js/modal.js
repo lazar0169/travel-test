@@ -30,9 +30,9 @@ const makeModal = (function () {
             if (Number(dataId) === data.destination[object].id) {
                 let seasonsArray = Object.keys(data.destination[object].seasons);
 
-                destinationName.innerText = data.destination[object].name;
+                destinationName.innerHTML = data.destination[object].name;
                 destinationImage.src = data.destination[object].image;
-                destinationText.innerText = data.destination[object].desc;
+                destinationText.innerHTML = data.destination[object].desc;
 
                 for (let season in seasonsArray) {
                     let seasonName = document.createElement('h1');
@@ -58,19 +58,19 @@ const makeModal = (function () {
                             for (let count = 0; count <= maxValue; count++) {
                                 let tableTR = document.createElement('tr');
                                 for (let spring = 0; spring < seasonSpring.length; spring++) {
-                                    seasonName.innerText = seasonsArray[season];
+                                    seasonName.innerHTML = seasonsArray[season];
                                     let tableTdSpring = document.createElement('td');
 
                                     if (count === 0) {
-                                        tableTdSpring.innerText = seasonSpring[spring];
+                                        tableTdSpring.innerHTML = seasonSpring[spring];
                                     }
                                     else {
                                         if (typeof data.destination[object].seasons.spring[seasonSpring[spring]][count - 1] !== typeof undefined) {
-                                            tableTdSpring.innerText = data.destination[object].seasons.spring[seasonSpring[spring]][count - 1];
+                                            tableTdSpring.innerHTML = data.destination[object].seasons.spring[seasonSpring[spring]][count - 1];
 
                                         }
                                         else {
-                                            tableTdSpring.innerText = '/';
+                                            tableTdSpring.innerHTML = '/';
 
                                         }
                                     }
@@ -100,19 +100,19 @@ const makeModal = (function () {
                                 let tableTR = document.createElement('tr');
 
                                 for (let summer = 0; summer < seasonSummer.length; summer++) {
-                                    seasonName.innerText = seasonsArray[season];
+                                    seasonName.innerHTML = seasonsArray[season];
                                     let tableTdSummer = document.createElement('td');
 
                                     if (count === 0) {
-                                        tableTdSummer.innerText = seasonSummer[summer];
+                                        tableTdSummer.innerHTML = seasonSummer[summer];
                                     }
                                     else {
                                         if (typeof data.destination[object].seasons.summer[seasonSummer[summer]][count - 1] !== typeof undefined) {
-                                            tableTdSummer.innerText = data.destination[object].seasons.summer[seasonSummer[summer]][count - 1];
+                                            tableTdSummer.innerHTML = data.destination[object].seasons.summer[seasonSummer[summer]][count - 1];
 
                                         }
                                         else {
-                                            tableTdSummer.innerText = '/'
+                                            tableTdSummer.innerHTML = '/'
                                         }
                                     }
                                     tableTR.appendChild(tableTdSummer);
@@ -141,18 +141,18 @@ const makeModal = (function () {
                                 let tableTR = document.createElement('tr');
 
                                 for (let autumn = 0; autumn < seasonAutumn.length; autumn++) {
-                                    seasonName.innerText = seasonsArray[season];
+                                    seasonName.innerHTML = seasonsArray[season];
                                     let tableTdAutumn = document.createElement('td');
 
                                     if (count === 0) {
-                                        tableTdAutumn.innerText = seasonAutumn[autumn];
+                                        tableTdAutumn.innerHTML = seasonAutumn[autumn];
                                     }
                                     else {
                                         if (typeof data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1] !== typeof undefined) {
-                                            tableTdAutumn.innerText = data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1];
+                                            tableTdAutumn.innerHTML = data.destination[object].seasons.autumn[seasonAutumn[autumn]][count - 1];
                                         }
                                         else {
-                                            tableTdAutumn.innerText = '/';
+                                            tableTdAutumn.innerHTML = '/';
                                         }
                                     }
                                     tableTR.appendChild(tableTdAutumn);
@@ -181,19 +181,19 @@ const makeModal = (function () {
                                 let tableTR = document.createElement('tr');
 
                                 for (let winter = 0; winter < seasonWinter.length; winter++) {
-                                    seasonName.innerText = seasonsArray[season];
+                                    seasonName.innerHTML = seasonsArray[season];
                                     let tableTdWinter = document.createElement('td');
 
                                     if (count === 0) {
-                                        tableTdWinter.innerText = seasonWinter[winter];
+                                        tableTdWinter.innerHTML = seasonWinter[winter];
 
                                     }
                                     else {
                                         if (typeof data.destination[object].seasons.winter[seasonWinter[winter]][count - 1] !== typeof undefined) {
-                                            tableTdWinter.innerText = data.destination[object].seasons.winter[seasonWinter[winter]][count - 1];
+                                            tableTdWinter.innerHTML = data.destination[object].seasons.winter[seasonWinter[winter]][count - 1];
                                         }
                                         else {
-                                            tableTdWinter.innerText = '/';
+                                            tableTdWinter.innerHTML = '/';
                                         }
                                     }
                                     tableTR.appendChild(tableTdWinter);

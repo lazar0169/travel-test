@@ -62,38 +62,36 @@ const description = (function () {
         destinationWrapper.innerHTML = '';
         for (let sectionNumber in array) {
             destinationWrapper.innerHTML += `<section id="section-${Number(sectionNumber)}" class="article-section">
-            <section class="section-footer">
-            <h2 class="model-name"></h2>
-            <p class="description-text"></p>
-            <button class= "read-more">Read more</button>
-            </section>
-            </section>`;
+                <section class="section-footer">
+                <h2 class="model-name"></h2>
+                <p class="description-text"></p>
+                <button class= "read-more">Read more</button>
+                </section>
+                </section>`;
         }
-        for (let city of destination) {
-            city.addEventListener('click', () => {
-                index(city.dataset.id);
-            })
-        }
+
+
+        addListener('.article-section', 'click', 'index')
     };
 
     function addCity(array, highRateID, data) {
         let sectionNumber = 1;
-        for (let id in array) {
-            for (let object in data.destination) {
-                if (array[id] === data.destination[object].id) {
-                    if (highRateID !== data.destination[object].id) {
-                        destination[sectionNumber].style.backgroundImage = `url(${data.destination[object].image})`;
-                        destinationName[sectionNumber].innerHTML = data.destination[object].name;
-                        destinationText[sectionNumber].innerHTML = data.destination[object].desc;
-                        destination[sectionNumber].dataset.id = data.destination[object].id;
+        for (let id of array) {
+            for (let object of data.destination) {
+                if (id === object.id) {
+                    if (highRateID !== object.id) {
+                        destination[sectionNumber].style.backgroundImage = `url(${object.image})`;
+                        destinationName[sectionNumber].innerHTML = object.name;
+                        destinationText[sectionNumber].innerHTML = object.desc;
+                        destination[sectionNumber].dataset.id = object.id;
                         sectionNumber++;
                         break;
                     }
                     else {
-                        destination[0].style.backgroundImage = `url(${data.destination[object].image})`;
-                        destinationName[0].innerHTML = data.destination[object].name;
-                        destinationText[0].innerHTML = data.destination[object].desc;
-                        destination[0].dataset.id = data.destination[object].id;
+                        destination[0].style.backgroundImage = `url(${object.image})`;
+                        destinationName[0].innerHTML = object.name;
+                        destinationText[0].innerHTML = object.desc;
+                        destination[0].dataset.id = object.id;
                         break;
                     }
                 }
@@ -142,12 +140,16 @@ const description = (function () {
     };
 
     function columns(col) {
-            let rowsNumber = Math.ceil(destination.length / col);
-            destinationWrapper.style.gridTemplateColumns = `none`;
-            destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${100 / col}% )`;
-            destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
-        
+        let rowsNumber = Math.ceil(destination.length / col);
+        destinationWrapper.style.gridTemplateColumns = `none`;
+        destinationWrapper.style.gridTemplateColumns = `repeat(${col}, ${100 / col}% )`;
+        destinationWrapper.style.gridTemplateRows = `repeat(${rowsNumber}, 50%)`;
+
     };
+    on('index', function (event, data) {
+        index(data.data);
+    });
+
 
     on('makeArrayId', function (event, data) {
         arrayId(data.season, data.data);
